@@ -75,13 +75,13 @@ pre {
 
 .site {
   margin: 3em auto;
-  width: 50em;
+  width: 60em;
   position: relative;
 }
 
 .sidebar {
   position: fixed;
-  width: 8em;
+  width: 15em;
   margin-top: 3em;
 }
 
@@ -95,12 +95,12 @@ pre {
 }
 
 .content {
-  margin-left: 10em;
+  margin-left: 15em;
   padding-bottom: 3em;
 }
 
 .footer {
-  margin-left: 10em;
+  margin-left: 15em;
   padding-bottom: 5em;
   padding-top: 1.5em;
   border-top: 1px solid #eee;

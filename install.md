@@ -5,7 +5,7 @@ title: How to install
 
 # How to install
 
-## Требования
+### Требования
 
 Для работы нужно будет минимум 2 (лучше конечно 3) сервера c Ubutnu 12.04 или 13.10,
 x64 обязательно, на серверах будут размещены:
@@ -25,9 +25,7 @@ _sudo apt-get install linux-generic-lts-saucy_.
 _sudo -u root id_, если будет просить пароль, добавить в /etc/sudoers
 _ALL=(ALL:ALL) NOPASSWD:ALL_ для пользователя или группы.
 
-<div class="sep"></div>
-
-## Перед началом установки
+### Перед началом установки
 
 Если вы намериваетесь использовать Github, то нужно [создать][app] приложение
 
@@ -37,9 +35,7 @@ _ALL=(ALL:ALL) NOPASSWD:ALL_ для пользователя или группы
 
 Если нужен будет Gitlab, то ничего делать не надо, понадобится только его адрес.
 
-<div class="sep"></div>
-
-## Установка
+### Установка
 
 Для установки используется [ansible][ansible], поэтому он должен быть на машине
 с которой будете ее запускать.
@@ -120,7 +116,7 @@ Ubuntu
     ./play production
 
 Дальше нужно зайти на машину(ы) c воркерами и вручную скачать docker image,
-который используется по умолчанию для работы, его размер около 4 gb, поэтому
+который используется по умолчанию для работы, его размер около 2 gb, поэтому
 скачивание займет некоторое время.
 
     docker pull dmexe/vexor-precise-full
@@ -128,9 +124,13 @@ Ubuntu
 Поздравляем, квест пройден!
 
 
-<div class="sep"></div>
+### Настройка почты
 
-## Что будет установлено на серверы
+Для отправки уведомлений web application использует установленный в системе
+sendmail, поэтому он должен быть сконфигурирован, если нет желания возиться
+c настройкой можно поставить [ssmtp][ssmtp].
+
+### Что будет установлено на серверы
 
 Web application
 
@@ -153,3 +153,4 @@ Rabbitmq
 [app]: https://github.com/settings/applications
 [ansible]: http://www.ansible.com/home
 [ansible-install]: http://docs.ansible.com/intro_installation.html
+[ssmtp]: http://mikebeach.org/2013/04/24/simple-outbound-email-configuration-for-ubuntu-server-12-04-using-ssmtp/

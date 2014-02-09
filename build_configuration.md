@@ -15,7 +15,7 @@ title: Build Configuration
     cache:
       directories:
         - директории которые будут кэшироваться между билдами,
-          по умолчанию кэширования включено для ruby, scala, clojure
+          по умолчанию кэширования включено для ruby и scala
 
     rvm:
       - список версий руби, строится матрица
@@ -41,5 +41,5 @@ title: Build Configuration
     script:
       - команды для запуска тестов
 
-    after_script:
+    after_success:
       - команды которые будут выполнены после успашного завершения тестов

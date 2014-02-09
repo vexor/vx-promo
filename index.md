@@ -20,5 +20,3 @@ Caching Dependencies
 Deploy using SSH
 
 Curently support out of box: Ruby, Scala, Clojure
-
-
