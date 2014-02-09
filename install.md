@@ -5,8 +5,8 @@ title: How to install
 
 ### Требования
 
-Для работы нужно будет минимум 2 (лучше конечно 3) сервера c Ubutnu 12.04 или 13.10,
-x64 обязательно, на серверах будут размещены:
+Для работы нужно будет минимум 2 (лучше 3) сервера c Ubutnu 12.04 или 13.10,
+__x64 обязательно__, на серверах будут размещены:
 
 * Web application
 * Worker
@@ -71,6 +71,7 @@ Ubuntu
     worker0.example.com
 
     [vexor:children]
+    # этот блок не нужно трогать
     vexor-mq
     vexor-web
     vexor-worker
@@ -96,18 +97,18 @@ Ubuntu
 
     # На всякий случай имя сервера с web application,
     # будет использоваться в web hooks
-    vx_web_hostname=ci.example.com
+    # vx_web_hostname=ci.example.com
 
     # Сколько процессов web application запускать,
     # по умолчанию равно количеству процессоров
-    vx_web_num_workers=8
+    # vx_web_num_workers=8
 
     # Сколько потоков с воркерами будет работать,
     # по умолчанию равно количеству процессоров
-    vx_worker_num_workers=3
+    # vx_worker_num_workers=3
 
     # Можно переопределить docker image используемый по умолчанию
-    vx_worker_docker_image: "dmexe/precise-full"
+    # vx_worker_docker_image: "dmexe/vexor-precise-full"
 
 После этого можно запускать
 

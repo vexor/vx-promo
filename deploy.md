@@ -22,5 +22,5 @@ Mina
 
 в конфигурации билда нужно добавить запуск деплоя
 
-    after_script:
+    after_success:
       - if [ $CI_BRANCH = 'production' ] ; then bundle exec cap production deploy ; fi
