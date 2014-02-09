@@ -3,8 +3,6 @@ layout: default
 title: Screenshots
 ---
 
-# Screenshots
-
 ### Dashboard, projects list
 
 ![Projects list](/img/projects.png "Projects List")

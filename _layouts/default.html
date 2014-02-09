@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
     </head>
     <body>
@@ -20,21 +20,23 @@
 
           <div class="sidebar">
             <ul>
-              <li><a href="/">About</a></li>
-              <li><a href="/screenshots.html">Screenshots</a></li>
-              <li><a href="/install.html">Install</a></li>
-              <li><a href="/build_configuration.html">Build Configuration</a></li>
-              <li><a href="/deploy.html">Deploy</a></li>
-              <li><a href="/ruby.html">Ruby</a></li>
-              <li><a href="/scala.html">Scala</a></li>
-              <li><a href="/clojure.html">Clojure</a></li>
-              <li><a href="/databases.html">Databases</a></li>
-              <li><a href="/puppet_and_ansible.html">Puppet and Ansible</a></li>
+              {% for link in site.navigation %}
+                {% assign current = nil %}
+                {% assign url = page.url | split: '/' %}
+                {% if url[1] == link.url %}
+                  {% assign current = 'current' %}
+                {% endif %}
+                {% assign link_url = link.url %}
+                <li class="{{ current }}"><a href="{{ link_url }}">{{ link.text }}</a></li>
+              {% endfor %}
             </ul>
           </div>
 
           <div class="content">
-            {{ content }}
+            <h1>{{page.title}}</h1>
+            <div class="page">
+              {{ content }}
+            </div>
           </div>
 
           <div class="footer">

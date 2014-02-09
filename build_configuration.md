@@ -3,8 +3,6 @@ layout: default
 title: Build Configuration
 ---
 
-# Build Configuration
-
 Описание билда должно находиться в файле .travis.yml, в корне репозитория.
 Ниже краткое описание всех поддерживамых ключей
 

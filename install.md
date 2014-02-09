@@ -3,8 +3,6 @@ layout: default
 title: How to install
 ---
 
-# How to install
-
 ### Требования
 
 Для работы нужно будет минимум 2 (лучше конечно 3) сервера c Ubutnu 12.04 или 13.10,

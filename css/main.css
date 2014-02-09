@@ -16,13 +16,13 @@ html, body {
 
 body {
   background-color: #FFF;
-  font: 15px Helvetica;
-  color: #333;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
+  color: #666;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font-family: Calibri,"PT Sans","Trebuchet MS"
 }
 
 h1 { margin-bottom: 1em; }
@@ -39,15 +39,19 @@ h1 {
   margin: 1em 0 2em;
   border-bottom: 1px solid #eee;
 }
-h2 {
-  font-weight: normal;
-  font-size: 130%;
-  margin: 2em 0 1em;
-}
+
 h3 {
   font-weight: normal;
-  font-size: 110%;
-  margin: 2em 0 1em;
+  font-size: 120%;
+  margin: 3em 0 1em;
+}
+
+h3:first-child {
+  margin-top: 1em;
+}
+
+h3:before {
+  content: "### ";
 }
 
 li {
@@ -62,15 +66,9 @@ img {
 
 pre {
   background: #F8F9FC;
-  font-family: Monaco, Consolas;
+  font-family: Menlo, Monaco, "Courier New", monospace;
   padding: 1em;
-}
-
-.sep {
-  width: 20em;
-  margin: 2.5em auto 1em;
-  border-bottom: 1px solid #eee;
-  height: 1px;
+  font-size: 90%;
 }
 
 .site {
@@ -79,19 +77,31 @@ pre {
   position: relative;
 }
 
+.page {
+  min-height: 40em;
+}
+
 .sidebar {
   position: fixed;
-  width: 15em;
+  width: 12em;
   margin-top: 3em;
+  text-align: right;
 }
 
 .sidebar ul {
   list-style: none;
+  margin-top: 3.4em;
 }
 
 .sidebar li {
-  padding: .5em 0;
+  padding: .2em .8em .2em 0;
+  margin: .2em 0;
   font-size: 110%;
+}
+
+.sidebar li.current a {
+  color: #666;
+  text-decoration: none;
 }
 
 .content {

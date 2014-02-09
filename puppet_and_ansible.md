@@ -3,8 +3,6 @@ layout: default
 title: Puppet And Ansible
 ---
 
-# Puppet And Ansible
-
 А контейнерах можно делать интеграционные тесты для provisionning, для этого
 нужно использовать образы с предустанной OS в минимальной конфигурации
 

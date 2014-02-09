@@ -3,8 +3,6 @@ layout: default
 title: Scala
 ---
 
-# Scala
-
 Для запуска приложений написанных на scala, достаточно просто указать
 
     language: scala

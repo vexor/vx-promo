@@ -3,8 +3,6 @@ layout: default
 title: Databases
 ---
 
-# Databases
-
 ### Postgresql
 
 Установлена версия 9.3 и пакет contrib, запускается автоматически, для доступа

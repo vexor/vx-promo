@@ -3,8 +3,6 @@ layout: default
 title: Ruby
 ---
 
-# Ruby
-
 Для запуска приложений написанных на ruby, достаточно просто указать
 
     language: ruby

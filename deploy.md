@@ -3,8 +3,6 @@ layout: default
 title: Deploy
 ---
 
-# Deploy
-
 На данные момент есть поддержка деплоя с использованием SSH. К каждому проекту привязан
 SSH ключ, который нужно добавить на серверы, на который будет производиться деплой
 
@@ -14,11 +12,11 @@ SSH ключ, который нужно добавить на серверы, н
 Во время выполения билда стартует ssh-agent и добавляется private key,
 ваше deploy tool должно быть сконфигурировано так что бы использовать agent forwarding.
 
-__Capistrano__
+Capistrano
 
     set :ssh_options, { forward_agent: true }
 
-__Mina__
+Mina
 
     set :forward_agent, true
 

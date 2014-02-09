@@ -3,8 +3,6 @@ layout: default
 title: Clojure
 ---
 
-# Clojure
-
 Для запуска приложений написанных на Clojure, нужно указать
 
     language: clojure

@@ -3,8 +3,6 @@ layout: default
 title: Vexor - Continius Integration Server
 ---
 
-# Vexor - Continius Integration Server
-
 Open Source, MIT License
 
 Build on Ruby, Rails, Docker, Angular.js
