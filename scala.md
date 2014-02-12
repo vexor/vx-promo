@@ -3,25 +3,25 @@ layout: default
 title: Scala
 ---
 
-Для запуска приложений написанных на scala, достаточно просто указать
+To run Scala apps issue:
 
     language: scala
 
-По умолчанию будет использоваться версия 2.10.3.
+Slcala 2.10.3 is used by default.
 
-Scala в образ dmexe/vexor-recise-full не установлена, потому что версий очень
-много и совместимость между ними хромает. Вместо предустановки используется
-[sbt-extras][extras] совместно с кэшированием. [sbt-extras][extras] автоматически
-детектит и устанавливает нужную версию sbt, а та уже устанавливает нужную версию
-scala. Во время первого запуска все будет скачано и скомпилино, в дальнейшем
-благодяря кэшированию будет работать быстро.
+Because of Scala's versions multitude and incompatibilities it's not preinstalled 
+in dmexe/vexor-recise-full. Instead, [sbt-extras][extras] is used together with caching.
+[sbt-extras][extras] detects and automatically installs the required version `sbt` which,
+in turn, msnsges the version of the language. Everything is being installed and set up
+during the first run, then works fast because of caching.
 
-Команды выполяемые для тесторования
+
+Testing is run with these commands:
 
     sbt ++$SCALA_VERSION update
     sbt ++$SCALA_VERSION test
 
-Можно указать разные версии scala и java
+Scala and Java versions can be managed:
 
     scala:
       - 2.10.2
@@ -31,12 +31,12 @@ scala. Во время первого запуска все будет скач�
       - openjdk7
       - oraclejdk7
 
-В образ dmexe/vexor-precise-full, предустановленны версии java
+JDKs preinstalled in dmexe/vexor-precise-full include
 
 * openjdk7
 * oraclejdk7
 * oraclejdk8
 
-Java 6 в образ не входит.
+Java 6 isn't included.
 
 [extras]: https://github.com/paulp/sbt-extras
