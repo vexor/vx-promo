@@ -29,13 +29,13 @@ The build description should be placed in .travis.yml in the repo's root. Here's
       - Docker images list, used in the matrix
 
     before_install:
-      - commands to be ran before dependencies installation
+      - commands to run before dependencies installation
 
     before_script:
-      - commands to be ran before build run
+      - commands to run before build
 
     script:
       - commands running the tests
 
     after_success:
-      - commands to be ran after the successful test run
+      - commands to execute after the successful test run

@@ -9,7 +9,7 @@ To run Clojure apps you should issue:
 
 Leiningen 2.3.4 is preinstalled in dmexe/vexor-precise-full image; 1.x isn't supported; symlink lein -> lein2 is included for Travis compatibility.
 
-These commands will be ran:
+These commands will be run:
 
     lein deps
     lein test
