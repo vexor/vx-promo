@@ -8,7 +8,7 @@ Open Source, MIT License
 
 Github and Gitlab integration
 
-Build matrixes
+Build matrices
 
 travis.yml compatibility
 
