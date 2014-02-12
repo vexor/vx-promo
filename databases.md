@@ -5,33 +5,31 @@ title: Databases
 
 ### Postgresql
 
-Установлена версия 9.3 и пакет contrib, запускается автоматически, для доступа
-нужно сипользовать логин postgres без пароля
+Version 9.3 with Contrib package are preinstalled and run atomaticaly. Login: `postgres`, without the password 
 
     psql -U postgres -c "create database test;"
 
 
 ### Mysql
 
-Установлена версия 5.5, запускается автоматически для доступа нужно использовать
-логин root без пароля
+Version 5.5 is preinstalled and run atomaticaly. Login: `root`, without the password 
 
     mysql -u root -e "create database test"
 
 ### Redis
 
-Установлена версия 2.8.5, запускается автоматически
+Version 2.8.5 is preinstalled and run atomaticaly
 
 ### Rabbitmq
 
-Установлена версия 3.2.3, для запуска нужно указать
+Version 3.2.3 is preinstalled; to run, issue:
 
     services:
       - rabbitmq
 
 ### Elasticsearch
 
-Установленна версия 0.90.10, для запуска нужно указать
+Version 0.90.10 is preinstalled; to run, issue:
 
     services:
       - elasticsearch
