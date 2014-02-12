@@ -3,32 +3,32 @@ layout: default
 title: Clojure
 ---
 
-Для запуска приложений написанных на Clojure, нужно указать
+To run Clojure apps you should issue:
 
     language: clojure
 
-В образ dmexe/vexor-precise-full предутановлен leiningen 2.3.4, версия 1.x
-в образ не входит, для совместимости с travis присутствует symlink lein -> lein2
+Leiningen 2.3.4 is preinstalled in dmexe/vexor-precise-full image; 1.x isn't supported; symlink lein -> lein2 is included for Travis compatibility.
 
-Будут выполнены команды
+These commands will be ran:
 
     lein deps
     lein test
 
-Команду для запуска тестов можно переопределить
+You can set your custom command to run the tests:
 
     script: lein midje
 
-Можно указать разные версии java
+You can specify a different version of the JDK
 
     jdk:
       - openjdk7
       - oraclejdk7
 
 В образ dmexe/vexor-precise-full, предустановленны версии java
+JDKs preinstalled in dmexe/vexor-precise-full:
 
 * openjdk7
 * oraclejdk7
 * oraclejdk8
 
-Java 6 в образ не входит.
+Java 6 isn't included.
