@@ -3,41 +3,39 @@ layout: default
 title: Build Configuration
 ---
 
-Описание билда должно находиться в файле .travis.yml, в корне репозитория.
-Ниже краткое описание всех поддерживамых ключей
+The build description should be placed in .travis.yml in the repo's root. Here's the keys description:
 
     ---
     env:
-      - переменные окружения из которых будет сформирована матрица
+      - environment variables, used in the matrix
 
     cache:
       directories:
-        - директории которые будут кэшироваться между билдами,
-          по умолчанию кэширования включено для ruby и scala
+        - folders to be cached between the builds (defaults are set for Ruby and Scala)
 
     rvm:
-      - список версий руби, строится матрица
+      - Ruby versions list, used in the matrix
 
     scala:
-      - список версий scala, строится матрица
+      - Scala versions list, used in the matrix
 
     java:
-      - список версий java, строится матрица
+      - Java versions list, used in the matrix
 
     gemfile:
-      - список гемфайлов, строится матрица
+      - Gemfiles list, used in the matrix
 
     image:
-      - список docker images, строится матрица
+      - Docker images list, used in the matrix
 
     before_install:
-      - команды перед установкой зависимостей
+      - commands to be ran before dependencies installation
 
     before_script:
-      - команды перед закуском билда
+      - commands to be ran before build run
 
     script:
-      - команды для запуска тестов
+      - commands running the tests
 
     after_success:
-      - команды которые будут выполнены после успашного завершения тестов
+      - commands to be ran after the successful test run
