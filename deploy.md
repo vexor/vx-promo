@@ -3,14 +3,12 @@ layout: default
 title: Deploy
 ---
 
-На данные момент есть поддержка деплоя с использованием SSH. К каждому проекту привязан
-SSH ключ, который нужно добавить на серверы, на который будет производиться деплой
+As for now, ssh-driven deploy mechanism is supported. Each project must have an associated ssh key installed on the server where you plan to deploy.
 
     curl -s https://ci.example.com/api/projects/1/key.txt \
       >> ~/.ssh/authorized_keys
 
-Во время выполения билда стартует ssh-agent и добавляется private key,
-ваше deploy tool должно быть сконфигурировано так что бы использовать agent forwarding.
+When the build is run, ssh-agent is being started adding a private key. THe deploy tool you use should be configured to use agent forwarding.
 
 Capistrano
 
@@ -20,7 +18,7 @@ Mina
 
     set :forward_agent, true
 
-в конфигурации билда нужно добавить запуск деплоя
+you should add deploy command explicitly in the configuration:
 
     after_success:
       - if [ $CI_BRANCH = 'production' ] ; then bundle exec cap production deploy ; fi
