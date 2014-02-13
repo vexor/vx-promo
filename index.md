@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Vexor - Continius Integration Server
-html_title: Vexor - Continius Integration Server
+title: Vexor - Continuous Integration Server
+html_title: Vexor - Continuous Integration Server
 ---
 
 Open Source, MIT License
