@@ -8,7 +8,7 @@ As for now, ssh-driven deploy mechanism is supported. Each project must have an 
     curl -s https://ci.example.com/api/projects/1/key \
       >> ~/.ssh/authorized_keys
 
-When the build is run, ssh-agent is being started adding a private key. THe deploy tool you use should be configured to use agent forwarding.
+When the build is run, ssh-agent is being started adding a private key. The deploy tool you use should be configured to use agent forwarding.
 
 Capistrano
 
