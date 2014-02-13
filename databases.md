@@ -5,20 +5,20 @@ title: Databases
 
 ### Postgresql
 
-Version 9.3 with Contrib package are preinstalled and run atomaticaly. Login: `postgres`, without the password 
+Version 9.3 with Contrib package are preinstalled and run automatically. Login: `postgres`, without the password
 
     psql -U postgres -c "create database test;"
 
 
 ### Mysql
 
-Version 5.5 is preinstalled and run atomaticaly. Login: `root`, without the password 
+Version 5.5 is preinstalled and run automatically. Login: `root`, without the password
 
     mysql -u root -e "create database test"
 
 ### Redis
 
-Version 2.8.5 is preinstalled and run atomaticaly
+Version 2.8.5 is preinstalled and run automatically
 
 ### Rabbitmq
 
