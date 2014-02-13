@@ -6,7 +6,7 @@ html_title: Vexor - Continius Integration Server
 
 Open Source, MIT License
 
-Github and Gitlab integration
+Github and Gitlab 5.x integration
 
 Build matrices
 
