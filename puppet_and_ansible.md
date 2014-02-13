@@ -51,10 +51,9 @@ Ansible way is quite simple:
       - sudo apt-add-repository -y ppa:rquillo/ansible
       - sudo apt-get update
       - sudo apt-get install -qy ansible
-      - echo "localhost ansible_connection=local" > hosts
 
     script:
-      - ansible-playbook -i hosts -v -s site.yml
+      - ansible-playbook -i localhost, -c local -v -s site.yml
 
 This lets you check if the configuration is being deployed without errors. For
 further checking use [serverspec][serverspec] or ansible itself.
