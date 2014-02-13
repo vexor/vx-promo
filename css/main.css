@@ -11,7 +11,6 @@
 }
 
 html, body {
-  height: 100%;
 }
 
 body {
@@ -79,7 +78,7 @@ pre {
 }
 
 .page {
-  min-height: 40em;
+  min-height: 20em;
 }
 
 .sidebar {
@@ -112,7 +111,7 @@ pre {
 
 .footer {
   margin-left: 15em;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
   padding-top: 1.5em;
   border-top: 1px solid #eee;
 }
