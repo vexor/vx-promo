@@ -24,8 +24,7 @@ You can specify a different version of the JDK
       - openjdk7
       - oraclejdk7
 
-В образ dmexe/vexor-precise-full, предустановленны версии java
-JDKs preinstalled in dmexe/vexor-precise-full:
+JDKs preinstalled in dmexe/vexor-precise-full include
 
 * openjdk7
 * oraclejdk7

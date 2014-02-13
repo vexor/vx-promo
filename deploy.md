@@ -5,7 +5,7 @@ title: Deploy
 
 As for now, ssh-driven deploy mechanism is supported. Each project must have an associated ssh key installed on the server where you plan to deploy.
 
-    curl -s https://ci.example.com/api/projects/1/key.txt \
+    curl -s https://ci.example.com/api/projects/1/key \
       >> ~/.ssh/authorized_keys
 
 When the build is run, ssh-agent is being started adding a private key. THe deploy tool you use should be configured to use agent forwarding.

@@ -49,6 +49,7 @@ Now clone the installer repo:
 
     git clone https://github.com/vexor/vx-install.git
     cd vx-install
+    git checkout stable-0.9
     cp inventory/production.example inventory/production
 
 Edit the configuration in _inventory/production_:
@@ -116,7 +117,7 @@ Here, you've completed the quest!
 
 ### Email setup
 
-Web application uses system senmail so you have to have it configured. Or, use [ssmtp][ssmtp].
+Web application uses system sendmail so you have to have it configured. Or, use [ssmtp][ssmtp].
 
 ### What you will have on your servers
 

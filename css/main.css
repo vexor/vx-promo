@@ -69,6 +69,7 @@ pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
   padding: 1em;
   font-size: 90%;
+  border: 1px solid #eee;
 }
 
 .site {
