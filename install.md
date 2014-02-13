@@ -55,52 +55,52 @@ Now clone the installer repo:
 Edit the configuration in _inventory/production_:
 
     [vexor-mq]
-    # rabbitmq server address
+    ### rabbitmq server address
     mq0.example.com
 
     [vexor-web]
-    # web application address
+    ### web application address
     ci.example.com
 
     [vexor-worker]
-    # server running the worker
+    ### server running the worker
     worker0.example.com
 
     [vexor:children]
-    # don't touch this
+    ### don't touch this
     vexor-mq
     vexor-web
     vexor-worker
 
     [vexor:vars]
 
-    # Here goes the config
+    ### Here goes the config
 
-    # SSH username
+    ### SSH username
     ansible_ssh_user=ubuntu
 
-    # Github credentials; remove these lines if you don't use Github
+    ### Gitlab servers, if any, divided by commas
+    gitlab_url=http://demo.gitlab.com,gitlab.example.com
+
+    ### Github credentials; remove these lines if you don't use Github
     github_key=<YOUR GITHUB KEY>
     github_secret=<YOUR GITHUB SECRET>
 
-    # Allows only users of a certain Organization
-    github_restriction=<YOUR ORGANIZATION NAME>
+    ### Allows only users of a certain Organization
+    # github_restriction=<YOUR ORGANIZATION NAME>
 
-    # Gitlab servers, if any, divided by commas
-    gitlab_url=http://demo.gitlab.com,gitlab.example.com
-
-    # Web application server (used in web hooks)
+    ### Web application server (used in web hooks)
     # vx_web_hostname=ci.example.com
 
-    # Web application processes number,
-    # defaults to the current number of CPUs
+    ### Web application processes number,
+    ### defaults to the current number of CPUs
     # vx_web_num_workers=8
 
-    # Worker threads number,
-    # defaults to CPU number
+    ### Worker threads number,
+    ### defaults to CPU number
     # vx_worker_num_workers=3
 
-    # Here you can specify your own default docker image:
+    ### Here you can specify your own default docker image:
     # vx_worker_docker_image: "dmexe/vexor-precise-full"
 
 Then, start:
