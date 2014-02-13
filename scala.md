@@ -7,7 +7,7 @@ To run Scala apps issue:
 
     language: scala
 
-Slcala 2.10.3 is used by default.
+Scala 2.10.3 is used by default.
 
 Because of Scala's versions multitude and incompatibilities it's not preinstalled
 in dmexe/vexor-recise-full. Instead, [sbt-extras][extras] is used together with caching.
