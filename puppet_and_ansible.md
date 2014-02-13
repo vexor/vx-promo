@@ -10,7 +10,7 @@ the minimal images of a preinstalled OS.
       - dmexe/vexor-precise
 
 __NB:__ if you are going to test Ubuntu in your own images, you should setup your init correctly.
-See examples in [Dockerfile][dockerfile]
+See examples in [bash.sh][base.sh]
 
 ### Puppet
 
@@ -56,7 +56,7 @@ Ansible way is quite simple:
     script:
       - ansible-playbook -i hosts -v -s site.yml
 
-This lets you check if the configuration is being deployed without errors. For 
+This lets you check if the configuration is being deployed without errors. For
 further checking use [serverspec][serverspec] and ansible itself.
 
     $ cat test.yml
@@ -69,4 +69,4 @@ everything there is done in chroot; Vexor CI itself does things much simpler.
 
 [serverspec]: http://serverspec.org/
 [install]: https://github.com/vexor/vx-install/blob/master/.travis.yml
-[dockerfile]: https://github.com/vexor/vx-worker/blob/master/docker/Dockerfile
+[base.sh]: https://github.com/vexor/vx-docker-image/blob/master/script/base.sh
