@@ -3,40 +3,35 @@ layout: default
 title: How to install
 ---
 
-### Требования
+### Prerequisites
 
-Для работы нужно будет минимум 2 (лучше 3) сервера c Ubutnu 12.04 или 13.10,
-__x64 обязательно__, на серверах будут размещены:
+You will need 2 (better 3) Ubuntu 12.04 or 13.10 servers to host, respectively:
 
 * Web application
 * Worker
 * Rabbitmq
 
-Если очень нужно web appalication и rabbitmq можно совместить на одной машине.
+Web and Rabbitmq may be hosted on the same machine.
 
-На машине с воркером ядро должно быть минимум 3.8 версии, а лучше выше. Проверить
-можно командой _uname -r_, и в случае необходимости обновить командой
-_sudo apt-get install linux-generic-lts-saucy_.
+Worker machine must have Linux kernel of at least v3.8, the higher the better. To check it run
+_uname -r_ and upgrade with _sudo apt-get install linux-generic-lts-saucy_ if needed.
 
-Уставновка будет происходить в автоматическом режиме, поэтому для ее работы на
-всех серверах необходим настроенные _sudo_ без пароля, проверить можно командой
-_sudo -u root id_, если будет просить пароль, добавить в /etc/sudoers
-_ALL=(ALL:ALL) NOPASSWD:ALL_ для пользователя или группы.
+All installation goes automatically, so you'll need _sudo_ without a password (check with _sudo -u root id_).
+If it asks for a password add _ALL=(ALL:ALL) NOPASSWD:ALL_ to /etc/sudoers for a an appointed user or a group.
 
-### Перед началом установки
+### Before installation
 
-Если вы намериваетесь использовать Github, то нужно [создать][app] приложение
+Create [app][app] if you use Github:
 
-* __Application name__ любое
-* __Homepage URL__ адрес вашего сервера
-* __Authorization callback URL__ http[s]://адрес.вашего.сервера/auth/github/callback
+* __Application name__ --- any
+* __Homepage URL__ --- your server address
+* __Authorization callback URL__ http[s]://your.server.address/auth/github/callback
 
-Если нужен будет Gitlab, то ничего делать не надо, понадобится только его адрес.
+If your app sits in the Gitlab just specify its address.
 
-### Установка
+### Installation
 
-Для установки используется [ansible][ansible], поэтому он должен быть на машине
-с которой будете ее запускать.
+Installation runs [ansible][ansible], so you have to have it on the machine from which you run the installation.
 
 OSX
 
@@ -48,105 +43,99 @@ Ubuntu
     sudo apt-get update
     sudo apt-get install ansible
 
-Остальным посмотреть [официальный гайд][ansible-install] по установке
+Or, read [the official ansible guide][ansible-install].
 
-Дальше нужно склонировать репу с установщиком
+Now clone the installer repo:
 
     git clone https://github.com/vexor/vx-install.git
     cd vx-install
     cp inventory/production.example inventory/production
 
-И отредактировать файл конфигурации _inventory/production_
+Edit the configuration in _inventory/production_:
 
     [vexor-mq]
-    # адрес rabbitmq сервера
+    # rabbitmq server address
     mq0.example.com
 
     [vexor-web]
-    # адрес web application
+    # web application address
     ci.example.com
 
     [vexor-worker]
-    # адрес сервера с воркером
+    # server running the worker
     worker0.example.com
 
     [vexor:children]
-    # этот блок не нужно трогать
+    # don't touch this
     vexor-mq
     vexor-web
     vexor-worker
 
     [vexor:vars]
 
-    # Тут непосредственно конфигурация
+    # Here goes the config
 
-    # Имя юзера под которым будем конектиться
+    # SSH username
     ansible_ssh_user=ubuntu
 
-    # Ключ и секрет от github application, если github
-    # не будет использоваться то можно все 3 строки неже удалить
-    github_key=<YOU GITHUB KEY>
-    github_secret=<YOU GITHUB SECRET>
+    # Github credentials; remove these lines if you don't use Github
+    github_key=<YOUR GITHUB KEY>
+    github_secret=<YOUR GITHUB SECRET>
 
-    # Разрешит логин только пользователям состоящим в
-    # указанной организации
-    github_restriction=<YOU ORGANIZATION NAME>
+    # Allows only users of a certain Organization
+    github_restriction=<YOUR ORGANIZATION NAME>
 
-    # Для Gitlab нужно просто указать адреса серверов через запятую
+    # Gitlab servers, if any, divided by commas
     gitlab_url=http://demo.gitlab.com,gitlab.example.com
 
-    # На всякий случай имя сервера с web application,
-    # будет использоваться в web hooks
+    # Web application server (used in web hooks)
     # vx_web_hostname=ci.example.com
 
-    # Сколько процессов web application запускать,
-    # по умолчанию равно количеству процессоров
+    # Web application processes number,
+    # defaults to the current number of CPUs
     # vx_web_num_workers=8
 
-    # Сколько потоков с воркерами будет работать,
-    # по умолчанию равно количеству процессоров
+    # Worker threads number,
+    # defaults to CPU number
     # vx_worker_num_workers=3
 
-    # Можно переопределить docker image используемый по умолчанию
+    # Here you can specify your own default docker image:
     # vx_worker_docker_image: "dmexe/vexor-precise-full"
 
-После этого можно запускать
+Then, start:
 
     ./play production
 
-Дальше нужно зайти на машину(ы) c воркерами и вручную скачать docker image,
-который используется по умолчанию для работы, его размер около 2 gb, поэтому
-скачивание займет некоторое время.
+Then, login to the workers server and manually install a docker image used for all work; it's 2G big
+so the download may consume some time.
 
     docker pull dmexe/vexor-precise-full
 
-Поздравляем, квест пройден!
+Here, you've completed the quest!
 
 
-### Настройка почты
+### Email setup
 
-Для отправки уведомлений web application использует установленный в системе
-sendmail, поэтому он должен быть сконфигурирован, если нет желания возиться
-c настройкой можно поставить [ssmtp][ssmtp].
+Web application uses system senmail so you have to have it configured. Or, use [ssmtp][ssmtp].
 
-### Что будет установлено на серверы
+### What you will have on your servers
 
 Web application
 
-* Ruby в /opt/vexor/ruby
-* Приложение в /opt/vexor/web/current
+* Ruby in /opt/vexor/ruby
+* App in /opt/vexor/web/current
 * postgresql 9.1
 * memcached
 
 Worker
 
-* Ruby в /opt/vexor/ruby
-* Приложение в /opt/vexor/worker/current
+* Ruby in /opt/vexor/ruby
+* App in /opt/vexor/worker/current
 * docker
 
 Rabbitmq
 
-* rabbitmq и erlang
+* rabbitmq & erlang
 
 
 [app]: https://github.com/settings/applications
