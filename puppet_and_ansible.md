@@ -29,8 +29,8 @@ The following will be enough if you use nodeless configuration and hiera.
     script:
       - sudo puppet apply --verbose site.pp
 
-The following will help to check that your configuration AT LEAST doesn't have errors.
-Use [serverspec][serverspec] and puppet for further checking.
+The following will help to check that your configuration at least doesn't have errors.
+Use [serverspec][serverspec] or puppet for further checking.
 
     $ cat test.pp
 
@@ -57,7 +57,7 @@ Ansible way is quite simple:
       - ansible-playbook -i hosts -v -s site.yml
 
 This lets you check if the configuration is being deployed without errors. For
-further checking use [serverspec][serverspec] and ansible itself.
+further checking use [serverspec][serverspec] or ansible itself.
 
     $ cat test.yml
 
