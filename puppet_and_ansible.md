@@ -3,19 +3,18 @@ layout: default
 title: Puppet And Ansible
 ---
 
-А контейнерах можно делать интеграционные тесты для provisionning, для этого
-нужно использовать образы с предустанной OS в минимальной конфигурации
+Integration tests of provisioning may be run in containers. To do it, you'll need
+the minimal images of a preinstalled OS.
 
     images:
       - dmexe/vexor-precise
 
-__Важно__ если будете тестить в ubuntu и собираетесь использовать свои образы,
-то для коректной работы понадобится правильно запущенный init, пример конфигурации
-можно посмотреть в [Dockerfile][dockerfile]
+__NB:__ if you are going to test Ubuntu in your own images, you should setup your init correctly.
+See examples in [Dockerfile][dockerfile]
 
 ### Puppet
 
-Если используется nodeless конфигурация и hiera, то достаточно будет такого
+The following will be enough if you use nodeless configuration and hiera.
 
     env:
       - ROLE=webapp
@@ -30,9 +29,8 @@ __Важно__ если будете тестить в ubuntu и собирае�
     script:
       - sudo puppet apply --verbose site.pp
 
-Это позволит проверить что как минимум конфигурация разворaчивается без ошибок,
-можно для дополнительных проверок использовать [serverspec][serverspec], или
-сам puppet:
+The following will help to check that your configuration AT LEAST doesn't have errors.
+Use [serverspec][serverspec] and puppet for further checking.
 
     $ cat test.pp
 
@@ -41,7 +39,7 @@ __Важно__ если будете тестить в ubuntu и собирае�
 
 ### Ansible
 
-Для ansible все довольно просто
+Ansible way is quite simple:
 
     env:
       - ROLE=webapp
@@ -58,19 +56,16 @@ __Важно__ если будете тестить в ubuntu и собирае�
     script:
       - ansible-playbook -i hosts -v -s site.yml
 
-Это позволит проверить что как минимум конфигурация разворaчивается без ошибок,
-можно для дополнительных проверок использовать [serverspec][serverspec], или
-сам ansible:
+This lets you check if the configuration is being deployed without errors. For 
+further checking use [serverspec][serverspec] and ansible itself.
 
     $ cat test.yml
 
     - shell: test -d /etc/application
     - shell: nc -z localhost 5432
 
-Пример реального теста можно посмотреть в [инсталяторе Vexor CI][install], он сделан для
-использования в travis, поэтому все в chroot выполняется, для Vexor CI будет все
-проще.
-
+The example of a real test may be found in [Vexor CI installer][install]. It was made for use with Travis so
+everything there is done in chroot; Vexor CI itself does things much simpler.
 
 [serverspec]: http://serverspec.org/
 [install]: https://github.com/vexor/vx-install/blob/master/.travis.yml
