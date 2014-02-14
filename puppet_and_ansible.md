@@ -10,7 +10,7 @@ the minimal images of a preinstalled OS.
       - dmexe/vexor-precise
 
 __NB:__ if you are going to test Ubuntu in your own images, you should setup your init correctly.
-See examples in [bash.sh][base.sh]
+See examples in [base.sh][base.sh]
 
 ### Puppet
 
