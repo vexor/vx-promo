@@ -12,7 +12,7 @@ Build matrices
 
 travis.yml compatibility
 
-Caching Dependencies
+Caching dependencies
 
 Deploy using SSH
 
