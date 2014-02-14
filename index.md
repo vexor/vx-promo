@@ -16,7 +16,7 @@ Caching Dependencies
 
 Deploy using SSH
 
-Supports out of the box : Ruby, Scala, Clojure
+Supports out of the box: Ruby, Scala, Clojure
 
 Build on Ruby, Rails, Docker, Angular.js
 
