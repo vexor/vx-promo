@@ -89,7 +89,7 @@ Edit the configuration in _inventory/production_:
     ### Allows only users of a certain Organization
     # github_restriction=<YOUR ORGANIZATION NAME>
 
-    ### Web application server (used in web hooks)
+    ### Web application server (used in web hooks), defaults FQDN
     # vx_web_hostname=ci.example.com
 
     ### Web application processes number,
