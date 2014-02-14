@@ -123,17 +123,3 @@ pre {
 .footer .contacts {
   float: left;
 }
-
-code {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-code span {
-  display: block;
-  margin: 0;
-  padding: 0;
-  line-height: 1em;
-  width: 100%;
-}
