@@ -11,7 +11,7 @@ Scala 2.10.3 is used by default.
 
 Because of Scala's versions multitude and incompatibilities it's not preinstalled
 in dmexe/vexor-recise-full. Instead, [sbt-extras][extras] is used together with caching.
-[sbt-extras][extras] detects and automatically installs the required version `sbt` which,
+[sbt-extras][extras] detects and automatically installs the required version sbt which,
 in turn, manages the version of the language. Everything is being installed and set up
 during the first run, then works fast because of caching.
 
