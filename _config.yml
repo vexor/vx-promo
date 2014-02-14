@@ -19,7 +19,7 @@ navigation:
     url: scala.html
   - text: Clojure
     url: clojure.html
-  - text: Databases
+  - text: Databases And Services
     url: databases.html
   - text: Puppet And Ansible
     url: puppet_and_ansible.html

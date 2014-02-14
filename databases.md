@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Databases
+title: Databases And Services
 ---
 
 ### Postgresql
@@ -33,3 +33,7 @@ Version 0.90.10 is preinstalled; to run, issue:
 
     services:
       - elasticsearch
+
+### PhantomJS
+
+Version 1.9.7 is preinstalled
