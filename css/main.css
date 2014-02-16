@@ -96,7 +96,6 @@ pre {
 .sidebar li {
   padding: .2em .8em .2em 0;
   margin: .2em 0;
-  font-size: 110%;
 }
 
 .sidebar li.current a {
@@ -122,4 +121,12 @@ pre {
 
 .footer .contacts {
   float: left;
+}
+
+.posts p.meta {
+  color: #999;
+}
+
+.post {
+  margin-bottom: 4em;
 }

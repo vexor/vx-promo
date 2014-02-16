@@ -11,9 +11,9 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="icon" type="image/png" href="img/favicon.png" />
-
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/feed.xml">
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <body>
@@ -24,29 +24,35 @@
             <ul>
               {% for link in site.navigation %}
                 {% assign current = nil %}
-                {% assign url = page.url | split: '/' %}
-                {% if url[1] == link.url %}
+                {% if page.url == link.url %}
                   {% assign current = 'current' %}
                 {% endif %}
                 {% assign link_url = link.url %}
+                {% if link_url == 'index.html' %}
+                  {% assign link_url = '/' %}
+                {% endif %}
+
                 <li class="{{ current }}"><a href="{{ link_url }}">{{ link.text }}</a></li>
               {% endfor %}
             </ul>
           </div>
 
           <div class="content">
-            <h1>{{page.title}}</h1>
+            <h1>{% if page.date %}Blog{% else %}{{ page.title }}{% endif %}</h1>
             <div class="page">
               {{ content }}
             </div>
           </div>
 
+          {% if page.date or page.title == 'Blog' %}
+          {% else %}
           <div class="footer">
             <div class="contacts">
               <small>feedback to <a href="https://github.com/vexor/vx-install/issues">github.com/vexor/vx-install/issues</a></small>
             </div>
             <div class="evrone"><small>Powered by <a href="http://evrone.com">Evrone</a></small></div>
           </div>
+          {% endif %}
         </div>
 
     </body>
