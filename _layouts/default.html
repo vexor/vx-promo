@@ -31,6 +31,11 @@
                 {% if link_url == 'index.html' %}
                   {% assign link_url = '/' %}
                 {% endif %}
+                {% if page.date %}
+                  {% if link.text == 'Blog' %}
+                    {% assign current = 'current' %}
+                  {% endif %}
+                {% endif %}
 
                 <li class="{{ current }}"><a href="{{ link_url }}">{{ link.text }}</a></li>
               {% endfor %}
