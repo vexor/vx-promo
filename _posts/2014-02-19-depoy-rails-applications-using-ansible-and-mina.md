@@ -80,7 +80,7 @@ As a result we have all settings in only one place - in Ansible. Ansible
 executes all necessary moves. Mina just creates one deploy script. It’s very
 simple and understandable to describe configuration in Ansible.
 
-You can download and run the demo application to see how it works live:
+You can download and run the [demo application][demo] to see how it works live:
 
     $ git clone https://github.com/dima-exe/demo-deploy-using-ansible-and-mina.git
     $ brew install ansible
