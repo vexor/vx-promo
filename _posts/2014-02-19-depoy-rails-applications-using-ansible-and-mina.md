@@ -55,13 +55,13 @@ when I found Ansible it very interested me.
 * Ansible is very simple, nevertheless it has enough functionality. You can
   start working with it right after _brew install ansible_ and quick view
   [examples][ansible examples]. Generally Ansible its ideology reminds VIM:
-  within  a could of simple solutions that allow you to do complex things.
+  within  a couple of simple solutions that allow you to do complex things.
 * All configuration is described in YAML files, it is declarative and
   immediately integrated with the documentation.
 * It allows you to perform ad hoc tasks on servers. If you need to do it with
   Puppet, you will need special service Mcollective.
 
-We have highly positive impression after couple of test implementations of
+We have highly positive impression after a couple of test implementations of
 ansible. I guess in our company, together with the planned update of Ubuntu
 servers 12.04->14.04, will be simultaneous migration from Puppet to Ansible.
 
