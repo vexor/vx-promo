@@ -45,7 +45,7 @@ __Ansible.__
 This is provision tool. Actually, for the current moment, we use Puppet for our
 company projects.  In general, I have took part in Puppet implementation in our
 company and I can say that me and my colleagues are satisfied with results. But
-when I found Ansible it has very interested me.
+when I found Ansible it very interested me.
 
 * It doesn’t need a central server. Task running goes from local machine.
   Perhaps, central server is useful thing, but in our current configuration, as
