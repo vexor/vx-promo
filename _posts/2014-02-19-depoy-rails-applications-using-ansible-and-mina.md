@@ -17,7 +17,7 @@ If we reject «Do It Yourself» options, the  obvious solution will be:
 
 Unfortunately meant solution has serious disadvantages:
 
-* You essentially have same configuration in 2 different places, which makes it difficult to 
+* You essentially have same configuration in 2 different places, which makes it difficult to
   support and test. Provisioning and deployment tools need to know
   a lot of information about each other: under which user will run deploy, what
   passwords and certificates are used, what addresses and ports hanging
@@ -44,7 +44,7 @@ __Ansible.__
 
 This is provision tool. Actually, for the current moment, we use Puppet for our
 company projects.  In general, I have took part in Puppet implementation in our
-company and i can say that me and my colleagues are satisfied with results. But
+company and I can say that me and my colleagues are satisfied with results. But
 when i found Ansible it has very interested me.
 
 * It doesn’t need a central server. Task running goes from local machine.
