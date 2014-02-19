@@ -96,7 +96,6 @@ pre {
 .sidebar li {
   padding: .2em .8em .2em 0;
   margin: .2em 0;
-  font-size: 110%;
 }
 
 .sidebar li.current a {
@@ -122,4 +121,15 @@ pre {
 
 .footer .contacts {
   float: left;
+}
+
+.post small.meta {
+  color: #999;
+}
+.post p.title {
+  margin: 0;
+}
+
+#disqus_thread {
+  margin-top: 4em;
 }
