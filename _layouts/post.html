@@ -5,9 +5,8 @@ page_title: Blog
 
 <h3>{{ page.title }}</h3>
 
-<p class="meta">{{ page.date | date_to_long_string }}</p>
-
 <div class="post">
+<small class="meta">{{ page.date | date_to_long_string }}</small>
 {{ content }}
 </div>
 
