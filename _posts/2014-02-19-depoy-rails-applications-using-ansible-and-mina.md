@@ -3,8 +3,8 @@ layout: post
 title: How To Deploy Rails Applications Using Ansible And Mina
 ---
 
-A lot of people face problems when they install rails application server
-from scratch. Despite the fact that  solutions such as
+A lot of people face problems when they install a rails application server
+from scratch. Despite the fact that solutions such as
 [Heroku][heroku] or [Engine Yard][engine yard] are available, unfortunately,
 for various reasons, it’s not always possible to use them.
 
