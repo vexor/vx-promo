@@ -3,24 +3,24 @@ layout: post
 title: How To Deploy Rails Applications Using Ansible And Mina
 ---
 
-Many people face problems when they try to install rails application server
-from scratch. Despite the fact that the correct solutions such as
+A lot of people face problems when they install a rails application server
+from scratch. Despite the fact that solutions such as
 [Heroku][heroku] or [Engine Yard][engine yard] are available, unfortunately,
 for various reasons, it’s not always possible to use them.
 
-If we’ll reject option «All done by hands», the most obvious solution will be:
+If we reject «Do It Yourself» options, the  obvious solution will be:
 
-* You can prepare the server using Puppet, Chef, etc. Install the required
+* You  prepare the server using Puppet, Chef etc. Install the required
   packages, install and configure services required by the application, create
   users and so on.
 * Describe tasks using Capistrano or Mina tools and initialize deployment.
 
 Unfortunately meant solution has serious disadvantages:
 
-* In fact, you have configuration in 2 different places, which hampers of its
-  support and testing; Actually, provision tools and deploy tools need to know
+* You essentially have same configuration in 2 different places, which makes it difficult to 
+  support and test. Provisioning and deployment tools need to know
   a lot of information about each other: under which user will run deploy, what
-  passwords and certificates are used on, what addresses and ports hanging
+  passwords and certificates are used, what addresses and ports hanging
   services.
 * There are many ways how to combine deploy and provision tasks such like:
   provision and deploy only using Puppet/Chef; integration Chef/Puppet into
