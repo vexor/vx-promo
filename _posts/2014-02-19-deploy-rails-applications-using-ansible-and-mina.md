@@ -15,7 +15,7 @@ If we reject «Do It Yourself» options, the  obvious solution will be:
   users and so on.
 * Describe tasks using Capistrano or Mina tools and initialize deployment.
 
-Unfortunately meant solution has serious disadvantages:
+Unfortunately, this solution has serious disadvantages:
 
 * You essentially have same configuration in 2 different places, which makes it difficult to
   support and test. Provisioning and deployment tools need to know
