@@ -5,7 +5,7 @@ title: How to install
 
 ### Prerequisites
 
-You will need 2 (better 3) Ubuntu 12.04 or 13.10 servers to host, respectively:
+You will need 2 (better 3) Ubuntu 12.04 or 13.10 servers to host, x64 necessarily, respectively:
 
 * Web application
 * Worker
