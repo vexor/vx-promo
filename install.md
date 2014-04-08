@@ -101,7 +101,7 @@ Edit the configuration in _inventory/production_:
     # vx_worker_num_workers=3
 
     ### Here you can specify your own default docker image:
-    # vx_worker_docker_image: "dmexe/vexor-precise-full"
+    # vx_worker_docker_image="dmexe/vexor-precise-full"
 
 Then, start:
 
