@@ -1,0 +1,281 @@
+body {
+  font-family: 'Open Sans', sans-serif; }
+  body .btn {
+    padding: 15px 50px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: lighter;
+    min-width: 330px; }
+  body .btn-primary {
+    color: #666666;
+    background-color: #9cf5fb;
+    border-color: #9cf5fb; }
+  body .btn-primary:hover {
+    color: #10a3e7;
+    background-color: #9cf5fb;
+    border-color: #9cf5fb; }
+  body .session .navbar {
+    background-color: #666666;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0; }
+    body .session .navbar .logo {
+      height: 1em; }
+    body .session .navbar li a {
+      text-transform: uppercase;
+      color: #9cf5fb;
+      font-weight: lighter;
+      font-size: 1.15em; }
+    body .session .navbar li a:hover {
+      background-color: #666666;
+      color: white;
+      text-decoration: underline; }
+    body .session .navbar li.active a, body .session .navbar li.active a:hover {
+      background-color: #666666;
+      color: white;
+      text-decoration: underline; }
+    @media (min-width: 0) {
+      body .session .navbar li.separator {
+        display: none; } }
+    @media (min-width: 768px) {
+      body .session .navbar li.separator {
+        display: inline;
+        margin-top: 14px;
+        color: #9cf5fb; } }
+  body .session .block-header {
+    background-color: #10a3e7;
+    padding-top: 98.0px;
+    color: white; }
+    @media (min-width: 0) {
+      body .session .block-header {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-header {
+        height: 700px; } }
+    body .session .block-header .main-image {
+      height: 235px;
+      background-image: url("../images/landing/main-image.png");
+      background-repeat: no-repeat;
+      background-position: center; }
+    body .session .block-header .description {
+      margin-top: 20px;
+      font-size: 2.1em;
+      line-height: 120%; }
+    body .session .block-header .sign-up {
+      margin-top: 49.0px; }
+      body .session .block-header .sign-up a .icon {
+        font-size: 1.8em;
+        float: left;
+        margin-right: 15px; }
+      body .session .block-header .sign-up a .content {
+        margin-top: 3px; }
+    body .session .block-header .scroll-down {
+      margin-top: 84px;
+      text-transform: uppercase;
+      font-weight: lighter;
+      font-size: 1.2em; }
+  body .session .block-description {
+    color: #10a3e7;
+    padding-top: 140px;
+    font-weight: lighter; }
+    @media (min-width: 0) {
+      body .session .block-description {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-description {
+        height: 700px; } }
+    body .session .block-description .title {
+      font-size: 2.1em;
+      line-height: 120%;
+      font-weight: normal;
+      padding-bottom: 0.6em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #10a3e7; }
+    body .session .block-description .items .description {
+      color: #666666;
+      font-size: 1.3em; }
+    body .session .block-description .items .subtitle {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 2.1em;
+      line-height: 120%; }
+    body .session .block-description .items .separator {
+      font-color: #9cf5fb;
+      font-weight: bolder;
+      font-size: 1.5em; }
+  body .session .block-features {
+    background-color: whitesmoke;
+    color: #10a3e7;
+    padding-top: 56px;
+    font-weight: lighter; }
+    @media (min-width: 0) {
+      body .session .block-features {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-features {
+        height: 700px; } }
+    body .session .block-features .icon {
+      margin-bottom: 20px; }
+    body .session .block-features .title {
+      font-size: 2.1em;
+      line-height: 120%;
+      font-weight: normal;
+      padding-bottom: 0.6em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #10a3e7; }
+    body .session .block-features .items .item {
+      margin-bottom: 30px;
+      height: 45px; }
+      body .session .block-features .items .item .description {
+        color: #666666;
+        font-size: 1.3em; }
+      body .session .block-features .items .item:before, body .session .block-features .items .item:after {
+        content: " ";
+        display: table; }
+      body .session .block-features .items .item:after {
+        clear: both; }
+    body .session .block-features .items .item .image {
+      float: left;
+      margin-right: 30px; }
+    body .session .block-features .items .item .description {
+      height: 45px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left; }
+    body .session .block-features .supports-title {
+      margin-top: 40px;
+      font-size: 2.1em;
+      line-height: 120%; }
+    body .session .block-features .supports-items {
+      margin-top: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: white;
+      border-radius: 15px; }
+  body .session .block-pricing {
+    background-color: white;
+    color: #10a3e7;
+    padding-top: 77px;
+    font-weight: lighter; }
+    @media (min-width: 0) {
+      body .session .block-pricing {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-pricing {
+        height: 700px; } }
+    body .session .block-pricing .icon {
+      margin-bottom: 20px; }
+    body .session .block-pricing .title {
+      font-size: 2.1em;
+      line-height: 120%;
+      font-weight: normal;
+      padding-bottom: 0.6em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #10a3e7; }
+    body .session .block-pricing .title .description {
+      color: #666666;
+      margin-top: 10px;
+      font-size: 0.6em;
+      font-weight: lighter; }
+      body .session .block-pricing .title .description em {
+        color: #10a3e7;
+        font-style: normal; }
+    body .session .block-pricing .table-wraper {
+      font-size: 1.3em;
+      padding: 20px 30px;
+      background-color: whitesmoke;
+      color: #666666;
+      border-radius: 15px; }
+      body .session .block-pricing .table-wraper .table {
+        margin-bottom: 0; }
+        body .session .block-pricing .table-wraper .table td {
+          border: none; }
+        body .session .block-pricing .table-wraper .table th {
+          border-bottom: 1px solid #666666;
+          font-weight: lighter;
+          text-align: center; }
+        body .session .block-pricing .table-wraper .table .project-type {
+          font-weight: 600;
+          color: #10a3e7; }
+    body .session .block-pricing .pay_as_you_go {
+      margin-top: 30px;
+      font-size: 2.1em;
+      line-height: 120%; }
+  body .session .block-testimonials {
+    background-color: whitesmoke;
+    color: #10a3e7;
+    padding-top: 98.0px;
+    font-weight: lighter; }
+    @media (min-width: 0) {
+      body .session .block-testimonials {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-testimonials {
+        height: 700px; } }
+    body .session .block-testimonials .icon {
+      margin-bottom: 20px; }
+    body .session .block-testimonials .title {
+      font-size: 2.1em;
+      line-height: 120%;
+      font-weight: normal;
+      padding-bottom: 0.6em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #10a3e7; }
+    body .session .block-testimonials .items .item .content {
+      font-size: 1.5em;
+      margin-bottom: 10px; }
+      @media (min-width: 0) {
+        body .session .block-testimonials .items .item .content {
+          min-height: 0;
+          font-size: 1.3em; } }
+      @media (min-width: 768px) {
+        body .session .block-testimonials .items .item .content {
+          min-height: 150px; } }
+    body .session .block-testimonials .items .item .author {
+      font-size: 1.3em;
+      margin-top: 15px;
+      width: 100%;
+      color: #666666; }
+      @media (min-width: 0) {
+        body .session .block-testimonials .items .item .author {
+          margin-bottom: 20px; } }
+      @media (min-width: 768px) {
+        body .session .block-testimonials .items .item .author {
+          padding: 0;
+          margin-bottom: 0; } }
+      @media (min-width: 1200px) {
+        body .session .block-testimonials .items .item .author {
+          padding: 0 100px; } }
+  body .session .block-footer {
+    background-color: #10a3e7;
+    padding-top: 126px;
+    color: white;
+    font-weight: lighter; }
+    @media (min-width: 0) {
+      body .session .block-footer {
+        padding-bottom: 20px; } }
+    @media (min-width: 768px) {
+      body .session .block-footer {
+        height: 700px; } }
+    body .session .block-footer .fast-setup {
+      font-size: 2.1em;
+      font-weight: normal;
+      line-height: 120%; }
+    body .session .block-footer .sign-up-description {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 1.5em; }
+    body .session .block-footer .sign-up {
+      margin-bottom: 150px; }
+    body .session .block-footer .logo {
+      margin-bottom: 20px; }
+    body .session .block-footer .copyright {
+      font-size: 1.3em; }
+      body .session .block-footer .copyright a {
+        color: #9cf5fb; }
+    body .session .block-footer .items {
+      margin-top: 80px; }
+      body .session .block-footer .items a {
+        padding: 0 20px;
+        color: #9cf5fb;
+        font-size: 1.3em; }
