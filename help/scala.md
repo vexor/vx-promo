@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: help
 title: Scala
 ---
 
@@ -10,7 +10,7 @@ To run Scala apps issue:
 Scala 2.10.3 is used by default.
 
 Because of Scala's versions multitude and incompatibilities it's not preinstalled
-in dmexe/vexor-recise-full. Instead, [sbt-extras][extras] is used together with caching.
+in image. Instead, [sbt-extras][extras] is used together with caching.
 [sbt-extras][extras] detects and automatically installs the required version sbt which,
 in turn, manages the version of the language. Everything is being installed and set up
 during the first run, then works fast because of caching.
@@ -31,7 +31,7 @@ Scala and Java versions can be managed:
       - openjdk7
       - oraclejdk7
 
-JDKs preinstalled in dmexe/vexor-precise-full include
+JDKs preinstalled in image include
 
 * openjdk7
 * oraclejdk7
@@ -44,3 +44,4 @@ Caching is turned on automatically when you use Scala. To turn it off set:
     cache: false
 
 [extras]: https://github.com/paulp/sbt-extras
+

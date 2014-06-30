@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: How To Deploy Rails Applications Using Ansible And Mina
 ---
 

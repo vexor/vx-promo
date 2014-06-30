@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Build Configuration
+layout: help
+title: Configuration
 ---
 
 The build description should be placed in .travis.yml in the repo's root. Here's the keys description:
@@ -25,8 +25,8 @@ The build description should be placed in .travis.yml in the repo's root. Here's
     gemfile:
       - Gemfiles list, used in the matrix
 
-    image:
-      - Docker images list, used in the matrix
+    bundler_args:
+      - Bundler additional arguments
 
     before_install:
       - commands to run before dependencies installation
@@ -39,3 +39,6 @@ The build description should be placed in .travis.yml in the repo's root. Here's
 
     after_success:
       - commands to execute after the successful test run
+
+    deploy:
+      - commands running the deploy tasks

@@ -1,28 +1,25 @@
-name: Vexor CI
-url: http://vexor.io
+name: Vexor
+url: https://vexor.io
 markdown: redcarpet
-pygments: true
+highlighter: true
 
-navigation:
-  - text: About
-    url: /index.html
-  - text: Blog
-    url: /blog.html
-  - text: Screenshots
-    url: /screenshots.html
-  - text: Install
-    url: /install.html
-  - text: Build Configuration
-    url: /build_configuration.html
-  - text: Deploy
-    url: /deploy.html
-  - text: Ruby
-    url: /ruby.html
-  - text: Scala
-    url: /scala.html
-  - text: Clojure
-    url: /clojure.html
-  - text: Databases And Services
-    url: /databases.html
-  - text: Puppet And Ansible
-    url: /puppet_and_ansible.html
+help:
+  - title: Configuration
+    url: /help
+  - title: Ruby
+    url: /help/ruby.html
+  - title: Scala
+    url: /help/scala.html
+  - title: Clojure
+    url: /help/clojure.html
+  - title: Deploy
+    url: /help/deploy.html
+  - title: Services
+    url: /help/services.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "page"
+    values:
+      js: false

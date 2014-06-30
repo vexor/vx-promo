@@ -1,0 +1,8 @@
+/2014/02/19/depoy.* /blog/2014/02/19/deploy-rails-applications-using-ansible-and-mina.html;
+(/2014/02/.*)  /blog$1;
+/build_configuration.html /help;
+/deploy.html /help/deploy.html;
+/ruby.html /help/ruby.html;
+/scala.html /help/scala.html;
+/clojure.html /help/clojure.html;
+/databases.html /help/services.html;

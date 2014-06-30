@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vexor: {{ page.title }} </title>
+    <meta charset="utf-8">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin" media="screen" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
+    <link href="/stylesheets/landing.css" media="all" rel="stylesheet" />
+    <link href="/stylesheets/content.css" media="all" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/feed.xml">
+  </head>
+  <body>
+    <div class='landing'>
+      <nav class='navbar navbar-default' role='navigation'>
+        <div class='container-fluid'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-md-4'>
+                <div class='navbar-header'>
+                  <button class='navbar-toggle' data-target='#navbar-items' data-toggle='collapse' type='button'>
+                    <span class='sr-only'>Toggle navigation</span>
+                    <span class='icon-bar' ></span>
+                    <span class='icon-bar' ></span>
+                    <span class='icon-bar' ></span>
+                  </button>
+                  <a class='navbar-brand' href='/'><img alt="Logo" class="logo" src="/images/landing/logo.png" /></a>
+                </div>
+              </div>
+              <div class='col-md-8'>
+                <div class='collapse navbar-collapse' id='navbar-items'>
+                  <ul class='nav navbar-nav'>
+                    <li><a data-scroll="true" href="/#features">Features</a></li>
+                    <li><a data-scroll="true" href="/#pricing">Pricing</a></li>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                  </ul>
+                  <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="https://ci.vexor.io/users/github?do=sign_in">Log in</a></li>
+                    <li class='separator'>|</li>
+                    <li><a href="https://ci.vexor.io/users/github?do=sign_up">Sign up</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {{ content }}
+
+
+    </div>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/turbolinks/1.3.0/turbolinks.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+
+    {% if page.js %}
+    <script src="/javascripts/{{ page.js }}.js"></script>
+    {% endif %}
+
+  </body>
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-47910635-1', 'vexor.io');
+ga('send', 'pageview');
+    </script>
+
+<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23972557 = new Ya.Metrika({id:23972557, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23972557" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+</html>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: help
 title: Ruby
 ---
 
@@ -24,13 +24,15 @@ You can set your custom command to run the tests:
 
     script: rake spec:integration
 
-The following are available in dmexe/vexor-precise-full:
+The following are available in image:
 
-* MRI 1.9.3-p484
-* MRI 2.0.0-p353
-* MRI 2.1.0
-* jruby 1.7.9
+* MRI 1.9.3-p547
+* MRI 2.0.0-p481
+* MRI 2.1.1
+* MRI 2.1.2
+* jruby 1.7.12
 
 Caching is turned on automatically when you use Ruby. To turn it off set:
 
     cache: false
+

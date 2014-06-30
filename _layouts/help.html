@@ -1,0 +1,41 @@
+---
+layout: landing
+---
+
+<div class='block-header content-block-header'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Help Center</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block content-block-help-topics">
+  <div class="container">
+    <div class="row">
+      {% for link in site.help %}
+        {% assign current = nil %}
+        {% if page.title == link.title %}
+          {% assign current = 'active' %}
+        {% endif %}
+        <div class="col-sm-4">
+          <h5 class="{{ current }}">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </h5>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="content-block content-block-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>

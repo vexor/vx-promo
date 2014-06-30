@@ -1,0 +1,59 @@
+.content-block-header {
+  background-color: #10a3e7;
+}
+
+.content-block-header h1 {
+  text-align: center;
+  color: white;
+  padding-bottom: .4em;
+}
+
+@media (min-width: 768px) {
+  .content-block-header h1 {
+    text-align: left;
+  }
+}
+
+.content-block-body {
+  padding: 3em 0 ;
+  font-size: 16px;
+}
+
+.content-block-footer {
+  background-color: #10a3e7;
+  padding-top: 26px;
+  color: white;
+  font-weight: lighter;
+}
+
+.content-block-help-topics {
+  padding: 1em 0;
+  background-color: #f3f6fb;
+  font-size: 16px;
+}
+
+.content-block-help-topics .help-topic {
+  padding .5em 0;
+}
+
+.content-block-help-topics h5 {
+  font-size: 16px;
+}
+
+.content-block-help-topics .active a {
+  color: #333;
+}
+
+.highlight pre {
+  color: #D8D4C3;
+  background-color: #002b36;
+  word-wrap: break-word;
+  font-family: Consolas, "Liberation Mono", Menlo, Monaco, monospace !important;
+  padding: 1.2em;
+  margin-bottom: 2em;
+  border: 0;
+  border-radius: 0;
+}
+
+.post-content {
+}

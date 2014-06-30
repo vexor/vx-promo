@@ -1,0 +1,22 @@
+---
+layout: blog
+title: Blog
+comments: false
+---
+
+<div class="posts">
+
+  {% for post in site.posts limit: 1 %}
+    <div class="post">
+      <p class="title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <br/>
+        <small class="meta">{{ post.date | date_to_long_string }}</small>
+      </p>
+
+      {{ post.excerpt }}
+    </div>
+  {% endfor %}
+
+</div>
+

@@ -1,280 +1,238 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Vexor CI</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin,cyrillic" media="screen" rel="stylesheet" />
-    <link href="./stylesheets/landing.css" media="all" rel="stylesheet" />
-  </head>
-  <body>
-    <div class='session'>
-      <nav class='navbar navbar-default' role='navigation'>
-        <div class='container-fluid'>
-          <div class='container'>
-            <div class='row'>
-              <div class='col-md-4'>
-                <div class='navbar-header'>
-                  <button class='navbar-toggle' data-target='#navbar-items' data-toggle='collapse' type='button'>
-                    <span class='sr-only'>Toggle navigation</span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                  </button>
-                  <a class='navbar-brand' href='/'><img alt="Logo" class="logo" src="./images/landing/logo.png" /></a>
-                </div>
-              </div>
-              <div class='col-md-8'>
-                <div class='collapse navbar-collapse' id='navbar-items'>
-                  <ul class='nav navbar-nav'>
-                    <li><a data-scroll="true" href="#features">Features</a></li>
-                    <li><a data-scroll="true" href="#pricing">Pricing</a></li>
-                    <li><a href="https://vexor.io/blog.html">Blog</a></li>
-                    <li><a href="https://vexor.io/build_configuration.html">Help</a></li>
-                  </ul>
-                  <ul class='nav navbar-nav navbar-right'>
-                    <li><a href="/users/github?do=sign_in">Log in</a></li>
-                    <li class='separator'>|</li>
-                    <li><a href="/users/github?do=sign_up">Sign up</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class='block-header text-center'>
-        <div class='container'>
-          <div class='row main-image'>
-            <div class='col-sm-12'></div>
-          </div>
-          <div class='row description'>
-            <div class='col-sm-12'>
-              Continuous integration in the cloud.<br>$0.01 per minute. Pay as you go.
-            </div>
-          </div>
-          <div class='row sign-up'>
-            <div class='col-sm-12'>
-              <a class="btn btn-primary" href="/users/github?do=sign_up"><div class='icon fa fa-github'></div>
-              <div class='content pull-right'>Sign up with Github</div>
-              </a>
-            </div>
-          </div>
-          <div class='row scroll-down'>
-            <div class='col-sm-12'>
-              Scroll down
-              <div class='arrow'><img alt="Arrow down" src="./images/landing/arrow-down.png" /></div>
-            </div>
-          </div>
-        </div>
+---
+layout: landing
+title: Continuous integration in the cloud.
+js: landing
+---
+
+<div class='block-header landing-block-header text-center'>
+  <div class='container'>
+    <div class='row main-image'>
+      <div class='col-sm-12'></div>
+    </div>
+    <div class='row description'>
+      <div class='col-sm-12'>
+        Continuous integration in the cloud.<br>$0.01 per minute. Pay as you go.
       </div>
-      <div class='block-description text-center'>
-        <div class='container'>
-          <div class='row title'>
-            <div class='col-sm-12'>
-              Fast, Cheap and Easy — you can easily have all three
-            </div>
-          </div>
-          <div class='row items'>
-            <div class='row'>
-              <div class='col-sm-4'>
-                <div class='image'><img alt="Watch" src="./images/landing/watch.png" /></div>
-                <div class='subtitle'>Fast</div>
-                <div class='description'>Unlimited workers</div>
-                <div class='separator'>·</div>
-                <div class='description'>Easily parallelize your test suit</div>
-                <div class='separator'>·</div>
-                <div class='description'>For each worker:<br>2 CPU cores, 4 Gb of RAM, SSD</div>
-              </div>
-              <div class='col-sm-4'>
-                <div class='image'><img alt="Coin" src="./images/landing/coin.png" /></div>
-                <div class='subtitle'>Cheap</div>
-                <div class='description'>$0.01 per minute</div>
-                <div class='separator'>·</div>
-                <div class='description'>No subscription fee,<br>pay only for running your tests</div>
-              </div>
-              <div class='col-sm-4'>
-                <div class='image'><img alt="Happy kitty" src="./images/landing/happy-kitty.png" /></div>
-                <div class='subtitle'>Easy setup</div>
-                <div class='description'>Full Github<br>and Gitlab integration</div>
-                <div class='separator'>·</div>
-                <div class='description'>Travis.yml compatibility</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class='row sign-up'>
+      <div class='col-sm-12'>
+        <a class="btn btn-primary" href="https://ci.vexor.io/users/github?do=sign_up"><div class='icon fa fa-github'></div>
+        <div class='content pull-right'>Sign up with Github</div>
+        </a>
       </div>
-      <div class='block-features text-center' id='features'>
-        <div class='container'>
-          <div class='row icon'>
-            <div class='col-sm-12'>
-              <img alt="List" src="./images/landing/list.png" />
-            </div>
-          </div>
-          <div class='row title'>
-            <div class='col-sm-12'>
-              Features
-            </div>
-          </div>
-          <div class='row items'>
-            <div class='col-sm-4'>
-              <div class='item'>
-                <div class='image'><img alt="Github" src="./images/landing/github.png" /></div>
-                <div class='description'>GitHub and Gitlab integration</div>
-              </div>
-              <div class='item'>
-                <div class='image'><img alt="Matrices" src="./images/landing/matrices.png" /></div>
-                <div class='description'>Parallelize your tests with<br>building matrices</div>
-              </div>
-            </div>
-            <div class='col-sm-4'>
-              <div class='item'>
-                <div class='image'><img alt="Notification" src="./images/landing/notification.png" /></div>
-                <div class='description'>Pull request and commit<br>notifications</div>
-              </div>
-              <div class='item'>
-                <div class='image'><img alt="Travis" src="./images/landing/travis.png" /></div>
-                <div class='description'>Travis.yml compatibility</div>
-              </div>
-            </div>
-            <div class='col-sm-4'>
-              <div class='item'>
-                <div class='image'><img alt="Dependency" src="./images/landing/dependency.png" /></div>
-                <div class='description'>Dependencies caching</div>
-              </div>
-              <div class='item'>
-                <div class='image'><img alt="Deploy" src="./images/landing/deploy.png" /></div>
-                <div class='description'>Deploy automatically if test<br>complete successfully</div>
-              </div>
-            </div>
-          </div>
-          <div class='row supports-title'>
-            <div class='col-sm-12'>
-              Supports out of the box
-            </div>
-          </div>
-          <div class='row supports-items'>
-            <div class='col-sm-2 col-sm-offset-1'>
-              <a href="http://ruby-lang.org/"><img alt="Ruby" src="./images/landing/ruby.png" /></a>
-            </div>
-            <div class='col-sm-2'>
-              <a href="http://rubyonrails.org/"><img alt="Rails" src="./images/landing/rails.png" /></a>
-            </div>
-            <div class='col-sm-2'>
-              <a href="http://java.com/"><img alt="Java" src="./images/landing/java.png" /></a>
-            </div>
-            <div class='col-sm-2'>
-              <a href="http://clojure.org/"><img alt="Clojure" src="./images/landing/clojure.png" /></a>
-            </div>
-            <div class='col-sm-2'>
-              <a href="http://www.scala-lang.org/"><img alt="Scala" src="./images/landing/scala.png" /></a>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class='row scroll-down'>
+      <div class='col-sm-12'>
+        Scroll down
+        <div class='arrow'><img alt="Arrow down" src="/images/landing/arrow-down.png" /></div>
       </div>
-      <div class='block-pricing text-center' id='pricing'>
-        <div class='container'>
-          <div class='row icon'>
-            <div class='col-sm-12'>
-              <img alt="Pricing" src="./images/landing/pricing.png" />
-            </div>
-          </div>
-          <div class='row title'>
-            <div class='row'>
-              <div class='col-sm-12'>Average monthly cost</div>
-            </div>
-            <div class='row description'>
-              <div class='col-sm-12'>VEXOR price in <em>only $0.01 per minute</em>. Average monthly payment depending on your project size</div>
-            </div>
-          </div>
-          <div class='table-responsive table-wraper'>
-            <table class='table'>
-              <thead>
-                <tr>
-                  <th>Project</th>
-                  <th>Commits per day</th>
-                  <th>Commits per month</th>
-                  <th>Build duration (min)</th>
-                  <th>Monthly cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class='project-type'>small</td>
-                  <td>1</td>
-                  <td>20</td>
-                  <td>5</td>
-                  <td>$1</td>
-                </tr>
-                <tr>
-                  <td class='project-type'>medium</td>
-                  <td>5</td>
-                  <td>100</td>
-                  <td>10</td>
-                  <td>$10</td>
-                </tr>
-                <tr>
-                  <td class='project-type'>large</td>
-                  <td>10</td>
-                  <td>200</td>
-                  <td>15</td>
-                  <td>$30</td>
-                </tr>
-                <tr>
-                  <td class='project-type'>giant</td>
-                  <td>20</td>
-                  <td>400</td>
-                  <td>20</td>
-                  <td>$80</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class='row pay_as_you_go'>
-            <div class='col-sm-12'>
-              Pay only for what you use!
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
+</div>
+
+<div class='block-description landing-block-description text-center'>
+  <div class='container'>
+    <div class='row title'>
+      <div class='col-sm-12'>
+        Fast, Cheap and Easy - you can easily have all three
       </div>
-      <div class='block-footer text-center'>
-        <div class='container'>
-          <div class='row fast-setup'>
-            <div class='col-sm-12'>
-              Set up your continuous integration<br>in 19 seconds.
-            </div>
-          </div>
-          <div class='row sign-up-description'>
-            <div class='col-sm-12'>
-              Sign up for VEXOR today.
-            </div>
-          </div>
-          <div class='row sign-up'>
-            <div class='col-sm-12'>
-              <a class="btn btn-primary" href="/users/github?do=sign_up">Try now!</a>
-            </div>
-          </div>
-          <div class='row logo'>
-            <div class='col-sm-12'>
-              <img alt="Footer logo" src="./images/landing/footer-logo.png" />
-            </div>
-          </div>
-          <div class='row copyright'>
-            <div class='col-sm-12'>
-              © 2014, VEXOR. All rights reserved. Powered by <a href='http://evrone.com/'>Evrone</a>.
-            </div>
-          </div>
-          <div class='row items'>
-            <div class='col-sm-12'>
-              <a href="https://github.com/vexor/vx-install/issues?page=1&amp;state=open">Contact</a>
-            </div>
-          </div>
+    </div>
+    <div class='row items'>
+      <div class='row'>
+        <div class='col-sm-4'>
+          <div class='image'><img alt="Watch" src="/images/landing/watch.png" /></div>
+          <div class='subtitle'>Fast</div>
+          <div class='description'>Unlimited workers</div>
+          <div class='separator'></div>
+          <div class='description'>Easily parallelize your test suit</div>
+          <div class='separator'></div>
+          <div class='description'>For each worker:<br>2 CPU cores, 2 Gb of RAM, SSD</div>
+        </div>
+        <div class='col-sm-4'>
+          <div class='image'><img alt="Coin" src="./images/landing/coin.png" /></div>
+          <div class='subtitle'>Cheap</div>
+          <div class='description'>$0.01 per minute</div>
+          <div class='separator'></div>
+          <div class='description'>No subscription fee,<br>pay only for running your tests</div>
+        </div>
+        <div class='col-sm-4'>
+          <div class='image'><img alt="Happy kitty" src="./images/landing/happy-kitty.png" /></div>
+          <div class='subtitle'>Easy setup</div>
+          <div class='description'>Full Github<br>and Gitlab 6.x integration</div>
+          <div class='separator'></div>
+          <div class='description'>Travis.yml compatibility</div>
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="./javascripts/smooth-scroll.js"></script>
-    <script src="./javascripts/landing.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+  </div>
+</div>
+
+<div class='block-features landing-block-features text-center' id='features'>
+  <div class='container'>
+    <div class='row icon'>
+      <div class='col-sm-12'>
+        <img alt="List" src="./images/landing/list.png" />
+      </div>
+    </div>
+    <div class='row title'>
+      <div class='col-sm-12'>
+        Features
+      </div>
+    </div>
+    <div class='row items'>
+      <div class='col-sm-4'>
+        <div class='item'>
+          <div class='image'><img alt="Github" src="./images/landing/github.png" /></div>
+          <div class='description'>GitHub and Gitlab integration</div>
+        </div>
+        <div class='item'>
+          <div class='image'><img alt="Matrices" src="./images/landing/matrices.png" /></div>
+          <div class='description'>Parallelize your tests with<br>building matrices</div>
+        </div>
+      </div>
+      <div class='col-sm-4'>
+        <div class='item'>
+          <div class='image'><img alt="Notification" src="./images/landing/notification.png" /></div>
+          <div class='description'>Pull request and commit<br>notifications</div>
+        </div>
+        <div class='item'>
+          <div class='image'><img alt="Travis" src="./images/landing/travis.png" /></div>
+          <div class='description'>Travis.yml compatibility</div>
+        </div>
+      </div>
+      <div class='col-sm-4'>
+        <div class='item'>
+          <div class='image'><img alt="Dependency" src="./images/landing/dependency.png" /></div>
+          <div class='description'>Dependencies caching</div>
+        </div>
+        <div class='item'>
+          <div class='image'><img alt="Deploy" src="./images/landing/deploy.png" /></div>
+          <div class='description'>Deploy automatically if test<br>complete successfully</div>
+        </div>
+      </div>
+    </div>
+    <div class='row supports-title'>
+      <div class='col-sm-12'>
+        Supports out of the box
+      </div>
+    </div>
+    <div class='row supports-items'>
+      <div class='col-sm-2 col-sm-offset-1'>
+        <a href="http://ruby-lang.org/"><img alt="Ruby" title="Ruby" src="./images/landing/ruby.png" /></a>
+      </div>
+      <div class='col-sm-2'>
+        <a href="http://rubyonrails.org/"><img alt="Ruby" title="Rails" src="./images/landing/rails.png" /></a>
+      </div>
+      <div class='col-sm-2'>
+        <a href="http://java.com/"><img alt="Java" title="Java" src="./images/landing/java.png" /></a>
+      </div>
+      <div class='col-sm-2'>
+        <a href="http://clojure.org/"><img alt="Clojure" title="Clojure" src="./images/landing/clojure.png" /></a>
+      </div>
+      <div class='col-sm-2'>
+        <a href="http://www.scala-lang.org/"><img alt="Scala" title="Scala" src="./images/landing/scala.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='block-pricing landing-block-pricing text-center' id='pricing'>
+  <div class='container'>
+    <div class='row icon'>
+      <div class='col-sm-12'>
+        <img alt="Pricing" src="/images/landing/pricing.png" />
+      </div>
+    </div>
+    <div class='row title'>
+      <div class='row'>
+        <div class='col-sm-12'>Average monthly cost</div>
+      </div>
+      <div class='row description'>
+        <div class='col-sm-12'>VEXOR price in <em>only $0.01 per minute</em>. Average monthly payment depending on your project size</div>
+      </div>
+    </div>
+    <div class='table-responsive table-wraper'>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Commits per day</th>
+            <th>Commits per month</th>
+            <th>Build duration (min)</th>
+            <th>Monthly cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class='project-type'>small</td>
+            <td>1</td>
+            <td>20</td>
+            <td>5</td>
+            <td>$1</td>
+          </tr>
+          <tr>
+            <td class='project-type'>medium</td>
+            <td>5</td>
+            <td>100</td>
+            <td>10</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td class='project-type'>large</td>
+            <td>10</td>
+            <td>200</td>
+            <td>15</td>
+            <td>$30</td>
+          </tr>
+          <tr>
+            <td class='project-type'>giant</td>
+            <td>20</td>
+            <td>400</td>
+            <td>20</td>
+            <td>$80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class='row pay_as_you_go'>
+      <div class='col-sm-12'>
+        Pay only for what you use!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='block-footer landing-block-footer text-center'>
+  <div class='container'>
+    <div class='row fast-setup'>
+      <div class='col-sm-12'>
+        Set up your continuous integration<br>in 19 seconds.
+      </div>
+    </div>
+    <div class='row sign-up-description'>
+      <div class='col-sm-12'>
+        Sign up for VEXOR today.
+      </div>
+    </div>
+    <div class='row sign-up'>
+      <div class='col-sm-12'>
+        <a class="btn btn-primary" href="https://ci.vexor.io/users/github?do=sign_up">Try now!</a>
+      </div>
+    </div>
+    <div class='row logo'>
+      <div class='col-sm-12'>
+        <img alt="Footer logo" src="/images/landing/footer-logo.png" />
+      </div>
+    </div>
+    <div class='row copyright'>
+      <div class='col-sm-12'>
+        © 2014, VEXOR. All rights reserved. Powered by <a href='http://evrone.com/'>Evrone</a>.
+      </div>
+    </div>
+    <div class='row items'>
+      <div class='col-sm-12'>
+        <a href="https://github.com/vexor/vx-install/issues?page=1&amp;state=open">Contact</a>
+      </div>
+    </div>
+  </div>
+</div>

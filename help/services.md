@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Databases And Services
+layout: help
+title: Services
 ---
 
 ### Postgresql
@@ -12,7 +12,7 @@ Version 9.3 with Contrib package are preinstalled and run automatically. Login: 
 
 ### Mysql
 
-Version 5.5 is preinstalled and run automatically. Login: `root`, without the password
+Version 5.6 is preinstalled and run automatically. Login: `root`, without the password
 
     mysql -u root -e "create database test"
 
@@ -22,14 +22,14 @@ Version 2.8.5 is preinstalled and run automatically
 
 ### Rabbitmq
 
-Version 3.2.3 is preinstalled; to run, issue:
+Version 3.3.4 is preinstalled; to run, issue:
 
     services:
       - rabbitmq
 
 ### Elasticsearch
 
-Version 0.90.10 is preinstalled; to run, issue:
+Version 1.2.1 is preinstalled; to run, issue:
 
     services:
       - elasticsearch
