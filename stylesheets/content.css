@@ -17,7 +17,8 @@
 
 .content-block-body {
   padding: 3em 0 ;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .content-block-footer {
@@ -30,7 +31,7 @@
 .content-block-help-topics {
   padding: 1em 0;
   background-color: #f3f6fb;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .content-block-help-topics .help-topic {
@@ -38,7 +39,8 @@
 }
 
 .content-block-help-topics h5 {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .content-block-help-topics .active a {

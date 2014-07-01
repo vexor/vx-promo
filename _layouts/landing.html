@@ -4,7 +4,7 @@
     <title>Vexor: {{ page.title }} </title>
     <meta charset="utf-8">
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin" media="screen" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin" media="screen" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
     <link href="/stylesheets/landing.css" media="all" rel="stylesheet" />
@@ -39,9 +39,9 @@
                     <li><a href="/blog">Blog</a></li>
                   </ul>
                   <ul class='nav navbar-nav navbar-right'>
-                    <li><a href="https://ci.vexor.io/users/github?do=sign_in">Log in</a></li>
+                    <li><a data-signin=true href="https://ci.vexor.io/users/github?do=sign_in">Log in</a></li>
                     <li class='separator'>|</li>
-                    <li><a href="https://ci.vexor.io/users/github?do=sign_up">Sign up</a></li>
+                    <li><a data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">Sign up</a></li>
                   </ul>
                 </div>
               </div>
@@ -76,4 +76,17 @@ ga('send', 'pageview');
     </script>
 
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23972557 = new Ya.Metrika({id:23972557, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23972557" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+<script>
+  var ready = function() {
+    $(document).on("click", "a[data-signup]", function(){
+        ga('send', 'event', 'sign_up', 'click')
+      })
+    $(document).on("click", "a[data-signin]", function(){
+        ga('send', 'event', 'sign_in', 'click');
+      })
+  }
+  $(document).ready(ready)
+  $(document).on("page:load", ready)
+</script>
 </html>
