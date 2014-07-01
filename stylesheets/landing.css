@@ -96,6 +96,9 @@ body {
     body .landing .landing-block-description .items .description {
       color: #666666;
       font-size: 1.3em; }
+    body .landing .landing-block-description .items .image {
+      min-height: 115px;
+    }
     body .landing .landing-block-description .items .subtitle {
       margin-top: 10px;
       margin-bottom: 10px;
