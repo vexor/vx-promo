@@ -6,6 +6,7 @@
   text-align: center;
   color: white;
   padding-bottom: .4em;
+  padding-top: .4em;
 }
 
 @media (min-width: 768px) {
