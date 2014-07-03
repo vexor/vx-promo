@@ -12,14 +12,10 @@ help:
     url: /help/scala.html
   - title: Clojure
     url: /help/clojure.html
-  - title: Services
-    url: /help/services.html
-  - title: Node.js
-    url: /help/nodejs.html
-  - title: Go
-    url: /help/go.html
   - title: Deploy
     url: /help/deploy.html
+  - title: Services
+    url: /help/services.html
 
 defaults:
   - scope:
