@@ -3,36 +3,61 @@ layout: help
 title: Ruby
 ---
 
-To run Ruby apps just issue:
+Для того что бы запустить тестирование руби проекта достаточнобудет указать
 
     language: ruby
 
-MRI 1.9.3 is used by default. The default setup runs:
+В этом случае будет использоваться версия ``1.9.3`` и выполены команды
 
-    rbenv shell 1.9.3
-    bundle install
-    bundle exec rake
+    install: bundle install
+    script: bundle exec rake
 
-If you wish to use different Ruby versions list them in `rvm` key.
+Если вы используете ``rails`` то потребуется настроить преед тестами базу
+
+    before_script:
+    - bundle exec rake db:create db:migrate RAILS_ENV=test
+
+Можно указать дополнительные ключи для bundler
+
+    bundler_args: --without debugger
+
+Указать несколько разных Gemfile, если это требуется, тогда будет построена
+матрица
+
+    gemfile:
+    - Gemfile.pg
+    - Gemfile.mysql
+
+Для тестирования доступны версии руби
+
+* ``1.9.3-p547``
+* ``2.0.0-p481``
+* ``2.1.1``
+* ``2.1.2``
+* ``jruby-1.7.13``
+* ``head``, свежая сборка из репозитория, пересобирается каждую неделю
+
+Для того что выбрать нужную версию для тестирования используется ключ ``rvm``
 
     rvm:
-      - 1.9.3
-      - 2.0.0
-      - 2.1.0
+    - 2.0
+    - 2.1
+    - head
 
-You can set your custom command to run the tests:
+При выборе версия используется fuzzy matching, поэтому не обязательно указывать полные
+версии.
 
-    script: rake spec:integration
+Если по какимто причинам предустановленные версии не устраивают, на тестовой машине
+установлен ruby-build, и вы всегда можете собрать нужную вам версию с нужными патчами.
 
-The following are available in image:
-
-* MRI 1.9.3-p547
-* MRI 2.0.0-p481
-* MRI 2.1.1
-* MRI 2.1.2
-* jruby 1.7.12
-
-Caching is turned on automatically when you use Ruby. To turn it off set:
+Для руби по умолчанию кэшируются устанавливанемые гемы, при последющем запуске тестов
+это позволит съекономить время. Кэширование можно выключить
 
     cache: false
 
+
+Для управления версиями ruby мы не используется rbenv или rvm, руби собраны в deb
+пакеты, каждая версия в отдельном. При запуске тестов в систему устанавливается
+нужная. На тестовой машине ``rbenv`` и ``rvm`` нет. Для сборки и установки кастомизированных
+доступен ``ruby-build``, или лучше если вы нам датите занать и мы соберем нужную
+вам версию с нужными патчеми в пакет.

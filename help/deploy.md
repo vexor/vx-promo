@@ -3,42 +3,41 @@ layout: help
 title: Deploy
 ---
 
-As for now, ssh-driven deploy mechanism is supported. Each project must have an associated ssh key installed on the server where you plan to deploy.
+Вы можете деплоить выши приложения прямо из CI.
 
-    curl -s https://ci.vexor.io/api/projects/1/key.txt \
-      >> ~/.ssh/authorized_keys
+Деплой это отдельная задача которая выполняется после всех остальных задача и только
+если все остальные задачи закончились успешно, поэтому его можно безболезненно
+использовать с матрицами.
 
-When the build is run, ssh-agent is being started adding a private key. The deploy tool you use should be configured to use agent forwarding.
+Поддерживается деплой с использванием __ssh__
 
-Capistrano
+* У каждого проекта в vexor.io есть пара  ssh ключей
+* Перед выполнением тестов на машине запускается ssh-agent и в него добавляется
+ключ от текущего проекта
 
-    set :ssh_options, { forward_agent: true }
+Для того что иметь доступ на серверы для деплоя с машины на которой идут тесты,
+вам нужно скопировать public ssh key от проекта. Public ssh key можно найти в
+настройках проекта, его нужно будет добавить в файл ~/.ssh/authorized_keys,
+например такой командой
 
-Mina
+    curl -s https://ci.vexor.io/api/projects/<PROJECT_ID>/key.txt >> \
+      ~/.ssh/authorized_keys
 
-    set :forward_agent, true
+Ssh уже сконфигурирован что использовать ssh-agent, а также не делать host key checking.
 
-
-you should add deploy command explicitly in the configuration:
-
-    deploy:
-      shell: "cap staging deploy"
-
-Or select any branches you want to deploy.
-
-    deploy:
-      shell: "cap staging deploy"
-      branch:
-        - staging
-
-Deploy performs only after all tasks successfully finished in matrix. E.g. if you have a configuration:
-
-    rvm:
-      - 2.0
-      - 2.1
+Для описания команд выполняемых при делое используется ключ ``deploy``, вот пример
+конфигурации которая запускает делой с использованием capistrano
 
     deploy:
       shell: cap staging deploy
 
-first builds will successfuly finish working for ruby 2.0 and 2.1,
-after that deploy will start as a separate task
+Вы также можете указать что бы делой запускался только в определенных баранчах, или
+разные команды для запуска деплоя в зависимости от бранча
+
+    deploy:
+    - shell: cap staging deploy
+      branch: master
+    - shell: cap qa deploy
+      branch:
+      - feature/1
+      - feature/2
