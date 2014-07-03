@@ -20,6 +20,8 @@ help:
     url: /help/go.html
   - title: Deploy
     url: /help/deploy.html
+  - title: Rust
+    url: /help/rust.html
 
 defaults:
   - scope:
