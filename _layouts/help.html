@@ -2,7 +2,7 @@
 layout: landing
 ---
 
-<div class='block-header content-block-header'>
+<div class='block-header content-block-header hidden'>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -20,7 +20,7 @@ layout: landing
         {% if page.title == link.title %}
           {% assign current = 'active' %}
         {% endif %}
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <h5 class="{{ current }}">
             <a href="{{ link.url }}">{{ link.title }}</a>
           </h5>
