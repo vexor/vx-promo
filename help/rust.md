@@ -1,13 +1,13 @@
 ---
 layout: help
-title: Go
+title: Rust
 ---
 
-Для того что бы запустить тестирование rust проекта достаточно будет указать
+In order to run the __rust__ tests, you need to specify:
 
     language: rust
 
-В этом случае будет использоваться версия ``0.11.0`` и выполены команды
+In this case the version ``0.11`` will be used and the following commands will be run:
 
     install:
     - git submodule init
@@ -15,12 +15,12 @@ title: Go
 
     script: make
 
-Для тестирования доступны версии ``rust``
+These versions of __rust__ are available for testing
 
 * ``0.11.0``
-* ``nightly`` свежая сборка из репозитория, пересобирается каждую неделю
+* ``nightly`` fresh build from the repository, refreshed nightly
 
-Для того что выбрать нужную версию для тестирования используется ключ ``rust``
+To select the specific version for testing, a configuration key ``rust`` is used
 
     rust:
     - nightly

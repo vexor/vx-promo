@@ -3,29 +3,28 @@ layout: help
 title: Node.js
 ---
 
-Для того что бы запустить тестирование nodejs проекта достаточнобудет указать
+In order to run the nodejs tests, you need to specify:
 
     language: node_js
 
-В этом случае будет использоваться версия ``0.10.29`` и выполены команды
+In this case the version ``0.10.29`` will be used and the following commands will be run:
 
     install: npm install
     script: npm test
 
-Для тестирования доступны версии nodejs
+These versions of nodejs are available for testing
 
 * ``0.9.12``
 * ``0.10.29``
 * ``0.11.13``
 
-Для того что выбрать нужную версию для тестирования используется ключ ``go``
+To select the specific version for testing, a configuration key ``node_js`` is used
 
     node_js:
     - "0.9"
     - "0.10"
 
-При выборе версия используется fuzzy matching, поэтому не обязательно указывать полные
-версии.
+When searching the __nodejs__ version, fuzzy matching is used, which first tries to find a
+match strictly, and then falls back to the closest version if not found.
 
-На тестовой машине установлен phantomjs 1.9.7, который можно использовать для headless
-тестрования проектов.
+Build machine has phantomjs 1.9.7 preinstalled, which you can use for headless testing.
