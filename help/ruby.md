@@ -3,61 +3,61 @@ layout: help
 title: Ruby
 ---
 
-Для того что бы запустить тестирование руби проекта достаточнобудет указать
+In order to start ruby tests, you only need to specify the language:
 
     language: ruby
 
-В этом случае будет использоваться версия ``1.9.3`` и выполены команды
+In this simplest case the ``1.9.3`` ruby version will be used and these commands will be run:
 
     install: bundle install
     script: bundle exec rake
 
-Если вы используете ``rails`` то потребуется настроить преед тестами базу
+If you're using ``rails``, you will need to setup the DB before running tests:
 
     before_script:
     - bundle exec rake db:create db:migrate RAILS_ENV=test
 
-Можно указать дополнительные ключи для bundler
+You can specify additional bundler options:
 
     bundler_args: --without debugger
 
-Указать несколько разных Gemfile, если это требуется, тогда будет построена
-матрица
+You can also specify several different Gemfile versions, in this case
+a matrix will be created:
 
     gemfile:
     - Gemfile.pg
     - Gemfile.mysql
 
-Для тестирования доступны версии руби
+These versions of ruby are available for testing:
 
 * ``1.9.3-p547``
 * ``2.0.0-p481``
 * ``2.1.1``
 * ``2.1.2``
 * ``jruby-1.7.13``
-* ``head``, свежая сборка из репозитория, пересобирается каждую неделю
+* ``head``, fresh repository version, rebuilt every week
 
-Для того что выбрать нужную версию для тестирования используется ключ ``rvm``
+To select the required version, use ``rvm`` key:
 
     rvm:
     - 2.0
     - 2.1
     - head
 
-При выборе версия используется fuzzy matching, поэтому не обязательно указывать полные
-версии.
+When searching a ruby version, a fuzzy matching is used, so you don't need to strictly specify the versions.
+If for whatever reasons you need the version we don't have, you have ``ruby-build`` preinstalled on the build
+machine, so you can always compile the required version.
 
-Если по какимто причинам предустановленные версии не устраивают, на тестовой машине
-установлен ruby-build, и вы всегда можете собрать нужную вам версию с нужными патчами.
-
-Для руби по умолчанию кэшируются устанавливанемые гемы, при последющем запуске тестов
-это позволит съекономить время. Кэширование можно выключить
+In order to save time when running tests, installed gems are cached.
+You can disable this with:
 
     cache: false
 
 
-Для управления версиями ruby мы не используется rbenv или rvm, руби собраны в deb
-пакеты, каждая версия в отдельном. При запуске тестов в систему устанавливается
-нужная. На тестовой машине ``rbenv`` и ``rvm`` нет. Для сборки и установки кастомизированных
-доступен ``ruby-build``, или лучше если вы нам датите занать и мы соберем нужную
-вам версию с нужными патчеми в пакет.
+We don't use ``rbenv`` or ``rvm`` to manage the ruby versions; all rubies are
+built as deb packages. When running your tests, the required ruby version
+is installed from the corresponding deb package.
+We don't have neither ``rbenv``, nor ``rvm`` on the testing machine, but
+``ruby-build`` is installed and can be used to compile the required version.
+The best option, however, will be to let us know which ruby version you need and
+we'll create the deb package for you.
