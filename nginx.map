@@ -6,3 +6,4 @@
 /clojure.html /help/clojure.html;
 /databases.html /help/services.html;
 /feed.xml /blog/feed.xml;
+/blog.html /blog;
