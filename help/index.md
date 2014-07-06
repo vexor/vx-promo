@@ -2,36 +2,33 @@
 layout: help
 title: Configuration
 ---
+Build config file must be a YAML file called ``.tavis.yml`` and located in the project root.
+For supported languages the configuration process is very simple, just specify the language
+in the ``language`` config section, for example ``language: ruby``.
+In this case the preparing of the environment and running the tests will be automatic and
+will follow the conventions of currently selected language.
+Some supported languages need only one ``language`` key, but some will require additional setup.
 
-Конфигурация билда должна находисться в YAML файле с названием ``.travis.yml`` в корне
-проекта. Для поддерживаемых языков конфигурация очень простая, достаточно указать
-в ключе ``language`` что именно вы хотите использовать, например ``language: ruby``.
-В этом случае подготовка окружения и запуск тестов будут происходить автоматически
-основываясь на соглашениях принятых в конкретном языке. Где то одного ключа будет хватать,
-например в ``clojure``, а где то скорее всего потребуется дополнительная настройка.
+If built-in configuration for running tests doesn't suit your for whatever reason,
+you can always customize it with ``install``, ``script``, ``before_install`` and ``before_script``
+keys. These keys contain commands that will be run in the shell.
 
-Если шаги для запуска тестов которые предлагаются по умолчанию для языка, вас не
-устраивают, то можно их изменить ключами ``install``, ``script``, ``before_install`` и
-``before_script``. В этих ключах указываются команды которые будет выпоняеть shell.
 
-* __env__ позволяет указать переменные окружения которые могут использоваться в
-тестах
+* __env__ allows to list environment variables that your tests use.
 
-* __before_install__ запускается как понятно из названия перед установкой, может
-потребоваться для установки каких либо библиотек нужных для зависимостей вашего проекта.
+* __before_install__ is run, as seen from the name, before the installation and is usually
+required to install additional libraries or dependencies for your project.
 
-* __install__ запускает команды на установку зависимостей, библиотек и всего того что
-может потребоваться для запуска тестов. Если этот ключ пустой то будут использоватся
-команды для каждого конкретного языка, например для ``ruby`` это ``bundle install``, а для ``go``, это
-``go get -v ./...``
+* __install__ runs commands to install the dependencies, libraries and anything that your tests require.
+If this config key is empty, the default commands for each language will be used, for example
+``bundle install`` for ruby or ``go get -v ./...`` for go.
 
-* __before_script__ здесь можно подготовить различные используемые сервисы для
-запуска тестов, настроить базу например.
+* __before_script__ here you can prepare various services to run your tests, for example to setup your database.
 
-* __script__ запускает непосредственно сами тесты, если этот ключ пустой, то будут
-выполняться команды по умолчанию для каждого конкретного языка.
+* __script__ actually runs your tests. If this config key is empty, the default test runner for each
+particular language will be used.
 
-Вот пример конфигурации которая использует некоторые перечисленные ключи
+Here is the example configuration that uses some of the above keys
 
     language: ruby
 
@@ -43,38 +40,38 @@ title: Configuration
 
     script: bundle exec rake test:ci
 
-Помимо обычных ключей с командами, есть еще возможность построить матрицы билдов,
-те запускать один билд одновременно в нескольких конфигурациях. Список ключей по
-которым может строиться матрица
 
-* __env__ переменные окружения
-* __rvm__ версии руби
-* __jdk__ версии java
-* __scala__ версии scala
-* __go__ версии go
-* __node_js__ версии node.js
+Besides regular configuration keys with commands, you can create build matrices,
+i.e. run a single build simultaneously in different configurations.
+The list of configuration keys for a matrix:
 
-Матрицы помимо тесторония нескольких конфигураций могут понадобится на распаралеливания
-тестов. Вы можете разбить ваши тесты на неколько частей и выполнять их одновременно.
-Это позволяет получить значительный выигрыш в скорости - например с сократить время
-тестирования с часа до 5 минут. Так как в vexor.io тарификация идет по используемым
-ресурсам нет никакой раздницы будут ли выполнять тесты на одном воркере 1 час или на 12
-воркерах 5 минут.
+* __env__ environment variable
+* __rvm__ ruby version
+* __jdk__ java version
+* __scala__ scala version
+* __go__ go version
+* __node_js__ node.js version
 
-Помимо вышеперичисленного, можете поменять таймауты поторые используются при запуске тестов,
+The matrices are used for parallelizing your test suite besides running several different configurations.
+You can split your tests into several parts and run them in parallel.
+This can give you a significant speed boost, for example to decrease the test run time
+from 1 hour to 5 minutes.
+Since vexor.io bills you for used resources, there is no difference in cost when
+running your tests on a single worker for 1 hour or running it on 12 workers for 5 minutes.
 
-* __timeout__ максимальноые время выполения теста, по умочанию 1 час. если тест
-не успел в течении этого времени закончится, то прекрачается принудительно.
+Besides all above, you can change the timeout values that are used when running the tests:
 
-* __read timeout__ по умолчанию 10 минут, если в течении этого времени ничего в
-stdout не появилось, то тест прекращается, read timeout нужен для того что бы в
-случае зависшей задачи не ждать целый час.
+* __timeout__ maximum test run time, 1 hour by default.
+If test does not finish within this time it is stopped forcibly.
 
-Таймауты позволяют прекращаять принудительно зависшые задачи, но иногда они могут мешать.
-В этом случае их можно увеличить, в vexor.io вы платите только за используемые ресурсы,
-поэтому мы позволяем использовать любые значения для таймаутов.
+* __read timeout__ 10 minutes by default. If no stdout occured during this time, the test is stopped.
+This config is used to kill the hung test after 10 minutes and avoid waiting for entire hour.
 
-* __vexor.timeout__ максимальноые время выполнения задачи в секундах, может быть
-любое
-* __vexor.read_timeout__ таймаут чтения в секундах, может быть любым.
+Timeouts generally allow you to forcibly close misbehaving tasks, but sometimes they can get in your way.
+In this case you can always increase their values, because in vexor.io you pay only for used
+resources, that's why we allow you to set any timeout values.
+
+* __vexor.timeout__ Maximum task run time. Can be any value.
+
+* __vexor.read_timeout__ Maximum task stdout read wait time. Can be any value.
 
