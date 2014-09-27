@@ -2,7 +2,7 @@
 layout: help
 title: Configuration
 ---
-Build config file must be a YAML file called ``.tavis.yml`` and located in the project root.
+Build config file must be a YAML file called ``.travis.yml`` and located in the project root.
 For supported languages the configuration process is very simple, just specify the language
 in the ``language`` config section, for example ``language: ruby``.
 In this case the preparing of the environment and running the tests will be automatic and
