@@ -15,8 +15,8 @@ In this case the version ``0.10.29`` will be used and the following commands wil
 These versions of nodejs are available for testing
 
 * ``0.9.12``
-* ``0.10.29``
-* ``0.11.13``
+* ``0.10.32``
+* ``0.11.14``
 
 To select the specific version for testing, a configuration key ``node_js`` is used
 

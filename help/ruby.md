@@ -34,7 +34,9 @@ These versions of ruby are available for testing:
 * ``2.0.0-p481``
 * ``2.1.1``
 * ``2.1.2``
+* ``2.1.3``
 * ``jruby-1.7.13``
+* ``rbx-2.2.9``
 * ``head``, fresh repository version, rebuilt every week
 
 To select the required version, use ``rvm`` key:
