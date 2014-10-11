@@ -14,5 +14,5 @@ task :default do
 end
 
 task :deploy => :build do
-  sh "rsync -rtz --delete _site/ vexor.io:~/promo/"
+  sh "rsync -rtz --delete _site/ dmexe@vexor.io:~/promo/"
 end
