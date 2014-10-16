@@ -159,6 +159,35 @@ body {
       background-color: white;
       border-radius: 15px; }
 
+  body .landing .landing-block-replies {
+      height: auto;
+  }
+
+    body .landing .landing-block-replies .row-replies {
+      margin-bottom: 50px;
+    }
+
+    body .landing .landing-block-replies .description {
+      color: #10a3e7;
+      font-size: 1.7em;
+    }
+
+    body .landing .landing-block-replies .user-data {
+      margin: 25px 0;
+    }
+
+    body .landing .landing-block-replies .user-avatar {
+      width: 86px;
+      height: 86px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+    }
+
+    body .landing .landing-block-replies .user-info {
+      font-size: 1.3em;
+      color: #666;
+    }
+
   body .landing .landing-block-pricing {
     background-color: white;
     color: #10a3e7;
