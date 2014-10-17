@@ -104,11 +104,15 @@ body {
       padding-bottom: 0.6em;
       margin-bottom: 1em;
       border-bottom: 1px solid #10a3e7; }
-body .landing .landing-block-description .subtitle2 {
-    font-size: 1.2em;
-    line-height: 120%;
-    font-weight: normal;
-    padding-top: 1.6em; }
+    body .landing .landing-block-description .subtitle2 {
+        font-size: 1.2em;
+        line-height: 120%;
+        font-weight: normal;
+        padding-top: 1.6em;}
+
+    body .landing .landing-block-description .subtitle2 a {
+        text-decoration: underline; }
+
     body .landing .landing-block-description .items .description {
       color: #666666;
       font-size: 1.3em; }
