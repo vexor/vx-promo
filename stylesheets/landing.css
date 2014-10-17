@@ -58,10 +58,21 @@ body {
       background-image: url("../images/landing/main-image.png");
       background-repeat: no-repeat;
       background-position: center; }
+    body .landing .landing-block-header .title{
+      margin-top: 20px;
+      font-size: 4.1em;
+      line-height: 120%; }
     body .landing .landing-block-header .description {
       margin-top: 20px;
       font-size: 2.1em;
       line-height: 120%; }
+    body .landing .landing-block-header .description a {
+        color: white;
+        text-decoration: underline;
+    }
+    body .landing .landing-block-header .go_ahead {
+    margin-top: 20px;
+ }
     body .landing .landing-block-header .sign-up {
       margin-top: 49.0px; }
       body .landing .landing-block-header .sign-up a .icon {
@@ -71,7 +82,7 @@ body {
       body .landing .landing-block-header .sign-up a .content {
         margin-top: 3px; }
     body .landing .landing-block-header .scroll-down {
-      margin-top: 84px;
+      margin-top: 24px;
       text-transform: uppercase;
       font-weight: lighter;
       font-size: 1.2em; }
@@ -93,6 +104,11 @@ body {
       padding-bottom: 0.6em;
       margin-bottom: 1em;
       border-bottom: 1px solid #10a3e7; }
+body .landing .landing-block-description .subtitle2 {
+    font-size: 1.2em;
+    line-height: 120%;
+    font-weight: normal;
+    padding-top: 1.6em; }
     body .landing .landing-block-description .items .description {
       color: #666666;
       font-size: 1.3em; }
