@@ -30,6 +30,8 @@ a matrix will be created:
 
 These versions of ruby are available for testing:
 
+* ``1.8.7-p375``
+* ``1.9.2-p320``
 * ``1.9.3-p547``
 * ``2.0.0-p481``
 * ``2.1.1``

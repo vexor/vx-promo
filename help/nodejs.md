@@ -14,6 +14,7 @@ In this case the version ``0.10.29`` will be used and the following commands wil
 
 These versions of nodejs are available for testing
 
+* ``0.8.28``
 * ``0.9.12``
 * ``0.10.32``
 * ``0.11.14``
