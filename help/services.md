@@ -16,6 +16,13 @@ Version 5.6 is preinstalled and run automatically. Login: `root`, without the pa
 
     mysql -u root -e "create database test"
 
+### MongoDB
+
+Version 2.6.5 is preinstalled, to run, issue:
+
+    services:
+      - mongodb
+
 ### Redis
 
 Version 2.8.5 is preinstalled and run automatically
@@ -37,3 +44,7 @@ Version 1.2.1 is preinstalled; to run, issue:
 ### PhantomJS
 
 Version 1.9.7 is preinstalled
+
+### SphinxSearch
+
+Version 2.2.5 is preinstalled
