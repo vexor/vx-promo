@@ -8,20 +8,22 @@ help:
     url: /help
   - title: Ruby
     url: /help/ruby.html
+  - title: Python
+    url: /help/python.html
   - title: Scala
     url: /help/scala.html
   - title: Clojure
     url: /help/clojure.html
-  - title: Services
-    url: /help/services.html
   - title: Node.js
     url: /help/nodejs.html
   - title: Go
     url: /help/go.html
-  - title: Deploy
-    url: /help/deploy.html
   - title: Rust
     url: /help/rust.html
+  - title: Services
+    url: /help/services.html
+  - title: Deploy
+    url: /help/deploy.html
 
 defaults:
   - scope:

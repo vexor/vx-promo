@@ -51,6 +51,7 @@ The list of configuration keys for a matrix:
 * __scala__ scala version
 * __go__ go version
 * __node_js__ node.js version
+* __python__ python version
 
 The matrices are used for parallelizing your test suite besides running several different configurations.
 You can split your tests into several parts and run them in parallel.
@@ -71,7 +72,7 @@ Timeouts generally allow you to forcibly close misbehaving tasks, but sometimes 
 In this case you can always increase their values, because in vexor.io you pay only for used
 resources, that's why we allow you to set any timeout values.
 
-* __vexor.timeout__ Maximum task run time. Can be any value.
+* __timeout__ Maximum task run time. Can be any value.
 
-* __vexor.read_timeout__ Maximum task stdout read wait time. Can be any value.
+* __read_timeout__ Maximum task stdout read wait time. Can be any value.
 
