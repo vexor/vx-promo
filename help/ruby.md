@@ -32,12 +32,13 @@ These versions of ruby are available for testing:
 
 * ``1.8.7-p375``
 * ``1.9.2-p320``
-* ``1.9.3-p547``
-* ``2.0.0-p481``
+* ``1.9.3-p550``
+* ``2.0.0-p594``
 * ``2.1.1``
 * ``2.1.2``
 * ``2.1.3``
-* ``jruby-1.7.13``
+* ``2.1.4``
+* ``jruby-1.7.16``
 * ``rbx-2.2.9``
 * ``head``, fresh repository version, rebuilt every week
 
