@@ -218,7 +218,7 @@ body {
         padding-bottom: 20px; } }
     @media (min-width: 768px) {
       body .landing .landing-block-pricing {
-        height: 700px; } }
+        /* height: 700px; */ } }
     body .landing .landing-block-pricing .icon {
       margin-bottom: 20px; }
     body .landing .landing-block-pricing .title {
@@ -227,7 +227,7 @@ body {
       font-weight: normal;
       padding-bottom: 0.6em;
       margin-bottom: 1em;
-      border-bottom: 1px solid #10a3e7; }
+      /* border-bottom: 1px solid #10a3e7; */ }
     body .landing .landing-block-pricing .title .description {
       color: #666666;
       margin-top: 10px;
