@@ -23,6 +23,8 @@ required to install additional libraries or dependencies for your project.
 If this config key is empty, the default commands for each language will be used, for example
 ``bundle install`` for ruby or ``go get -v ./...`` for go.
 
+* __database__ runs commands to setup and prepare databases.
+
 * __before_script__ here you can prepare various services to run your tests, for example to setup your database.
 
 * __script__ actually runs your tests. If this config key is empty, the default test runner for each
