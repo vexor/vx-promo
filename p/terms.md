@@ -11,7 +11,7 @@ Terms and conditions
 
 Please read these Terms and Conditions ("Terms", "Terms and Conditions")
 carefully before using the [http://vexor.io](http://vexor.io) website (the
-"Service") operated by Evrone LLC ("us", "we", or "our").
+"Service") operated by Vexor LLC ("us", "we", or "our").
 
 Your access to and use of the Service is conditioned on your acceptance of and
 compliance with these Terms. These Terms apply to all visitors, users and
@@ -43,20 +43,20 @@ authorization, or a name that is otherwise offensive, vulgar or obscene.
 __Intellectual property__
 
 The Service and its original content, features and functionality are and will
-remain the exclusive property of Evrone LLC and its licensors. The Service is
+remain the exclusive property of Vexor LLC and its licensors. The Service is
 protected by copyright, trademark, and other laws of both the Czech Republic
 and foreign countries. Our trademarks and trade dress may not be used in
 connection with any product or service without the prior written consent of
-Evrone LLC.
+Vexor LLC.
 
 __Links to other web sites__
 
 Our Service may contain links to third-party web sites or services that are not
-owned or controlled by Evrone LLC.
+owned or controlled by Vexor LLC.
 
-Evrone LLC has no control over, and assumes no responsibility for, the content,
+Vexor LLC has no control over, and assumes no responsibility for, the content,
 privacy policies, or practices of any third party web sites or services. You
-further acknowledge and agree that Evrone LLC shall not be responsible or
+further acknowledge and agree that Vexor LLC shall not be responsible or
 liable, directly or indirectly, for any damage or loss caused or alleged to be
 caused by or in connection with use of or reliance on any such content, goods
 or services available on or through any such web sites or services.
@@ -103,7 +103,7 @@ warranty disclaimers, indemnity and limitations of liability.
 
 __Indemnification__
 
-You agree to defend, indemnify and hold harmless Evrone LLC and its licensee
+You agree to defend, indemnify and hold harmless Vexor LLC and its licensee
 and licensors, and their employees, contractors, agents, officers and
 directors, from and against any and all claims, damages, obligations, losses,
 liabilities, costs or debt, and expenses (including but not limited to
@@ -113,7 +113,7 @@ breach of these Terms.
 
 __Limitation of liability__
 
-In no event shall Evrone LLC, nor its directors, employees, partners, agents,
+In no event shall Vexor LLC, nor its directors, employees, partners, agents,
 suppliers, or affiliates, be liable for any indirect, incidental, special,
 consequential or punitive damages, including without limitation, loss of
 profits, data, use, goodwill, or other intangible losses, resulting from (i)
@@ -133,7 +133,7 @@ kind, whether express or implied, including, but not limited to, implied
 warranties of merchantability, fitness for a particular purpose,
 non-infringement or course of performance.
 
-Evrone LLC its subsidiaries, affiliates, and its licensors do not warrant that
+Vexor LLC its subsidiaries, affiliates, and its licensors do not warrant that
 a) the Service will function uninterrupted, secure or available at any
 particular time or location; b) any errors or defects will be corrected; c) the
 Service is free of viruses or other harmful components; or d) the results of
