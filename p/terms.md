@@ -174,6 +174,6 @@ __Contact us__
 
 If you have any questions about these Terms, please contact us: [support@vexor.io](mailto@support@vexor.io).
 
-Our address: U Vodarny 1169, 250 01 Brandys nad Labem, Czech Republic
+Our address: Petra Romanova st, 14/1, Moscow, Russia
 
-Phone Number: +420 775557753
+Phone Number: +7 495 943-24-54
