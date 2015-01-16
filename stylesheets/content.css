@@ -21,6 +21,15 @@
   font-weight: 300;
 }
 
+.logos {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.logos img {
+  width: 60px;
+}
+
 .content-block-footer {
   background-color: #10a3e7;
   padding-top: 26px;
