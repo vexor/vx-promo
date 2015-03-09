@@ -15,11 +15,11 @@ end
 
 task :deploy => :build do
   begin
-    sh "git checkout gh-pages"
+    sh "git checkout master"
     sh "cp -r _site/ ."
     sh "git add --all ."
     sh "git commit -m 'Deploy #{Time.now}'"
-    sh "git checkout master"
-    sh "git push origin gh-pages"
+    sh "git checkout develop"
+    sh "git push origin master"
   end
 end
