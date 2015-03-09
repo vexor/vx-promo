@@ -3,6 +3,8 @@ url: https://vexor.io
 markdown: redcarpet
 highlighter: true
 
+exclude: [translate/]
+
 help:
   - title: Configuration
     url: /help
@@ -28,6 +30,6 @@ help:
 defaults:
   - scope:
       path: ""
-      type: "page"
+      type: "pages"
     values:
       js: false
