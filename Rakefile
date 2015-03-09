@@ -14,5 +14,12 @@ task :default do
 end
 
 task :deploy => :build do
-  sh "rsync -rtz --delete _site/ dmexe@vexor.io:~/promo/"
+  begin
+    sh "git checkout gh-pages"
+    sh "cp -r _site/ ."
+    sh "git add --all ."
+    sh "git commit -m 'Deploy #{Time.now}'"
+    sh "git checkout master"
+    sh "git push origin gh-pages"
+  end
 end

@@ -21,6 +21,7 @@ GEM
     execjs (2.4.0)
     fast-stemmer (1.0.2)
     ffi (1.9.6)
+<<<<<<< HEAD
     gemoji (2.1.0)
     github-pages (33)
       RedCloth (= 4.2.9)
@@ -48,6 +49,9 @@ GEM
       activesupport (>= 2)
       nokogiri (~> 1.4)
     i18n (0.7.0)
+=======
+    hitimes (1.2.2)
+>>>>>>> update jekill, add github-pages
     jekyll (2.4.0)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
@@ -66,6 +70,7 @@ GEM
     jekyll-coffeescript (1.0.1)
       coffee-script (~> 2.2)
     jekyll-gist (1.1.0)
+<<<<<<< HEAD
     jekyll-mentions (0.2.1)
       html-pipeline (~> 1.9.0)
       jekyll (~> 2.0)
@@ -82,12 +87,20 @@ GEM
       html-pipeline (~> 1.9)
       jekyll (~> 2.0)
     json (1.8.2)
+=======
+    jekyll-paginate (1.1.0)
+    jekyll-sass-converter (1.2.0)
+      sass (~> 3.2)
+    jekyll-watch (1.2.1)
+      listen (~> 2.7)
+>>>>>>> update jekill, add github-pages
     kramdown (1.5.0)
     liquid (2.6.1)
     listen (2.8.6)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+<<<<<<< HEAD
     maruku (0.7.0)
     mercenary (0.3.5)
     mini_portile (0.6.2)
@@ -99,6 +112,12 @@ GEM
       blankslate (~> 2.0)
     posix-spawn (0.3.10)
     public_suffix (1.4.6)
+=======
+    mercenary (0.3.5)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
+    posix-spawn (0.3.10)
+>>>>>>> update jekill, add github-pages
     pygments.rb (0.6.1)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
@@ -109,14 +128,20 @@ GEM
     redcarpet (3.1.2)
     safe_yaml (1.0.4)
     sass (3.4.13)
+<<<<<<< HEAD
     terminal-table (1.4.5)
     thread_safe (0.3.4)
+=======
+>>>>>>> update jekill, add github-pages
     timers (4.0.1)
       hitimes
     toml (0.1.2)
       parslet (~> 1.5.0)
+<<<<<<< HEAD
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+=======
+>>>>>>> update jekill, add github-pages
     yajl-ruby (1.2.1)
 
 PLATFORMS
