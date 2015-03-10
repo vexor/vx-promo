@@ -3,7 +3,7 @@ url: https://vexor.io
 markdown: redcarpet
 highlighter: true
 
-exclude: [translate/]
+exclude: [translate/, Rakefile, Gemfile, Gemfile.lock, vexor.yml]
 
 help:
   - title: Configuration
