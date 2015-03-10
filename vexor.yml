@@ -1,0 +1,5 @@
+language: ruby
+
+script:
+  - bundle exec rake build
+  - tar -C _site -cf - . | ssh assets-bot@vexor-bot-eu0.cloudapp.net push www.vexor.io
