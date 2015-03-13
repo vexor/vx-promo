@@ -7,7 +7,7 @@ exclude: [translate/, Rakefile, Gemfile, Gemfile.lock, vexor.yml]
 
 help:
   - title: Configuration
-    url: /help
+    url: "/help/"
   - title: Ruby
     url: /help/ruby.html
   - title: Python
