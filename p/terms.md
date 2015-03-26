@@ -7,11 +7,11 @@ js: landing
 Terms and conditions
 ====================
 
-<small>Last updated: June 04, 2014</small>
+<small>Last updated: March 26, 2015</small>
 
 Please read these Terms and Conditions ("Terms", "Terms and Conditions")
 carefully before using the [http://vexor.io](http://vexor.io) website (the
-"Service") operated by Vexor LLC ("us", "we", or "our").
+"Service") operated by Vexor.io LLC ("us", "we", or "our").
 
 Your access to and use of the Service is conditioned on your acceptance of and
 compliance with these Terms. These Terms apply to all visitors, users and
@@ -43,20 +43,20 @@ authorization, or a name that is otherwise offensive, vulgar or obscene.
 __Intellectual property__
 
 The Service and its original content, features and functionality are and will
-remain the exclusive property of Vexor LLC and its licensors. The Service is
-protected by copyright, trademark, and other laws of both the Czech Republic
+remain the exclusive property of Vexor.io LLC and its licensors. The Service is
+protected by copyright, trademark, and other laws of both the Russian Federation
 and foreign countries. Our trademarks and trade dress may not be used in
 connection with any product or service without the prior written consent of
-Vexor LLC.
+Vexor.io LLC.
 
 __Links to other web sites__
 
 Our Service may contain links to third-party web sites or services that are not
-owned or controlled by Vexor LLC.
+owned or controlled by Vexor.io LLC.
 
-Vexor LLC has no control over, and assumes no responsibility for, the content,
+Vexor.io LLC has no control over, and assumes no responsibility for, the content,
 privacy policies, or practices of any third party web sites or services. You
-further acknowledge and agree that Vexor LLC shall not be responsible or
+further acknowledge and agree that Vexor.io LLC shall not be responsible or
 liable, directly or indirectly, for any damage or loss caused or alleged to be
 caused by or in connection with use of or reliance on any such content, goods
 or services available on or through any such web sites or services.
@@ -64,21 +64,13 @@ or services available on or through any such web sites or services.
 We strongly advise you to read the terms and conditions and privacy policies of
 any third-party web sites or services that you visit.
 
-__Payment, refunds, upgrading and downgrading__
+__Payments and Billing__
 
-All paid plans must enter a valid credit card.
+Subscribers are typically billed monthly on or about the first day of each month, with payment due no later than ten (10) days past the invoice date.
 
-For monthly payment plans, the Service is billed in advance on a monthly basis
-and is non-refundable. There will be no refunds or credits for partial months
-of service, upgrade/downgrade refunds, or refunds for months unused with an
-open account. In order to treat everyone equally, no exceptions will be made.
+All invoices are denominated, and you must pay, in U.S. Dollars. Vexor accepts major credit cards and debit cards. Virtual credit cards and gift cards typically will not be accepted. Other forms of payment may be arranged by contacting at [support@vexor.io](mailto:support@vexor.io). We use third-party payment processors to bill you through a payment account linked to your account on the Vexor. The processing of payments will be subject to the terms, conditions and privacy policies of the payment processors in addition to this Agreement. We are not responsible for error by the payment processors. By choosing to use Vexor, you agree to pay us, through the payment processors, all charges at the prices then in effect for any use of such paid services in accordance with the applicable payment terms and you authorize us, through the payment processors.
 
-For any upgrade or downgrade in plan level while on a monthly billing cycle,
-the credit card that you provided will automatically be charged the new rate on
-your next billing cycle.
-
-Downgrading your Service may cause the loss of features, or capacity of your
-Account. Vexor does not accept any liability for such loss.
+Payments not made within ten (10) days of invoicing will be deemed in arrears. For accounts in arrears, if any amount is more than ten (10) days overdue, without the requirement of providing notice of such arrears, Vexor may suspend service to such account and bring legal action to collect the full amount due, including any attorneys’ fees and costs.
 
 __Termination__
 
@@ -103,7 +95,7 @@ warranty disclaimers, indemnity and limitations of liability.
 
 __Indemnification__
 
-You agree to defend, indemnify and hold harmless Vexor LLC and its licensee
+You agree to defend, indemnify and hold harmless Vexor.io LLC and its licensee
 and licensors, and their employees, contractors, agents, officers and
 directors, from and against any and all claims, damages, obligations, losses,
 liabilities, costs or debt, and expenses (including but not limited to
@@ -113,7 +105,7 @@ breach of these Terms.
 
 __Limitation of liability__
 
-In no event shall Vexor LLC, nor its directors, employees, partners, agents,
+In no event shall Vexor.io LLC, nor its directors, employees, partners, agents,
 suppliers, or affiliates, be liable for any indirect, incidental, special,
 consequential or punitive damages, including without limitation, loss of
 profits, data, use, goodwill, or other intangible losses, resulting from (i)
@@ -133,7 +125,7 @@ kind, whether express or implied, including, but not limited to, implied
 warranties of merchantability, fitness for a particular purpose,
 non-infringement or course of performance.
 
-Vexor LLC its subsidiaries, affiliates, and its licensors do not warrant that
+Vexor.io LLC its subsidiaries, affiliates, and its licensors do not warrant that
 a) the Service will function uninterrupted, secure or available at any
 particular time or location; b) any errors or defects will be corrected; c) the
 Service is free of viruses or other harmful components; or d) the results of
@@ -148,7 +140,7 @@ so the limitations above may not apply to you.
 __Governing law__
 
 These Terms shall be governed and construed in accordance with the laws of
-Czech Republic, without regard to its conflict of law provisions and excluding
+Russian Federation, without regard to its conflict of law provisions and excluding
 the United Nations Convention on Contracts for the International Sale of Goods
 (CISG).
 

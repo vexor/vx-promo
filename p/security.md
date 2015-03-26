@@ -90,5 +90,5 @@ database using bcrypt. Login information is always sent over SSL.
 __Credit card safety__
 
 When you sign up for a paid account on Vexor, we do not store any of your card
-information on our servers. It's handed off to Paypal, a company dedicated to
+information on our servers. It's handed off to [http://cloudpayments.eu/](http://cloudpayments.eu/), a company dedicated to
 storing your sensitive data on PCI-Compliant servers.
