@@ -25,7 +25,7 @@ potential threats to the physical safety of any person, violations of Terms of
 Service, or as otherwise required by law.
 
 We transfer information about you if Vexor is acquired by or merged with
-another company. In this event, Vexor, inc. will notify you before information
+another company. In this event, Vexor, llc. will notify you before information
 about you is transferred and becomes subject to a different privacy policy.
 
 __Information gathering and usage__
@@ -53,7 +53,7 @@ __Data storage__
 
 Vexor uses third party vendors and hosting partners to provide the necessary
 hardware, software, networking, storage, and related technology required to run
-Vexor. Although Vexor, inc. owns the code, databases, and all rights to the
+Vexor. Although Vexor, llc. owns the code, databases, and all rights to the
 Vexor application, you retain all rights to your data.
 
 __Disclosure__
