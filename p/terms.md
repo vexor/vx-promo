@@ -166,6 +166,8 @@ __Contact us__
 
 If you have any questions about these Terms, please contact us: [support@vexor.io](mailto@support@vexor.io).
 
+Company name: Vexor.io LLC
+
 Our address: Petra Romanova st, 14/1, Moscow, Russia
 
-Phone Number: +7 495 943-24-54
+Phone Number: +7 926 754-53-23
