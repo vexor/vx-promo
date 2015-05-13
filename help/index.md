@@ -17,7 +17,7 @@ Vexor supports 3 popular source control providers: [GitHub](https://github.com),
 
 ## Team settings<a class="anchor" id="getting-started-team-settings"></a>
 
-Collaborators can be invited to your team on the "Users" page. Each user can be assigned with a role Admin or Developer. Developers cannot remove projects and users to the team.
+Collaborators can be invited to your team on the "Users" page. Each user can be assigned with a role Admin or Developer. Developers cannot remove projects and add users to the team.
 
 ![Team settings](/images/docs/04.jpg)
 
@@ -39,7 +39,7 @@ Then you'll be redirected to the freshly added project.
 
 You can choose on which occasions you will be notified about your project's build statuses. There're three available options:
 
-+ **Watching** (default): Get an email after each build is completed whther it's failed or succeeded.
++ **Watching** (default): Get an email after each build is completed whether it's failed or succeeded.
 + **Not watching**: Get an email only if a build was initiated by your commit or pull request.
 + **Ignoring**: Don't get any emails about this project. 
 
