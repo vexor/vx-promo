@@ -218,6 +218,8 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 
   Additional services you want to run in your container. For each specified service there will be `sudo service #{specified_service} start` command executed. [Here](https://github.com/vexor/vx-docker-image/tree/master/docker/trusty/playbooks/roles) you can see which services are already present in our image.
   
+  See [Services](#services) for details about versions installed in our image.
+  
   **Note**: *There's an alias for `rabbitmq-server`. You could simply write `rabbitmq`.*
 
   ```yaml
@@ -394,6 +396,332 @@ There's another option for Rails users. You can specify a number of parallel job
 parallel: 4
 script: parallel_rspec
 ```
+
+# Preinstalled packages<a class="anchor" id="services"></a>
+
+There's a number of preinstalled packages in our image.
+
+### Xvfb
+
+We already have `xvfb` installed and running in our image. 
+
+### Postgresql
+
+Version 9.3 with Contrib package is preinstalled and run automatically. Use login `postgres` without a password.
+
+    psql -U postgres -c "create database test;"
+
+
+### Mysql
+
+Version 5.6 is preinstalled and run automatically. Use login `root` without a password.
+
+    mysql -u root -e "create database test"
+
+### MongoDB
+
+Version 2.6.5 is preinstalled.
+
+    services:
+      - mongodb
+
+### Redis
+
+Version 2.8.5 is preinstalled and run automatically
+
+### Rabbitmq
+
+Version 3.3.4 is preinstalled; to run, issue:
+
+    services:
+      - rabbitmq
+
+### Elasticsearch
+
+Version 1.2.1 is preinstalled; to run, issue:
+
+    services:
+      - elasticsearch
+
+### PhantomJS
+
+Version 1.9.7 is preinstalled
+
+### SphinxSearch
+
+Version 2.2.5 is preinstalled
+
+
+# Language guides<a class="anchor" id="language-guides"></a>
+
+## Ruby<a class="anchor" id="language-guides-ruby"></a>
+
+In order to start ruby tests, you only need to specify the language:
+
+    language: ruby
+
+In this simplest case the ``1.9.3`` ruby version will be used and these commands will be run:
+
+    install: bundle install
+    script: bundle exec rake
+
+If you're using ``rails``, you will need to setup the DB before running tests:
+
+    before_script:
+    - bundle exec rake db:create db:migrate RAILS_ENV=test
+
+You can specify additional bundler options:
+
+    bundler_args: --without debugger
+
+You can also specify several different Gemfile versions, in this case
+a matrix will be created:
+
+    gemfile:
+    - Gemfile.pg
+    - Gemfile.mysql
+
+These versions of ruby are available for testing:
+
+* ``1.8.7-p375``
+* ``1.9.2-p320``
+* ``1.9.3-p550``
+* ``2.0.0-p594``
+* ``2.1.1``
+* ``2.1.2``
+* ``2.1.3``
+* ``2.1.4``
+* ``jruby-1.7.16``
+* ``rbx-2.2.9``
+* ``head``, fresh repository version, rebuilt every week
+
+To select the required version, use ``rvm`` key:
+
+    rvm:
+    - 2.0
+    - 2.1
+    - head
+
+When searching a ruby version, a fuzzy matching is used, so you don't need to strictly specify the versions.
+If for whatever reasons you need the version we don't have, you have ``ruby-build`` preinstalled on the build
+machine, so you can always compile the required version.
+
+In order to save time when running tests, installed gems are cached.
+You can disable this with:
+
+    cache: false
+
+
+We don't use ``rbenv`` or ``rvm`` to manage the ruby versions; all rubies are
+built as deb packages. When running your tests, the required ruby version
+is installed from the corresponding deb package.
+We don't have neither ``rbenv``, nor ``rvm`` on the testing machine, but
+``ruby-build`` is installed and can be used to compile the required version.
+The best option, however, will be to let us know which ruby version you need and
+we'll create the deb package for you.
+
+## Clojure<a class="anchor" id="language-guides-clojure"></a>
+
+To run Clojure apps you should issue:
+
+    language: clojure
+
+Leiningen 2.3.4 is preinstalled in image; 1.x isn't supported; symlink lein -> lein2 is included for Travis compatibility.
+
+These commands will be run:
+
+    lein deps
+    lein test
+
+You can set your custom command to run the tests:
+
+    script: lein midje
+
+You can specify a different version of the JDK
+
+    jdk:
+      - openjdk7
+      - oraclejdk7
+
+JDKs preinstalled in image include
+
+* openjdk7
+* oraclejdk7
+* oraclejdk8
+
+Java 6 isn't included.
+
+## Scala<a class="anchor" id="language-guides-scala"></a>
+
+To run Scala apps issue:
+
+    language: scala
+
+Scala 2.10.3 is used by default.
+
+Because of Scala's versions multitude and incompatibilities it's not preinstalled
+in image. Instead, [sbt-extras][extras] is used together with caching.
+[sbt-extras][extras] detects and automatically installs the required version sbt which,
+in turn, manages the version of the language. Everything is being installed and set up
+during the first run, then works fast because of caching.
+
+
+Testing is run with these commands:
+
+    sbt ++$SCALA_VERSION update
+    sbt ++$SCALA_VERSION test
+
+Scala and Java versions can be managed:
+
+    scala:
+      - 2.10.2
+      - 2.10.3
+
+    jdk:
+      - openjdk7
+      - oraclejdk7
+
+JDKs preinstalled in image include
+
+* openjdk7
+* oraclejdk7
+* oraclejdk8
+
+Java 6 isn't included.
+
+Caching is turned on automatically when you use Scala. To turn it off set:
+
+    cache: false
+
+[extras]: https://github.com/paulp/sbt-extras
+
+## Python<a class="anchor" id="language-guides-python"></a>
+
+In order to run tests for a __python__ project you need to specify the language:
+
+    `language: python`
+
+
+`python version 2.7` will be used for running the tests and the following commands will be run:
+
+    install:
+      virtualenv ~/.python-virtualenv
+      source ~/.python-virtualenv/bin/activate
+
+      pip install -r [Rr]equirements.txt
+      or
+      python setup.py install
+
+    script:
+      python manage.py test
+      # or
+      python setup.py test
+      # or
+      nosetests
+
+These versions of __python__ are available
+
+* ``2.7.8``
+* ``3.1.5``
+* ``3.2.5``
+* ``3.3.3``
+* ``3.4.1``
+* ``pypy-2.2.1``
+
+To select a specific version for testing, a ``python`` config key should be used:
+
+    python:
+    - 2.7
+    - pypy-2
+
+When searching the __python__ version, fuzzy matching is used, which first tries to find a
+match strictly, and then falls back to the closest version if not found.
+
+## Node.js<a class="anchor" id="language-guides-nodejs"></a>
+
+In order to run the nodejs tests, you need to specify:
+
+    language: node_js
+
+In this case the version ``0.10.29`` will be used and the following commands will be run:
+
+    install: npm install
+    script: npm test
+
+These versions of nodejs are available for testing
+
+* ``0.8.28``
+* ``0.9.12``
+* ``0.10.32``
+* ``0.11.14``
+
+To select the specific version for testing, a configuration key ``node_js`` is used
+
+    node_js:
+    - "0.9"
+    - "0.10"
+
+When searching the __nodejs__ version, fuzzy matching is used, which first tries to find a
+match strictly, and then falls back to the closest version if not found.
+
+Build machine has phantomjs 1.9.7 preinstalled, which you can use for headless testing.
+
+## Go<a class="anchor" id="language-guides-golang"></a>
+
+In order to run tests for a __go__ project you need to specify the language:
+
+    `language: go`
+
+
+`go version 1.2.2` will be used for running the tests and the following commands will be run:
+
+    install: go get -v ./...
+    script: go test -v ./...
+
+These versions of __go__ are available
+
+* ``go1.1.2``
+* ``go1.2.2``
+* ``go1.3``
+* ``go1.3.1``
+* ``go1.3.2``
+* ``go1.3.3``
+* ``tip``, fresh repository build, updated weekly
+
+To select a specific version for testing, a ``go`` config key should be used:
+
+    rvm:
+    - go1.1
+    - go2.2
+    - tip
+
+When searching the __go__ version, fuzzy matching is used, which first tries to find a
+match strictly, and then falls back to the closest version if not found.
+
+## Rust<a class="anchor" id="language-guides-rust"></a>
+In order to run the __rust__ tests, you need to specify:
+
+    language: rust
+
+In this case the version ``0.11`` will be used and the following commands will be run:
+
+    install:
+    - git submodule init
+    - git submodule update
+
+    script: make
+
+These versions of __rust__ are available for testing
+
+* ``0.11.0``
+* ``0.12.0``
+* ``nightly`` fresh build from the repository, refreshed nightly
+
+To select the specific version for testing, a configuration key ``rust`` is used
+
+    rust:
+    - nightly
+
 
 # Deploiyng your application<a class="anchor" id="deploy"></a>
 
