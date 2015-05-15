@@ -217,7 +217,7 @@ body .landing .landing-block-features {
 
 @media (min-width: 768px) {
   body .landing .landing-block-features {
-    height: 460px;
+    height: 660px;
   }
 }
 
@@ -278,6 +278,18 @@ body .landing .landing-block-features .supports-items {
   padding-bottom: 10px;
   background-color: white;
   border-radius: 15px;
+}
+
+body .landing .landing-block-features .supports-items img {
+  transition: all .1s ease-in-out;
+  height: 80px;
+  -webkit-filter: grayscale(100%);
+  opacity: .6;
+}
+
+body .landing .landing-block-features .supports-items img:hover {
+  -webkit-filter: grayscale(0);
+  opacity: 1;
 }
 
 body .landing .landing-block-replies {
