@@ -95,10 +95,12 @@ body .landing .landing-block-header {
 
 body .landing .landing-block-header .main-image {
   height: 235px;
-  background-image: url("../images/landing/main-image.png");
+  /* background-image: url("../images/landing/main-image.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
 }
+
+.main-image img { width: 570px; }
 
 body .landing .landing-block-header .title{
   margin-top: 20px;
@@ -110,6 +112,10 @@ body .landing .landing-block-header .description {
   margin-top: 20px;
   font-size: 1.7em;
   line-height: 120%;
+}
+
+.landing .landing-block-description .col-sm-4 .image img {
+  width: 100px;
 }
 
 body .landing .landing-block-clients img {
