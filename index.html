@@ -7,36 +7,33 @@ js: landing
 <div class='block-header landing-block-header text-center'>
   <div class='container'>
     <div class='row main-image'>
-      <div class='col-sm-12'></div>
+      <div class='col-sm-12'><img src="./images/landing/scheme.svg" /></div>
     </div>
     <h1 class='title'>
-      Облачный CI с безлимитными ресурсами
+      Continuous Integration без очередей.<br />
+      С поминутной оплатой.
     </h1>
-    <h2 class='row description'>
-      <div class='col-sm-12'>
-          Vexor - облачный Continuous Integration/Continuous Delivery<br />сервис с <a data-scroll="true" href="/#pricing">поминутной</a> оплатой.
-      </div>
-    </h2>
+    <!-- <h2 class='row description'> -->
+    <!--   <div class='col-sm-12'> -->
+    <!--       Vexor - облачный Continuous Integration/Continuous Delivery<br />сервис с <a data-scroll="true" href="/#pricing">поминутной</a> оплатой. -->
+    <!--   </div> -->
+    <!-- </h2> -->
 
     <div class='row sign-up'>
-      <div class='col-sm-12'>
+      <div class='col-sm-6' style="text-align: right;">
         <a class="btn btn-primary" data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">
           <div class='icon fa fa-github'></div>
           <div class='content pull-right'>Войти через GitHub</div>
         </a>
+      </div>
+      <div class="col-sm-6" style="text-align: left;">
         <a class="btn btn-primary" style="margin-left: 10px" data-signup=true href="https://ci.vexor.io/users/bitbucket?do=sign_up">
           <div class='icon fa fa-bitbucket'></div>
           <div class='content pull-right'>Войти через BitBucket</div>
         </a>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="block-clients landing-block-clients">
-  <div class="container">
-    <h4 class="text-center">Vexor уже используют</h4>
-    <div class="row">
+    <div class="row clients">
       <div class="cl-md col-sm-2"><img src="./images/landing/clients/meduza.svg" alt="" /></div>
       <div class="cl-rm col-sm-2"><img src="./images/landing/clients/rambler.svg" alt="" /></div>
       <div class="cl-bm col-sm-2"><img src="./images/landing/clients/bookmate.svg" alt="" /></div>
@@ -44,53 +41,63 @@ js: landing
       <div class="cl-is col-sm-2"><img src="./images/landing/clients/insales.svg" alt="" /></div>
       <div class="cl-brm col-sm-2"><img src="./images/landing/clients/brandymint.svg" alt="" /></div>
     </div>
+
+    <div class="row down-sign">
+      <a data-scroll="true" href="./#description">
+        <img src="./images/landing/down.svg" alt="scroll down" />
+      </a>
+    </div>
   </div>
 </div>
 
 
-<div class='block-description landing-block-description text-center'>
+<div class='block-description landing-block-description text-center' id="description">
   <div class='container'>
     <div class='row title'>
       <div class='col-sm-12'>
-        Быстро, дешево и просто
+        Быстро, дешево, просто – вы получаете все три
       </div>
     </div>
     <div class='row items'>
       <div class='row'>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Watch" src="./images/landing/watch.png" /></div>
-          <div class='subtitle' style="white-space: nowrap;">Безлимитные ресурсы</div>
-          <div class='description'>Простое распараллеливание.</div>
-          <div class='separator'></div>
-          <div class='description'>2 ядра, 4 Гб памяти и SSD<br/>в каждом воркере.</div>
+          <div class='image'><img alt="Fast" src="./images/landing/fast.svg" /></div>
+          <div class='subtitle' style="white-space: nowrap;">Быстро</div>
+          <div class='description'>Безлимитные воркеры</div>
+          <div class='separator'>.</div>
+          <div class='description'>С легкостью <br />распараллеливайте тесты</div>
+          <div class="separator">.</div>
+          <div class="description">В каждом воркере:<br />2 ядра, 2 Гб памяти, SSD</div>
         </div>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Coin" src="./images/landing/coin.png" /></div>
-          <div class='subtitle'>Оплата за минуты</div>
-          <div class='description'>$0.015 в минуту.</div>
-          <div class='separator'></div>
-          <div class='description'>Никаких подписок, платите только<br />за реальное время ваших тестов.</div>
+          <div class='image'><img alt="Cheap" src="./images/landing/cheap.svg" /></div>
+          <div class='subtitle'>Дешево</div>
+          <div class='description'>$0.015 в минуту</div>
+          <div class='separator'>.</div>
+          <div class='description'>Никаких подписок, вы платите<br />только за реальное время тестов</div>
         </div>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Happy kitty" src="./images/landing/happy-kitty.png" /></div>
+          <div class='image'><img alt="Easy" src="./images/landing/easy.svg" /></div>
           <div class='subtitle'>Простая настройка</div>
-          <div class='description'>Полная интеграция с Github<br>Bitbucket и Gitlab.</div>
-          <div class='separator'></div>
-          <div class='description'>Настройка в один клик.</div>
+          <div class='description'>Полная интеграция с <br />Github, Bitbucket и Gitlab</div>
+          <div class="separator">.</div>
+          <div class="description">Совместимость с .travis.yml</div>
+          <div class='separator'>.</div>
+          <div class='description'>Настройка в один клик</div>
         </div>
       </div>
     </div>
-      <div class='row subtitle2'>
-          Если вы настроили <a href="./images/landing/8jobs.png" target="_blank">8 параллельных потоков</a> и опубликовали 5 коммитов, запустив <a href="./images/landing/5builds.png" target="_blank">5 билдов</a> одновременно, мы правда запускаем 40 параллельных воркеров для вас в течение пары секунд!
-      </div>
+      <!-- <div class='row subtitle2'> -->
+      <!--     Если вы настроили <a href="./images/landing/8jobs.png" target="_blank">8 параллельных потоков</a> и опубликовали 5 коммитов, запустив <a href="./images/landing/5builds.png" target="_blank">5 билдов</a> одновременно, мы правда запускаем 40 параллельных воркеров для вас в течение пары секунд! -->
+      <!-- </div> -->
   </div>
 </div>
 
 <div class='block-features landing-block-features text-center' id='features'>
   <div class='container'>
     <div class='row icon'>
-      <div class='col-sm-12'>
-        <img alt="List" src="./images/landing/list.png" />
+      <div class='col-sm-12 features'>
+        <img alt="Features" src="./images/landing/features.svg" />
       </div>
     </div>
     <div class='row title'>
@@ -164,21 +171,20 @@ js: landing
   <div class='container'>
     <div class='row icon'>
       <div class='col-sm-12'>
-        <img alt="Pricing" src="./images/landing/pricing.png" />
+        <img alt="Pricing" src="/images/landing/price.svg" />
       </div>
     </div>
     <div class='row title'>
-      <div class='row'>
-        <div class='col-sm-12'>$0.015 за минуту</div>
-      </div>
+      <div>Стоимость</div>
       <div class='row description'>
-        <div class='col-sm-12'>VEXOR стоит <em>всего $0.015 за минуту</em>. Мы даем 100 бесплатных минут в месяц!</div>
+        <div class='col-sm-12'>VEXOR стоит <em>всего $0.015 за минуту</em>. 100 бесплатных минут в месяц.</div>
       </div>
-        <div class='row pay_as_you_go'>
-            <div class='col-sm-12'>
-                Платите столько, сколько используете!
-            </div>
-        </div>
+
+    </div>
+    <div class='row pay_as_you_go'>
+      <div class='col-sm-12'>
+        Размер месячного чека зависит от скорости и количества тестов. Платите за столько, сколько используете.
+      </div>
     </div>
     <!--
     <div class='table-responsive table-wraper'>
@@ -232,7 +238,7 @@ js: landing
     <div class='container'>
         <div class='row icon'>
             <div class='col-sm-12'>
-                <img alt="List" src="./images/landing/developer.png" />
+                <img alt="List" src="./images/landing/developer.svg" />
             </div>
         </div>
         <div class='row title'>
