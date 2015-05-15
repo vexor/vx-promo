@@ -102,14 +102,59 @@ body .landing .landing-block-header .main-image {
 
 body .landing .landing-block-header .title{
   margin-top: 20px;
-  font-size: 4.1em;
-  line-height: 120%;
+  font-size: 3.5em;
+  line-height: 110%;
 }
 
 body .landing .landing-block-header .description {
   margin-top: 20px;
   font-size: 1.7em;
   line-height: 120%;
+}
+
+body .landing .landing-block-clients img {
+  width: 100%;
+}
+
+body .landing .landing-block-clients img {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+.block-clients {
+  background: #10a3e7;
+  padding: 40px 0;
+}
+
+.block-clients .row {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.block-clients h4 {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.cl-md { margin-top: 20px; }
+.cl-rm { margin-top: 12px; }
+.cl-bm { margin-top: 27px; }
+.cl-cc { margin-top: -10px; }
+.cl-is { margin-top: 7px; }
+.cl-brm { margin-top: 22px; }
+
+@media (max-width: 768px) {
+  .block-clients img {
+    width: 100px!important;
+  }
+
+  .block-clients .row { text-align: center; }
+
+  .block-clients .col-sm-2 {
+    display: inline-block;
+  }
 }
 
 body .landing .landing-block-header .description a {
