@@ -1,3 +1,6 @@
+---
+---
+
 body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,20 +21,14 @@ body .btn-primary {
   color: #666666;
   background-color: #9cf5fb;
   border-color: #9cf5fb;
+
+  &:hover {
+    color: #10a3e7;
+    background-color: #9cf5fb;
+    border-color: #9cf5fb;
+  }
 }
 
-body .btn-primary:hover {
-  color: #10a3e7;
-  background-color: #9cf5fb;
-  border-color: #9cf5fb;
-}
-
-body .landing .navbar {
-  background-color: #666666;
-  border: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-}
 
 body .landing > .navbar {
   position: fixed;
@@ -41,29 +38,81 @@ body .landing > .navbar {
   z-index: 99;
 }
 
-body .landing .navbar .logo {
-  height: 1em;
-}
 
-body .landing .navbar li a {
-  text-transform: uppercase;
-  color: #9cf5fb;
-  font-weight: lighter;
-  font-size: 1.15em;
-}
-
-body .landing .navbar li a:hover {
+body .landing .navbar {
   background-color: #666666;
-  color: white;
-  text-decoration: underline;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  .logo {
+    height: 1em;
+  }
+
+  li a {
+    text-transform: uppercase;
+    color: #9cf5fb;
+
+    &:hover {
+      background-color: #666666;
+      color: white;
+      text-decoration: none;
+    }
+
+    font-size: 1.3em;
+    line-height: 1.2;
+    font-weight: normal;
+    letter-spacing: 1px;
+
+
+    li.active a,
+    li.active a:hover {
+      background-color: #666666;
+      color: white;
+      text-decoration: underline;
+    }
+  }
 }
 
-body .landing .navbar li.active a,
-body .landing .navbar li.active a:hover {
-  background-color: #666666;
-  color: white;
-  text-decoration: underline;
+body .landing .navbar-collapse .navbar-nav {
+  float: none;
+  display: inline-block;
+  margin: 0 auto;
 }
+
+body .landing .navbar-collapse {
+  position: relative;
+  text-align: center;
+
+}
+
+body .landing .navbar-collapse ul li {
+  padding-top: 3px;
+}
+
+body .landing .navbar-collapse ul li a:hover span {
+  display: inline-block;
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+  margin-bottom: -6px;
+}
+
+
+body .landing .navbar-collapse ul li a:active,
+body .landing .navbar-collapse ul li a:focus {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  body .landing nav.navbar .navbar-nav {
+    font-size: 0.8em;
+
+    li {
+      padding-top: 5px;
+    }
+  }
+}
+
 
 @media (min-width: 0) {
   body .landing .navbar li.separator {
@@ -99,12 +148,20 @@ body .landing .landing-block-header {
 
 body .landing .landing-block-header .main-image {
   height: 235px;
-  /* background-image: url("../images/landing/main-image.png");
-  background-repeat: no-repeat;
-  background-position: center; */
+
+  img { width: 570px; }
 }
 
-.main-image img { width: 570px; }
+@media (max-width: 768px) {
+  body .landing .landing-block-header .main-image {
+    height: auto;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
 
 body .landing .landing-block-header .title{
   margin-top: 20px;
@@ -174,12 +231,40 @@ body .landing .landing-block-header .go_ahead {
 
 body .landing .landing-block-header .sign-up {
   margin-top: 49.0px;
+
+  a {
+    display: inline-block;
+    white-space: nowrap;
+    div {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .icon {
+      font-size: 1.8em;
+      margin-right: 15px;
+    }
+
+    .content {
+      margin-top: 3px;
+    }
+  }
 }
 
-body .landing .landing-block-header .sign-up a .icon {
-  font-size: 1.8em;
-  float: left;
-  margin-right: 15px;
+@media (max-width: 768px) {
+  body .landing .landing-block-header .sign-up {
+    .col-sm-6 {
+      text-align: center!important;
+      padding-bottom: 20px;
+      a { margin-left: 0!important; }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body .landing .landing-block-header .sign-up {
+    a { display: block; }
+  }
 }
 
 body .landing .row {
@@ -190,50 +275,6 @@ body .landing .header-logo {
   position: absolute;
   top: 2px;
   left: 0;
-}
-
-body .landing .navbar-collapse .navbar-nav {
-  float: none;
-  display: inline-block;
-  margin: 0 auto;
-}
-
-body .landing .navbar-collapse {
-  position: relative;
-  text-align: center;
-
-}
-
-body .landing .navbar-collapse ul li {
-  padding-top: 3px;
-}
-
-body .landing .navbar-collapse ul li a {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: normal;
-  letter-spacing: 1px;
-}
-
-body .landing .navbar-collapse ul li a:hover {
-  text-decoration: none;
-}
-
-body .landing .navbar-collapse ul li a:hover span {
-  display: inline-block;
-  border-bottom: 2px solid white;
-  padding-bottom: 4px;
-  margin-bottom: -6px;
-}
-
-
-body .landing .navbar-collapse ul li a:active,
-body .landing .navbar-collapse ul li a:focus {
-  color: #fff;
-}
-
-body .landing .landing-block-header .sign-up a .content {
-  margin-top: 3px;
 }
 
 body .navbar-right {
@@ -393,18 +434,25 @@ body .landing .landing-block-features .supports-items {
   padding-bottom: 10px;
   background-color: white;
   border-radius: 15px;
+
+  img {
+    transition: all .1s ease-in-out;
+    height: 80px;
+    -webkit-filter: grayscale(100%);
+    opacity: .6;
+
+    &:hover {
+      -webkit-filter: grayscale(0);
+      opacity: 1;
+    }
+  }
 }
 
-body .landing .landing-block-features .supports-items img {
-  transition: all .1s ease-in-out;
-  height: 80px;
-  -webkit-filter: grayscale(100%);
-  opacity: .6;
-}
-
-body .landing .landing-block-features .supports-items img:hover {
-  -webkit-filter: grayscale(0);
-  opacity: 1;
+@media (max-width: 768px) {
+  body .landing .landing-block-features .supports-items {
+    padding-top: 30px;
+    .col-sm-2 { display: inline-block; padding-bottom: 30px; }
+  }
 }
 
 body .landing .landing-block-replies {
@@ -528,6 +576,14 @@ body .landing .landing-block-pricing .pay_as_you_go {
   width: 70%;
   font-weight: 400;
   margin: 100px auto;
+}
+
+@media (max-width: 480px) {
+  body .landing .landing-block-pricing .pay_as_you_go {
+    font-size: 1.8em;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
 }
 
 body .landing .landing-block-testimonials {
@@ -682,4 +738,11 @@ body .landing .landing-block-footer .items a {
 
 body .landing .page {
   margin-top: 50px;
+}
+
+@media (max-width: 768px){
+  .row {
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
 }
