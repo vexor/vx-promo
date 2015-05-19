@@ -285,6 +285,18 @@ body .navbar-right {
   top: 0;
 }
 
+@media (max-width: 768px) {
+  body .landing .navbar-default {
+    .navbar-collapse {
+      ul.navbar-nav {
+        li a { font-size: 1.8em; }
+        position: relative;
+        display: block;
+      }
+    }
+  }
+}
+
 body .landing .landing-block-header .scroll-down {
   margin-top: 24px;
   text-transform: uppercase;
