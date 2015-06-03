@@ -6,143 +6,160 @@ js: landing
 
 <div class='block-header landing-block-header text-center'>
   <div class='container'>
-    <div class='row main-image'>
-      <div class='col-sm-12'></div>
+    <div class='main-image'>
+      <div class='col-sm-12'><img src="./images/landing/scheme.svg" /></div>
     </div>
-    <div class='title'>
-        No more bugs in production!
-    </div>
-    <div class='row description'>
-      <div class='col-sm-12'>
-          Vexor is the first cloud continuous integration and delivery solution<br>with <a data-scroll="true" href="/#pricing">per-minute</a> billing.
-      </div>
-    </div>
+    <h1 class='title'>
+      Continuous Integration без очередей.<br />
+      С поминутной оплатой.
+    </h1>
 
 
     <div class='row sign-up'>
-      <div class='col-sm-12'>
+      <div class='col-sm-6' style="text-align: right;">
         <a class="btn btn-primary" data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">
           <div class='icon fa fa-github'></div>
-          <div class='content pull-right'>Sign up with Github</div>
+          <div class='content'>Войти через GitHub</div>
         </a>
+      </div>
+      <div class="col-sm-6" style="text-align: left;">
         <a class="btn btn-primary" style="margin-left: 10px" data-signup=true href="https://ci.vexor.io/users/bitbucket?do=sign_up">
           <div class='icon fa fa-bitbucket'></div>
-          <div class='content pull-right'>Sign up with BitBucket</div>
+          <div class='content'>Войти через BitBucket</div>
         </a>
       </div>
     </div>
-    <div class="row go_ahead">
-      C'mon! Start using Vexor. We give 100 free minutes a month.
+    <div class="row clients">
+      <div class="cl-md col-md-2 col-md-offset-1"><img src="./images/landing/clients/meduza.svg" alt="" /></div>
+      <!-- <div class="cl-rm col-sm-2"><img src="./images/landing/clients/rambler.svg" alt="" /></div> -->
+      <div class="cl-bm col-md-2"><img src="./images/landing/clients/bookmate.svg" alt="" /></div>
+      <div class="cl-cc col-md-2"><img src="./images/landing/clients/cloud_castle.svg" alt="" /></div>
+      <div class="cl-is col-md-2"><img src="./images/landing/clients/insales.svg" alt="" /></div>
+      <div class="cl-brm col-md-2"><img src="./images/landing/clients/brandymint.svg" alt="" /></div>
+    </div>
+
+    <div class="row down-sign">
+      <a data-scroll="true" href="./#description">
+        <img src="./images/landing/down.svg" alt="scroll down" />
+      </a>
     </div>
   </div>
 </div>
 
-<div class='block-description landing-block-description text-center'>
+
+<div class='block-description landing-block-description text-center' id="description">
   <div class='container'>
     <div class='row title'>
       <div class='col-sm-12'>
-        Fast, Cheap and Easy – you can easily have all three
+        Быстро, дешево, просто – вы получаете все три
       </div>
     </div>
     <div class='row items'>
       <div class='row'>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Watch" src="/images/landing/watch.png" /></div>
-          <div class='subtitle'>Unlimited workers</div>
-          <div class='description'>Easily parallelize your test suite</div>
-          <div class='separator'></div>
-          <div class='description'>2 CPU cores, 4 GB of RAM and SSD<br/>for each worker</div>
+          <div class='image'><img alt="Fast" src="./images/landing/fast.svg" /></div>
+          <div class='subtitle' style="white-space: nowrap;">Быстро</div>
+          <div class='description'>Безлимитные воркеры</div>
+          <div class='separator'>.</div>
+          <div class='description'>С легкостью <br />распараллеливайте тесты</div>
+          <div class="separator">.</div>
+          <div class="description">В каждом воркере:<br />2 ядра, 2 Гб памяти, SSD</div>
         </div>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Coin" src="./images/landing/coin.png" /></div>
-          <div class='subtitle'>Pay as you go</div>
-          <div class='description'>$0.015 per minute</div>
-          <div class='separator'></div>
-          <div class='description'>No subscription fee,<br>pay only for running your tests</div>
+          <div class='image'><img alt="Cheap" src="./images/landing/cheap.svg" /></div>
+          <div class='subtitle'>Дешево</div>
+          <div class='description'>$0.015 в минуту</div>
+          <div class='separator'>.</div>
+          <div class='description'>Никаких подписок, вы платите<br />только за реальное время тестов</div>
         </div>
         <div class='col-sm-4'>
-          <div class='image'><img alt="Happy kitty" src="./images/landing/happy-kitty.png" /></div>
-          <div class='subtitle'>Easy setup</div>
-          <div class='description'>Full Github, Bitbucket<br>and Gitlab integration</div>
-          <div class='separator'></div>
-          <div class='description'>One-click setup</div>
+          <div class='image'><img alt="Easy" src="./images/landing/easy.svg" /></div>
+          <div class='subtitle'>Простая настройка</div>
+          <div class='description'>Полная интеграция с <br />Github, Bitbucket и Gitlab</div>
+          <div class="separator">.</div>
+          <div class="description">Совместимость с .travis.yml</div>
+          <div class='separator'>.</div>
+          <div class='description'>Настройка в один клик</div>
         </div>
       </div>
     </div>
-      <div class='row subtitle2'>
-          If you've set up <a href="./images/landing/8jobs.png" target="_blank">8 parallel jobs</a> per build and pushed 5 commits to start <a href="./images/landing/5builds.png" target="_blank">5 builds</a> simultaneously, we really do start 40 parallel workers for you in a matter of seconds!
-      </div>
+      <!-- <div class='row subtitle2'> -->
+      <!--     Если вы настроили <a href="./images/landing/8jobs.png" target="_blank">8 параллельных потоков</a> и опубликовали 5 коммитов, запустив <a href="./images/landing/5builds.png" target="_blank">5 билдов</a> одновременно, мы правда запускаем 40 параллельных воркеров для вас в течение пары секунд! -->
+      <!-- </div> -->
   </div>
 </div>
 
 <div class='block-features landing-block-features text-center' id='features'>
   <div class='container'>
     <div class='row icon'>
-      <div class='col-sm-12'>
-        <img alt="List" src="./images/landing/list.png" />
+      <div class='col-sm-12 features'>
+        <img alt="Features" src="./images/landing/features.svg" />
       </div>
     </div>
     <div class='row title'>
       <div class='col-sm-12'>
-        Features
+        Особенности
       </div>
     </div>
     <div class='row items'>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Github" src="./images/landing/github.png" /></div>
-          <div class='description'>GitHub, Bitbucket and Gitlab integration</div>
+          <div class='description'>Интеграция с GitHub, Bitbucket и Gitlab</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Matrices" src="./images/landing/matrices.png" /></div>
-          <div class='description'>Parallelize your tests with<br>building matrices</div>
+          <div class='description'>Распараллеливание тестов при помощи матриц</div>
         </div>
       </div>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Notification" src="./images/landing/notification.png" /></div>
-          <div class='description'>Pull request and commit<br>notifications</div>
+          <div class='description'>Уведомления о коммитах и пулл реквестах</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Travis" src="./images/landing/travis.png" /></div>
-          <div class='description'>Travis.yml compatibility</div>
+          <div class='description'>Совместимость с .travis.yml</div>
         </div>
       </div>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Dependency" src="./images/landing/dependency.png" /></div>
-          <div class='description'>Dependency caching</div>
+          <div class='description'>Кеширование зависимостей</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Deploy" src="./images/landing/deploy.png" /></div>
-          <div class='description'>Deploy automatically<br/>if tests complete successfully</div>
+          <div class='description'>Автоматический деплой,<br/>если тесты прошли успешно</div>
         </div>
       </div>
     </div>
-    <!--
+
     <div class='row supports-title'>
       <div class='col-sm-12'>
-        Supports out of the box
+        Поддерживаем из коробки
       </div>
     </div>
     <div class='row supports-items'>
-      <div class='col-sm-2 col-sm-offset-1'>
-        <a href="http://ruby-lang.org/"><img alt="Ruby" title="Ruby" src="./images/landing/ruby.png" /></a>
+      <div class='col-sm-2'>
+        <a target="_blank" href="https://ruby-lang.org/"><img alt="Ruby" title="Ruby" src="./images/landing/logos/ruby.svg" /></a>
       </div>
       <div class='col-sm-2'>
-        <a href="http://rubyonrails.org/"><img alt="Ruby" title="Rails" src="./images/landing/rails.png" /></a>
+        <a target="_blank" href="https://rubyonrails.org/"><img alt="Ruby On Rails" title="Rails" src="./images/landing/logos/rails.svg" /></a>
       </div>
       <div class='col-sm-2'>
-        <a href="http://java.com/"><img alt="Java" title="Java" src="./images/landing/java.png" /></a>
+        <a target="_blank" href="https://www.python.org/"><img alt="Python" title="Python" src="./images/landing/logos/python.svg" /></a>
       </div>
       <div class='col-sm-2'>
-        <a href="http://clojure.org/"><img alt="Clojure" title="Clojure" src="./images/landing/clojure.png" /></a>
+        <a target="_blank" href="https://nodejs.org"><img alt="Node.js" title="Node.js" src="./images/landing/logos/node.svg" /></a>
+      </div>
+
+      <div class='col-sm-2'>
+        <a target="_blank" href="http://clojure.org/"><img alt="Clojure" title="Clojure" src="./images/landing/logos/clojure.svg" /></a>
       </div>
       <div class='col-sm-2'>
-        <a href="http://www.scala-lang.org/"><img alt="Scala" title="Scala" src="./images/landing/scala.png" /></a>
+        <a target="_blank" href="http://www.scala-lang.org/"><img alt="Scala" title="Scala" src="./images/landing/logos/scala.svg" /></a>
       </div>
     </div>
-    -->
   </div>
 </div>
 
@@ -150,21 +167,20 @@ js: landing
   <div class='container'>
     <div class='row icon'>
       <div class='col-sm-12'>
-        <img alt="Pricing" src="/images/landing/pricing.png" />
+        <img alt="Pricing" src="./images/landing/price.svg" />
       </div>
     </div>
     <div class='row title'>
-      <div class='row'>
-        <div class='col-sm-12'>$0.015 per minute</div>
-      </div>
+      <div>Стоимость</div>
       <div class='row description'>
-        <div class='col-sm-12'>VEXOR costs <em>just $0.015 per minute</em>. We give 100 free minutes a month!</div>
+        <div class='col-sm-12'>VEXOR стоит <em>всего $0.015 за минуту</em>. 100 бесплатных минут в месяц.</div>
       </div>
-        <div class='row pay_as_you_go'>
-            <div class='col-sm-12'>
-                Pay as you go!
-            </div>
-        </div>
+
+    </div>
+    <div class='row pay_as_you_go'>
+      <div class='col-sm-12'>
+        Размер месячного чека зависит от скорости и количества тестов. Платите за столько, сколько используете.
+      </div>
     </div>
     <!--
     <div class='table-responsive table-wraper'>
@@ -218,54 +234,54 @@ js: landing
     <div class='container'>
         <div class='row icon'>
             <div class='col-sm-12'>
-                <img alt="List" src="./images/landing/developer.png" />
+                <img alt="List" src="./images/landing/developer.svg" />
             </div>
         </div>
         <div class='row title'>
             <div class='col-sm-12'>
-                Made by developers for developers!
+              Сделано разработчиками для разработчиков
             </div>
         </div>
         <div class="row row-replies">
             <div class="col-sm-4">
-                <div class="description">
-                    “We have >1000 tests and it takes only 4:30 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
+              <div class="description">
+                “У нас больше 1000 тестов и они проходят всего за 4.5 минуты. Спасибо команде Vexor за помощь с настройкой и значительно меньшей цене, чем у конкурентов!”
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_vlad.png" class="user-avatar"/>
-                    <div class="user-info">Vlad Syabruk, Lead developer<br/>Bookmate.com</div>
+                    <div class="user-info">Влад Сябрук, ведущий разработчик<br/>Bookmate.com</div>
                 </div>
                 <div class="description">
-                    “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
+                  “Привет! У нас есть городской портал klops.ru. У нас примерно 300 тестов с общим временем 3-5 минут. Средний чек в месяц примерно $10.”
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_vd.png" class="user-avatar"/>
-                    <div class="user-info">Voldemar Duletskiy, CTO<br/>Klops.ru</div>
+                    <div class="user-info">Вольдемар Дулецкий, CTO<br/>Klops.ru</div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="description">
-                    “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
+              <div class="description">
+                “Vexor помогаем нам тестировать все наши бранчи параллельно. И в итоге у нас выходит 8 минут на больше, чем 3000 тестов!”
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_ab.png" class="user-avatar"/>
-                    <div class="user-info">Alexander Balashov, CTO<br/>Uptopromo.com</div>
+                    <div class="user-info">Александр Балашов, CTO<br/>Uptopromo.com</div>
                 </div>
                 <div class="description">
-                    “We are a small team of developers chose Vexor for optimal pricing – pay only for the processing time, the speed test is very good for us”
+                  “Мы, маленькая команда разработчиков, выбираем Vexor из-за оптимальной цены - платишь только за реальное время тестов. И еще нам нравится скорость.”
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_zotov.png" class="user-avatar"/>
-                    <div class="user-info">Ivan Zotov, CEO<br/>Railsmob</div>
+                    <div class="user-info">Иван Зотов, CEO<br/>Railsmob</div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="description">
-                    “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
+              <div class="description">
+                “Starttrack - проект с большим количеством тестов. Поэтому мы очень удовлетворены производительностью Vexor за такую доступную цену”
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_b.png" class="user-avatar"/>
-                    <div class="user-info">Alexander Baryshnikov, CTO<br/>Starttrack.ru</div>
+                    <div class="user-info">Александр Барышников, CTO<br/>Starttrack.ru</div>
                 </div>
 
                 <!--
