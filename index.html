@@ -10,8 +10,7 @@ js: landing
       <div class='col-sm-12'><img src="./images/landing/scheme.svg" /></div>
     </div>
     <h1 class='title'>
-      Continuous Integration без очередей.<br />
-      С поминутной оплатой.
+      {{ 'header.slogan' | t }}
     </h1>
 
 
@@ -19,13 +18,13 @@ js: landing
       <div class='col-sm-6' style="text-align: right;">
         <a class="btn btn-primary" data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">
           <div class='icon fa fa-github'></div>
-          <div class='content'>Войти через GitHub</div>
+          <div class='content'>{{ 'header.sign_up.github' | t }}</div>
         </a>
       </div>
       <div class="col-sm-6" style="text-align: left;">
         <a class="btn btn-primary" style="margin-left: 10px" data-signup=true href="https://ci.vexor.io/users/bitbucket?do=sign_up">
           <div class='icon fa fa-bitbucket'></div>
-          <div class='content'>Войти через BitBucket</div>
+          <div class='content'>{{ 'header.sign_up.bitbucket' | t }}</div>
         </a>
       </div>
     </div>
@@ -51,41 +50,38 @@ js: landing
   <div class='container'>
     <div class='row title'>
       <div class='col-sm-12'>
-        Быстро, дешево, просто – вы получаете все три
+        {{ 'description.slogan' | t }}
       </div>
     </div>
     <div class='row items'>
       <div class='row'>
         <div class='col-sm-4'>
           <div class='image'><img alt="Fast" src="./images/landing/fast.svg" /></div>
-          <div class='subtitle' style="white-space: nowrap;">Быстро</div>
-          <div class='description'>Безлимитные воркеры</div>
+          <div class='subtitle' style="white-space: nowrap;">{{ 'description.blocks.fast.title' | t }}</div>
+          <div class='description'>{{ 'description.blocks.fast.workers' | t }}</div>
           <div class='separator'>.</div>
-          <div class='description'>С легкостью <br />распараллеливайте тесты</div>
+          <div class='description'>{{ 'description.blocks.fast.parallel' | t }}</div>
           <div class="separator">.</div>
-          <div class="description">В каждом воркере:<br />2 ядра, 2 Гб памяти, SSD</div>
+          <div class="description">{{ 'description.blocks.fast.specs' | t }}</div>
         </div>
         <div class='col-sm-4'>
           <div class='image'><img alt="Cheap" src="./images/landing/cheap.svg" /></div>
-          <div class='subtitle'>Дешево</div>
-          <div class='description'>$0.015 в минуту</div>
+          <div class='subtitle'>{{ 'description.blocks.cheap.title' | t }}</div>
+          <div class='description'>{{ 'description.blocks.cheap.price' | t }}</div>
           <div class='separator'>.</div>
-          <div class='description'>Никаких подписок, вы платите<br />только за реальное время тестов</div>
+          <div class='description'>{{ 'description.blocks.cheap.subscr' | t }}</div>
         </div>
         <div class='col-sm-4'>
           <div class='image'><img alt="Easy" src="./images/landing/easy.svg" /></div>
-          <div class='subtitle'>Простая настройка</div>
-          <div class='description'>Полная интеграция с <br />Github, Bitbucket и Gitlab</div>
+          <div class='subtitle'>{{ 'description.blocks.easy.title' | t }}</div>
+          <div class='description'>{{ 'description.blocks.easy.integration' | t }}</div>
           <div class="separator">.</div>
-          <div class="description">Совместимость с .travis.yml</div>
+          <div class="description">{{ 'description.blocks.easy.travis' | t }}</div>
           <div class='separator'>.</div>
-          <div class='description'>Настройка в один клик</div>
+          <div class='description'>{{ 'description.blocks.easy.setup' | t }}</div>
         </div>
       </div>
     </div>
-      <!-- <div class='row subtitle2'> -->
-      <!--     Если вы настроили <a href="./images/landing/8jobs.png" target="_blank">8 параллельных потоков</a> и опубликовали 5 коммитов, запустив <a href="./images/landing/5builds.png" target="_blank">5 билдов</a> одновременно, мы правда запускаем 40 параллельных воркеров для вас в течение пары секунд! -->
-      <!-- </div> -->
   </div>
 </div>
 
@@ -98,45 +94,45 @@ js: landing
     </div>
     <div class='row title'>
       <div class='col-sm-12'>
-        Особенности
+        {{ 'features.header' | t ' }}
       </div>
     </div>
     <div class='row items'>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Github" src="./images/landing/github.png" /></div>
-          <div class='description'>Интеграция с GitHub, Bitbucket и Gitlab</div>
+          <div class='description'>{{ 'features.integrations' | t }}</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Matrices" src="./images/landing/matrices.png" /></div>
-          <div class='description'>Распараллеливание тестов при помощи матриц</div>
+          <div class='description'>{{ 'features.matrices' | t }}</div>
         </div>
       </div>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Notification" src="./images/landing/notification.png" /></div>
-          <div class='description'>Уведомления о коммитах и пулл реквестах</div>
+          <div class='description'>{{ 'features.notifications' | t }}</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Travis" src="./images/landing/travis.png" /></div>
-          <div class='description'>Совместимость с .travis.yml</div>
+          <div class='description'>{{ 'features.travis' | t }}</div>
         </div>
       </div>
       <div class='col-sm-4'>
         <div class='item'>
           <div class='image'><img alt="Dependency" src="./images/landing/dependency.png" /></div>
-          <div class='description'>Кеширование зависимостей</div>
+          <div class='description'>{{ 'features.cache' | t }}</div>
         </div>
         <div class='item'>
           <div class='image'><img alt="Deploy" src="./images/landing/deploy.png" /></div>
-          <div class='description'>Автоматический деплой,<br/>если тесты прошли успешно</div>
+          <div class='description'>{{ 'features.deploy' | t }}</div>
         </div>
       </div>
     </div>
 
     <div class='row supports-title'>
       <div class='col-sm-12'>
-        Поддерживаем из коробки
+        {{ 'support.header' | t }}
       </div>
     </div>
     <div class='row supports-items'>
@@ -171,15 +167,15 @@ js: landing
       </div>
     </div>
     <div class='row title'>
-      <div>Стоимость</div>
+      <div>{{ 'pricing.header' | t }}</div>
       <div class='row description'>
-        <div class='col-sm-12'>VEXOR стоит <em>всего $0.015 за минуту</em>. 100 бесплатных минут в месяц.</div>
+        <div class='col-sm-12'>{{ 'pricing.note' | t '}}</div>
       </div>
 
     </div>
     <div class='row pay_as_you_go'>
       <div class='col-sm-12'>
-        Размер месячного чека зависит от скорости и количества тестов. Платите за столько, сколько используете.
+        {{ 'pricing.text' | t }}
       </div>
     </div>
     <!--
@@ -239,60 +235,50 @@ js: landing
         </div>
         <div class='row title'>
             <div class='col-sm-12'>
-              Сделано разработчиками для разработчиков
+              {{ 'reviews.header' | t }}
             </div>
         </div>
         <div class="row row-replies">
             <div class="col-sm-4">
               <div class="description">
-                “У нас больше 1000 тестов и они проходят всего за 4.5 минуты. Спасибо команде Vexor за помощь с настройкой и значительно меньшей цене, чем у конкурентов!”
+                {{ 'reviews.bm.text' | t }}
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_vlad.png" class="user-avatar"/>
-                    <div class="user-info">Влад Сябрук, ведущий разработчик<br/>Bookmate.com</div>
+                    <div class="user-info">{{ 'reviews.bm.person' | t }}</div>
                 </div>
                 <div class="description">
-                  “Привет! У нас есть городской портал klops.ru. У нас примерно 300 тестов с общим временем 3-5 минут. Средний чек в месяц примерно $10.”
+                  {{ 'reviews.klops.text' | t }}
                 </div>
                 <div class='col-sm-12 user-data'>
                     <img alt="user" src="./images/landing/avatar_vd.png" class="user-avatar"/>
-                    <div class="user-info">Вольдемар Дулецкий, CTO<br/>Klops.ru</div>
+                    <div class="user-info">{{ 'reviews.klops.person' | t }}</div>
                 </div>
             </div>
             <div class="col-sm-4">
               <div class="description">
-                “Vexor помогаем нам тестировать все наши бранчи параллельно. И в итоге у нас выходит 8 минут на больше, чем 3000 тестов!”
-                </div>
-                <div class='col-sm-12 user-data'>
-                    <img alt="user" src="./images/landing/avatar_ab.png" class="user-avatar"/>
-                    <div class="user-info">Александр Балашов, CTO<br/>Uptopromo.com</div>
-                </div>
-                <div class="description">
-                  “Мы, маленькая команда разработчиков, выбираем Vexor из-за оптимальной цены - платишь только за реальное время тестов. И еще нам нравится скорость.”
-                </div>
-                <div class='col-sm-12 user-data'>
-                    <img alt="user" src="./images/landing/avatar_zotov.png" class="user-avatar"/>
-                    <div class="user-info">Иван Зотов, CEO<br/>Railsmob</div>
-                </div>
+                {{ 'reviews.uptopromo.text' | t }}
+              </div>
+              <div class='col-sm-12 user-data'>
+                <img alt="user" src="./images/landing/avatar_ab.png" class="user-avatar"/>
+                <div class="user-info">{{ 'reviews.uptopromo.person' | t }}</div>
+              </div>
+              <div class="description">
+                {{ 'reviews.railsmob.text' | t }}
+              </div>
+              <div class='col-sm-12 user-data'>
+                <img alt="user" src="./images/landing/avatar_zotov.png" class="user-avatar"/>
+                <div class="user-info">{{ 'reviews.railsmob.person' | t }}</div>
+              </div>
             </div>
             <div class="col-sm-4">
               <div class="description">
-                “Starttrack - проект с большим количеством тестов. Поэтому мы очень удовлетворены производительностью Vexor за такую доступную цену”
-                </div>
-                <div class='col-sm-12 user-data'>
-                    <img alt="user" src="./images/landing/avatar_b.png" class="user-avatar"/>
-                    <div class="user-info">Александр Барышников, CTO<br/>Starttrack.ru</div>
-                </div>
-
-                <!--
-                <div class="description">
-                    “We add new projects rapidly and continuous integration happens from the get-go.”
-                </div>
-                <div class='col-sm-12 user-data'>
-                    <img alt="user" src="./images/landing/avatar.png" class="user-avatar"/>
-                    <div class="user-info">John Doe, CEO<br/>Innovation Systems</div>
-                </div>
-                -->
+                {{ 'reviews.starttrack.text' | t }}
+              </div>
+              <div class='col-sm-12 user-data'>
+                <img alt="user" src="./images/landing/avatar_b.png" class="user-avatar"/>
+                <div class="user-info">{{ 'reviews.starttrack.person' | t }}</div>
+              </div>
             </div>
         </div>
     </div>

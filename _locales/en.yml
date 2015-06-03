@@ -1,0 +1,82 @@
+en:
+  nav:
+    features: Features
+    pricing: Pricing
+    help: Help
+    blog: Blog
+    signin: Sign in
+  header:
+    slogan: Continuous Integration without waiting.<br />Pay for what you use.
+    sign_up:
+      github: Sign up with GitHub
+      bitbucket: Sign up with BitBucket
+
+  description:
+    slogan: Fast, Cheap and Easy – you can easily have all three
+
+    blocks:
+      fast:
+        title: Fast
+        workers: Unlimited workers
+        parallel: Easily parallelize your test suite
+        specs: 2 CPU cores, 4 GB of RAM<br />and SSD for each worker
+
+      cheap:
+        title: Cheap
+        price: $0.015 per minute
+        subscr: No subscription fee,<br />pay only for running your tests
+
+      easy:
+        title: Easy setup
+        integration: Full Github, Bitbucket<br />and Gitlab integration
+        travis: Travis.yml compatibility
+        setup: One-click setup
+
+  features:
+    header: Features
+    integrations: GitHub, Bitbucket and Gitlab integration
+    matrices: Parallelize your tests with building matrices
+    notifications: Pull request and commit notifications
+    travis: Travis.yml compatibility
+    cache: Dependency caching
+    deploy: Deploy automatically if your<br />tests complete successfully
+
+  support:
+    header: "Out of the box support:"
+
+  pricing:
+    header: Pricing
+    note: VEXOR costs <em>just $0.015 per minute</em>. We give you 100 free minutes a month.
+    text: Pay only for what you use.
+
+  reviews:
+    header: Made by developers for developers
+    bm:
+      text: "“We have >1000 tests and it takes only 4:30 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”"
+      person: Vlad Syabruk, Lead developer<br />Bookmate.com
+
+    klops:
+      text: "“Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”"
+      person: Voldemar Duletskiy, CTO<br />Klops.ru
+
+    uptopromo:
+      text: "“Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”"
+      person: Alexander Balashov, CTO<br />Uptopromo.com
+
+    railsmob:
+      text: “We are a small team of developers chose Vexor for optimal pricing – pay only for the processing time, the speed test is very good for us”
+      person: Ivan Zotov, CEO<br />Railsmob
+
+    starttrack:
+      text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
+      person: Alexander Baryshnikov, CTO<br />Starttrack.ru
+
+  footer:
+    setup: Set up your continuous integration<br />in 18 seconds.
+    signup: Sign up for VEXOR today.
+    try: Try now
+    copyright: © 2014–2015, VEXOR. All rights reserved. Powered by <a href="http://evrone.com" target="_blank">Evrone</a>.
+    terms: Terms
+    security: Security
+    privacy: Privacy
+    contacts: Contact us

@@ -7,8 +7,8 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin" media="screen" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
-    <link href="./stylesheets/landing.css" media="all" rel="stylesheet" />
-    <link href="./stylesheets/content.css" media="all" rel="stylesheet" />
+    <link href="/stylesheets/landing.css" media="all" rel="stylesheet" />
+    <link href="/stylesheets/content.css" media="all" rel="stylesheet" />
 
     <link rel="icon" type="image/png" href="./images/favicon.png" />
     <link rel="alternate" type="application/atom+xml" title="Atom" href="./blog/feed.xml">
@@ -33,14 +33,15 @@
               <div class="clearfix"></div>
               <div class='collapse navbar-collapse' id='navbar-items'>
                 <ul class='nav navbar-nav'>
-                  <li><a data-scroll="true" href="./#features"><span>Особенности</span></a></li>
-                  <li><a data-scroll="true" href="./#pricing"><span>Стоимость</span></a></li>
-                  <li><a href="./help"><span>Документация</span></a></li>
-                  <li><a href="./blog"><span>Блог</span></a></li>
+                  <li><a data-scroll="true" href="./#features"><span>{{ 'nav.features' | t }}</span></a></li>
+                  <li><a data-scroll="true" href="./#pricing"><span>{{ 'nav.pricing' | t }}</span></a></li>
+                  <li><a href="https://vexor.io/help/"><span>{{ 'nav.help' | t }}</span></a></li>
+                  <li><a href="https://vexor.io/blog/"><span>{{ 'nav.blog' | t }}</span></a></li>
                 </ul>
                 <ul class='nav navbar-nav navbar-right'>
-                  <li><a data-signin=true href="https://ci.vexor.io/ui">
-                      Войти
+                  <li>
+                    <a data-signin=true href="https://ci.vexor.io/ui">
+                      {{ 'nav.signin' | t }}
                     </a>
                   </li>
                 </ul>

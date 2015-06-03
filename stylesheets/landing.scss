@@ -208,7 +208,7 @@ body .landing .clients.row {
 .cl-is { margin-top: 4px; }
 .cl-brm { margin-top: 11px; }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .clients img {
     width: 100px!important;
   }
@@ -216,7 +216,7 @@ body .landing .clients.row {
   .clients .row { text-align: center; }
 
   .clients .col-md-2 {
-    display: inline-block;
+    display: inline-block!important;
     padding-bottom: 30px;
   }
 }

@@ -8,17 +8,19 @@ layout: landing
   <div class='container'>
     <div class='row fast-setup'>
       <div class='col-sm-12'>
-        Настройте continuous integration<br>за 18 секунд.
+        {{ 'footer.setup' | t }}
       </div>
     </div>
     <div class='row sign-up-description'>
       <div class='col-sm-12'>
-        Зарегистрируйтесь на Vexor сегодня.
+        {{ 'footer.signup' | t }}
       </div>
     </div>
     <div class='row sign-up'>
       <div class='col-sm-12'>
-        <a class="btn btn-primary" data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">Попробовать сейчас!</a>
+        <a class="btn btn-primary" data-signup=true href="https://ci.vexor.io/users/github?do=sign_up">
+          {{ 'footer.try' | t }}
+        </a>
       </div>
     </div>
     <div class='row logo'>
@@ -30,24 +32,24 @@ layout: landing
     </div>
     <div class='row copyright'>
       <div class='col-sm-12'>
-        © 2014–2015, VEXOR. Все права защищены. При поддержке <a href='http://evrone.com/'>Evrone</a>.
+        {{ 'footer.copyright' | t}}
       </div>
     </div>
     <div class='row items'>
       <div class='col-sm-12'>
-        <a href="/p/terms.html">Соглашение</a>
-        <a href="/p/security.html">Безопасность</a>
-        <a href="/p/privacy.html">Конфиденциальность</a>
-        <a href="mailto:support@vexor.io">Контакты</a>
+        <a href="https://vexor.io/p/terms.html">{{ 'footer.terms' | t }}</a>
+        <a href="https://vexor.io/p/security.html">{{ 'footer.security' | t }}</a>
+        <a href="https://vexor.io/p/privacy.html">{{ 'footer.privacy' | t }}</a>
+        <a href="mailto:support@vexor.io">{{ 'footer.contacts' | t }}</a>
       </div>
     </div>
     <div class='row logos'>
       <div class='col-sm-12'>
-        <img src="./images/footer/visa.jpg">
-        <img src="./images/footer/visa_verified.gif">
-        <img src="./images/footer/mc.jpg">
-        <img src="./images/footer/mc-secure.gif">
-        <img src="./images/footer/cp.png">
+        <img src="/images/footer/visa.jpg">
+        <img src="/images/footer/visa_verified.gif">
+        <img src="/images/footer/mc.jpg">
+        <img src="/images/footer/mc-secure.gif">
+        <img src="/images/footer/cp.png">
       </div>
     </div>
   </div>
