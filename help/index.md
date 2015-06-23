@@ -182,7 +182,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 
   A list of database-related configuration.
 
-  We already have Postgresql 9.3 (with postgres-contrib), MySQL 5.6, MongoDB 2.6.5 and Redis 2.8.5 installed in containers.
+  We already have Postgresql 9.4 (with postgres-contrib), MySQL 5.6, MongoDB 2.6.5 and Redis 3.0.2 installed in containers.
 
   **Using PostgreSQL**
 
@@ -407,7 +407,7 @@ We already have `xvfb` installed and running in our image.
 
 ### Postgresql
 
-Version 9.3 with Contrib package is preinstalled and run automatically. Use login `postgres` without a password.
+Version 9.4 with Contrib package is preinstalled and run automatically. Use login `postgres` without a password.
 
     psql -U postgres -c "create database test;"
 
@@ -427,7 +427,7 @@ Version 2.6.5 is preinstalled.
 
 ### Redis
 
-Version 2.8.5 is preinstalled and run automatically
+Version 3.0.2 is preinstalled and run automatically
 
 ### Rabbitmq
 
