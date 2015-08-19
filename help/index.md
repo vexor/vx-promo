@@ -41,7 +41,7 @@ You can choose on which occasions you will be notified about your project's buil
 
 + **Watching** (default): Get an email after each build is completed whether it's failed or succeeded.
 + **Not watching**: Get an email only if a build was initiated by your commit or pull request.
-+ **Ignoring**: Don't get any emails about this project. 
++ **Ignoring**: Don't get any emails about this project.
 
 ![Project notifications settings](/images/docs/07.jpg)
 
@@ -59,7 +59,7 @@ Project's language can be changed here.
 
 ## Configuring build restrictions<a class="anchor" id="project-settings-build-restrictions"></a>
 
-You can specify which branches you want to be built by a regular expression in the "Filter pushes" popup. 
+You can specify which branches you want to be built by a regular expression in the "Filter pushes" popup.
 
 ![Project settings | Filter branches](/images/docs/project-settings-build-restrictions.jpg)
 
@@ -67,7 +67,7 @@ We don't build pull requests from the same repo by default, because builds are a
 
 ## Configuring build statuses on GitHub or GitLab (no BitBucket, sorry)<a class="anchor" id="project-settings-build-statuses"></a>
 
-Build statuses shown in pull requests could be configured here. Enabled by default. 
+Build statuses shown in pull requests could be configured here. Enabled by default.
 
 ![Project settings | Build statuses](/images/docs/project-settings-build-statuses.jpg)
 
@@ -106,7 +106,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 #### language *string*<a class="anchor" id="config-language"></a>
 
   Specify a language so Vexor could run language-specific preparations for your project. If you don't have a Vexor config included in your repo's root, a default config will be used, which has only the `language` key based on a language you've chosen when added a repo to Vexor. If config file is empty, without language specified, your build won't we able to run.
-  
+
   Example:
 
   ```yaml
@@ -129,9 +129,9 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   ```
 
   **Matrix**
-  
+
   A list of martix-specific variables. For each variable there will be one job started with this var + all vars from `global` section exported. See [Parallelism](#parallelism) for better matrix understanding.
-  
+
   ```yaml
   env:
     martix:
@@ -140,7 +140,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   ```
 
   **Exclude**
-  
+
   Soon
 
   **Full example**
@@ -217,9 +217,9 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 #### services *array*<a class="anchor" id="config-services"></a>
 
   Additional services you want to run in your container. For each specified service there will be `sudo service #{specified_service} start` command executed. [Here](https://github.com/vexor/vx-docker-image/tree/master/docker/trusty/playbooks/roles) you can see which services are already present in our image.
-  
+
   See [Services](#services) for details about versions installed in our image.
-  
+
   **Note**: *There's an alias for `rabbitmq-server`. You could simply write `rabbitmq`.*
 
   ```yaml
@@ -235,35 +235,35 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   ```yaml
   script: bundle exec rspec
   ```
-  
+
 #### chdir *string*<a class="anchor" id="config-chdir"></a>
   Your project's working directory. By default it's set to your repo's root directory (which is `~/vexor_org_name/project_name`).
-  
+
   ```yaml
   chdir: ~
   ```
-  
+
 #### timeout *int*<a class="anchor" id="config-timeout"></a>
   Job's maximum running time in seconds. Default is 1 hour.
-  
+
   ```yaml
   timeout: 1800
   ```
 
 #### read_timeout *int*<a class="anchor" id="config-read-timeout"></a>
 
-  If there wasn't any output within the read timeout (in seconds) a job will be shut down. 
-  
+  If there wasn't any output within the read timeout (in seconds) a job will be shut down.
+
   ```yaml
   read_timeout: 60
   ```
 
 #### cache <a class="anchor" id="config-cache"></a>
-  
+
   Enable/disable dependencies caching. `True` by default.
-  
+
   *Note: this description has not been finished yet*.
-  
+
   ```yaml
   cache: false
   ```
@@ -298,7 +298,7 @@ You can cancel any build by clicking a "Stop" button on a build page. A particul
 
 ## Restart a build<a class="anchor" id="builds-rebuild"></a>
 
-Any finished build can be restarted. 
+Any finished build can be restarted.
 
 If you want to restart a build without changing any build configuration, just click a "Rebuild" button on a build page.
 
@@ -360,7 +360,7 @@ env:
     - BUILD_CMD='brakeman -z'
     - BUILD_CMD='haml-lint app/views/'
     - BUILD_CMD='scss-lint'
-    - BUILD_CMD='rake coffeelint'    
+    - BUILD_CMD='rake coffeelint'
 script: bundle exec ${BUILD_CMD}
 ```
 
@@ -377,11 +377,11 @@ env:
   matrix:
   - TEST_SUITE=test
   - TEST_SUITE=cucumber
-  
+
 rvm:
 - 2.2
 - 2.1
-- 2.0  
+- 2.0
 ```
 
 And the result is:
@@ -403,7 +403,7 @@ There's a number of preinstalled packages in our image.
 
 ### Xvfb
 
-We already have `xvfb` installed and running in our image. 
+We already have `xvfb` installed and running in our image.
 
 ### Postgresql
 
@@ -680,19 +680,19 @@ In order to run tests for a __go__ project you need to specify the language:
 
 These versions of __go__ are available
 
-* ``go1.1.2``
-* ``go1.2.2``
-* ``go1.3``
-* ``go1.3.1``
-* ``go1.3.2``
-* ``go1.3.3``
+* ``1.1.2``
+* ``1.2.2``
+* ``1.3``
+* ``1.3.1``
+* ``1.3.2``
+* ``1.3.3``
 * ``tip``, fresh repository build, updated weekly
 
 To select a specific version for testing, a ``go`` config key should be used:
 
     rvm:
-    - go1.1
-    - go2.2
+    - 1.1
+    - 1.3
     - tip
 
 When searching the __go__ version, fuzzy matching is used, which first tries to find a

@@ -15,12 +15,12 @@ In order to run tests for a __go__ project you need to specify the language:
 
 These versions of __go__ are available
 
-* ``go1.1.2``
-* ``go1.2.2``
-* ``go1.3``
-* ``go1.3.1``
-* ``go1.3.2``
-* ``go1.3.3``
+* ``1.1.2``
+* ``1.2.2``
+* ``1.3``
+* ``1.3.1``
+* ``1.3.2``
+* ``1.3.3``
 * ``tip``, fresh repository build, updated weekly
 
 To select a specific version for testing, a ``go`` config key should be used:
