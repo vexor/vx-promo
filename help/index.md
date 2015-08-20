@@ -686,7 +686,8 @@ These versions of __go__ are available
 * ``1.3.1``
 * ``1.3.2``
 * ``1.3.3``
-* ``tip``, fresh repository build, updated weekly
+* ``1.4.2``
+* ``1.5``
 
 To select a specific version for testing, a ``go`` config key should be used:
 
