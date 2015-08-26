@@ -716,12 +716,13 @@ These versions of __rust__ are available for testing
 
 * ``0.11.0``
 * ``0.12.0``
-* ``nightly`` fresh build from the repository, refreshed nightly
+* ``1.0.0``
+* ``1.2.0``
 
 To select the specific version for testing, a configuration key ``rust`` is used
 
     rust:
-    - nightly
+    - 1.2.0
 
 
 # Deploiyng your application<a class="anchor" id="deploy"></a>
