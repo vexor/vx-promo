@@ -262,10 +262,21 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 
   Enable/disable dependencies caching. `True` by default.
 
-  *Note: this description has not been finished yet*.
-
   ```yaml
   cache: false
+  ```
+
+  <b>Directories caching:</b>
+
+  You can download some packages before running tests and install them. To get away from downloading the package each time you can cache directory where it is located. Then delete "wget" from your config file and just "make" or "dpkg" your package at each run of tests.  
+  
+  ```yaml
+  cache:
+    enabled: true
+    directories:
+    - ~/my_deps1
+    - /usr/local/my_deps2
+    - .....
   ```
 
 ### Language versions<a class="anchor" id="config-languages"></a>

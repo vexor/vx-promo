@@ -18,6 +18,7 @@ These versions of nodejs are available for testing
 * ``0.9.12``
 * ``0.10.32``
 * ``0.11.14``
+* ``4.0.0``
 
 To select the specific version for testing, a configuration key ``node_js`` is used
 
