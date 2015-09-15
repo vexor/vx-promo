@@ -32,6 +32,7 @@ These versions of __python__ are available
 * ``3.2.5``
 * ``3.3.3``
 * ``3.4.1``
+* ``3.5.0``
 * ``pypy-2.2.1``
 
 To select a specific version for testing, a ``python`` config key should be used:
