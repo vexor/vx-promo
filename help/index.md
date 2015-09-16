@@ -637,6 +637,7 @@ These versions of __python__ are available
 * ``3.2.5``
 * ``3.3.3``
 * ``3.4.1``
+* ``3.5.0``
 * ``pypy-2.2.1``
 
 To select a specific version for testing, a ``python`` config key should be used:
@@ -665,6 +666,7 @@ These versions of nodejs are available for testing
 * ``0.9.12``
 * ``0.10.32``
 * ``0.11.14``
+* ``4.0.0``
 
 To select the specific version for testing, a configuration key ``node_js`` is used
 
