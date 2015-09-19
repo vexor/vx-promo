@@ -4,6 +4,7 @@ en:
     pricing: Pricing
     help: Help
     blog: Blog
+    blog_link: https://medium.com/vexor-ci
     signin: Sign in
   header:
     slogan: Continuous Integration without waiting.<br />Pay for what you use.
