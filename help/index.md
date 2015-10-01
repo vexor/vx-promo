@@ -236,11 +236,11 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   script: bundle exec rspec
   ```
 
-#### chdir *string*<a class="anchor" id="config-chdir"></a>
-  Your project's working directory. By default it's set to your repo's root directory (which is `~/vexor_org_name/project_name`).
+#### workdir *string*<a class="anchor" id="config-chdir"></a>
+  Your project's working directory. By default it's set to your repo's root directory (which is `~/org_name/project_name`).
 
   ```yaml
-  chdir: ~
+  workdir: relative_dir
   ```
 
 #### timeout *int*<a class="anchor" id="config-timeout"></a>
@@ -268,8 +268,8 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
 
   <b>Directories caching:</b>
 
-  You can download some packages before running tests and install them. To get away from downloading the package each time you can cache directory where it is located. Then delete "wget" from your config file and just "make" or "dpkg" your package at each run of tests.  
-  
+  You can download some packages before running tests and install them. To get away from downloading the package each time you can cache directory where it is located. Then delete "wget" from your config file and just "make" or "dpkg" your package at each run of tests.
+
   ```yaml
   cache:
     enabled: true
