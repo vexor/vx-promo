@@ -53,15 +53,15 @@ en:
   reviews:
     header: Made by developers for developers
     bm:
-      text: "“We have >1000 tests and it takes only 4:30 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”"
+      text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
       person: Vlad Syabruk, Lead developer<br />Bookmate.com
 
     klops:
-      text: "“Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”"
+      text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
       person: Voldemar Duletskiy, CTO<br />Klops.ru
 
     uptopromo:
-      text: "“Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”"
+      text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
       person: Alexander Balashov, CTO<br />Uptopromo.com
 
     railsmob:
@@ -71,6 +71,10 @@ en:
     starttrack:
       text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
       person: Alexander Baryshnikov, CTO<br />Starttrack.ru
+
+    scalex:
+      text: “We have 6400 tests. And even when there are dozens of pull requests, by some miracle, Vexor does everything within 10 minutes and nothing breaks.“
+      person: Alexey Blinov, CTO<br /> Scalex
 
   footer:
     setup: Set up your continuous integration<br />in 18 seconds.
