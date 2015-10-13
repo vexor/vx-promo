@@ -247,7 +247,8 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   Job's maximum running time in seconds. Default is 1 hour.
 
   ```yaml
-  timeout: 1800
+  vexor:
+    timeout: 1800
   ```
 
 #### read_timeout *int*<a class="anchor" id="config-read-timeout"></a>
@@ -255,7 +256,8 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   If there wasn't any output within the read timeout (in seconds) a job will be shut down.
 
   ```yaml
-  read_timeout: 60
+  vexor:
+    read_timeout: 60
   ```
 
 #### cache <a class="anchor" id="config-cache"></a>
