@@ -433,7 +433,7 @@ Version 5.6 is preinstalled and run automatically. Use login `root` without a pa
 
 ### MongoDB
 
-Version 2.6.5 is preinstalled.
+Version 3.2 is preinstalled.
 
     services:
       - mongodb
@@ -444,25 +444,30 @@ Version 3.0.2 is preinstalled and run automatically
 
 ### Rabbitmq
 
-Version 3.3.4 is preinstalled; to run, issue:
+Version 3.6.1 is preinstalled; to run, issue:
 
     services:
       - rabbitmq
 
 ### Elasticsearch
 
-Version 1.2.1 is preinstalled; to run, issue:
+Version 1.5.2 is preinstalled; to run, issue:
 
     services:
       - elasticsearch
 
+You can use v2.1.1 also:
+
+    services:
+      - elasticsearch2
+
 ### PhantomJS
 
-Version 1.9.7 is preinstalled
+Version 2.1.1 is preinstalled
 
 ### SphinxSearch
 
-Version 2.2.5 is preinstalled
+Version 2.2.10 is preinstalled
 
 
 # Language guides<a class="anchor" id="language-guides"></a>
@@ -473,7 +478,7 @@ In order to start ruby tests, you only need to specify the language:
 
     language: ruby
 
-In this simplest case the ``1.9.3`` ruby version will be used and these commands will be run:
+In this simplest case the ``2.0.0`` ruby version will be used and these commands will be run:
 
     install: bundle install
     script: bundle exec rake
@@ -499,13 +504,30 @@ These versions of ruby are available for testing:
 * ``1.8.7-p375``
 * ``1.9.2-p320``
 * ``1.9.3-p550``
-* ``2.0.0-p594``
+* ``2.0.0-p645``
+* ``2.1.0``
 * ``2.1.1``
 * ``2.1.2``
 * ``2.1.3``
 * ``2.1.4``
-* ``jruby-1.7.16``
-* ``rbx-2.2.9``
+* ``2.1.5``
+* ``2.1.6``
+* ``2.1.7``
+* ``2.1.8``
+* ``2.1.9``
+* ``2.1.10``
+* ``2.2.0``
+* ``2.2.1``
+* ``2.2.2``
+* ``2.2.3``
+* ``2.2.4``
+* ``2.2.5``
+* ``2.3.0``
+* ``2.3.1``
+* ``jruby-1.7.19``
+* ``jruby-1.7.23``
+* ``jruby-9.0.0.0``
+* ``rbx-2.5.2``
 * ``head``, fresh repository version, rebuilt every week
 
 To select the required version, use ``rvm`` key:
@@ -634,13 +656,15 @@ In order to run tests for a __python__ project you need to specify the language:
 
 These versions of __python__ are available
 
-* ``2.7.8``
-* ``3.1.5``
-* ``3.2.5``
-* ``3.3.3``
-* ``3.4.1``
+* ``2.7.9``
+* ``2.7.10``
+* ``2.7.11``
+* ``3.2.6``
+* ``3.3.6``
+* ``3.4.3``
 * ``3.5.0``
-* ``pypy-2.2.1``
+* ``3.5.1``
+* ``pypy-2.5.0``
 
 To select a specific version for testing, a ``python`` config key should be used:
 
@@ -666,9 +690,30 @@ These versions of nodejs are available for testing
 
 * ``0.8.28``
 * ``0.9.12``
-* ``0.10.32``
-* ``0.11.14``
+* ``0.10.37``
+* ``0.10.40``
+* ``0.11.16``
+* ``0.12.0``
+* ``0.12.2``
 * ``4.0.0``
+* ``4.2.2``
+* ``4.2.3``
+* ``4.2.4``
+* ``4.2.5``
+* ``4.2.6``
+* ``4.4.2``
+* ``4.4.4``
+* ``5.1.0``
+* ``5.2.0``
+* ``5.3.0``
+* ``5.4.0``
+* ``5.4.1``
+* ``5.5.0``
+* ``5.10.1``
+* ``5.11.0``
+* ``5.11.1``
+* ``6.0.0``
+* ``6.1.0``
 
 To select the specific version for testing, a configuration key ``node_js`` is used
 
@@ -703,6 +748,10 @@ These versions of __go__ are available
 * ``1.3.3``
 * ``1.4.2``
 * ``1.5``
+* ``1.5.1``
+* ``1.5.2``
+* ``1.5.3``
+* ``1.6``
 
 To select a specific version for testing, a ``go`` config key should be used:
 
@@ -733,6 +782,12 @@ These versions of __rust__ are available for testing
 * ``0.12.0``
 * ``1.0.0``
 * ``1.2.0``
+* ``1.3.0``
+* ``1.4.0``
+* ``1.5.0``
+* ``1.6.0``
+* ``1.7.0``
+* ``1.8.0``
 
 To select the specific version for testing, a configuration key ``rust`` is used
 
