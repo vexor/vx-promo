@@ -25,13 +25,14 @@ ru:
       cheap:
         title: Дешево
         price: $0.015 в минуту
-        subscr: Никаких подписок, вы платите<br />только за реальное время тестов
+        subscr: Никаких подписок
+        pay: Оплата по мере использования
 
       easy:
         title: Простая настройка
         integration: Полная интеграция с <br />Github, Bitbucket и Gitlab
-        travis: Совместимость с .travis.yml
         setup: Настройка в один клик
+        docker: Поддержка Docker
 
   features:
     header: Особенности

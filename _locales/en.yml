@@ -26,13 +26,14 @@ en:
       cheap:
         title: Cheap
         price: $0.015 per minute
-        subscr: No subscription fee,<br />pay only for running your tests
+        subscr: No subscription fee
+        pay: Pay as you go
 
       easy:
         title: Easy setup
-        integration: Full Github, Bitbucket<br />and Gitlab integration
-        travis: Travis.yml compatibility
+        integration: Full Github, Bitbucke<br />and Gitlab integration
         setup: One-click setup
+        docker: Docker friendly
 
   features:
     header: Features
