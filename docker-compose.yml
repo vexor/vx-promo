@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  web:
+    image: ruby:alpine
+    working_dir: /app
+    command: tail -f /dev/null
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/app

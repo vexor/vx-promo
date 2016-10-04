@@ -2,6 +2,7 @@ name: Vexor
 url: https://vexor.io
 markdown: redcarpet
 highlighter: true
+host: 0.0.0.0
 
 exclude: [translate/, Rakefile, Gemfile, Gemfile.lock, vexor.yml]
 

@@ -7,7 +7,7 @@ en:
     blog_link: https://medium.com/vexor-ci
     signin: Sign in
   header:
-    slogan: Continuous Integration without waiting.<br />Pay for what you use.
+    slogan: Unlimited parallelism.<br />No more pending and queues of builds.<br />Per minutes payment. Pay as you go.
     sign_up:
       github: Sign up with GitHub
       bitbucket: Sign up with BitBucket
