@@ -1,7 +1,12 @@
 language: ruby
 
+install:
+  - sudo pip install awscli
+
 script:
   - LOCALE=en bundle exec rake build
-  - tar -C _site -cf - . | ssh assets-bot@vexor-bot-eu0.cloudapp.net push www.vexor.io
+  # - tar -C _site -cf - . | ssh assets-bot@vexor-bot-eu0.cloudapp.net push www.vexor.io
+  - aws s3 sync _site/ s3://assets-eu1-vexor-io/www.vexor.io --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
   - LOCALE=ru bundle exec rake build
-  - tar -C _site -cf - . | ssh assets-bot@vexor-bot-eu0.cloudapp.net push www.vexor.ru
+  - aws s3 sync _site/ s3://assets-eu1-vexor-io/www.vexor.ru --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+  # - tar -C _site -cf - . | ssh assets-bot@vexor-bot-eu0.cloudapp.net push www.vexor.ru
