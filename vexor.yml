@@ -1,5 +1,4 @@
 language: ruby
-ruby: 2.3
 
 install:
   - sudo pip install awscli
