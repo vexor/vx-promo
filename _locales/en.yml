@@ -41,6 +41,7 @@ en:
     matrices: Parallelize your tests with building matrices
     notifications: Pull request and commit notifications
     travis: Travis.yml compatibility
+    docker: Docker integration
     cache: Dependency caching
     deploy: Deploy automatically if your<br />tests complete successfully
 
