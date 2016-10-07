@@ -162,6 +162,12 @@ body .landing .landing-block-header .main-image {
   }
 }
 
+body .landing .landing-block-header {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+}
+
 body .landing .landing-block-header .title{
   margin-top: 20px;
   font-size: 3.5em;

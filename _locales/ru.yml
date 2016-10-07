@@ -8,6 +8,7 @@ ru:
     blog_link: https://medium.com/vexor-ci-russian
     signin: Войти
   header:
+    title: Cloud Continuous Integration service.
     slogan: Continuous Integration без очередей.<br />С поминутной оплатой.
     sign_up:
       github: Войти через GitHub

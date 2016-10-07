@@ -8,7 +8,8 @@ en:
     blog_link: https://medium.com/vexor-ci
     signin: Sign in
   header:
-    slogan: Unlimited parallelism.<br />No more pending and queues of builds.<br />Per minutes payment. Pay as you go.
+    title: Cloud Continuous Integration service.
+    slogan: Unlimited parallelism. No more pending and queues of builds.<br />Per minutes payment. Pay as you go.
     sign_up:
       github: Sign up with GitHub
       bitbucket: Sign up with BitBucket
