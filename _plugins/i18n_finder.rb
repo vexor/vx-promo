@@ -21,6 +21,10 @@ module Jekyll
         I18n.locale = LOCALE
       end
     end
+
+    def current_language(_name)
+      I18n.locale
+    end
   end
 end
 
