@@ -1,6 +1,10 @@
 ---
 layout: help
 title: Configuration
+sitemap:
+  priority: 0.7
+  changefreq: monthly
+  lastmod: 2016-11-14T13:45:20+03:00
 ---
 
 # Getting started with Vexor

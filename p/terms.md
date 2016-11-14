@@ -2,6 +2,10 @@
 layout: promo_page
 title: Continuous integration in the cloud.
 js: landing
+sitemap:
+  priority: 0.7
+  changefreq: never
+  lastmod: 2014-11-14T13:45:20+03:00
 ---
 
 Terms and conditions
