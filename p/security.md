@@ -1,6 +1,7 @@
 ---
 layout: promo_page
 title: Security
+description_key: security
 js: landing
 sitemap:
   priority: 0.7

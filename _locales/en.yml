@@ -17,6 +17,12 @@ en:
 
   description:
     slogan: Fast, Cheap and Easy – you can easily have all three
+    pages:
+      promo: Unlimited parallelism. No more pending and queues of builds. Per minutes payment. Pay as you go.
+      privacy: Privacy. General information.
+      security: "We know your code is extremely important to you and your business, and we're very protective of it."
+      terms: Terms and conditions
+      help: How to configure Vexor
 
     blocks:
       fast:

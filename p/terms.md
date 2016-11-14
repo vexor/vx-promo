@@ -1,6 +1,7 @@
 ---
 layout: promo_page
 title: Terms and conditions
+description_key: terms
 js: landing
 sitemap:
   priority: 0.7

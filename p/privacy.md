@@ -1,6 +1,7 @@
 ---
 layout: promo_page
 title: Privacy
+description_key: privacy
 js: landing
 sitemap:
   priority: 0.7

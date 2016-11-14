@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: How To Deploy Rails Applications Using Ansible And Mina
+description_key: deploy_rails
 ---
 
 A lot of people face problems when they install a rails application server
