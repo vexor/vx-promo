@@ -1,6 +1,6 @@
 ---
 layout: promo_page
-title: Continuous integration in the cloud.
+title: Privacy
 js: landing
 sitemap:
   priority: 0.7

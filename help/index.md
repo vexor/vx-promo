@@ -503,7 +503,7 @@ a matrix will be created:
     - Gemfile.pg
     - Gemfile.mysql
 
-These versions of ruby are available for testing:
+<p id="vexor-yml-language-versions">These versions of ruby are available for testing:</p>
 
 * ``1.8.7-p375``
 * ``1.9.2-p320``

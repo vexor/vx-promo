@@ -1,6 +1,6 @@
 ---
 layout: promo_page
-title: Continuous integration in the cloud.
+title: Terms and conditions
 js: landing
 sitemap:
   priority: 0.7
@@ -168,7 +168,7 @@ the new terms, please stop using the Service.
 
 __Contact us__
 
-If you have any questions about these Terms, please contact us: [support@vexor.io](mailto@support@vexor.io).
+If you have any questions about these Terms, please contact us: [support@vexor.io](mailto:support@vexor.io).
 
 Company name: Vexor.io LLC
 
