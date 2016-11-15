@@ -8,6 +8,7 @@ ru:
     blog: Блог
     blog_link: https://medium.com/vexor-ci-russian
     signin: Войти
+    not_found: Страница не найдена
   header:
     title: Cloud Continuous Integration service.
     slogan: Continuous Integration без очередей.<br />С поминутной оплатой.
@@ -16,6 +17,12 @@ ru:
       bitbucket: Войти через BitBucket
 
   description:
+    pages:
+      promo: Неограниченный параллелизм. Нет задержек и очередей в ожидании билда. Поминутная оплата. Плати как сможешь.
+      privacy: Конфиденциальность и правовая информация.
+      security: "Мы знаем, что ваш код является чрезвычайно важным для вас и вашего бизнеса"
+      terms: Общие условия 
+      help: Помощь в конфигурировании Vexor
     slogan: Быстро, дешево, просто – вы получаете все три
     blocks:
       fast:

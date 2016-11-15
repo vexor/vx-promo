@@ -8,6 +8,7 @@ en:
     blog: Blog
     blog_link: https://medium.com/vexor-ci
     signin: Sign in
+    not_found: Page not found
   header:
     title: Cloud Continuous Integration service.
     slogan: Unlimited parallelism. No more pending and queues of builds.<br />Per minutes payment. Pay as you go.
