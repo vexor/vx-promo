@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILES=$(find ./images -type f -name '*.png')
+
+for file in $FILES
+do
+    $(pngcrush -rem gAMA -rem alla -rem text $file $file-new)
+    $(mv $file-new $file)
+done
