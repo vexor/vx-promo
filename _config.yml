@@ -34,3 +34,6 @@ defaults:
       type: "pages"
     values:
       js: false
+
+jekyll-press:
+  exclude: 'sitemap.xml'
