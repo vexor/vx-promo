@@ -40,7 +40,7 @@ en:
 
       easy:
         title: Easy setup
-        integration: Full Github, Bitbucke<br />and Gitlab integration
+        integration: Full Github, Bitbucket<br />and Gitlab integration
         setup: One-click setup
         docker: Docker friendly
 
