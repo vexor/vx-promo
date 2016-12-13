@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    image: ruby:alpine
+    image: ruby:2.3.1-alpine
     working_dir: /app
     command: tail -f /dev/null
     ports:
