@@ -37,3 +37,6 @@ defaults:
 
 jekyll-press:
   exclude: 'sitemap.xml'
+
+sass:
+  sass_dir: _sass
