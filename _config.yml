@@ -39,4 +39,8 @@ jekyll-press:
   exclude: 'sitemap.xml'
 
 sass:
+  style: :compressed
   sass_dir: _sass
+
+gems:
+  - jekyll-bootstrap-sass
