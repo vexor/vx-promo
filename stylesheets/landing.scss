@@ -613,8 +613,12 @@ body {
 
 .landing .landing-block-footer .sign-up {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 150px;
+
+  .sign-in-link {
+    margin: 0 25px;
+  }
 
   @include mobile {
     flex-direction: column;
