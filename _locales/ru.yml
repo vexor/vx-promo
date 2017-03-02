@@ -88,7 +88,7 @@ ru:
       person: Алексей Блинов, CTO<br/> Scalex
 
   footer:
-    setup: Настройте continuous integration<br>за 18 секунд.
+    setup: Настройте continuous integration.
     signup: Зарегистрируйтесь на Vexor сегодня.
     try: Попробовать сейчас!
     copyright: © 2014–2017, VEXOR. Все права защищены. Проект <a href='http://evrone.ru/'>Evrone</a>.
