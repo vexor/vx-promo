@@ -1,3 +1,5 @@
+@import "mixins.scss";
+
 .sidebar {
   position: fixed;
   overflow-y: scroll;
@@ -72,14 +74,16 @@ ul.nav-sidebar ul.nav-sidebar ul.nav-sidebar a {
   font-weight: 300;
 }
 
-.logos {
-  margin-top: 60px;
-  margin-bottom: 40px;
-}
+/*.logos {*/
+  /*margin-top: 60px;*/
+  /*margin-bottom: 40px;*/
+/*}*/
 
-.logos img {
-  width: 60px;
-}
+/*.logos img {*/
+  /*width: 60px;*/
+  /*margin: 10px 30px;*/
+/*}*/
+
 
 .content-block-footer {
   background-color: #10a3e7;

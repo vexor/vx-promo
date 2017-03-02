@@ -68,28 +68,28 @@ en:
       text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
       person: Vlad Syabruk, Lead developer<br />Bookmate.com
 
-    klops:
-      text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
-      person: Voldemar Duletskiy, CTO<br />Klops.ru
+#    klops:
+#      text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
+#      person: Voldemar Duletskiy, CTO<br />Klops.ru
 
     uptopromo:
       text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
       person: Alexander Balashov, CTO<br />Uptopromo.com
 
-    railsmob:
-      text: “We are a small team of developers chose Vexor for optimal pricing – pay only for the processing time, the speed test is very good for us”
-      person: Ivan Zotov, CEO<br />Railsmob
+#    railsmob:
+#      text: “We are a small team of developers chose Vexor for optimal pricing – pay only for the processing time, the speed test is very good for us”
+#      person: Ivan Zotov, CEO<br />Railsmob
 
-    starttrack:
-      text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
-      person: Alexander Baryshnikov, CTO<br />Starttrack.ru
+#    starttrack:
+#      text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
+#      person: Alexander Baryshnikov, CTO<br />Starttrack.ru
 
     scalex:
       text: “We have 6400 tests. And even when there are dozens of pull requests, by some miracle, Vexor does everything within 10 minutes and nothing breaks.“
       person: Alexey Blinov, CTO<br /> Scalex
 
   footer:
-    setup: Set up your continuous integration<br />in 18 seconds.
+    setup: Set up your continuous integration.
     signup: Sign up for VEXOR today.
     try: Try now
     copyright: © 2014–2017, VEXOR. All rights reserved. Powered by <a href="http://evrone.com" target="_blank">Evrone</a>.

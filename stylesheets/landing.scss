@@ -9,6 +9,20 @@ body {
   /* color: rgba(255,255,255,0.95) */
 }
 
+.logos {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.logos img {
+  width: 60px;
+  margin: 10px 30px;
+
+  @include mobile {
+    margin: 10px 10px;
+  }
+}
+
 .btn {
     padding: 15px 50px;
     border-radius: 10px;
@@ -598,7 +612,18 @@ body {
 }
 
 .landing .landing-block-footer .sign-up {
+  display: flex;
+  justify-content: space-around;
   margin-bottom: 150px;
+
+  @include mobile {
+    flex-direction: column;
+    margin-bottom: 85px;
+
+    .sign-in-link {
+      margin: 10px 0;
+    }
+  }
 }
 
 .landing .landing-block-footer .logo {
