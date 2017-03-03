@@ -29,19 +29,19 @@ en:
       fast:
         title: Fast
         workers: Unlimited workers
-        parallel: Easily parallelize your test suite
-        specs: 2 CPU cores, 4 GB of RAM<br />and SSD for each worker
+        parallel: Easily parallelize<br />your test suite
+#        specs: 2 CPU cores, 4 GB of RAM<br />and SSD for each worker
 
       cheap:
         title: Cheap
         price: $0.015 per minute
         subscr: No subscription fee
-        pay: Pay as you go
+#        pay: Pay as you go
 
       easy:
         title: Easy setup
         integration: Full Github, Bitbucket<br />and Gitlab integration
-        setup: One-click setup
+#        setup: One-click setup
         docker: Docker friendly
 
   features:
