@@ -36,8 +36,8 @@ about you is transferred and becomes subject to a different privacy policy.
 __Information gathering and usage__
 
 When you register for Vexor we ask for information such as your name, email
-address, billing address, credit card information. Members who sign up for the
-free account are not required to enter a credit card.
+address, billing address, credit card information. After binding a credit card,
+the amount of 1$ is holded to check the creditworthiness of the card. Member receives 5$ as a bonus after binding the first credit card.
 
 Vexor uses collected information for the following general purposes: products
 and services provision, billing, identification and authentication, services
