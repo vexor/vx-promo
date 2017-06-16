@@ -1,0 +1,17 @@
+.base {
+  width: 920px;
+  margin: 0 auto;
+  @include clearfix;
+
+  @include medium-width-media {
+    width: 1160px;
+  }
+
+  @include large-width-media {
+    width: 1520px;
+  }
+}
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/slides";

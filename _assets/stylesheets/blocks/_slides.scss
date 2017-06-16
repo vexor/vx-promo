@@ -1,0 +1,15 @@
+.slides {
+  @include size(100%);
+}
+
+.slide {
+  position: relative;
+  @include size(100%);
+  overflow: hidden;
+}
+
+@import "slides/first";
+@import "slides/features";
+@import "slides/configuration";
+@import "slides/reviews";
+@import "slides/last";

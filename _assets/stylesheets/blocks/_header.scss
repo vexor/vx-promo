@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+
+  &__inner {
+    height: 100px;
+    padding-top: 40px;
+
+    svg {
+      float: left;
+      height: 30px;
+    }
+
+    nav {
+      float: right;
+
+      a {
+        height: 20px;
+        font-size: 20px;
+        line-height: 1.0;
+        margin-left: 100px;
+        color: white;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @include medium-width-media {
+      nav a {
+        margin-left: 160px;
+      }
+    }
+
+    @include large-width-media {
+      nav a {
+        margin-left: 250px;
+      }
+    }
+  }
+}

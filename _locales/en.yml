@@ -1,20 +1,44 @@
 en:
-  nav:
-    url: https://vexor.io
-    about: About
-    features: Features
-    pricing: Pricing
-    help: Help
-    blog: Blog
-    blog_link: https://medium.com/vexor-ci
-    signin: Sign in
-    not_found: Page not found
   header:
-    title: Cloud Continuous Integration service.
-    slogan: Unlimited parallelism. No more pending and queues of builds.<br />Per minutes payment. Pay as you go.
-    sign_up:
-      github: GitHub
-      bitbucket: BitBucket
+    base_url: https://vexor.io
+    not_found: Page not found
+    nav:
+      blog: Blog
+      documentation: Documentation
+      sign_up: Sign up
+
+  get_started:
+    caption: "Get started with:"
+    github: GitHub
+    bitbucket: BitBucket
+    gitlab: GitLab
+
+  sections:
+    first:
+      title: Unlımıted parallelısm of buılds.
+      subtitle: No pending. No queues.
+      more: More
+
+    second:
+      slides:
+        fast_and_easy:
+          title: Fast & easy
+          caption: Integrate and setup your GitHub, BitBucket or Gitlab projects.
+        asm_asn:
+          title: As mutch as needs
+          caption: Vexor can run unlimited number of parallel builds because it works in the cloud.
+
+    third:
+      title: Pay only for you use
+      subtitle: Just $0.015 per minute.
+      btn-caption: Get $5 to test Vexor
+
+    fourth:
+      titile: Join our customers
+
+    last:
+      title: Set up the&nbsp;rıght contınuous ıntegratıon!
+      subtitle: "Sign up for VEXOR today:"
 
   description:
     slogan: Fast, Cheap and Easy – you can easily have all three
@@ -89,11 +113,10 @@ en:
       person: Alexey Blinov, CTO<br /> Scalex
 
   footer:
-    setup: Set up your continuous integration.
-    signup: Sign up for VEXOR today.
-    try: Try now
-    copyright: © 2014–2017, VEXOR. All rights reserved. Powered by <a href="http://evrone.com" target="_blank">Evrone</a>.
-    terms: Terms
-    security: Security
-    privacy: Privacy
-    contacts: Contact us
+    copyright: © 2014–2017, VEXOR. All rights reserved.
+    powered_by: Powered by <a href="http://evrone.com" target="_blank" class="underlined white">Evrone</a>.
+    menu:
+      terms: Terms
+      security: Security
+      privacy: Privacy
+      contacts: Contacts

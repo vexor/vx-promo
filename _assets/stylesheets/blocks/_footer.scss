@@ -1,0 +1,135 @@
+.footer {
+  position: fixed;
+  bottom: -$footer-height-sm;
+  left: 0;
+  width: 100%;
+  height: $footer-height-sm;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+
+  &__inner {
+    position: relative;
+    height: 100%;
+  }
+
+  &__copyright, &__powered, &__menu, &__payment {
+    position: absolute;
+  }
+
+  &__copyright, &__powered, &__menu {
+    left: 240px;
+  }
+
+  &__copyright, &__powered {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.4px;
+  }
+
+  &__menu {
+    top: 27px;
+    @include clearfix;
+
+    li {
+      float: left;
+      margin-right: 20px;
+      line-height: 1.25;
+
+      a {
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__copyright {
+    bottom: 49px;
+  }
+
+  &__powered {
+    bottom: 27px;
+    line-height: 1.25;
+
+    a {
+      margin-left: 3px;
+      text-transform: lowercase;
+      font-size: 16px;
+      @include opacity(100);
+    }
+  }
+
+  &__payment {
+    bottom: 35px;
+    right: 0;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+
+      img {
+        display: block;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.visible {
+    bottom: 0;
+    @include transition(bottom 0.28s ease);
+  }
+
+  @include medium-width-media {
+    bottom: -$footer-height-md;
+    height: $footer-height-md;
+
+    &__inner {
+      padding-top: 43px;
+    }
+
+    &__copyright, &__powered, &__menu, &__payment {
+      position: static;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__menu {
+      margin: 0 120px 0 65px;
+    }
+
+    &__powered {
+      margin-left: 40px;
+    }
+  }
+
+  @include large-width-media {
+    bottom: -$footer-height-lg;
+    height: $footer-height-lg;
+
+    &__inner {
+      padding-top: 62px;
+    }
+
+    &__copyright, &__powered, &__menu, &__payment {
+      position: static;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__menu {
+      margin: 0 390px 0 155px;
+    }
+
+    &__powered {
+      margin-left: 40px;
+    }
+  }
+}

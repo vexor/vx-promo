@@ -38,9 +38,18 @@ defaults:
 jekyll-press:
   exclude: 'sitemap.xml'
 
-sass:
-  style: :compressed
-  sass_dir: _sass
-
 gems:
   - jekyll-bootstrap-sass
+
+assets:
+  autowrite: true
+  cdn: https://cdn.example.com
+  skip_baseurl_with_cdn: false
+  skip_prefix_with_cdn: false
+  prefix: "/assets"
+  assets:
+    - "*.png"
+  sources:
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images

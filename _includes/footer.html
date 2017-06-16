@@ -1,0 +1,41 @@
+<footer class="footer">
+
+  <div class="footer__inner base">
+
+    <div class="footer__copyright">
+      {{ 'footer.copyright' | t }}
+    </div>
+
+    <ul class="footer__menu">
+      <li>
+        <a href="#" class="underlined white">{{ 'footer.menu.terms' | t }}</a>
+      </li>
+
+      <li>
+        <a href="#" class="underlined white">{{ 'footer.menu.security' | t }}</a>
+      </li>
+
+      <li>
+        <a href="#" class="underlined white">{{ 'footer.menu.privacy' | t }}</a>
+      </li>
+
+      <li>
+        <a href="#" class="underlined white">{{ 'footer.menu.contacts' | t }}</a>
+      </li>
+    </ul>
+
+    <div class="footer__payment">
+      <a href="#">{% image 'interface/footer/visa.png' %}</a>
+      <a href="#">{% image 'interface/footer/verifiedby_visa.png' %}</a>
+      <a href="#">{% image 'interface/footer/mastercard.png' %}</a>
+      <a href="#">{% image 'interface/footer/master_card_secure.png' %}</a>
+      <a href="#">{% image 'interface/footer/cloud_payments.png' %}</a>
+    </div>
+
+    <div class="footer__powered">
+      {{ 'footer.powered_by' | t }}
+    </div>
+
+  </div>
+
+</footer>

@@ -1,0 +1,145 @@
+.first-slide {
+  color: white;
+  background-color: $blue-pigment;
+  z-index: 0;
+
+  &__inner {
+    position: relative;
+    height: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      right: 0;
+      top: 140px;
+      width: 440px;
+      height: 498px;
+      background-image: asset_url('interface/slides/first/3-d.png');
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: contain;
+    }
+  }
+
+  h1, &__get-started, &__more, &__page-title {
+    position: absolute;
+    line-height: 1.0;
+  }
+
+  h1, &__get-started, &__page-title {
+    left: 240px;
+  }
+
+  &__get-started, &__more {
+    bottom: 50px;
+  }
+
+  h1 {
+    width: 535px;
+    top: 50%;
+    margin: -143px 0 0;
+    font-size: 114px;
+    font-weight: 800;
+    line-height: 0.7;
+    letter-spacing: -1px;
+
+    span {
+      display: block;
+      margin-top: 60px;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.11;
+    }
+  }
+
+  &__get-started {
+
+    ul {
+      margin-top: 20px;
+      @include clearfix;
+
+      li {
+        position: relative;
+        float: left;
+        padding: 0 40px;
+
+        &:after {
+          content: "/";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        &:first-of-type {
+          padding-left: 0;
+        }
+
+        &:last-of-type {
+          padding-right: 0;
+
+          &:after { display: none; }
+        }
+      }
+    }
+  }
+
+  &__page-title {
+    width: 100px;
+    top: 40px;
+  }
+
+  &__more {
+    left: 0;
+
+    a {
+      border-bottom-color: transparent;
+    }
+  }
+
+  @include medium-width-media {
+    &__inner:before {
+      top: 80px;
+      width: 564px;
+      height: 638px;
+      background-image: asset_url('interface/slides/first/3-d@2x.png');
+    }
+
+    h1, &__get-started, &__page-title {
+      left: 300px;
+    }
+  }
+
+  @include large-width-media {
+    h1, &__get-started, &__page-title {
+      left: 390px;
+    }
+  }
+
+  @include large-height-media {
+    &__inner:before {
+      top: 120px;
+      width: 740px;
+      height: 837px;
+      background-image: asset_url('interface/slides/first/3-d@3x.png');
+    }
+
+    h1 {
+      width: 740px;
+      font-size: 144px;
+      margin-top: -200px;
+
+      span {
+        margin-top: 80px;
+        font-size: 48px;
+        line-height: 0.83;
+        letter-spacing: -1.3px;
+      }
+    }
+
+    &__get-started, &__more {
+      bottom: 40px;
+    }
+  }
+}

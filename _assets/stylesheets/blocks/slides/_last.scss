@@ -1,0 +1,135 @@
+.last-slide {
+  color: white;
+  background-color: $blue-pigment;
+  z-index: 0;
+
+  &__inner {
+    position: relative;
+    height: calc(100vh - #{$footer-height-sm});
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      left: 240px;
+      top: 0;
+      width: 440px;
+      height: 196px;
+      background-image: asset_url('interface/slides/last/3-d-turned.png');
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: contain;
+    }
+  }
+
+  h2, &__sign-up {
+    position: absolute;
+    left: 240px;
+  }
+
+  h2 {
+    width: 397px;
+    top: 50%;
+    margin: -180px 0 0;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 0.75;
+    letter-spacing: -0.9px;
+
+    span {
+      display: block;
+      margin-top: 30px;
+      font-size: 30px;
+      font-weight: normal;
+      line-height: 1.33;
+      letter-spacing: -0.8px;
+    }
+  }
+
+  &__sign-up {
+    bottom: 90px;
+    @include clearfix;
+
+    button {
+      float: left;
+      width: 120px;
+      margin-right: 40px;
+      font-size: 19px;
+    }
+  }
+
+  @include medium-width-media {
+    &__inner {
+      height: calc(100vh - #{$footer-height-md});
+
+      &:before {
+        left: 260px;
+        width: 630px;
+        height: 282px;
+        background-image: asset_url('interface/slides/last/3-d-turned@2x.png');
+      }
+    }
+
+    h2, &__sign-up {
+      left: 300px;
+    }
+
+    h2 {
+      margin-top: -155px;
+    }
+
+    &__sign-up {
+      bottom: 80px;
+
+      button {
+        width: 160px;
+      }
+    }
+  }
+
+  @include large-width-media {
+    &__inner:before {
+      left: 350px;
+    }
+
+    h2, &__sign-up {
+      left: 390px;
+    }
+  }
+
+  @include large-height-media {
+    &__inner {
+      height: calc(100vh - #{$footer-height-lg});
+
+      &:before {
+        width: 830px;
+        height: 372px;
+        background-image: asset_url('interface/slides/last/3-d-turned@3x.png');
+      }
+    }
+
+    h2 {
+      width: 640px;
+      margin-top: -185px;
+      font-size: 100px;
+      line-height: 0.8;
+      letter-spacing: -1.2px;
+
+      span {
+        margin-top: 40px;
+        font-size: 48px;
+        line-height: 0.83;
+        letter-spacing: -1.3px;
+      }
+    }
+
+    &__sign-up {
+      bottom: 130px;
+
+      button {
+        width: 220px;
+        height: 60px;
+      }
+    }
+  }
+}
