@@ -23,9 +23,13 @@ body {
 
 a {
   text-decoration: none;
+  @include transition(color 0.2s ease, border-bottom-color 0.2s ease);
 
   &.underlined {
-    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+
+    &:hover {
+      border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+    }
   }
 
   &.white {

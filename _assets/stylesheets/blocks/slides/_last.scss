@@ -89,7 +89,7 @@
 
   @include large-width-media {
     &__inner:before {
-      left: 350px;
+      left: 340px;
     }
 
     h2, &__sign-up {
@@ -102,8 +102,8 @@
       height: calc(100vh - #{$footer-height-lg});
 
       &:before {
-        width: 830px;
-        height: 372px;
+        width: 840px;
+        height: 382px;
         background-image: asset_url('interface/slides/last/3-d-turned@3x.png');
       }
     }

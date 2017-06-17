@@ -1,17 +1,18 @@
 function initPageScroll(){
+
     // TODO: add condition for mobile/tablet?
+
     $("#slides").onepage_scroll({
-        sectionContainer: "section",
+        sectionContainer: "section.slide",
         animationTime: 500,
         loop: false,
         pagination: false,
         keyboard: false,
 
         beforeMove: function(index) {
-            if ($('.last-slide').hasClass('active'))
-                setTimeout(function() { $('footer').addClass('visible'); }, 240 );
-            else
-                $('footer').removeClass('visible');
+            classToggler('.last-slide', 'footer', 'visible', 240);
+            classToggler('.first-slide, .last-slide', 'header', 'white', 200);
         }
     });
+
 }

@@ -1,4 +1,11 @@
 ru:
+  currency:
+    name: Рубль
+    sign: "₽"
+
+  time:
+    minutes: мин.
+
   nav:
     url: https://vexor.ru
     about: О нас

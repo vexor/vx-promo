@@ -1,4 +1,11 @@
 en:
+  currency:
+    name: Dollar
+    sign: "$"
+
+  time:
+    minutes: min
+
   header:
     base_url: https://vexor.io
     not_found: Page not found
@@ -19,19 +26,23 @@ en:
       subtitle: No pending. No queues.
       more: More
 
-    second:
-      slides:
-        fast_and_easy:
-          title: Fast & easy
-          caption: Integrate and setup your GitHub, BitBucket or Gitlab projects.
-        asm_asn:
-          title: As mutch as needs
-          caption: Vexor can run unlimited number of parallel builds because it works in the cloud.
+    features:
+      fast_and_easy:
+        title: Fast &<br>easy
+        caption: Integrate and setup your GitHub, BitBucket or Gitlab projects.
+        btn-text: Try it!
+      asm_asn:
+        title: As mutch<br>as needs
+        caption: Vexor can run unlimited number of parallel builds because it works in the cloud.
 
-    third:
-      title: Pay only for you use
-      subtitle: Just $0.015 per minute.
-      btn-caption: Get $5 to test Vexor
+    configuration:
+      title: Pay only<br>for you<br>use
+      caption: Just $0.015 per minute.
+      btn-text: Get $5 to test Vexor
+      calculator:
+        commits: Commits
+        build_duration: Build duration
+        cost_per: Cost per <span class="active">Day</span> / <span>Month</span>
 
     fourth:
       titile: Join our customers

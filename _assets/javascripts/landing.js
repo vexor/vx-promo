@@ -1,5 +1,6 @@
 //= require_directory ./libs
 //= require auth
+//= require classToggler
 //= require pageScroll
 
 $(function() {

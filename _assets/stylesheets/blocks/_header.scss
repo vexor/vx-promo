@@ -12,6 +12,11 @@
     svg {
       float: left;
       height: 30px;
+
+      path {
+        fill: $blue-pigment;
+        @include transition(fill 0.2s ease);
+      }
     }
 
     nav {
@@ -22,7 +27,11 @@
         font-size: 20px;
         line-height: 1.0;
         margin-left: 100px;
-        color: white;
+        color: $blue-pigment;
+
+        &:hover {
+          border-bottom-color: $blue-pigment;
+        }
 
         &:first-of-type {
           margin-left: 0;
@@ -41,5 +50,12 @@
         margin-left: 250px;
       }
     }
+  }
+
+  &.white {
+
+    svg path { fill: white; }
+
+    nav a { color: white; }
   }
 }

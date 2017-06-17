@@ -1,0 +1,124 @@
+.features-slide {
+  background-color: white;
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+    @include size(100%);
+
+    &__info, &__screenshot {
+      @include abs-vert-cent-block(330px);
+      width: 440px;
+    }
+
+    &__info {
+      left: 0;
+      padding-top: 10px;
+
+      strong {
+        color: $blue-pigment;
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 0.75;
+        letter-spacing: -1px;
+      }
+
+      p {
+        margin: 30px 0 40px;
+        font-size: 30px;
+        line-height: 1.33;
+      }
+
+      button {
+        width: 160px;
+      }
+    }
+
+    &__screenshot {
+      right: 0;
+      background-size: cover;
+      @include box-shadow(0 40px 80px 10px rgba(51, 51, 153, 0.1));
+    }
+
+    &[data-item="fae"] {
+      .features-slide__item__screenshot {
+        background: asset_url('pictures/features/fast-and-easy.png') no-repeat right top;
+        background-size: cover;
+      }
+    }
+
+    &[data-item="asm_asn"] {
+      display: none; // #TODO: tmp
+
+      .features-slide__item__screenshot {
+        background: asset_url('pictures/features/asm_asn.png') no-repeat right top;
+        background-size: cover;
+      }
+    }
+  }
+
+  @include medium-width-media {
+    &__item {
+
+      &__info, &__screenshot {
+        width: 560px;
+        height: 420px;
+        margin-top: -210px;
+      }
+
+      &__info {
+        padding-top: 60px;
+      }
+    }
+  }
+
+  @include large-width-media {
+    &__item {
+
+      &__info, &__screenshot {
+        width: 740px;
+        height: 555px;
+        margin-top: -277.5px;
+      }
+
+      &__info {
+        padding-top: 80px;
+
+        strong {
+          font-size: 100px;
+          line-height: 0.8;
+        }
+
+        p {
+          margin: 40px 0 60px;
+        }
+
+        button {
+          width: 220px;
+          height: 60px;
+        }
+      }
+
+      &[data-item="fae"] {
+        .features-slide__item__screenshot {
+          background: asset_url('pictures/features/fast-and-easy@2x.png') no-repeat right top;
+          background-size: cover;
+        }
+      }
+
+      &[data-item="asm_asn"] {
+        .features-slide__item__screenshot {
+          background: asset_url('pictures/features/asm_asn@2x.png') no-repeat right top;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  @include large-height-media {
+
+  }
+}
