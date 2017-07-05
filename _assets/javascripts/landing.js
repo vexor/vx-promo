@@ -1,12 +1,12 @@
 //= require_directory ./libs
-//= require auth
-//= require classToggler
-//= require pageScroll
+//= require_directory ./funcs
 
 $(function() {
+    prepareAuth();
+
     initPageScroll();
 
-    prepareAuth();
+    initReviewsSlider();
 
     $(window).on('resize', initPageScroll);
 

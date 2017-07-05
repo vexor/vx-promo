@@ -1,0 +1,178 @@
+.customers-slide {
+  z-index: 0;
+
+  &__inner {
+    height: calc(100vh - #{$customers-height-sm-md});
+    padding-top: 120px;
+
+    & > strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.33;
+      text-align: center;
+      font-weight: normal;
+    }
+  }
+
+  &__reviews {
+
+    &__item {
+      width: 920px;
+      height: 440px;
+      padding-top: 70px;
+
+      &__inner {
+        position: relative;
+        @include size(600px 300px);
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        background-color: white;
+        @include border-radius(5px);
+        box-shadow: 0 40px 60px 0 rgba(51, 51, 153, 0.1), 0 30px 40px 0 rgba(51, 51, 153, 0.1);
+        text-align: center;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          @include size(80px);
+          top: -40px;
+          left: 50%;
+          margin-left: -40px;
+          @include border-radius(50%);
+          background-repeat: no-repeat;
+          background-position: left top;
+          background-size: cover;
+        }
+
+        & > div {
+          color: $blue-pigment;
+          font-size: 16px;
+          line-height: 1.25;
+
+          span {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 1.0;
+          }
+        }
+
+        p {
+          margin-top: 20px;
+          line-height: 1.5;
+        }
+      }
+
+      &[data-review="bookmate"] {
+        .customers-slide__reviews__item__inner:before {
+          background-image: asset_url('pictures/reviews/bm_avatar.jpg');
+        }
+      }
+
+      &[data-review="uptopromo"] {
+        .customers-slide__reviews__item__inner:before {
+          background-image: asset_url('pictures/reviews/up_avatar.jpg');
+        }
+      }
+
+      &[data-review="scalex"] {
+        .customers-slide__reviews__item__inner:before {
+          background-image: asset_url('pictures/reviews/sx_avatar.jpg');
+        }
+      }
+
+      &[data-review="railsmob"] {
+        .customers-slide__reviews__item__inner:before {
+          background-image: asset_url('pictures/reviews/rb_avatar.jpg');
+        }
+      }
+    }
+  }
+
+  &__logos {
+    height: $customers-height-sm-md;
+    padding: 43.5px 0;
+    background-color: rgba(51, 51, 153, 0.05);
+
+    a {
+      float: left;
+      @include size(120px 23px);
+      margin-left: 40px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+
+      &[data-image="bookmate"] {
+        margin-left: 0;
+        background-color: $dark-blue-gray; // TODO: tmp
+        //background-image: asset_url('interface/slides/customers/customers/bookmate.png') no-repeat center center;
+      }
+
+      &[data-image="meduza"] {
+        background-image: asset_url('interface/slides/customers/logos/meduza.png');
+      }
+
+      &[data-image="insales"] {
+        background-image: asset_url('interface/slides/customers/logos/insales.png');
+      }
+
+      &[data-image="uptopromo"] {
+        background-image: asset_url('interface/slides/customers/logos/uptopromo.png');
+      }
+
+      &[data-image="brandymint"] {
+        background-image: asset_url('interface/slides/customers/logos/brandymint.png');
+      }
+
+      &[data-image="castle"] {
+        background-image: asset_url('interface/slides/customers/logos/castle.png');
+      }
+    }
+  }
+
+  @include medium-width-media {
+    &__reviews__item {
+      width: 1160px;
+    }
+
+    &__logos {
+      padding: 40px 0;
+
+      a {
+        @include size(160px 30px);
+      }
+    }
+  }
+
+  @include large-width-media {
+    &__reviews__item {
+      width: 670px;
+    }
+  }
+
+  @include large-height-media {
+    &__inner {
+      height: calc(100vh - #{$customers-height-lg});
+      padding-top: 200px;
+    }
+
+    &__reviews {
+
+      &__item {
+        height: 500px;
+        padding-top: 130px;
+      }
+    }
+
+    &__logos {
+      height: $customers-height-lg;
+      padding: 58px 0;
+
+      a {
+        @include size(220px 44px);
+      }
+    }
+  }
+}

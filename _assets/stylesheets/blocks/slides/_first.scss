@@ -1,7 +1,7 @@
 .first-slide {
   color: white;
   background-color: $blue-pigment;
-  z-index: 0;
+  z-index: 1;
 
   &__inner {
     position: relative;

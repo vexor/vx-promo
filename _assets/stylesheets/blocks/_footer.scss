@@ -84,7 +84,7 @@
 
   &.visible {
     bottom: 0;
-    @include transition(bottom 0.27s ease);
+    @include transition(bottom 0.26s ease);
   }
 
   @include medium-width-media {

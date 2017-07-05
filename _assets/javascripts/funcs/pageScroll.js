@@ -11,7 +11,7 @@ function initPageScroll(){
 
         beforeMove: function(index) {
             classToggler('.last-slide', 'footer', 'visible', 240);
-            classToggler('.first-slide, .last-slide', 'header', 'white', 200);
+            classToggler('.first-slide, .last-slide', 'header', 'white', 240, 240);
         }
     });
 
