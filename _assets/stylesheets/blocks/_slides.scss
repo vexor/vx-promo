@@ -8,8 +8,34 @@
   overflow: hidden;
 }
 
+.first-slide__inner, .last-slide__inner {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 440px;
+    height: 528px;
+    background-image: asset_url('interface/slides/3-d.gif');
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    @include medium-width-media {
+      width: 564px;
+      height: 688px;
+    }
+
+    @include large-height-media {
+      width: 740px;
+      height: 887px;
+    }
+  }
+}
+
 @import "slides/first";
 @import "slides/features";
 @import "slides/configuration";
 @import "slides/customers";
 @import "slides/last";
+

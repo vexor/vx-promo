@@ -108,9 +108,13 @@
     &__powered {
       margin-left: 40px;
     }
+
+    &.visible {
+      @include transition(bottom 0.25s ease);
+    }
   }
 
-  @include large-width-media {
+  @include large-height-media {
     bottom: -$footer-height-lg;
     height: $footer-height-lg;
 
