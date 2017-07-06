@@ -7,8 +7,6 @@
     height: 100%;
 
     &:before {
-      top: 140px;
-      right: 0;
       background-size: cover;
     }
   }
@@ -61,6 +59,11 @@
           position: absolute;
           top: 0;
           right: 0;
+        }
+
+        a {
+          display: inline-block;
+          border-bottom: solid 1.5px rgba(255, 255, 255, 0.4);
         }
 
         &:first-of-type {

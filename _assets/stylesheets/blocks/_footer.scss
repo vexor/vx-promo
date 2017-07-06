@@ -39,6 +39,7 @@
       a {
         font-size: 16px;
         line-height: 1.25;
+        border-bottom: solid 1.5px rgba(255, 255, 255, 0.4);
       }
 
       &:last-of-type {
@@ -59,6 +60,7 @@
       margin-left: 3px;
       text-transform: lowercase;
       font-size: 16px;
+      border-bottom: solid 1.5px rgba(255, 255, 255, 0.4);
       @include opacity(100);
     }
   }
@@ -67,24 +69,20 @@
     bottom: 35px;
     right: 0;
 
-    a {
+    span {
       display: inline-block;
       vertical-align: middle;
       margin-left: 15px;
 
-      img {
-        display: block;
-      }
+      img { display: block; }
 
-      &:first-of-type {
-        margin-left: 0;
-      }
+      &:first-of-type { margin-left: 0; }
     }
   }
 
   &.visible {
     bottom: 0;
-    @include transition(bottom 0.26s ease);
+    @include transition(bottom 0.31s ease);
   }
 
   @include medium-width-media {
@@ -110,7 +108,7 @@
     }
 
     &.visible {
-      @include transition(bottom 0.25s ease);
+      @include transition(bottom 0.28s ease);
     }
   }
 
@@ -134,6 +132,10 @@
 
     &__powered {
       margin-left: 40px;
+    }
+
+    &.visible {
+      @include transition(bottom 0.3s ease);
     }
   }
 }

@@ -29,6 +29,12 @@
 
     &__commits, &__build-duration {
       margin-bottom: 35px;
+      padding-bottom: 11px;
+      overflow: hidden;
+
+      strong {
+        margin: 5px 0 25px;
+      }
     }
 
     &__cost-per {

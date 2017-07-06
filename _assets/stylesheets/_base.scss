@@ -26,14 +26,26 @@ a {
   @include transition(color 0.3s ease, border-bottom-color 0.3s ease);
 
   &.underlined {
+    border-bottom: 1px solid transparent;
 
     &:hover {
-      border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+      color: aquamarine;
+      border-bottom-color: rgba(107, 219, 188, 0.4);
     }
+
+    &:active {
+      border-bottom-color: transparent;
+    }
+  }
+
+  &.blue {
+    color: $blue-pigment;
+    border-bottom-color: rgba(51, 51, 153, 0.4);
   }
 
   &.white {
     color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -50,6 +62,15 @@ button {
   font-weight: 800;
   cursor: pointer;
   @include transition(color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease);
+
+  &:hover {
+    background: $blue-pigment;
+    color: $aquamarine;
+  }
+
+  &.bordered {
+    border: 2px solid $aquamarine;
+  }
 }
 
 ul {

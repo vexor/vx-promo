@@ -7,10 +7,8 @@
     height: calc(100vh - #{$footer-height-sm});
 
     &:before {
-      left: 230px;
-      top: -266px;
-      @include transform(rotate(90deg));
       background-size: contain;
+      @include transition(all 0.6s ease);
     }
   }
 
@@ -50,14 +48,18 @@
     }
   }
 
+  &.turned-gif {
+
+    .last-slide__inner:before {
+      left: 230px;
+      top: -266px;
+      @include transform(rotate(90deg));
+    }
+  }
+
   @include medium-width-media {
     &__inner {
       height: calc(100vh - #{$footer-height-md});
-
-      &:before {
-        top: -337px;
-        left: 280px;
-      }
     }
 
     h2, &__sign-up {
@@ -75,6 +77,14 @@
         width: 160px;
       }
     }
+
+    &.turned-gif {
+
+      .last-slide__inner:before {
+        top: -337px;
+        left: 280px;
+      }
+    }
   }
 
   @include large-width-media {
@@ -86,11 +96,6 @@
   @include large-height-media {
     &__inner {
       height: calc(100vh - #{$footer-height-lg});
-
-      &:before {
-        top: -420px;
-        left: 360px;
-      }
     }
 
     h2 {
@@ -114,6 +119,14 @@
       button {
         width: 220px;
         height: 60px;
+      }
+    }
+
+    &.turned-gif {
+
+      .last-slide__inner:before {
+        top: -420px;
+        left: 360px;
       }
     }
   }

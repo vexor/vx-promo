@@ -6,18 +6,18 @@
       <div class="configuration-slide__calculator__commits">
         {{ 'sections.configuration.calculator.commits' | t }}
         <strong>
-          <span>200</span>
+          <span id="configuration-commits-count">200</span>
         </strong>
-        <div></div>
+        <div id="configuration-commits"></div>
       </div>
 
       <div class="configuration-slide__calculator__build-duration">
         {{ 'sections.configuration.calculator.build_duration' | t }}
         <strong>
-          <span>15</span>
+          <span id="configuration-duration-value">15</span>
           {{ 'time.minutes' | t }}
         </strong>
-        <div></div>
+        <div id="configuration-duration"></div>
       </div>
 
       <div class="configuration-slide__calculator__cost-per">
@@ -27,7 +27,7 @@
       <div class="configuration-slide__calculator__total-cost">
         <strong>
           {{ 'currency.sign' | t }}
-          <span>30</span>
+          <span id="configuration-cost">30</span>
         </strong>
       </div>
     </div>

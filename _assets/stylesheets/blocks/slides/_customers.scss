@@ -5,12 +5,18 @@
     height: calc(100vh - #{$customers-height-sm-md});
     padding-top: 120px;
 
-    & > strong {
-      display: block;
-      font-size: 30px;
-      line-height: 1.33;
-      text-align: center;
-      font-weight: normal;
+    &-wrap {
+      position: relative;
+      top: 50%;
+      @include transform(translateY(-50%));
+
+      & > strong {
+        display: block;
+        font-size: 30px;
+        line-height: 1.33;
+        text-align: center;
+        font-weight: normal;
+      }
     }
   }
 
@@ -103,11 +109,16 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
+      @include opacity(50);
+      @include transition(all 0.3s ease);
+
+      &:hover {
+        @include opacity(100);
+      }
 
       &[data-image="bookmate"] {
         margin-left: 0;
-        background-color: $dark-blue-gray; // TODO: tmp
-        //background-image: asset_url('interface/slides/customers/customers/bookmate.png') no-repeat center center;
+        background-image: asset_url('interface/slides/customers/logos/bookmate.png');
       }
 
       &[data-image="meduza"] {

@@ -95,35 +95,51 @@
 .slick-arrow {
     display: block;
     position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100px;
+    top: 50%;
+    height: 36px;
+    width: 36px;
     z-index: 1;
-    background: transparent;
-    @include box-shadow(none);
     color: transparent;
+    background-color: transparent;
+    @include box-shadow(none);
+    @include transform(translateY(-100%));
     font-size: 0;
+    overflow: hidden;
+    cursor: default;
 
     &:before {
+        position: absolute;
+        top: -27px;
         color: $aquamarine;
         line-height: 0.33;
         text-align: center;
         font: normal 60px Circe;
         cursor: pointer;
+        @include transition(color 0.3s ease);
     }
 
     &.slick-prev {
         left: 0;
-        text-align: left;
 
-        &:before { content: "←"; }
+        &:before {
+            content: "←";
+            left: -1px;
+        }
     }
 
     &.slick-next {
         right: 0;
-        text-align: right;
 
-        &:before { content: "→"; }
+        &:before {
+            content: "→";
+            right: -1px;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+
+        &:before { color: $blue-pigment; }
     }
 }
 .slick-arrow.slick-hidden {
@@ -148,7 +164,10 @@
             font-size: 0;
             color: transparent;
 
-            &:hover { border-color: transparent; }
+            &:hover {
+                background-color: aquamarine;
+                border-color: aquamarine;
+            }
         }
 
         &:first-of-type { margin-left: 0; }

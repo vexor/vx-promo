@@ -43,7 +43,7 @@ en:
       calculator:
         commits: Commits
         build_duration: Build duration
-        cost_per: Cost per <span class="active">Day</span> / <span>Month</span>
+        cost_per: Cost per <span class="cost-per active" data-period="day">Day</span> / <span class="cost-per" data-period="month">Month</span>
 
     customers:
       title: Join our customers
