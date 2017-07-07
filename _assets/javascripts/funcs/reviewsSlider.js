@@ -2,7 +2,7 @@ function initReviewsSlider() {
     $('#reviews').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        speed: 1000,
+        speed: 400,
         variableWidth: true,
         dots: true,
         responsive: [
@@ -10,7 +10,7 @@ function initReviewsSlider() {
                 breakpoint: 1600,
                 settings: {
                     slidesToShow: 2,
-                    speed: 400
+                    speed: 800
                 }
             }
         ]

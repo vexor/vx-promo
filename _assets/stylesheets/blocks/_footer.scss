@@ -108,7 +108,7 @@
     }
 
     &.visible {
-      @include transition(bottom 0.28s ease);
+      @include transition(bottom 0.285s ease);
     }
   }
 

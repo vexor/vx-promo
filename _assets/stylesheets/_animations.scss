@@ -1,0 +1,68 @@
+@include keyframes(blink) {
+  0% {
+    @include transform(scale(1));
+  }
+  10% {
+    @include transform(scale(0.9));
+  }
+  20% {
+    @include transform(scale(1));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(to_front_and_back) {
+  0% {
+    z-index: 2;
+  }
+  49% {
+    z-index: 2;
+  }
+  50% {
+    z-index: 1;
+  }
+  99% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 2;
+  }
+}
+
+@include keyframes(slide_fae) {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -200%;
+  }
+  50% {
+    top: -200%;
+  }
+  60% {
+    top: 0
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@include keyframes(slide_asm_asn) {
+  0% {
+    top: 200%;
+  }
+  10% {
+    top: 0;
+  }
+  50% {
+    top: 0;
+  }
+  60% {
+    top: 200%;
+  }
+  100% {
+    top: 200%;
+  }
+}

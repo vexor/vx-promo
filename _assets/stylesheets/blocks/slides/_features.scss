@@ -2,123 +2,143 @@
   background-color: white;
 
   &__inner {
+    position: relative;
     height: 100%;
   }
 
-  &__item {
-    position: relative;
-    @include size(100%);
+  &__info, &__screenshots {
+    @include abs-vert-cent-block(330px);
+    width: 440px;
 
-    &__info, &__screenshot {
-      @include abs-vert-cent-block(330px);
-      width: 440px;
-    }
-
-    &__info {
+    &__item {
+      position: absolute;
+      top: 0;
       left: 0;
-      padding-top: 10px;
+      @include size(100%);
+    }
+  }
 
-      strong {
-        color: $blue-pigment;
-        font-size: 80px;
-        font-weight: 800;
-        line-height: 0.75;
-        letter-spacing: -1px;
-      }
+  &__info {
+    left: 0;
 
-      p {
-        margin: 30px 0 40px;
-        font-size: 30px;
-        line-height: 1.33;
-      }
-
-      button {
-        width: 160px;
-      }
+    strong {
+      color: $blue-pigment;
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 0.75;
+      letter-spacing: -1px;
     }
 
-    &__screenshot {
-      right: 0;
+    p {
+      margin: 30px 0 40px;
+      font-size: 30px;
+      line-height: 1.33;
+    }
+
+    button { width: 160px; }
+
+    &__item {
+      padding-top: 7px;
+
+      &[data-item="fae"] { top: 0; }
+
+      &[data-item="asm_asn"] { top: 200%; }
+    }
+
+    &.animate {
+
+      .features-slide__info__item {
+
+        &[data-item="fae"] {
+          @include animation(slide_fae 10s ease 5s infinite);
+        }
+
+        &[data-item="asm_asn"] {
+          @include animation(slide_asm_asn 10s ease 5s infinite);
+        }
+      }
+    }
+  }
+
+  &__screenshots {
+    right: 0;
+    background-size: cover;
+    @include box-shadow(0 40px 80px 10px rgba(51, 51, 153, 0.1));
+
+    &__item {
+      background: asset_url('pictures/features/fast-and-easy.png') no-repeat right top;
       background-size: cover;
-      @include box-shadow(0 40px 80px 10px rgba(51, 51, 153, 0.1));
-    }
 
-    &[data-item="fae"] {
-      .features-slide__item__screenshot {
+      &[data-item="fae"] {
         background: asset_url('pictures/features/fast-and-easy.png') no-repeat right top;
         background-size: cover;
+        z-index: 2;
+      }
+
+      &[data-item="asm_asn"] {
+        background: asset_url('pictures/features/asm_asn.png') no-repeat right top;
+        background-size: cover;
+        z-index: 1;
       }
     }
 
-    &[data-item="asm_asn"] {
-      display: none; // #TODO: tmp
+    &.animate {
+      @include animation(blink 5s ease 5s infinite);
 
-      .features-slide__item__screenshot {
-        background: asset_url('pictures/features/asm_asn.png') no-repeat right top;
-        background-size: cover;
+      .features-slide__screenshots__item[data-item="asm_asn"] {
+          @include animation(to_front_and_back 10s ease 5.6s infinite);
       }
     }
   }
 
   @include medium-width-media {
-    &__item {
+    &__info, &__screenshots {
+      width: 560px;
+      height: 420px;
+      margin-top: -210px;
+    }
 
-      &__info, &__screenshot {
-        width: 560px;
-        height: 420px;
-        margin-top: -210px;
-      }
-
-      &__info {
-        padding-top: 60px;
-      }
+    &__info__item {
+      padding-top: 57px;
     }
   }
 
   @include large-width-media {
-    &__item {
+    &__info, &__screenshots {
+      width: 740px;
+      height: 555px;
+      margin-top: -277.5px;
+    }
 
-      &__info, &__screenshot {
-        width: 740px;
-        height: 555px;
-        margin-top: -277.5px;
+    &__info__item {
+      padding-top: 77px;
+
+      strong {
+        font-size: 100px;
+        line-height: 0.8;
       }
 
-      &__info {
-        padding-top: 80px;
+      p { margin: 40px 0 60px; }
 
-        strong {
-          font-size: 100px;
-          line-height: 0.8;
-        }
-
-        p {
-          margin: 40px 0 60px;
-        }
-
-        button {
-          width: 220px;
-          height: 60px;
-        }
+      button {
+        width: 220px;
+        height: 60px;
       }
+    }
+
+    &__screenshots__item {
 
       &[data-item="fae"] {
-        .features-slide__item__screenshot {
-          background: asset_url('pictures/features/fast-and-easy@2x.png') no-repeat right top;
-          background-size: cover;
-        }
+        background: asset_url('pictures/features/fast-and-easy@2x.png') no-repeat right top;
+        background-size: cover;
       }
 
       &[data-item="asm_asn"] {
-        .features-slide__item__screenshot {
-          background: asset_url('pictures/features/asm_asn@2x.png') no-repeat right top;
-          background-size: cover;
-        }
+        background: asset_url('pictures/features/asm_asn@2x.png') no-repeat right top;
+        background-size: cover;
       }
     }
   }
 
-  @include large-height-media {
-
-  }
+  @include large-height-media {}
 }

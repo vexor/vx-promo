@@ -28,30 +28,51 @@
     }
 
     &__commits, &__build-duration {
+      position: relative;
       margin-bottom: 35px;
-      padding-bottom: 11px;
+      padding: 0 20px 11px 0;
       overflow: hidden;
 
       strong {
-        margin: 5px 0 25px;
+        margin: 15px 0 25px;
+      }
+
+      &:after {
+        content: '∞';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 15px;
+        height: 20px;
+        font-size: 20px;
+        line-height: 1.0;
+        color: $crayola-blue-bell;
       }
     }
 
     &__cost-per {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
 
       span {
         display: inline-block;
         vertical-align: baseline;
         color: $blue-pigment;
-        border-bottom: solid 1px transparent;
+        border-bottom: dashed 1px $blue-pigment;
         line-height: 1.0;
         font-weight: 800;
         cursor: pointer;
+        @include transition(all 0.3s ease);
+
+        &:hover {
+          color: $aquamarine;
+          border-bottom-color: rgba(107, 219, 188, 0.4);
+        }
 
         &.active {
           color: $aquamarine;
-          border-bottom-color: rgba(107, 219, 188, 0.4);
+          border-bottom-color: transparent;
+          cursor: default;
         }
       }
     }

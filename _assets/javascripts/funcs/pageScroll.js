@@ -10,9 +10,13 @@ function initPageScroll(){
         keyboard: false,
 
         beforeMove: function(index) {
-            classToggler('.last-slide', '.last-slide', 'turned-gif', 300, 600);
             classToggler('.last-slide', 'footer', 'visible', 290);
             classToggler('.first-slide, .last-slide', 'header nav a, #logo', 'white', 290, 290);
+            classToggler('.last-slide', '.last-slide', 'turned-gif', 290, 600);
+        },
+
+        afterMove: function(index) {
+            featuresToggler();
         }
     });
 

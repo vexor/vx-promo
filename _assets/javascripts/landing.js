@@ -13,7 +13,10 @@ $(function() {
 
     initReviewsSlider();
 
-    $(window).on('resize', initPageScroll);
+    // $(window).on('resize', function() {
+    //     $("#slides").destroy_onepage_scroll("section.slide");
+    //     initPageScroll();
+    // });
 
     $(document).on('body:load', prepareAuth);
 });
