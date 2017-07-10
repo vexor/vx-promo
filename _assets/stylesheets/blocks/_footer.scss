@@ -85,6 +85,11 @@
     @include transition(bottom 0.31s ease);
   }
 
+  @include mobile {
+    position: absolute;
+    bottom: 0;
+  }
+
   @include medium-width-media {
     bottom: -$footer-height-md;
     height: $footer-height-md;

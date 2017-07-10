@@ -1,23 +1,30 @@
-function initPageScroll(){
+function initPageScroll() {
 
-    // TODO: add condition for mobile/tablet?
+    var onepageWrapSel = '#slides',
+        onepageSlideSel = 'section.slide';
 
-    $("#slides").onepage_scroll({
-        sectionContainer: "section.slide",
-        animationTime: 600,
-        loop: false,
-        pagination: false,
-        keyboard: false,
+    if (!isMobile.any) {
 
-        beforeMove: function(index) {
-            classToggler('.last-slide', 'footer', 'visible', 290);
-            classToggler('.first-slide, .last-slide', 'header nav a, #logo', 'white', 290, 290);
-            classToggler('.last-slide', '.last-slide', 'turned-gif', 290, 600);
-        },
+        $(onepageWrapSel).onepage_scroll({
+            sectionContainer: onepageSlideSel,
+            animationTime: 600,
+            loop: false,
+            pagination: false,
+            keyboard: false,
 
-        afterMove: function(index) {
-            featuresToggler();
-        }
-    });
+            beforeMove: function (index) {
+                classToggler('.last-slide', 'footer', 'visible', 290);
+                classToggler('.first-slide, .last-slide', 'header nav a, header svg', 'white', 290, 290);
+                classToggler('.last-slide', '.last-slide', 'turned-gif', 290, 600);
+            },
+
+            afterMove: function (index) {
+                featuresToggler();
+            }
+        });
+
+    }
+    else if($(onepageWrapSel).hasClass('onepage-wrapper'))
+       $(onepageWrapSel).destroy_onepage_scroll(onepageSlideSel);
 
 }

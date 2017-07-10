@@ -11,6 +11,7 @@
 
     svg {
       float: left;
+      width: auto;
       height: 30px;
 
       path {
@@ -20,6 +21,10 @@
 
       &.white {
         path { fill: white; }
+      }
+
+      &#nav-toggler {
+        display: none;
       }
     }
 
@@ -34,6 +39,22 @@
 
         &:first-of-type {
           margin-left: 0;
+        }
+      }
+    }
+
+    @include mobile {
+      height: 60px;
+      padding-top: 20px;
+
+      nav { display: none; }
+
+      svg {
+        height: 20px;
+
+        &#nav-toggler {
+          display: block;
+          float: right;
         }
       }
     }

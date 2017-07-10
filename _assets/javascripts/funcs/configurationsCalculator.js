@@ -1,10 +1,12 @@
 function initConfigurationsCalculator() {
     var commitsCountSel = '#configuration-commits-count',
         durationValueSel = '#configuration-duration-value',
-        costSel = '#configuration-cost';
+        costSel = '#configuration-cost',
+        commitsSliderSel = '#configuration-commits',
+        durationSliderSel = '#configuration-duration';
 
     // Commits slider
-    $('#configuration-commits').slider({
+    $(commitsSliderSel).slider({
         animate: 400,
         max: 1000,
         min: 10,
@@ -14,10 +16,11 @@ function initConfigurationsCalculator() {
         slide: function( event, ui ) { $(commitsCountSel).text(ui.value); },
 
         stop: function(event, ui) { calculateCost(); }
-    });
+    }).draggable();
+
 
     // Duration slider
-    $('#configuration-duration').slider({
+    $(durationSliderSel).slider({
         animate: 400,
         max: 100,
         min: 1,
@@ -27,7 +30,8 @@ function initConfigurationsCalculator() {
         slide: function( event, ui ) { $(durationValueSel).text(ui.value); },
 
         stop: function(event, ui) { calculateCost(); }
-    });
+    }).draggable();
+
 
     // Toggle Day/Month costs
     $('.cost-per').on('click', function() {

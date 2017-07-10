@@ -143,6 +143,59 @@
     }
   }
 
+  @include mobile {
+    padding-bottom: 60px;
+
+    &__inner {
+      position: relative;
+      //min-height: 500px;
+      height: auto;
+      padding-top: 0;
+
+      &-wrap {
+        position: static;
+        //top: 0;
+        //bottom: 0;
+        //left: 0;
+        width: 100%;
+        @include transform(none);
+
+        & > strong {
+          font-size: 20px;
+          line-height: 2.0;
+        }
+      }
+    }
+
+    &__reviews {
+
+      &__item {
+        width: px_to_vw(280, 320);
+        height: auto;
+        margin: 0 px_to_vw(20, 320);
+        padding-bottom: 60px;
+
+        &__inner {
+          @include size(280px auto);
+          padding: 60px 20px 40px;
+        }
+      }
+    }
+
+    &__logos {
+      height: 190px;
+      padding: 45px 20px;
+
+      a {
+        margin: 0 0 18px;
+
+        &:nth-child(even) {
+          float: right;
+        }
+      }
+    }
+  }
+
   @include medium-width-media {
     &__reviews__item {
       width: 1160px;

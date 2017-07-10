@@ -15,6 +15,11 @@
   filter: alpha(opacity=$opacity);
 }
 
+@mixin clearTransform3d {
+  @include transform(translate3d(0px, 0px, 0px));
+  @include transform-style(flat);
+}
+
 @mixin abs-vert-cent-block($height) {
   position: absolute;
   top: 50%;

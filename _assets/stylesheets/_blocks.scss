@@ -3,12 +3,32 @@
   margin: 0 auto;
   @include clearfix;
 
+  @include mobile {
+    width: 280px;
+  }
+
   @include medium-width-media {
     width: 1160px;
   }
 
   @include large-width-media {
     width: 1520px;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+
+  @include mobile {
+    display: none;
   }
 }
 

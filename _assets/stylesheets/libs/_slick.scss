@@ -16,7 +16,6 @@
 }
 .slick-list {
     position: relative;
-    overflow: hidden;
     display: block;
     margin: 0;
     padding: 0;
@@ -159,14 +158,14 @@
 
         button {
             display: block;
-            @include size(10px);
-            border: 2px solid white;
+            @include size(5px);
+            @include border-radius(50%);
             font-size: 0;
             color: transparent;
 
             &:hover {
                 background-color: aquamarine;
-                border-color: aquamarine;
+                @include transform(scale(2));
             }
         }
 
@@ -174,8 +173,20 @@
 
         &.slick-active button {
             background-color: $blue-pigment;
-            border-color: $blue-pigment;
+            @include transform(scale(2));
         }
+    }
+}
+
+@include mobile {
+    .slick-list {
+        padding-left: px_to_vw(20, 320);
+    }
+
+    .slick-dots {
+        @include transform(translate(-50%, -40px));
+
+        li { margin-left: 40px; }
     }
 }
 

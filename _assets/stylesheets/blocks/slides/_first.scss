@@ -92,6 +92,49 @@
     }
   }
 
+  @include mobile {
+    padding-bottom: 20px;
+
+    h1, &__get-started, &__more, &__page-title {
+      position: static;
+    }
+
+    h1 {
+      width: 100%;
+      margin-top: 60px;
+      font-size: 56px;
+      letter-spacing: -1px;
+
+      span {
+        margin-top: 20px;
+        font-size: 24px;
+        line-height: 1.67;
+        letter-spacing: -0.7px;
+      }
+    }
+
+    &__get-started {
+      margin: 20px 0 110px;
+      font-size: 0;
+      color: transparent;
+
+      ul { display: none; }
+
+      button { width: 100%; }
+    }
+
+    &__page-title {
+      width: 150px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    &__more {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
   @include medium-width-media {
     &__inner:before {
       top: 60px;

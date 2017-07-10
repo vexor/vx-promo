@@ -97,8 +97,8 @@
 .ui-slider .ui-slider-handle {
 	position: absolute;
 	z-index: 2;
-	width: 21px;
-	height: 21px;
+	width: 20px;
+	height: 20px;
 	@include border-radius(10px);
 	cursor: default;
 	-ms-touch-action: none;
@@ -189,7 +189,6 @@
 .ui-widget.ui-widget-content {
 	height: 1px;
 	background-color: $crayola-blue-bell;
-	//border: 1px solid #c5c5c5;
   cursor: pointer;
 }
 .ui-widget-content {
