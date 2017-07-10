@@ -5,7 +5,7 @@ function initConfigurationsCalculator() {
 
     // Commits slider
     $('#configuration-commits').slider({
-        animate: 500,
+        animate: 400,
         max: 1000,
         min: 10,
         step: 10,
@@ -18,7 +18,7 @@ function initConfigurationsCalculator() {
 
     // Duration slider
     $('#configuration-duration').slider({
-        animate: 500,
+        animate: 400,
         max: 100,
         min: 1,
         step: 1,
