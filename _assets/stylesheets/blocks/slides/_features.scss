@@ -121,7 +121,7 @@
 
         .screenshot {
           width: 100%;
-          height: 367px;
+          height: px_to_vw(367, 320);
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover;

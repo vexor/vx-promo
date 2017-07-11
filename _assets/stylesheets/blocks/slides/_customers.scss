@@ -179,9 +179,11 @@
 
     &__logos {
       height: 190px;
-      padding: 45px 20px;
+      padding: 45px 0;
 
       a {
+        width: px_to_vw(120, 320);
+        height: px_to_vw(23, 320);
         margin: 0 0 18px;
 
         &:nth-child(even) {
