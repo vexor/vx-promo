@@ -23,7 +23,7 @@
         path { fill: white; }
       }
 
-      &#nav-toggler {
+      &#menu-close {
         display: none;
       }
     }
@@ -47,15 +47,10 @@
       height: 60px;
       padding-top: 20px;
 
-      nav { display: none; }
-
       svg {
         height: 20px;
 
-        &#nav-toggler {
-          display: block;
-          float: right;
-        }
+        &.toggler { float: right; }
       }
     }
 
@@ -70,5 +65,9 @@
         margin-left: 250px;
       }
     }
+  }
+
+  @include mobile {
+    position: absolute;
   }
 }

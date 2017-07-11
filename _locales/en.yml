@@ -9,10 +9,11 @@ en:
   header:
     base_url: https://vexor.io
     not_found: Page not found
-    nav:
-      blog: Blog
-      documentation: Documentation
-      sign_up: Sign up
+
+  nav:
+    blog: Blog
+    documentation: Documentation
+    sign_up: Sign up
 
   get_started:
     caption: "Get started with:"
@@ -126,8 +127,9 @@ en:
   footer:
     copyright: © 2014–2017, VEXOR. All rights reserved.
     powered_by: Powered by <a href="http://evrone.com" target="_blank" class="underlined white">Evrone</a>.
-    menu:
-      terms: Terms
-      security: Security
-      privacy: Privacy
-      contacts: Contacts
+
+  second_nav:
+    terms: Terms
+    security: Security
+    privacy: Privacy
+    contacts: Contacts

@@ -3,7 +3,13 @@ function initPageScroll() {
     var onepageWrapSel = '#slides',
         onepageSlideSel = 'section.slide';
 
-    if (!isMobile.any) {
+    if (isMobile.any) {
+
+        if($(onepageWrapSel).hasClass('onepage-wrapper'))
+            $(onepageWrapSel).destroy_onepage_scroll(onepageSlideSel);
+
+    }
+    else {
 
         $(onepageWrapSel).onepage_scroll({
             sectionContainer: onepageSlideSel,
@@ -24,7 +30,5 @@ function initPageScroll() {
         });
 
     }
-    else if($(onepageWrapSel).hasClass('onepage-wrapper'))
-       $(onepageWrapSel).destroy_onepage_scroll(onepageSlideSel);
 
 }

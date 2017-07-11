@@ -4,7 +4,7 @@
   @include clearfix;
 
   @include mobile {
-    width: 280px;
+    width: px_to_vw(280, 320);
   }
 
   @include medium-width-media {

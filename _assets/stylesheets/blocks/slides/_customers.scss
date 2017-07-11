@@ -144,19 +144,14 @@
   }
 
   @include mobile {
-    padding-bottom: 60px;
 
     &__inner {
       position: relative;
-      //min-height: 500px;
       height: auto;
       padding-top: 0;
 
       &-wrap {
         position: static;
-        //top: 0;
-        //bottom: 0;
-        //left: 0;
         width: 100%;
         @include transform(none);
 
@@ -173,7 +168,7 @@
         width: px_to_vw(280, 320);
         height: auto;
         margin: 0 px_to_vw(20, 320);
-        padding-bottom: 60px;
+        padding-bottom: 50px;
 
         &__inner {
           @include size(280px auto);

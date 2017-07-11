@@ -58,6 +58,49 @@
     }
   }
 
+  @include mobile {
+    padding: 130px 0 240px;
+
+    &__inner {
+      position: static;
+      height: auto;
+
+      &:before {
+        width: px_to_vw(292, 320);
+        height: px_to_vw(350, 320);
+        top: px_to_vw(-160, 320);
+        left: px_to_vw(15, 320);
+        @include transform(rotate(90deg));
+      }
+    }
+
+    h2, &__sign-up {
+      position: static;
+    }
+
+    h2 {
+      width: 100%;
+      margin: 0;
+      font-size: 50px;
+      line-height: 0.8;
+      letter-spacing: -1px;
+
+      span {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+    }
+
+    &__sign-up {
+      margin-bottom: 60px;
+
+      button {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
   @include medium-width-media {
     &__inner {
       height: calc(100vh - #{$footer-height-md});

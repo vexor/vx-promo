@@ -15,6 +15,10 @@ $(function() {
 
     initReviewsSlider();
 
+    if (isMobile.phone) {
+        initSlidedMenu();
+    }
+
     $(document).on('body:load', prepareAuth);
 
     $(window).on('resize', function() {

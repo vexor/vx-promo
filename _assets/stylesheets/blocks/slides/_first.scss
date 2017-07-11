@@ -87,13 +87,45 @@
   &__more {
     left: 0;
 
-    a {
-      border-bottom-color: transparent;
+    a { border-bottom-color: transparent; }
+  }
+
+  &__menu, &__sign-up {
+    display: none;
+    position: absolute;
+    right: px_to_vw(20, 320);
+  }
+
+  .first-slide__menu {
+    top: 100px;
+
+    ul li {
+      margin-bottom: 30px;
+      text-align: right;
+
+      a.smaller {
+        font-size: 16px;
+        line-height: 1.25;
+      }
     }
   }
 
+  .first-slide__sign-up {
+    width: px_to_vw(280, 320);
+    bottom: px_to_vw(20, 320);
+  }
+
   @include mobile {
+    left: 0;
     padding-bottom: 20px;
+    @include transition(all 0.5s ease);
+
+    &__inner:before {
+      width: px_to_vw(440, 320);
+      height: px_to_vw(528, 320);
+      top: px_to_vw(-35, 320);
+      right: px_to_vw(-240, 320);
+    }
 
     h1, &__get-started, &__more, &__page-title {
       position: static;
@@ -132,6 +164,11 @@
     &__more {
       font-size: 16px;
       line-height: 1.25;
+    }
+
+    &.menu-opened {
+      width: 300%;
+      left: -200%;
     }
   }
 

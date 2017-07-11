@@ -28,21 +28,14 @@
     background-repeat: no-repeat;
     background-position: left top;
 
-    @include mobile {
-      top: px_to_vw(-35, 320);
-      right: px_to_vw(-240, 320);
-      width: px_to_vw(440, 320);
-      height: px_to_vw(528, 320);
-    }
-
     @include medium-width-media {
       width: 564px;
-      height: 688px;
+      height: 677px;
     }
 
     @include large-height-media {
       width: 740px;
-      height: 887px;
+      height: 888px;
     }
   }
 }
