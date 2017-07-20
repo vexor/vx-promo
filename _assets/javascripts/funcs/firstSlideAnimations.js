@@ -14,13 +14,13 @@ function firstSlideAnimations() {
 
     $(window).on('scroll', function() {
         if ($(window).scrollTop() <= $(firstSlideSel).outerHeight()) {
-            $(firstSlideSel).find(scrollableContentSel).css('top', 0 - 0.5*$(window).scrollTop());
-            $(firstSlideSel).find(scrollableContentSel).addClass('blur');
+            $(firstSlideSel).find(scrollableContentSel).css('top', 0 - $(window).scrollTop()/2);
+            // $(firstSlideSel).find(scrollableContentSel).addClass('blur');
         }
     });
 
-    $(window).scrollStopped(function() {
-        $(firstSlideSel).find(scrollableContentSel).removeClass('blur');
-    });
+    // $(window).scrollStopped(function() {
+    //     $(firstSlideSel).find(scrollableContentSel).removeClass('blur');
+    // });
 
 }

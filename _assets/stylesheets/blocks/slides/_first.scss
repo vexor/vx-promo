@@ -9,7 +9,7 @@
     position: relative;
     top: 0;
     @include size(100%);
-    @include transition(top 0.15s linear);
+    @include transition(top 0.2s linear);
   }
 
   figure.gif { background-size: cover; }

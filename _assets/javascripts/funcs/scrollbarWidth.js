@@ -1,4 +1,4 @@
-function scrollWidth(){
+function scrollbarWidth(){
     var outer = document.createElement("div");
     outer.style.visibility = "hidden";
     outer.style.width = "100px";
@@ -14,5 +14,5 @@ function scrollWidth(){
     var widthWithScroll = inner.offsetWidth;
     outer.parentNode.removeChild(outer);
 
-    window.scrollWidth = widthNoScroll - widthWithScroll;
+    window.scrollbarWidth = widthNoScroll - widthWithScroll;
 }

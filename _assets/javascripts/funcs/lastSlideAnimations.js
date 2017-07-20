@@ -12,9 +12,9 @@ function lastSlideAnimations() {
     });
 
     function getGifFinalPosition() {
-        if ($(window).width() >= 1600 - window.scrollWidth && $(window).height() >= 1080)
+        if ($(window).width() + window.scrollbarWidth >= 1600 && $(window).height() >= 1080)
             return 415;
-        else if ($(window).width() >= 1366 - window.scrollWidth)
+        else if ($(window).width() + window.scrollbarWidth >= 1366)
             return 310;
         else
             return 266;

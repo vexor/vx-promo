@@ -7,6 +7,7 @@
   }
 
   &__info, &__screenshots {
+    top: 0;
     position: relative;
     width: 50%;
 
@@ -42,10 +43,9 @@
   }
 
   &__screenshots {
-    top: 0;
+    right: 0;
     float: right;
     height: 100vh;
-    @include transition(top 0.15s linear);
 
     &__item {
       @include abs-vert-cent-block(330px);
@@ -65,6 +65,15 @@
         background-image: asset_url('pictures/features/asm_asn.png');
         z-index: 1;
       }
+    }
+
+    &.bottomed {
+      top: 100vh;
+      right: 0;
+
+      .features-slide__screenshots__item[data-item="fae"] { z-index: 1; }
+
+      .features-slide__screenshots__item[data-item="asm_asn"] { z-index: 2; }
     }
 
     &.fixed {
@@ -156,7 +165,7 @@
     }
   }
 
-  @include large-width-media {
+  @include large-desktops-media {
     &__info, &__screenshots {
 
       &__item {

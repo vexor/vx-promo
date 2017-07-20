@@ -1,4 +1,4 @@
-function scrollDirection() {
+function scrollParams() {
     var windowScrollY = 0; // initial value
 
     $(window).on('scroll', function() {
@@ -8,6 +8,8 @@ function scrollDirection() {
             window.scrollDirection = 1;
         else
             window.scrollDirection = -1;
+
+        window.scrollDifference = Math.abs(windowCurrentScrollY - windowScrollY);
 
         windowScrollY = windowCurrentScrollY;
     });

@@ -10,7 +10,7 @@
     left: 230px;
     top: 0; // final position: -266px
     background-size: contain;
-    @include transition(top 0.3s linear);
+    @include transition(top 0.2s linear);
 
     &--turned {
       @include transform(rotate(90deg));
@@ -102,7 +102,7 @@
     }
 
     figure.gif {
-      //top: -70px;
+      //top: -310px;
       left: 280px;
     }
 
@@ -117,13 +117,6 @@
 
       button { width: 160px; }
     }
-
-    &.turned-gif {
-
-      .last-slide__inner:before {
-        top: -337px;
-      }
-    }
   }
 
   @include large-desktops-media {
@@ -132,7 +125,7 @@
     }
 
     figure.gif {
-      //top: -150px;
+      //top: -415px;
       left: 360px;
     }
 
@@ -161,13 +154,6 @@
       button {
         width: 220px;
         height: 60px;
-      }
-    }
-
-    &.turned-gif {
-
-      .last-slide__inner:before {
-        top: -420px;
       }
     }
   }

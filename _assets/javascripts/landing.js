@@ -16,9 +16,9 @@ $(function() {
     prepareAuth();
 
     if (!isMobile.any) {
-        scrollDirection();
+        scrollParams();
 
-        scrollWidth();
+        scrollbarWidth();
 
         firstSlideAnimations();
 
