@@ -2,29 +2,20 @@
   0% {
     @include transform(scale(1));
   }
-  10% {
+  50% {
     @include transform(scale(0.9));
-  }
-  20% {
-    @include transform(scale(1));
   }
   100% {
     @include transform(scale(1));
   }
 }
 
-@include keyframes(to_front_and_back) {
+@include keyframes(to_front) {
   0% {
-    z-index: 2;
-  }
-  49% {
-    z-index: 2;
+    z-index: 1;
   }
   50% {
-    z-index: 1;
-  }
-  99% {
-    z-index: 1;
+    z-index: 2;
   }
   100% {
     z-index: 2;

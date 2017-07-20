@@ -10,18 +10,28 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
+
+  &.unscrollable {
+    overflow-y: hidden;
+  }
 }
 
 body {
+  position: relative;
   min-height: 100%;
+  //padding-bottom: $footer-height-sm;
   -webkit-font-smoothing: antialiased;
   color: $dark-blue-gray;
   font: normal normal normal 20px Circe, SansSerif;
   font-stretch: normal;
   letter-spacing: normal;
 
-  @include mobile {
-    position: relative;
+  @include medium-width-media {
+    //padding-bottom: $footer-height-md;
+  }
+
+  @include large-height-media {
+    //padding-bottom: $footer-height-lg;
   }
 }
 

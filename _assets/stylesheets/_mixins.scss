@@ -69,3 +69,9 @@
     @content;
   }
 }
+
+@mixin large-desktops-media {
+  @media (min-width: $large-desktop-width) and (min-height: $large-desktop-height) {
+    @content;
+  }
+}

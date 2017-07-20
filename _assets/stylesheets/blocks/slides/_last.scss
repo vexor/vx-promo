@@ -1,16 +1,19 @@
 .last-slide {
   color: white;
   background-color: $blue-pigment;
-  z-index: 0;
 
   &__inner {
     height: calc(100vh - #{$footer-height-sm});
+  }
 
-    &:before {
-      left: 230px;
-      top: 0;
-      background-size: contain;
-      @include transition(all 0.6s ease);
+  figure.gif {
+    left: 230px;
+    top: 0; // final position: -266px
+    background-size: contain;
+    @include transition(top 0.3s linear);
+
+    &--turned {
+      @include transform(rotate(90deg));
     }
   }
 
@@ -47,14 +50,6 @@
       width: 120px;
       margin-right: 40px;
       font-size: 19px;
-    }
-  }
-
-  &.turned-gif {
-
-    .last-slide__inner:before {
-      top: -266px;
-      @include transform(rotate(90deg));
     }
   }
 
@@ -104,27 +99,23 @@
   @include medium-width-media {
     &__inner {
       height: calc(100vh - #{$footer-height-md});
+    }
 
-      &:before {
-        top: -70px;
-        left: 280px;
-      }
+    figure.gif {
+      //top: -70px;
+      left: 280px;
     }
 
     h2, &__sign-up {
       left: 300px;
     }
 
-    h2 {
-      margin-top: -155px;
-    }
+    h2 { margin-top: -155px; }
 
     &__sign-up {
       bottom: 80px;
 
-      button {
-        width: 160px;
-      }
+      button { width: 160px; }
     }
 
     &.turned-gif {
@@ -135,20 +126,18 @@
     }
   }
 
-  @include large-width-media {
-    h2, &__sign-up {
-      left: 390px;
-    }
-  }
-
-  @include large-height-media {
+  @include large-desktops-media {
     &__inner {
       height: calc(100vh - #{$footer-height-lg});
+    }
 
-      &:before {
-        top: -150px;
-        left: 360px;
-      }
+    figure.gif {
+      //top: -150px;
+      left: 360px;
+    }
+
+    h2, &__sign-up {
+      left: 390px;
     }
 
     h2 {

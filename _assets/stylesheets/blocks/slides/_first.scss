@@ -1,15 +1,18 @@
 .first-slide {
   color: white;
   background-color: $blue-pigment;
-  z-index: 1;
+  z-index: 2;
 
-  &__inner {
-    height: 100%;
+  &__inner { height: 100%; }
 
-    &:before {
-      background-size: cover;
-    }
+  &__scrollable {
+    position: relative;
+    top: 0;
+    @include size(100%);
+    @include transition(top 0.15s linear);
   }
+
+  figure.gif { background-size: cover; }
 
   h1, &__get-started, &__more, &__page-title {
     position: absolute;
@@ -93,14 +96,14 @@
   &__menu, &__sign-up {
     display: none;
     position: absolute;
-    right: px_to_vw(20, 320);
+    right: px_to_vw(20, $mobile-width-grid);
   }
 
   .first-slide__menu {
-    top: 100px;
+    top: px_to_vh(80, $mobile-height);
 
     ul li {
-      margin-bottom: 30px;
+      margin-bottom: px_to_vh(30, $mobile-height);
       text-align: right;
 
       a.smaller {
@@ -111,34 +114,34 @@
   }
 
   .first-slide__sign-up {
-    width: px_to_vw(280, 320);
-    bottom: px_to_vw(20, 320);
+    width: px_to_vw(280, $mobile-width-grid);
+    bottom: px_to_vh(20, $mobile-height);
   }
 
   @include mobile {
     left: 0;
-    padding-bottom: 20px;
+    padding-bottom: px_to_vh(20, $mobile-height);
     @include transition(all 0.5s ease);
 
-    &__inner:before {
-      width: 440px;
-      height: 528px;
-      top: -35px;
-      right: -240px;
+    figure.gif {
+      width: px_to_vw(350, $mobile-width-grid);
+      height: px_to_vh(420, $mobile-height);
+      top: px_to_vh(-25, $mobile-height);
+      right: px_to_vw(-190, $mobile-width-grid);
     }
 
-    h1, &__get-started, &__more, &__page-title {
+    h1, &__get-started, &__page-title {
       position: static;
     }
 
     h1 {
       width: 100%;
-      margin-top: 60px;
+      margin-top: px_to_vh(60, $mobile-height);
       font-size: 56px;
       letter-spacing: -1px;
 
       span {
-        margin-top: 20px;
+        margin-top: px_to_vh(20, $mobile-height);
         font-size: 24px;
         line-height: 1.67;
         letter-spacing: -0.7px;
@@ -146,7 +149,7 @@
     }
 
     &__get-started {
-      margin: 20px 0 110px;
+      margin: px_to_vh(20, $mobile-height) 0 px_to_vh(110, $mobile-height);
       font-size: 0;
       color: transparent;
 
@@ -156,12 +159,13 @@
     }
 
     &__page-title {
-      width: 150px;
+      width: px_to_vw(150, $mobile-width-grid);
       font-size: 16px;
       line-height: 1.25;
     }
 
     &__more {
+      bottom: px_to_vh(30, $mobile-height);
       font-size: 16px;
       line-height: 1.25;
     }
@@ -173,7 +177,7 @@
   }
 
   @include medium-width-media {
-    &__inner:before {
+    figure.gif {
       top: 60px;
     }
 
@@ -182,14 +186,16 @@
     }
   }
 
-  @include large-width-media {
+  @include large-desktops-media {
     h1, &__get-started, &__page-title {
       left: 390px;
     }
-  }
 
-  @include large-height-media {
-    &__inner:before {
+    &__get-started, &__more {
+      bottom: 40px;
+    }
+
+    figure.gif {
       top: 100px;
       right: -5px;
     }
@@ -205,10 +211,6 @@
         line-height: 0.83;
         letter-spacing: -1.3px;
       }
-    }
-
-    &__get-started, &__more {
-      bottom: 40px;
     }
   }
 }

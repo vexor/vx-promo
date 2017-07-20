@@ -190,9 +190,10 @@
     }
 }
 
-@include large-width-media {
+@include large-desktops-media {
     .slick-list {
         width: 1340px;
         margin: 0 auto;
+        overflow: hidden;
     }
 }

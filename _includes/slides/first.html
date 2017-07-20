@@ -1,43 +1,49 @@
-<section class="slide first-slide">
+<section id="first-slide" class="slide first-slide">
 
   <div class="first-slide__inner base">
 
-    <div class="first-slide__page-title">
-      {{ page.title }}
-    </div>
+    <figure class="gif"></figure>
 
-    <h1>
-      {{ 'sections.first.title' | t }}
+    <div class="first-slide__scrollable">
 
-      <span>{{ 'sections.first.subtitle' | t }}</span>
-    </h1>
+      <div class="first-slide__page-title">
+        {{ page.title }}
+      </div>
 
-    <div class="first-slide__get-started">
-      {{ 'get_started.caption' | t }}
-      <ul>
-        <li>
-          <a href="#" class="underlined white">{{ 'get_started.github' | t }}</a>
-        </li>
+      <h1>
+        {{ 'sections.first.title' | t }}
 
-        <li>
-          <a href="#" class="underlined white">{{ 'get_started.bitbucket' | t }}</a>
-        </li>
+        <span>{{ 'sections.first.subtitle' | t }}</span>
+      </h1>
 
-        <li>
-          <a href="#" class="underlined white">{{ 'get_started.gitlab' | t }}</a>
-        </li>
-      </ul>
+      <div class="first-slide__get-started">
+        {{ 'get_started.caption' | t }}
+        <ul>
+          <li>
+            <a href="#" class="underlined white">{{ 'get_started.github' | t }}</a>
+          </li>
 
-      <button class="mobile">{{ 'get_started.mobile' | t }}</button>
-    </div>
+          <li>
+            <a href="#" class="underlined white">{{ 'get_started.bitbucket' | t }}</a>
+          </li>
 
-    <div class="first-slide__more">
-      <a href="#" class="white">{{ 'sections.first.more' | t }}</a>
+          <li>
+            <a href="#" class="underlined white">{{ 'get_started.gitlab' | t }}</a>
+          </li>
+        </ul>
+
+        <button class="mobile">{{ 'get_started.mobile' | t }}</button>
+      </div>
+
+      <div class="first-slide__more">
+        <a href="#" class="white">{{ 'sections.first.more' | t }}</a>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="first-slide__menu">
+  <div class="first-slide__menu mobile">
     <ul>
       <li>
         <a href="#" class="underlined white">{{ 'nav.documentation' | t }}</a>
@@ -60,6 +66,6 @@
     </ul>
   </div>
 
-  <button class="first-slide__sign-up">{{ 'nav.sign_up' | t }}</button>
+  <button class="first-slide__sign-up mobile">{{ 'nav.sign_up' | t }}</button>
 
 </section>

@@ -1,14 +1,14 @@
-.slides {
-  @include size(100%);
-}
+.slides {}
 
 .slide {
   position: relative;
-  @include size(100%);
   overflow: hidden;
-  @include clearTransform3d;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
 
   @include mobile {
+    height: auto;
     padding-top: 60px;
   }
 }
@@ -16,14 +16,15 @@
 .first-slide__inner, .last-slide__inner {
   position: relative;
 
-  &:before {
-    content: '';
+  figure.gif {
+    display: block;
     position: absolute;
-    z-index: -1;
     top: 140px;
     right: 0;
     width: 440px;
     height: 528px;
+    margin: 0;
+    z-index: -1;
     background-image: asset_url('interface/slides/3-d.gif');
     background-repeat: no-repeat;
     background-position: left top;
@@ -33,7 +34,7 @@
       height: 677px;
     }
 
-    @include large-height-media {
+    @include large-desktops-media {
       width: 740px;
       height: 888px;
     }

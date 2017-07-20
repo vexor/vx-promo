@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 
   &__inner {
     height: 100px;
@@ -13,6 +13,7 @@
       float: left;
       width: auto;
       height: 30px;
+      @include transition(all 0.3s ease);
 
       path {
         fill: $blue-pigment;
@@ -21,6 +22,11 @@
 
       &.white {
         path { fill: white; }
+      }
+
+      &.smaller {
+        margin-left: -23px;
+        @include transform(scale(0.7));
       }
 
       &#menu-close {

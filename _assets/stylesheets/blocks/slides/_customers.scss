@@ -1,5 +1,4 @@
 .customers-slide {
-  z-index: 0;
 
   &__inner {
     height: calc(100vh - #{$customers-height-sm-md});
