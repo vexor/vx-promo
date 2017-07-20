@@ -48,32 +48,32 @@
         }
       }
     }
-
-    @include mobile {
-      height: 60px;
-      padding-top: 20px;
-
-      svg {
-        height: 20px;
-
-        &.toggler { float: right; }
-      }
-    }
-
-    @include medium-width-media {
-      nav a {
-        margin-left: 160px;
-      }
-    }
-
-    @include large-width-media {
-      nav a {
-        margin-left: 250px;
-      }
-    }
   }
 
   @include mobile {
     position: absolute;
+
+    &__inner {
+      height: px_to_vh(60, $mobile-height);
+      padding-top: px_to_vh(20, $mobile-height);
+
+      svg {
+        height: px_to_vh(20, $mobile-height);
+
+        &.toggler { float: right; }
+      }
+    }
+  }
+
+  @include medium-width-media {
+    nav a {
+      margin-left: 160px;
+    }
+  }
+
+  @include large-width-media {
+    nav a {
+      margin-left: 250px;
+    }
   }
 }

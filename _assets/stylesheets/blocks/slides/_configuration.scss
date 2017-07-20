@@ -106,7 +106,7 @@
   }
 
   @include mobile {
-    padding: 80px 0;
+    padding: px_to_vh(80, $mobile-height) 0;
 
     &__info {
       position: static;
@@ -115,7 +115,7 @@
       padding: 0;
 
       strong {
-        margin-bottom: 20px;
+        margin-bottom: px_to_vh(20, $mobile-height);
         font-size: 50px;
         letter-spacing: -1px;
       }
@@ -138,7 +138,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      margin: 40px 0 110px;
+      margin: px_to_vh(40, $mobile-height) 0 px_to_vh(110, $mobile-height);
     }
   }
 
@@ -161,7 +161,7 @@
     }
   }
 
-  @include large-width-media {
+  @include large-desktops-media {
     &__calculator, &__info {
       @include abs-vert-cent-block(520px);
     }

@@ -99,8 +99,8 @@
     right: px_to_vw(20, $mobile-width-grid);
   }
 
-  .first-slide__menu {
-    top: px_to_vh(80, $mobile-height);
+  &__menu {
+    top: px_to_vh(100, $mobile-height);
 
     ul li {
       margin-bottom: px_to_vh(30, $mobile-height);
@@ -113,7 +113,7 @@
     }
   }
 
-  .first-slide__sign-up {
+  &__sign-up {
     width: px_to_vw(280, $mobile-width-grid);
     bottom: px_to_vh(20, $mobile-height);
   }
@@ -124,10 +124,10 @@
     @include transition(all 0.5s ease);
 
     figure.gif {
-      width: px_to_vw(350, $mobile-width-grid);
-      height: px_to_vh(420, $mobile-height);
-      top: px_to_vh(-25, $mobile-height);
-      right: px_to_vw(-190, $mobile-width-grid);
+      width: px_to_vw(420, $mobile-width-grid);
+      height: px_to_vh(500, $mobile-height);
+      top: px_to_vh(-30, $mobile-height);
+      right: px_to_vw(-220, $mobile-width-grid);
     }
 
     h1, &__get-started, &__page-title {
@@ -149,7 +149,7 @@
     }
 
     &__get-started {
-      margin: px_to_vh(20, $mobile-height) 0 px_to_vh(110, $mobile-height);
+      margin: px_to_vh(20, $mobile-height) 0 px_to_vh(140, $mobile-height);
       font-size: 0;
       color: transparent;
 
@@ -165,7 +165,7 @@
     }
 
     &__more {
-      bottom: px_to_vh(30, $mobile-height);
+      bottom: 0;
       font-size: 16px;
       line-height: 1.25;
     }

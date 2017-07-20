@@ -9,7 +9,7 @@
 
   @include mobile {
     height: auto;
-    padding-top: 60px;
+    padding-top: px_to_vh(60, $mobile-height);
   }
 }
 

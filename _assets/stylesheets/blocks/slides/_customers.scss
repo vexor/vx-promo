@@ -164,30 +164,28 @@
     &__reviews {
 
       &__item {
-        width: px_to_vw(280, 320);
+        width: px_to_vw(280, $mobile-width-grid);
         height: auto;
-        margin: 0 px_to_vw(20, 320);
-        padding-bottom: 50px;
+        margin: 0 px_to_vw(20, $mobile-width-grid);
+        padding-bottom: px_to_vh(50, $mobile-height);
 
         &__inner {
-          @include size(280px auto);
-          padding: 60px 20px 40px;
+          @include size(100% auto);
+          padding: px_to_vh(60, $mobile-height) px_to_vw(20, $mobile-width-grid) px_to_vh(40, $mobile-height);
         }
       }
     }
 
     &__logos {
-      height: 190px;
-      padding: 45px 0;
+      height: px_to_vh(190, $mobile-height);
+      padding: px_to_vh(45, $mobile-height) 0;
 
       a {
-        width: px_to_vw(120, 320);
-        height: px_to_vw(23, 320);
-        margin: 0 0 18px;
+        width: px_to_vw(120, $mobile-width-grid);
+        height: px_to_vw(23, $mobile-width-grid);
+        margin: 0 0 px_to_vh(18, $mobile-height);
 
-        &:nth-child(even) {
-          float: right;
-        }
+        &:nth-child(even) { float: right; }
       }
     }
   }
@@ -206,13 +204,7 @@
     }
   }
 
-  @include large-width-media {
-    &__reviews__item {
-      width: 670px;
-    }
-  }
-
-  @include large-height-media {
+  @include large-desktops-media {
     &__inner {
       height: calc(100vh - #{$customers-height-lg});
       padding-top: 200px;
@@ -221,6 +213,7 @@
     &__reviews {
 
       &__item {
+        width: 670px;
         height: 500px;
         padding-top: 130px;
       }

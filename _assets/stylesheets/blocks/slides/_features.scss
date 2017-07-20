@@ -88,7 +88,7 @@
   }
 
   @include mobile {
-    padding: 90px 0 80px;
+    padding: px_to_vh(90, $mobile-height) 0 px_to_vh(90, $mobile-height);
 
     &__info {
       position: static;
@@ -102,7 +102,7 @@
       }
 
       p {
-        margin: 10px 0 20px;
+        margin: px_to_vh(10, $mobile-height) 0 px_to_vh(20, $mobile-height);
         font-size: 20px;
         line-height: 1.5;
       }
@@ -115,11 +115,12 @@
 
       &__item {
         position: static;
+        width: 100%;
         padding-top: 0;
 
         .screenshot {
           width: 100%;
-          height: px_to_vw(367, 320);
+          height: px_to_vh(367, $mobile-height);
           background-repeat: no-repeat;
           background-position: center center;
           background-size: cover;
@@ -127,7 +128,7 @@
         }
 
         &[data-item="fae"] {
-          margin-bottom: 80px;
+          margin-bottom: px_to_vh(80, $mobile-height);
 
           .screenshot {
             background-image: asset_url('pictures/features/fast_and_easy_mobile.png');
@@ -135,7 +136,7 @@
         }
 
         &[data-item="asm_asn"] {
-          margin-bottom: 110px;
+          margin-bottom: px_to_vh(110, $mobile-height);
 
           .screenshot {
             background-image: asset_url('pictures/features/asm_asn_mobile.png');

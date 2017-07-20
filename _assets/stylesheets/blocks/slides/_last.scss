@@ -54,19 +54,18 @@
   }
 
   @include mobile {
-    padding: 130px 0 240px;
+    padding: px_to_vh(130, $mobile-height) 0 px_to_vh(240, $mobile-height);
 
     &__inner {
       position: static;
       height: auto;
+    }
 
-      &:before {
-        width: px_to_vw(292, 320);
-        height: px_to_vw(350, 320);
-        top: px_to_vw(-160, 320);
-        left: px_to_vw(15, 320);
-        @include transform(rotate(90deg));
-      }
+    figure.gif {
+      width: px_to_vh(300, $mobile-height);
+      height: px_to_vw(350, $mobile-width-grid);
+      top: px_to_vh(-160, $mobile-height);
+      left: px_to_vw(10, $mobile-width-grid);
     }
 
     h2, &__sign-up {
@@ -87,11 +86,11 @@
     }
 
     &__sign-up {
-      margin-bottom: 60px;
+      margin-bottom: px_to_vh(60, $mobile-height);
 
       button {
         width: 100%;
-        margin-top: 20px;
+        margin-top: px_to_vh(20, $mobile-height);
       }
     }
   }

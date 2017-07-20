@@ -81,11 +81,11 @@
   @include mobile {
     position: absolute;
     bottom: 0;
-    height: 240px;
-    padding: 35px 0;
+    height: px_to_vh(240, $mobile-height);
+    padding: px_to_vh(35, $mobile-height) 0;
 
     &__inner {
-      padding-top: 62px;
+      padding-top: px_to_vh(65, $mobile-height);
     }
 
     &__copyright, &__powered {
@@ -142,7 +142,7 @@
     &__powered { margin-left: 40px; }
   }
 
-  @include large-height-media {
+  @include large-desktops-media {
     height: $footer-height-lg;
 
     &__inner { padding-top: 62px; }
