@@ -24,7 +24,7 @@ en:
 
   sections:
     first:
-      title: Unlımıted parallelısm of buılds.
+      title: <span class="row row-first">Un<b class="char-l">l</b>ımıted</span> <span class="row row-second">para<b class="char-l">l</b><b class="char-l">l</b>e<b class="char-l">l</b>ısm</span> <span class="row row-third">of <b class="char-b">b</b>uı<b class="char-l">l</b>ds.</span>
       subtitle: No pending. No queues.
       more: More
 

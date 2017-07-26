@@ -37,11 +37,69 @@
     letter-spacing: -1px;
 
     span {
-      display: block;
-      margin-top: 60px;
-      font-size: 36px;
-      font-weight: normal;
-      line-height: 1.11;
+
+      &.row {
+        display: block;
+        letter-spacing: -2px;
+
+        b.char-l {
+            color: transparent;
+            font-size: 0;
+
+            &:before {
+              content: '|';
+              color: white;
+              font-size: 114px;
+            }
+          }
+
+        &.row-first {
+
+          b.char-l {
+            margin-left: -2px;
+            letter-spacing: -7px;
+          }
+        }
+
+        &.row-second {
+
+          b.char-l {
+
+            &:first-of-type {
+              margin-left: -4px;
+            }
+
+            &:nth-of-type(2) {
+              margin-left: -6.5px;
+              letter-spacing: -7px;
+            }
+          }
+        }
+
+        &.row-third {
+          margin-left: -18px;
+
+          b {
+
+            &.char-b {
+              margin-left: -11px;
+            }
+
+            &.char-l {
+              margin-left: -6px;
+              letter-spacing: -7px;
+            }
+          }
+        }
+      }
+
+      &.subtitle {
+        display: block;
+        margin-top: 60px;
+        font-size: 36px;
+        font-weight: normal;
+        line-height: 1.11;
+      }
     }
   }
 
@@ -140,7 +198,7 @@
       font-size: 56px;
       letter-spacing: -1px;
 
-      span {
+      .subtitle {
         margin-top: px_to_vh(20, $mobile-height);
         font-size: 24px;
         line-height: 1.67;
@@ -205,7 +263,7 @@
       font-size: 144px;
       margin-top: -200px;
 
-      span {
+      .subtitle {
         margin-top: 80px;
         font-size: 48px;
         line-height: 0.83;
