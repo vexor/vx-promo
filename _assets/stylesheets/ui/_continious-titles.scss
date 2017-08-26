@@ -1,0 +1,60 @@
+h1 {
+
+  span {
+
+    &.row {
+      display: block;
+      letter-spacing: -2px;
+
+      b.char-l {
+        color: transparent;
+        font-size: 0;
+
+        &:before {
+          content: '|';
+          color: white;
+          font-size: 114px;
+        }
+      }
+
+      &.row-first {
+
+        b.char-l {
+          margin-left: -2px;
+          letter-spacing: -7px;
+        }
+      }
+
+      &.row-second {
+
+        b.char-l {
+
+          &:first-of-type {
+            margin-left: -4px;
+          }
+
+          &:nth-of-type(2) {
+            margin-left: -6.5px;
+            letter-spacing: -7px;
+          }
+        }
+      }
+
+      &.row-third {
+        margin-left: -18px;
+
+        b {
+
+          &.char-b {
+            margin-left: -11px;
+          }
+
+          &.char-l {
+            margin-left: -6px;
+            letter-spacing: -7px;
+          }
+        }
+      }
+    }
+  }
+}

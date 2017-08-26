@@ -3,6 +3,7 @@
   background-color: $blue-pigment;
 
   &__inner {
+    position: relative;
     height: calc(100vh - #{$footer-height-sm});
   }
 
@@ -63,9 +64,9 @@
 
     figure.gif {
       width: px_to_vh(300, $mobile-height);
-      height: px_to_vw(350, $mobile-width-grid);
+      height: px_to_vw(525, $mobile-width);
       top: px_to_vh(-160, $mobile-height);
-      left: px_to_vw(10, $mobile-width-grid);
+      left: px_to_vw(15, $mobile-width);
     }
 
     h2, &__sign-up {

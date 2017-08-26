@@ -16,6 +16,8 @@ $(function() {
     prepareAuth();
 
     if (!isMobile.any) {
+        $('body').addClass('at-desktop');
+
         scrollParams();
 
         scrollbarWidth();
@@ -27,7 +29,10 @@ $(function() {
         lastSlideAnimations();
     }
 
-    if (isMobile.phone) { initSlidedMenu(); }
+    if (isMobile.phone) {
+        $('body').addClass('at-mobile');
+        initSlidedMenu();
+    }
 
     $(document).on('body:load', prepareAuth);
 

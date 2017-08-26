@@ -18,13 +18,20 @@ html {
 
 body {
   position: relative;
-  min-height: 768px;
-  min-width: 900px;
   -webkit-font-smoothing: antialiased;
   color: $dark-blue-gray;
   font: normal normal normal 20px Circe, SansSerif;
   font-stretch: normal;
   letter-spacing: normal;
+
+  &.at-desktop {
+    min-height: 768px;
+    min-width: 900px;
+
+    @import 'ui/continious-titles';
+  }
+
+  &.at-mobile { }
 }
 
 a {

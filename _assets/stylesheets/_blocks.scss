@@ -4,7 +4,11 @@
   @include clearfix;
 
   @include mobile {
-    width: px_to_vw(280, $mobile-width-grid);
+    width: px_to_vw($mobile-width-grid, $mobile-width);
+  }
+
+  @include tablet {
+    width: px_to_vw($tablet-width-grid, $tablet-width);
   }
 
   @include medium-width-media {
@@ -24,14 +28,50 @@
   }
 }
 
+.tablet {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
 .desktop {
   display: block;
 
   @include mobile {
     display: none;
   }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+figure.gif {
+  display: block;
+  position: absolute;
+  top: 140px;
+  right: 0;
+  width: 440px;
+  height: 528px;
+  margin: 0;
+  z-index: -1;
+  background-image: asset_url('interface/slides/3-d.gif');
+  background-repeat: no-repeat;
+  background-position: left top;
+
+  @include medium-width-media {
+    width: 564px;
+    height: 677px;
+  }
+
+  @include large-desktops-media {
+    width: 740px;
+    height: 888px;
+  }
 }
 
 @import "blocks/header";
 @import "blocks/footer";
-@import "blocks/slides";
+@import "blocks/mobile-menu";

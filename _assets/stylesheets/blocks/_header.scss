@@ -24,6 +24,10 @@
         path { fill: white; }
       }
 
+      &.separate-white {
+        path { fill: white; }
+      }
+
       &.smaller {
         margin-left: -23px;
         @include transform(scale(0.7));
@@ -51,7 +55,7 @@
   }
 
   @include mobile {
-    position: absolute;
+    background-color: rgba($blue-pigment, 0.8);
 
     &__inner {
       height: px_to_vh(60, $mobile-height);
@@ -62,6 +66,14 @@
 
         &.toggler { float: right; }
       }
+    }
+
+    &.white-bg {
+      background-color: rgba(white, 0.8);
+    }
+
+    &.without-bg {
+      background-color: transparent;
     }
   }
 

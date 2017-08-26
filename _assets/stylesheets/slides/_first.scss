@@ -3,7 +3,10 @@
   background-color: $blue-pigment;
   z-index: 2;
 
-  &__inner { height: 100%; }
+  &__inner {
+    position: relative;
+    height: 100%;
+  }
 
   &__scrollable {
     position: relative;
@@ -36,70 +39,12 @@
     line-height: 0.7;
     letter-spacing: -1px;
 
-    span {
-
-      &.row {
-        display: block;
-        letter-spacing: -2px;
-
-        b.char-l {
-            color: transparent;
-            font-size: 0;
-
-            &:before {
-              content: '|';
-              color: white;
-              font-size: 114px;
-            }
-          }
-
-        &.row-first {
-
-          b.char-l {
-            margin-left: -2px;
-            letter-spacing: -7px;
-          }
-        }
-
-        &.row-second {
-
-          b.char-l {
-
-            &:first-of-type {
-              margin-left: -4px;
-            }
-
-            &:nth-of-type(2) {
-              margin-left: -6.5px;
-              letter-spacing: -7px;
-            }
-          }
-        }
-
-        &.row-third {
-          margin-left: -18px;
-
-          b {
-
-            &.char-b {
-              margin-left: -11px;
-            }
-
-            &.char-l {
-              margin-left: -6px;
-              letter-spacing: -7px;
-            }
-          }
-        }
-      }
-
-      &.subtitle {
-        display: block;
-        margin-top: 60px;
-        font-size: 36px;
-        font-weight: normal;
-        line-height: 1.11;
-      }
+    .subtitle {
+      display: block;
+      margin-top: 60px;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.11;
     }
   }
 
@@ -151,41 +96,16 @@
     a { border-bottom-color: transparent; }
   }
 
-  &__menu, &__sign-up {
-    display: none;
-    position: absolute;
-    right: px_to_vw(20, $mobile-width-grid);
-  }
-
-  &__menu {
-    top: px_to_vh(100, $mobile-height);
-
-    ul li {
-      margin-bottom: px_to_vh(30, $mobile-height);
-      text-align: right;
-
-      a.smaller {
-        font-size: 16px;
-        line-height: 1.25;
-      }
-    }
-  }
-
-  &__sign-up {
-    width: px_to_vw(280, $mobile-width-grid);
-    bottom: px_to_vh(20, $mobile-height);
-  }
-
   @include mobile {
     left: 0;
     padding-bottom: px_to_vh(20, $mobile-height);
     @include transition(all 0.5s ease);
 
     figure.gif {
-      width: px_to_vw(420, $mobile-width-grid);
+      width: px_to_vw(630, $mobile-width);
       height: px_to_vh(500, $mobile-height);
-      top: px_to_vh(-30, $mobile-height);
-      right: px_to_vw(-220, $mobile-width-grid);
+      top: px_to_vh(-15, $mobile-height);
+      right: px_to_vw(-335, $mobile-width);
     }
 
     h1, &__get-started, &__page-title {
@@ -217,7 +137,7 @@
     }
 
     &__page-title {
-      width: px_to_vw(150, $mobile-width-grid);
+      width: px_to_vw(225, $mobile-width);
       font-size: 16px;
       line-height: 1.25;
     }
@@ -226,11 +146,6 @@
       bottom: 0;
       font-size: 16px;
       line-height: 1.25;
-    }
-
-    &.menu-opened {
-      width: 300%;
-      left: -200%;
     }
   }
 

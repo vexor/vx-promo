@@ -164,14 +164,14 @@
     &__reviews {
 
       &__item {
-        width: px_to_vw(280, $mobile-width-grid);
+        width: px_to_vw(420, $mobile-width);
         height: auto;
-        margin: 0 px_to_vw(20, $mobile-width-grid);
+        margin: 0 px_to_vw(30, $mobile-width);
         padding-bottom: px_to_vh(50, $mobile-height);
 
         &__inner {
           @include size(100% auto);
-          padding: px_to_vh(60, $mobile-height) px_to_vw(20, $mobile-width-grid) px_to_vh(40, $mobile-height);
+          padding: px_to_vh(60, $mobile-height) px_to_vw(30, $mobile-width) px_to_vh(40, $mobile-height);
         }
       }
     }
@@ -181,8 +181,8 @@
       padding: px_to_vh(45, $mobile-height) 0;
 
       a {
-        width: px_to_vw(120, $mobile-width-grid);
-        height: px_to_vw(23, $mobile-width-grid);
+        width: px_to_vw(180, $mobile-width);
+        height: px_to_vw(35, $mobile-width);
         margin: 0 0 px_to_vh(18, $mobile-height);
 
         &:nth-child(even) { float: right; }

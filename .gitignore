@@ -2,3 +2,4 @@ _site
 translate/
 .#*
 /.sass-cache/
+/TODO.md
