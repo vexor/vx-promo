@@ -34,7 +34,7 @@
 }
 
 @mixin tablet {
-  @media (min-width: #{$tablet-width + 1}) and (max-width: #{$small-desktop-width - 1}) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$small-desktop-width - 1}) {
     @content;
   }
 }

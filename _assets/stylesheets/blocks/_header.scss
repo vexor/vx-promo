@@ -77,6 +77,20 @@
     }
   }
 
+  @include tablet {
+    &__inner {
+
+      svg { height: 20px; }
+
+      nav {
+        position: relative;
+        top: -5px;
+
+        a { margin-left: 40px; }
+      }
+    }
+  }
+
   @include medium-width-media {
     nav a {
       margin-left: 160px;

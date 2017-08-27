@@ -51,6 +51,10 @@
       width: 120px;
       margin-right: 40px;
       font-size: 19px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 
@@ -92,6 +96,32 @@
       button {
         width: 100%;
         margin-top: px_to_vh(20, $mobile-height);
+      }
+    }
+  }
+
+  @include tablet {
+
+    &__inner {
+      height: calc(100vh - #{$footer-height-tb});
+    }
+
+    figure.gif {
+      width: 530px;
+      height: 660px;
+      top: -330px;
+      left: 50px;
+    }
+
+    h2, &__sign-up {
+      left: 0;
+    }
+
+    &__sign-up {
+      bottom: 150px;
+
+      button {
+        width: 200px;
       }
     }
   }

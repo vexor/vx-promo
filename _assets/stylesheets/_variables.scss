@@ -14,6 +14,7 @@ $medium-desktop-width: 1366px;
 $large-desktop-width: 1600px;
 
 $mobile-height: 568px;
+$tablet-height: 1024px;
 $small-desktop-height: 768px;
 $large-desktop-height: 1080px;
 
@@ -23,9 +24,10 @@ $tablet-width-grid: 680px;
 
 // customers
 $customers-height-sm-md: 110px;
-$customers-height-lg: 160px;
+$customers-height-tb-lg: 160px;
 
 // footer
+$footer-height-tb: 163px;
 $footer-height-sm: 147px;
 $footer-height-md: 116px;
 $footer-height-lg: 138px;

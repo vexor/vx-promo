@@ -20,10 +20,18 @@
   }
 }
 
-.mobile {
+.desktop {
+  display: block;
+
+  @include mobile_tablet {
+    display: none;
+  }
+}
+
+.mobile-tablet {
   display: none;
 
-  @include mobile {
+  @include mobile_tablet {
     display: block;
   }
 }
@@ -36,15 +44,11 @@
   }
 }
 
-.desktop {
-  display: block;
+.mobile {
+  display: none;
 
   @include mobile {
-    display: none;
-  }
-
-  @include tablet {
-    display: none;
+    display: block;
   }
 }
 

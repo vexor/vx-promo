@@ -4,7 +4,7 @@
   <head>
     <title>Vexor: {{ page.title }} </title>
     {%if page.description_key %}{% assign page_description = 'description.pages.' | append: page.description_key%}{% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="google-site-verification" content="QN2ZV4jh2PVBk7XxTqTlc4OBVZgsB3VN4TDVLV2YysY" />
     <meta name="yandex-verification" content="c860b1651a6c8ff7" />
     <meta name="description" content="{{ page_description | t }}">

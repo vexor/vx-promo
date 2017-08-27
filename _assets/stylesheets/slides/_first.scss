@@ -97,9 +97,7 @@
   }
 
   @include mobile {
-    left: 0;
     padding-bottom: px_to_vh(20, $mobile-height);
-    @include transition(all 0.5s ease);
 
     figure.gif {
       width: px_to_vw(630, $mobile-width);
@@ -147,6 +145,31 @@
       font-size: 16px;
       line-height: 1.25;
     }
+  }
+
+  @include tablet {
+    padding-top: 140px;
+
+    figure.gif {
+      width: 560px;
+      height: 670px;
+      top: 40px;
+      right: -240px;
+    }
+
+    h1, &__get-started, &__page-title {
+      position: static;
+    }
+
+    h1 {
+      margin: 140px 0 220px;
+    }
+
+    &__page-title {
+      width: 105px;
+    }
+
+    &__more { display: none; }
   }
 
   @include medium-width-media {

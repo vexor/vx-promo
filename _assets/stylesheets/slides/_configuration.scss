@@ -94,7 +94,7 @@
     }
 
     p {
-      margin: 40px 0;
+      margin: 35px 0 40px;
       font-size: 30px;
       line-height: 1.33;
     }
@@ -139,6 +139,32 @@
       left: 0;
       width: 100%;
       margin: px_to_vh(40, $mobile-height) 0 px_to_vh(110, $mobile-height);
+    }
+  }
+
+  @include tablet {
+    height: auto;
+    padding: 120px 0;
+
+    &__info, &__calculator {
+      position: static;
+      width: 320px;
+      margin: 0;
+    }
+
+    &__info {
+      float: right;
+
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      button { width: 230px; }
+    }
+
+    &__calculator {
+      float: left;
     }
   }
 
