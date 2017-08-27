@@ -21,34 +21,46 @@
 }
 
 .desktop {
-  display: block;
 
-  @include mobile_tablet {
-    display: none;
+  @include desktop {
+    display: block;
+
+    &-down {
+      display: none;
+    }
   }
 }
 
 .mobile-tablet {
-  display: none;
 
   @include mobile_tablet {
     display: block;
+
+    &-down {
+      display: none;
+    }
   }
 }
 
 .tablet {
-  display: none;
 
   @include tablet {
     display: block;
+
+    &-down {
+      display: none;
+    }
   }
 }
 
 .mobile {
-  display: none;
 
   @include mobile {
     display: block;
+
+    &-down {
+      display: none;
+    }
   }
 }
 
