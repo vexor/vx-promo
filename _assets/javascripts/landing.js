@@ -9,43 +9,40 @@ $(function() {
 
     headerColor();
 
-    initConfigurationsCalculator();
-
-    initReviewsSlider();
-
-    prepareAuth();
-
+    // common desktop scripts
     if (!isMobile.any) {
         $('body').addClass('at-desktop');
-
         scrollParams();
-
         scrollbarWidth();
-
-        firstSlideAnimations();
-
-        featuresSlideAnimations();
-
-        lastSlideAnimations();
     }
 
+    // common mobile scripts
     if (isMobile.phone) {
         $('body').addClass('at-mobile');
-        initSlidedMenu();
     }
 
-    $(document).on('body:load', prepareAuth);
+    // index page's scripts
+    if ($('#documentation').length < 1) {
+        initConfigurationsCalculator();
+        initReviewsSlider();
 
-    $(window).on('resize', function() {
-        //
-        // headerColor();
-        //
-        // firstSlideAnimations();
-        //
-        // featuresSlideAnimations();
-        //
-        // lastSlideAnimations();
+        // slides animation if desktop
+        if (!isMobile.any) {
+            firstSlideAnimations();
+            featuresSlideAnimations();
+            lastSlideAnimations();
+        }
 
-    });
+        // slided menu if mobile
+        if (isMobile.phone) {
+            initSlidedMenu();
+        }
+    }
+    // documentation page's scripts
+    else {
+        initDocumentationNav();
+    }
 
 });
+
+$(document).on('body:load', prepareAuth);

@@ -1,0 +1,51 @@
+.sidebar {
+
+  &__nav {
+
+    li {
+      margin-bottom: 20px;
+      font: bold normal normal px_to_em(20) Circe, SansSerif;
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+
+      & > a {
+        color: $blue-pigment;
+
+        &.active { color: $aquamarine; }
+      }
+    }
+
+    &__title {
+
+      &:after {
+        content: '↓';
+        color: $crayola-blue-bell;
+        padding-left: 3px;
+      }
+
+      &.toggled {
+
+        &:after { content: '↑'; }
+      }
+
+      &.untoggle {
+
+        &:after { content: ''; }
+      }
+    }
+
+    &__links {
+      display: none;
+
+      ul {
+        list-style: none;
+        padding-left: 20px;
+
+        li {
+          font-weight: normal;
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+}

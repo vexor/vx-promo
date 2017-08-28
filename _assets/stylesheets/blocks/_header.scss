@@ -43,7 +43,7 @@
 
       a {
         display: inline-block;
-        font-size: 20px;
+        font-size: px_to_em(20);
         line-height: 1.0;
         margin-left: 100px;
 
@@ -52,6 +52,14 @@
         }
       }
     }
+  }
+
+  &.white-bg {
+    background-color: rgba(white, 0.8);
+  }
+
+  &.without-bg {
+    background-color: transparent;
   }
 
   @include mobile {
@@ -66,14 +74,6 @@
 
         &.toggler { float: right; }
       }
-    }
-
-    &.white-bg {
-      background-color: rgba(white, 0.8);
-    }
-
-    &.without-bg {
-      background-color: transparent;
     }
   }
 

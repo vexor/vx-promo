@@ -20,7 +20,7 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   color: $dark-blue-gray;
-  font: normal normal normal 20px Circe, SansSerif;
+  font: normal normal normal px_to_em(20) Circe, Sans;
   font-stretch: normal;
   letter-spacing: normal;
 

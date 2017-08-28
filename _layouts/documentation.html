@@ -1,34 +1,28 @@
 ---
-layout: landing
+layout: landing_redesign
 ---
 
-<div class='block-header content-block-header hidden'>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Help Center</h1>
-      </div>
-    </div>
-  </div>
-</div>
+<main id="documentation" class="documentation base">
 
-<div class="container-fluid help">
-  <div class="row">
-
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li><a href="#">Getting started</a></li>
-        <li>
-          <ul class="nav nav-sidebar">
+    <aside class="documentation__nav sidebar">
+      <ul class="sidebar__nav">
+        <li class="sidebar__nav__title">
+          <a href="#getting-started">Getting started</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#getting-started-registration">Registration</a></li>
             <li><a href="#getting-started-team-settings">Team settings</a></li>
             <li><a href="#getting-started-adding-a-project">Adding a project</a></li>
             <li><a href="#getting-started-project-notifications">Project notifications</a></li>
           </ul>
         </li>
-        <li><a href="#project-settings">Project settings</a></li>
-        <li>
-          <ul class="nav nav-sidebar">
+
+        <li class="sidebar__nav__title">
+          <a href="#project-settings">Project settings</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#project-settings-language">Language</a></li>
             <li><a href="#project-settings-build-restrictions">Filtering branches</a></li>
             <li><a href="#project-settings-build-statuses">Build statuses</a></li>
@@ -39,14 +33,14 @@ layout: landing
           </ul>
         </li>
 
-        <li><a href="#config-file">Vexor config file</a></li>
-
-        <li>
-          <ul class="nav nav-sidebar">
+        <li class="sidebar__nav__title">
+          <a href="#config-file">Vexor config file</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#config-common-keys">Common keys</a></li>
-
             <li>
-              <ul class="nav nav-sidebar">
+              <ul>
                 <li><a href="#config-language">language</a></li>
                 <li><a href="#config-env">env</a></li>
                 <li><a href="#config-before-install">before_install</a></li>
@@ -61,34 +55,41 @@ layout: landing
                 <li><a href="#config-cache">cache</a></li>
               </ul>
             </li>
-
             <li><a href="#config-languages">Language versions</a></li>
           </ul>
         </li>
 
-        <li><a href="#builds">Builds</a></li>
-
-        <li>
-          <ul class="nav nav-sidebar">
+        <li class="sidebar__nav__title">
+          <a href="#builds">Builds</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#builds-cancel">Cancel a build</a></li>
             <li><a href="#builds-rebuild">Rebuild</a></li>
           </ul>
         </li>
 
-        <li><a href="#parallelism">Parallelism</a></li>
-
-        <li>
-          <ul class="nav nav-sidebar">
+        <li class="sidebar__nav__title">
+          <a href="#parallelism">Parallelism</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#parallelism-versions">Different language versions</a></li>
             <li><a href="#parallelism-env">Different scripts</a></li>
             <li><a href="#parallelism-combined">Versions and scripts combined</a></li>
             <li><a href="#parallelism-rspec">Parallel Rspec</a></li>
           </ul>
         </li>
-        <li><a href="#services">Preinstalled packages</a></li>
-        <li><a href="#language-guides">Language guides</a></li>
-        <li>
-          <ul class="nav nav-sidebar">
+
+        <li class="sidebar__nav__title untoggle">
+          <a href="#services">Preinstalled packages</a>
+        </li>
+
+        <li class="sidebar__nav__title">
+          <a href="#language-guides">Language guides</a>
+        </li>
+        <li class="sidebar__nav__links">
+          <ul>
             <li><a href="#language-guides-ruby">Ruby</a></li>
             <li><a href="#language-guides-clojure">Clojure</a></li>
             <li><a href="#language-guides-scala">Scala</a></li>
@@ -97,17 +98,24 @@ layout: landing
             <li><a href="#language-guides-golang">Go</a></li>
             <li><a href="#language-guides-rust">Rust</a></li>
           </ul>
-        <li><a href="#deploy">Deploying apps</a></li>
-        <li><a href="#ssh">SSHing into builds</a></li>
-        <li><a href="#billing">Billing</a></li>
+        </li>
 
+        <li class="sidebar__nav__title untoggle">
+          <a href="#deploy">Deploying apps</a>
+        </li>
 
+        <li class="sidebar__nav__title untoggle">
+          <a href="#ssh">SSHing into builds</a>
+        </li>
+
+        <li class="sidebar__nav__title untoggle">
+          <a href="#billing">Billing</a>
+        </li>
       </ul>
+    </aside>
 
-    </div>
-
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 help-page">
+    <div class="documentation__content">
       {{ content }}
     </div>
-  </div>
-</div>
+
+</main>

@@ -1,6 +1,6 @@
 ---
-layout: help
-title: Configuration
+layout: documentation
+title: Documentation
 description_key: help
 sitemap:
   priority: 0.7
@@ -8,25 +8,25 @@ sitemap:
   lastmod: 2016-11-14T13:45:20+03:00
 ---
 
-# Getting started with Vexor
+# <a class="anchor" id="getting-started">Getting started with Vexor</a>
 
-## Registration<a class="anchor" id="getting-started-registration"></a>
+## <a class="anchor" id="getting-started-registration">Registration</a>
 
 In order to start using Vexor you should have a GitHub or BitBucket account.
 
-![Sign up to Vexor](/images/docs/01.jpg)
+![Sign up to Vexor](/images/docs/01.png)
 
 Vexor supports 3 popular source control providers: [GitHub](https://github.com), [BitBucket](https://bitbucket.org) and [GitLab](https://gitlab.com). No matter which one you've signed up with, you can always connect another, as well as update your email address and name, on the Profile Settings page.
 
 ![Profile settings](/images/docs/02.jpg)
 
-## Team settings<a class="anchor" id="getting-started-team-settings"></a>
+## <a class="anchor" id="getting-started-team-settings">Team settings</a>
 
 Collaborators can be invited to your team on the "Users" page. Each user can be assigned with a role Admin or Developer. Developers cannot remove projects and add users to the team.
 
 ![Team settings](/images/docs/04.jpg)
 
-## Adding a project<a class="anchor" id="getting-started-adding-a-project"></a>
+## <a class="anchor" id="getting-started-adding-a-project">Adding a project</a>
 
 There's a list of all repos imported from your connected accounts in the "Add project" section.
 
@@ -40,29 +40,29 @@ Then you'll be redirected to the freshly added project.
 
 ![Project page](/images/docs/06.jpg)
 
-## Project notification settings<a class="anchor" id="getting-started-project-notifications"></a>
+## <a class="anchor" id="getting-started-project-notifications">Project notification settings</a>
 
 You can choose on which occasions you will be notified about your project's build statuses. There're three available options:
 
-+ **Watching** (default): Get an email after each build is completed whether it's failed or succeeded.
-+ **Not watching**: Get an email only if a build was initiated by your commit or pull request.
-+ **Ignoring**: Don't get any emails about this project.
++ **Watching(default)** Get an email after each build is completed whether it's failed or succeeded.
++ **Not watching** Get an email only if a build was initiated by your commit or pull request.
++ **Ignoring** Don't get any emails about this project.
 
 ![Project notifications settings](/images/docs/07.jpg)
 
-# Project settings<a class="anchor" id="project-settings"></a>
+# <a class="anchor" id="project-settings">Project settings</a>
 
 Secure env variables, SSH keys and build restrictions can be configured on project's "Settings" page.
 
 ![Project settings page](/images/docs/project-settings.jpg)
 
-## Choosing project's language<a class="anchor" id="project-settings-language"></a>
+## <a class="anchor" id="project-settings-language">Choosing project's language</a>
 
 Project's language can be changed here.
 
 ![Project settings language](/images/docs/project-settings-language.jpg)
 
-## Configuring build restrictions<a class="anchor" id="project-settings-build-restrictions"></a>
+## <a class="anchor" id="project-settings-build-restrictions">Configuring build restrictions</a>
 
 You can specify which branches you want to be built by a regular expression in the "Filter pushes" popup.
 
@@ -70,156 +70,146 @@ You can specify which branches you want to be built by a regular expression in t
 
 We don't build pull requests from the same repo by default, because builds are already being initiated by pushes to a repo. This behavior can be changed by clicking on a "Build pull requests" checkbox (e.g. if you have filtered some branches but want to build all PRs). Pull requests from foreign repos are being built always, whether "Build pull requests" checkbox is on or not.
 
-## Configuring build statuses on GitHub or GitLab (no BitBucket, sorry)<a class="anchor" id="project-settings-build-statuses"></a>
+## <a class="anchor" id="project-settings-build-statuses">Configuring build statuses on GitHub or GitLab (no BitBucket, sorry)</a>
 
 Build statuses shown in pull requests could be configured here. Enabled by default.
 
 ![Project settings | Build statuses](/images/docs/project-settings-build-statuses.jpg)
 
-## Canceling running builds after a push to the same branch<a class="anchor" id="project-settings-cancel-ongoing-build"></a>
+## <a class="anchor" id="project-settings-cancel-ongoing-build">Canceling running builds after a push to the same branch</a>
 
 You might want ongoing builds to get cancelled after a push to the same branch. Enabled by default.
 
 ![Project settings | Cancel builds](/images/docs/project-settings-cancel-builds.jpg)
 
-## Configuring Slack notifications<a class="anchor" id="project-settings-slack-notifications"></a>
+## <a class="anchor" id="project-settings-slack-notifications">Configuring Slack notifications</a>
 
 Vexor can send build notifications to Slack channels. To enable this feature you should create an incoming webhook on the Slack integrations page and paste it to the "slack" section of the Vexor project settings page.
 
 ![Project settings | Slack](/images/docs/project-settings-slack.jpg)
 
-## Securing environment variables<a class="anchor" id="project-settings-env-vars"></a>
+## <a class="anchor" id="project-settings-env-vars">Securing environment variables</a>
 
 You can add secure environment variables to your project (e.g. Heroku tokens, Code Climate keys, etc.). Note that env-vars which don't have to be secure could also be added via `.vexor.yml` config file.
 
 ![Project settings | env vars](/images/docs/project-settings-env-vars.jpg)
 
-## Adding SSH keys<a class="anchor" id="project-settings-ssh-keys"></a>
+## <a class="anchor" id="project-settings-ssh-keys">Adding SSH keys</a>
 
 Additional SSH keys can also be added through the interface. Note that you might want to keep keys in a particular order. User-added SSH keys are being added to the agent before the project's deploy key, ordered from most recent to earliest.
 
 ![Project settings | SSH keys](/images/docs/project-settings-ssh-keys.jpg)
 
-# Vexor config file<a class="anchor" id="config-file"></a>
+# <a class="anchor" id="config-file">Vexor config file</a>
 
 Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file in a root directory. For those who are migrating from Travis it is possible to use `.travis.yml` file but it's recommended to switch to `vexor.yml` config, because Vexor is not fully compatible with Travis and uses slightly different configuration options.
 
 ## Available configuration keys
 
-### Common keys<a class="anchor" id="config-common-keys"></a>
+### <a class="anchor" id="config-common-keys">Common keys</a>
 
-#### language *string*<a class="anchor" id="config-language"></a>
+#### <a class="anchor" id="config-language">language *string*</a>
 
-  Specify a language so Vexor could run language-specific preparations for your project. If you don't have a Vexor config included in your repo's root, a default config will be used, which has only the `language` key based on a language you've chosen when added a repo to Vexor. If config file is empty, without language specified, your build won't we able to run.
+Specify a language so Vexor could run language-specific preparations for your project. If you don't have a Vexor config included in your repo's root, a default config will be used, which has only the `language` key based on a language you've chosen when added a repo to Vexor. If config file is empty, without language specified, your build won't we able to run.
 
-  Example:
+Example:
 
-  ```yaml
-  language: ruby
+```yaml
+language: ruby
+```
+
+#### <a class="anchor" id="config-env">env *map*</a>
+
+Set up your environment variables here. For secure env-vars see [Configuring project ENV variables](#project-settings-env-vars) section. Environment config consists of three sections: `global`, `exclude` and `matrix`.
+
++ **Global** A list of global environment variables exported into the system.
+
+```yaml
+env:
+  global:
+  - VAR1=some_stuff
+  - VAR2="i'm a var with spaces"
+```
+
++ **Matrix** A list of martix-specific variables. For each variable there will be one job started with this var + all vars from `global` section exported. See [Parallelism](#parallelism) for better matrix understanding.
+
+```yaml
+env:
+  martix:
+  - SCRIPT=script_for_one_job
+  - SCRIPT=script_for_another_job
+```
+
++ **Exclude** Soon
+
+**Full example**
+
+```yaml
+env:
+  global:
+  - RAILS_ENV=test
+  - DATABASE_URL=postgresql://postgres@herokupgserver.com/my_database
+  matrix:
+  - SCRIPT="bundle exec rspec"
+  - SCRIPT="bundle exec brakeman"
+  - SCRIPT="bundle exec rubocop"
+```
+
+#### <a class="anchor" id="config-before-install">before_install *array*</a>
+
+A list of commands called before installation stage.
+
+```yaml
+before_install:
+- echo called before installing any dependencies
+- ... etc.
   ```
 
-#### env *map*<a class="anchor" id="config-env"></a>
+#### <a class="anchor" id="config-install">install *array*</a>
 
-  Set up your environment variables here. For secure env-vars see [Configuring project ENV variables](#project-settings-env-vars) section. Environment config consists of three sections: `global`, `exclude` and `matrix`.
+By default we install a number of packages depending on a language specified at the beginning of your config file, including a language binary itself. Use this option to override this behavior.
 
-  **Global**
+```yaml
+install:
+- sudo apt-get install -y ruby-build rbenv
+- rbenv install 2.1.2
+- gem install bundler
+- ... etc.
+```
 
-  A list of global environment variables exported into the system.
+#### <a class="anchor" id="config-database">database *array*</a>
 
-  ```yaml
-  env:
-    global:
-    - VAR1=some_stuff
-    - VAR2="i'm a var with spaces"
-  ```
+A list of database-related configuration.
 
-  **Matrix**
+We already have Postgresql 9.4 (with postgres-contrib), MySQL 5.6, MongoDB 2.6.5 and Redis 3.0.2 installed in containers.
 
-  A list of martix-specific variables. For each variable there will be one job started with this var + all vars from `global` section exported. See [Parallelism](#parallelism) for better matrix understanding.
++ **Using PostgreSQL** Postgres starts automatically in containers. Use `postgres` user to execute psql command.
 
-  ```yaml
-  env:
-    martix:
-    - SCRIPT=script_for_one_job
-    - SCRIPT=script_for_another_job
-  ```
+```yaml
+database:
+- psql -U postgres -c "create database test;"
+```
 
-  **Exclude**
++ **Using MySQL** MySQL is already running by default in containers. Use `root` user to call mysql queries.
 
-  Soon
+```yaml
+database:
+– mysql -u root -e "create database test;"
+```
 
-  **Full example**
+*Notice for Rails users*: by default we're already running all necessary database configuration to get Rails tests working so in most cases you don't have to write any database configuration at all. Use `database` config only if you want to override this behavior.
 
-  ```yaml
-  env:
-    global:
-    - RAILS_ENV=test
-    - DATABASE_URL=postgresql://postgres@herokupgserver.com/my_database
-    matrix:
-    - SCRIPT="bundle exec rspec"
-    - SCRIPT="bundle exec brakeman"
-    - SCRIPT="bundle exec rubocop"
+#### <a class="anchor" id="config-before-script">before_script *array*</a>
 
-  ```
-#### before_install *array*<a class="anchor" id="config-before-install"></a>
+A list of commands called after installation and database stages but before running tests. Usually it's used to install additional dependencies when the system's environment's already configured (e.g you need to install additional gems etc.)
 
-  A list of commands called before installation stage.
+```yaml
+before_script:
+- sudo npm install bower
+- sudo gem install brakeman
+```
 
-  ```yaml
-  before_install:
-  - echo called before installing any dependencies
-  - ... etc.
-  ```
-
-#### install *array*<a class="anchor" id="config-install"></a>
-
-  By default we install a number of packages depending on a language specified at the beginning of your config file, including a language binary itself. Use this option to override this behavior.
-
-  ```yaml
-  install:
-  - sudo apt-get install -y ruby-build rbenv
-  - rbenv install 2.1.2
-  - gem install bundler
-  - ... etc.
-  ```
-
-#### database *array*<a class="anchor" id="config-database"></a>
-
-  A list of database-related configuration.
-
-  We already have Postgresql 9.4 (with postgres-contrib), MySQL 5.6, MongoDB 2.6.5 and Redis 3.0.2 installed in containers.
-
-  **Using PostgreSQL**
-
-  Postgres starts automatically in containers. Use `postgres` user to execute psql command.
-
-  ```yaml
-  database:
-  - psql -U postgres -c "create database test;"
-  ```
-
-  **Using MySQL**
-
-  MySQL is already running by default in containers. Use `root` user to call mysql queries.
-
-  ```yaml
-  database:
-  – mysql -u root -e "create database test;"
-  ```
-
-  *Notice for Rails users*: by default we're already running all necessary database configuration to get Rails tests working so in most cases you don't have to write any database configuration at all. Use `database` config only if you want to override this behavior.
-
-#### before_script *array*<a class="anchor" id="config-before-script"></a>
-
-  A list of commands called after installation and database stages but before running tests. Usually it's used to install additional dependencies when the system's environment's already configured (e.g you need to install additional gems etc.)
-
-  ```yaml
-  before_script:
-  - sudo npm install bower
-  - sudo gem install brakeman
-  ```
-
-#### services *array*<a class="anchor" id="config-services"></a>
+#### <a class="anchor" id="config-services">services *array*</a>
 
   Additional services you want to run in your container. For each specified service there will be `sudo service #{specified_service} start` command executed. [Here](https://github.com/vexor/vx-docker-image/tree/master/docker/trusty/playbooks/roles) you can see which services are already present in our image.
 
@@ -233,7 +223,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   - redis-server
   ```
 
-#### script *string*<a class="anchor" id="config-script"></a>
+#### <a class="anchor" id="config-script">script *string*</a>
 
   You can override a command which runs tests. This might be useful together with `matrix` when you want to run your test in parallel.
 
@@ -241,14 +231,14 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
   script: bundle exec rspec
   ```
 
-#### workdir *string*<a class="anchor" id="config-chdir"></a>
+#### <a class="anchor" id="config-chdir">workdir *string*</a>
   Your project's working directory. By default it's set to your repo's root directory (which is `~/org_name/project_name`).
 
   ```yaml
   workdir: relative_dir
   ```
 
-#### timeout *int*<a class="anchor" id="config-timeout"></a>
+#### <a class="anchor" id="config-timeout">timeout *int*</a>
   Job's maximum running time in seconds. Default is 1 hour.
 
   ```yaml
@@ -256,7 +246,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
     timeout: 1800
   ```
 
-#### read_timeout *int*<a class="anchor" id="config-read-timeout"></a>
+#### <a class="anchor" id="config-read-timeout">read_timeout *int*</a>
 
   If there wasn't any output within the read timeout (in seconds) a job will be shut down.
 
@@ -265,7 +255,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
     read_timeout: 60
   ```
 
-#### cache <a class="anchor" id="config-cache"></a>
+#### <a class="anchor" id="config-cache">cache</a>
 
   Enable/disable dependencies caching. `True` by default.
 
@@ -286,7 +276,7 @@ Project's config should be stored in `vexor.yml` (`.vexor.yml` works too) file i
     - .....
   ```
 
-### Language versions<a class="anchor" id="config-languages"></a>
+### <a class="anchor" id="config-languages">Language versions</a>
 
 Each of these keys usually gets a list of language versions which you want to run tests against. If you specified env:matrix, there will be `versions_num * martix_size` jobs. See [Paralleism](#parallelism) for better understanding.
 
@@ -306,15 +296,15 @@ rvm:
 - 2.1.1
 ```
 
-# Builds<a class="anchor" id="builds"></a>
+# <a class="anchor" id="builds">Builds</a>
 
-## Cancel a build<a class="anchor" id="builds-cancel"></a>
+## <a class="anchor" id="builds-cancel">Cancel a build</a>
 
 You can cancel any build by clicking a "Stop" button on a build page. A particular job cannot be stopped.
 
 ![Cancelling a build](/images/docs/cancelling-build.jpg)
 
-## Restart a build<a class="anchor" id="builds-rebuild"></a>
+## <a class="anchor" id="builds-rebuild">Restart a build</a>
 
 Any finished build can be restarted.
 
@@ -327,11 +317,11 @@ In case you want to quickly test some configuration options out without commitin
 ![Rebuild with new config](/images/docs/rebuild-with-new-config.jpg)
 
 
-# Parallelism<a class="anchor" id="parallelism"></a>
+# <a class="anchor" id="parallelism">Parallelism</a>
 
 One of the Vexor's main advantages is that it can run an unlimited amount of jobs in parallel. There're several ways to set up parallelim.
 
-## Running tests in parallel against different language versions.<a class="anchor" id="parallelism-versions"></a>
+## <a class="anchor" id="parallelism-versions">Running tests in parallel against different language versions.</a>
 
 You can specify different language versions (see [Language versions](#vexor-yml-language-versions) for details) in `vexor.yml` config file. For each version there will be a job started.
 
@@ -351,7 +341,7 @@ Result:
 
 ![Parallelism | Capistrano example](/images/docs/parallelism-capistrano-example.jpg)
 
-## Running a different script for each job<a class="anchor" id="parallelism-env"></a>
+## <a class="anchor" id="parallelism-env">Running a different script for each job</a>
 
 Parallel jobs can also be configured via `env:matrix` key in `vexor.yml` file. The basic idea is that you specify a script which depends on an environment variable and assign different values to this variable in the matrix section of a config file. Here's an example of how we're using this aproach to build the Vexor web app:
 
@@ -384,7 +374,7 @@ script: bundle exec ${BUILD_CMD}
 
 ![Parallelism | Vexor 2 example](/images/docs/parallelism-vexor-2-example.jpg)
 
-## Combining language versions with a matrix<a class="anchor" id="parallelism-combined"></a>
+## <a class="anchor" id="parallelism-combined">Combining language versions with a matrix</a>
 
 "Matrix" and "language versions" approaches can be combined. A resulting build will be containing `versions_num * matrix_size` jobs.
 
@@ -406,7 +396,7 @@ And the result is:
 
 ![Parallelism | Jekyll example](/images/docs/parallelism-jekyll-example.jpg)
 
-## Parallel Rspec<a class="anchor" id="parallelism-rspec"></a>
+## <a class="anchor" id="parallelism-rspec">Parallel Rspec</a>
 
 There's another option for Rails users. You can specify a number of parallel jobs and set `script` to `parallel_rspec` to run automatically Rspec jobs in parallel.
 
@@ -415,7 +405,7 @@ parallel: 4
 script: parallel_rspec
 ```
 
-# Preinstalled packages<a class="anchor" id="services"></a>
+# <a class="anchor untoggle" id="services">Preinstalled packages</a>
 
 There's a number of preinstalled packages in our image.
 
@@ -475,9 +465,9 @@ Version 2.1.1 is preinstalled
 Version 2.2.10 is preinstalled
 
 
-# Language guides<a class="anchor" id="language-guides"></a>
+# <a class="anchor" id="language-guides">Language guides</a>
 
-## Ruby<a class="anchor" id="language-guides-ruby"></a>
+## <a class="anchor" id="language-guides-ruby">Ruby</a>
 
 In order to start ruby tests, you only need to specify the language:
 
@@ -560,7 +550,7 @@ We don't have neither ``rbenv``, nor ``rvm`` on the testing machine, but
 The best option, however, will be to let us know which ruby version you need and
 we'll create the deb package for you.
 
-## Clojure<a class="anchor" id="language-guides-clojure"></a>
+## <a class="anchor" id="language-guides-clojure">Clojure</a>
 
 To run Clojure apps you should issue:
 
@@ -591,7 +581,7 @@ JDKs preinstalled in image include
 
 Java 6 isn't included.
 
-## Scala<a class="anchor" id="language-guides-scala"></a>
+## <a class="anchor" id="language-guides-scala">Scala</a>
 
 To run Scala apps issue:
 
@@ -635,7 +625,7 @@ Caching is turned on automatically when you use Scala. To turn it off set:
 
 [extras]: https://github.com/paulp/sbt-extras
 
-## Python<a class="anchor" id="language-guides-python"></a>
+## <a class="anchor" id="language-guides-python">Python</a>
 
 In order to run tests for a __python__ project you need to specify the language:
 
@@ -680,7 +670,7 @@ To select a specific version for testing, a ``python`` config key should be used
 When searching the __python__ version, fuzzy matching is used, which first tries to find a
 match strictly, and then falls back to the closest version if not found.
 
-## Node.js<a class="anchor" id="language-guides-nodejs"></a>
+## <a class="anchor" id="language-guides-nodejs">Node.js</a>
 
 In order to run the nodejs tests, you need to specify:
 
@@ -731,7 +721,7 @@ match strictly, and then falls back to the closest version if not found.
 
 Build machine has phantomjs 1.9.7 preinstalled, which you can use for headless testing.
 
-## Go<a class="anchor" id="language-guides-golang"></a>
+## <a class="anchor" id="language-guides-golang">Go</a>
 
 In order to run tests for a __go__ project you need to specify the language:
 
@@ -768,7 +758,7 @@ To select a specific version for testing, a ``go`` config key should be used:
 When searching the __go__ version, fuzzy matching is used, which first tries to find a
 match strictly, and then falls back to the closest version if not found.
 
-## Rust<a class="anchor" id="language-guides-rust"></a>
+## <a class="anchor" id="language-guides-rust">Rust</a>
 In order to run the __rust__ tests, you need to specify:
 
     language: rust
@@ -800,17 +790,17 @@ To select the specific version for testing, a configuration key ``rust`` is used
     - 1.2.0
 
 
-# Deploiyng your application<a class="anchor" id="deploy"></a>
+# <a class="anchor" id="deploy">Deploiyng your application</a>
 
 Soon.
 
 + Capistrano examples
 + Ansible examples
 
-# SSHing into a build<a class="anchor" id="ssh"></a>
+# <a class="anchor" id="ssh">SSHing into a build</a>
 
 Soon.
 
-# Billing<a class="anchor" id="billing"></a>
+# <a class="anchor" id="billing">Billing</a>
 
 Soon.

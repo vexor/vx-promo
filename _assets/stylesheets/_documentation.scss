@@ -1,0 +1,123 @@
+.documentation {
+  position: relative;
+  top: 100px;
+  padding-top: px_to_vh(80, $large-desktop-height);
+  @include scrollbars(5px, $blue-pigment, white);
+
+  &__nav {
+    position: fixed;
+    top: 100px;
+    left: 7%;
+    width: 20%;
+    height: calc(100vh - 200px);
+    margin-top: px_to_vh(80, $large-desktop-height);
+    overflow-x: scroll;
+  }
+
+  &__content {
+    position: relative;
+    left: 28%;
+    width: 82%;
+    padding-right: 10%;
+    padding-bottom: 120px;
+
+    h1, h2, h3, h4 {
+      color: black;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 120px 0 0;
+      font-size: px_to_em(48);
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+
+      & + p { margin-top: 20px; }
+
+      &:first-of-type { margin-top: -5px; }
+    }
+
+    h2 {
+      margin: 60px 0 20px;
+      font-size: px_to_em(36);
+      line-height: 1;
+      letter-spacing: normal;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      font-size: px_to_em(24);
+
+      & + h4 { margin-top: 20px; }
+    }
+
+    h4 {
+      margin: 40px 0 10px;
+
+      em {
+        font-weight: normal;
+        font-style: normal;
+        color: $dark-blue-gray;
+      }
+    }
+
+    img {
+      display: block;
+      max-width: px_to_vw(740, $large-desktop-width);
+      margin: 30px auto;
+    }
+
+    p {
+      color: $ford-gunpowder-gray;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: disc;
+      margin-top: 25px;
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 15px;
+        color: $ford-gunpowder-gray;
+        line-height: 1.5;
+
+        strong { display: block; }
+      }
+    }
+
+    p a, ul li a {
+      display: inline-block;
+      color: #4e4e5a;
+      border-bottom: 1px solid rgba($blue-pigment, 0.4);
+      line-height: 20px;
+
+      &:hover { color: rgba($blue-pigment, 0.4); }
+    }
+
+    strong {
+      font-weight: bold;
+      color: black;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 5px;
+      @include border-radius(5px);
+      background-color: #3c3c5a;
+      color: #6bdbbc;
+      font: normal normal normal px_to_em(18) Consolas, SansSerif;
+      line-height: 1.25;
+    }
+
+    .highlight {
+      width: 100%;
+      margin: 20px 0 40px;
+
+      code {
+        display: block;
+        padding: 20px;
+      }
+    }
+  }
+}
