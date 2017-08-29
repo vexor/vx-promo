@@ -12,19 +12,17 @@ function initDocumentationNav() {
             target = $(id).offset().top - 150,
             duration = getScrollDuration(target);
 
-        history.pushState(null, null, id);
+        // history.pushState(null, null, id);
 
-        $('html, body').animate({
-            scrollTop: target
-        }, duration);
+        $('html, body').animate({ scrollTop: target }, duration);
     });
 
-    $(menuTitleSel).not('.toggled, .untoggle').on('click', 'a', function() {
+    $(menuTitleSel+':not(.toggled)').on('click', 'a', function() {
         $(menuTitleSel+'.toggled').removeClass('toggled')
                                   .next(menuListSel).slideUp(400);
 
-        $(this).parent(menuTitleSel).addClass('toggled')
-                                    .next(menuListSel).slideDown(400);
+        $(this).parent(menuTitleSel+':not(.untoggle)').addClass('toggled')
+                                                      .next(menuListSel).slideDown(400);
     });
 
     $(menuListSel).on('click', 'a:not(.active)', function() {

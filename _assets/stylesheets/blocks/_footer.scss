@@ -22,7 +22,7 @@
 
   &__copyright, &__powered {
     color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
+    font-size: px_to_em(16);
     line-height: 1.43;
     letter-spacing: -0.4px;
   }
@@ -37,7 +37,7 @@
       line-height: 1.25;
 
       a {
-        font-size: 16px;
+        font-size: px_to_em(16);
         line-height: 1.25;
       }
 
@@ -58,7 +58,7 @@
     a {
       margin-left: 3px;
       text-transform: lowercase;
-      font-size: 16px;
+      font-size: px_to_em(18);
       @include opacity(100);
     }
   }
@@ -74,7 +74,36 @@
 
       img { display: block; }
 
+      &.blue-logo { @extend .hidden; }
+
       &:first-of-type { margin-left: 0; }
+    }
+  }
+
+  &.blue-text {
+    border-top: 1px solid rgba($blue-pigment, 0.1);
+
+    .footer__copyright, .footer__powered {
+      color: rgba($blue-pigment, 0.6);
+    }
+
+    .footer__powered {
+
+      a { @extend .blue; }
+    }
+
+    .footer__menu li a {
+      @extend .blue;
+    }
+
+    .footer__payment {
+
+      span {
+
+        &.gray-logo { @extend .hidden; }
+
+        &.blue-logo { @extend .visible; }
+      }
     }
   }
 

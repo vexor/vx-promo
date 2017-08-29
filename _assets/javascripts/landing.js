@@ -40,6 +40,8 @@ $(function() {
     }
     // documentation page's scripts
     else {
+        $('body').addClass('doc');
+        $('footer').addClass('blue-text');
         initDocumentationNav();
     }
 

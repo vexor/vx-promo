@@ -24,6 +24,22 @@ body {
   font-stretch: normal;
   letter-spacing: normal;
 
+  &.doc {
+    padding-bottom: $footer-height-sm;
+
+    @include tablet {
+      padding-bottom: $footer-height-tb;
+    }
+
+    @include medium-width-media {
+      padding-bottom: $footer-height-md;
+    }
+
+    @include large-desktops-media {
+      padding-bottom: $footer-height-lg;
+    }
+  }
+
   &.at-desktop {
     min-height: 768px;
     min-width: 900px;
@@ -31,15 +47,14 @@ body {
     //@import 'ui/continious-titles';
   }
 
-  &.at-mobile { }
+  &.at-mobile {}
 }
 
 a {
   text-decoration: none;
   @include transition(color 0.3s ease, border-bottom-color 0.3s ease);
 
-  &.underlined {
-    border-bottom: 1px solid transparent;
+  &.blue, &.white, &.underlined {
 
     &:hover {
       color: aquamarine;
@@ -59,6 +74,10 @@ a {
   &.white {
     color: white;
     border-bottom-color: rgba(255, 255, 255, 0.4);
+  }
+
+  &.underlined {
+    border-bottom: 1px solid transparent;
   }
 }
 

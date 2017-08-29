@@ -2,6 +2,7 @@
   position: relative;
   top: 100px;
   padding-top: px_to_vh(80, $large-desktop-height);
+  padding-bottom: calc(#{px_to_vh(120, $large-desktop-height)} + 100px);
   @include scrollbars(5px, $blue-pigment, white);
 
   &__nav {
@@ -9,9 +10,21 @@
     top: 100px;
     left: 7%;
     width: 20%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-sm});
     margin-top: px_to_vh(80, $large-desktop-height);
     overflow-x: scroll;
+
+    @include tablet {
+      height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
+    }
+
+    @include medium-width-media {
+      height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-md});
+    }
+
+    @include large-desktops-media {
+      height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-lg});
+    }
   }
 
   &__content {
@@ -19,7 +32,6 @@
     left: 28%;
     width: 82%;
     padding-right: 10%;
-    padding-bottom: 120px;
 
     h1, h2, h3, h4 {
       color: black;
