@@ -11,9 +11,21 @@
     </h2>
 
     <div class="last-slide__sign-up">
-      <button class="bordered github">{{ 'get_started.github' | t }}</button>
-      <button class="bordered bitbucket">{{ 'get_started.bitbucket' | t }}</button>
-      <button class="bordered gitlab">{{ 'get_started.gitlab' | t }}</button>
+      <button class="bordered github">
+        <a href="https://ci.vexor.io/users/github?do=sign_up" class="blue" data-action="sign-up">
+          {{ 'get_started.github' | t }}
+        </a>
+      </button>
+      <button class="bordered bitbucket">
+        <a href="https://ci.vexor.io/users/bitbucket?do=sign_up" class="blue" data-action="sign-up">
+          {{ 'get_started.bitbucket' | t }}
+        </a>
+      </button>
+      <button class="bordered gitlab">
+        <a href="https://ci.vexor.io/users/gitlab?do=sign_up" class="blue" data-action="sign-up">
+          {{ 'get_started.gitlab' | t }}
+        </a>
+      </button>
     </div>
 
   </div>

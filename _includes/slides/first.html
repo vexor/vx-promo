@@ -20,19 +20,29 @@
         {{ 'get_started.caption' | t }}
         <ul>
           <li>
-            <a href="#" class="underlined white">{{ 'get_started.github' | t }}</a>
+            <a href="https://ci.vexor.io/users/github?do=sign_up" class="underlined white" data-action="sign-up">
+              {{ 'get_started.github' | t }}
+            </a>
           </li>
 
           <li>
-            <a href="#" class="underlined white">{{ 'get_started.bitbucket' | t }}</a>
+            <a href="https://ci.vexor.io/users/bitbucket?do=sign_up" class="underlined white" data-action="sign-up">
+              {{ 'get_started.bitbucket' | t }}
+            </a>
           </li>
 
           <li>
-            <a href="#" class="underlined white">{{ 'get_started.gitlab' | t }}</a>
+            <a href="https://ci.vexor.io/users/gitlab?do=sign_up" class="underlined white" data-action="sign-up">
+              {{ 'get_started.gitlab' | t }}
+            </a>
           </li>
         </ul>
 
-        <button class="tablet-down desktop-down">{{ 'get_started.mobile' | t }}</button>
+        <button class="tablet-down desktop-down">
+          <a href="https://ci.vexor.io/users/companies/new" data-action="sign-up">
+            {{ 'get_started.mobile' | t }}
+          </a>
+        </button>
       </div>
 
       <div class="first-slide__more">
