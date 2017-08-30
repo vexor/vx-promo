@@ -259,6 +259,13 @@
         width: 670px;
         height: 500px;
         padding-top: 130px;
+
+        &__inner {
+
+          & > div { font-size: 20px; }
+
+          p { font-size: 22px; }
+        }
       }
     }
 

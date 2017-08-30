@@ -1,7 +1,7 @@
 function initDocumentationNav() {
 
-    var containerSel = '.documentation__nav',
-        $commonMenu = $(containerSel).children('.sidebar__nav'),
+    var navSel = '.documentation__nav',
+        $commonMenu = $(navSel).children('.sidebar__nav'),
         menuTitleSel = '.sidebar__nav__title',
         menuListSel = '.sidebar__nav__links';
 
@@ -9,7 +9,7 @@ function initDocumentationNav() {
         ev.preventDefault();
 
         var id = $(this).attr('href'),
-            target = $(id).offset().top - 150,
+            target = $(id).offset().top - $('.documentation__content').offset().top,
             duration = getScrollDuration(target);
 
         // history.pushState(null, null, id);

@@ -4,6 +4,7 @@ title: How To Deploy Rails Applications Using Ansible And Mina
 description_key: deploy_rails
 ---
 
+
 A lot of people face problems when they install a rails application server
 from scratch. Despite the fact that solutions such as
 [Heroku][heroku] or [Engine Yard][engine yard] are available, unfortunately,
@@ -33,7 +34,7 @@ simplicity.
 To solve the problem we will need 2 tools: [Ansible][ansible] and [Mina][mina].
 Let’s examine them in more detail.
 
-__Mina.__
+## Mina.
 
 This is deploy tool which uses a slightly different approach than Capistrano:
 Mina immediately generates from config/deploy.rb one big bash script, which can
@@ -41,7 +42,7 @@ be placed to the server and executed as single command. In addition it can
 simply generate script without execution. This is what you need exactly to
 combine with Ansible.
 
-__Ansible.__
+## Ansible.
 
 This is provision tool. Actually, for the current moment, we use Puppet for our
 company projects.  In general, I have took part in Puppet implementation in our
@@ -66,7 +67,7 @@ We have highly positive impression after a couple of test implementations of
 ansible. I guess in our company, together with the planned update of Ubuntu
 servers 12.04->14.04, will be simultaneous migration from Puppet to Ansible.
 
-__Provision & Deploy.__
+## Provision & Deploy.
 
 You can deploy with Ansible the right ambience and generate deployment config
 template for Mina, then run it. Detailed steps look like this:

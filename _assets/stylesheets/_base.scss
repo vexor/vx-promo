@@ -20,12 +20,13 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   color: $dark-blue-gray;
-  font: normal normal normal px_to_em(20) Circe, Sans;
+  font: normal normal normal 20px Circe, Sans;
   font-stretch: normal;
   letter-spacing: normal;
 
-  &.doc {
+  &.alternate {
     padding-bottom: $footer-height-sm;
+    font-size: 16px;
 
     @include tablet {
       padding-bottom: $footer-height-tb;
@@ -37,6 +38,7 @@ body {
 
     @include large-desktops-media {
       padding-bottom: $footer-height-lg;
+      font-size: 20px;
     }
   }
 
@@ -54,16 +56,8 @@ a {
   text-decoration: none;
   @include transition(color 0.3s ease, border-bottom-color 0.3s ease);
 
-  &.blue, &.white, &.underlined {
-
-    &:hover {
-      color: aquamarine;
-      border-bottom-color: rgba(107, 219, 188, 0.4);
-    }
-
-    &:active {
-      border-bottom-color: transparent;
-    }
+  &.underlined {
+    border-bottom: 1px solid transparent;
   }
 
   &.blue {
@@ -76,8 +70,16 @@ a {
     border-bottom-color: rgba(255, 255, 255, 0.4);
   }
 
-  &.underlined {
-    border-bottom: 1px solid transparent;
+  &.blue, &.white, &.underlined {
+
+    &:hover {
+      color: aquamarine;
+      border-bottom-color: rgba(107, 219, 188, 0.4);
+    }
+
+    &:active {
+      border-bottom-color: transparent;
+    }
   }
 }
 

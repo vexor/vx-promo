@@ -1,121 +1,121 @@
 ---
-layout: landing_redesign
+layout: landing
 ---
 
-<main id="documentation" class="documentation base">
+<main id="documentation" class="documentation page base">
 
-    <aside class="documentation__nav sidebar">
-      <ul class="sidebar__nav">
-        <li class="sidebar__nav__title">
-          <a href="#getting-started">Getting started</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#getting-started-registration">Registration</a></li>
-            <li><a href="#getting-started-team-settings">Team settings</a></li>
-            <li><a href="#getting-started-adding-a-project">Adding a project</a></li>
-            <li><a href="#getting-started-project-notifications">Project notifications</a></li>
-          </ul>
-        </li>
+  <aside class="documentation__nav sidebar">
+    <ul class="sidebar__nav">
+      <li class="sidebar__nav__title">
+        <a href="#getting-started">Getting started</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#getting-started-registration">Registration</a></li>
+          <li><a href="#getting-started-team-settings">Team settings</a></li>
+          <li><a href="#getting-started-adding-a-project">Adding a project</a></li>
+          <li><a href="#getting-started-project-notifications">Project notifications</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title">
-          <a href="#project-settings">Project settings</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#project-settings-language">Language</a></li>
-            <li><a href="#project-settings-build-restrictions">Filtering branches</a></li>
-            <li><a href="#project-settings-build-statuses">Build statuses</a></li>
-            <li><a href="#project-settings-cancel-ongoing-build">Cancelling ongoing builds</a></li>
-            <li><a href="#project-settings-slack-notifications">Slack notifications</a></li>
-            <li><a href="#project-settings-env-vars">Environment variables</a></li>
-            <li><a href="#project-settings-ssh-keys">SSH keys</a></li>
-          </ul>
-        </li>
+      <li class="sidebar__nav__title">
+        <a href="#project-settings">Project settings</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#project-settings-language">Language</a></li>
+          <li><a href="#project-settings-build-restrictions">Filtering branches</a></li>
+          <li><a href="#project-settings-build-statuses">Build statuses</a></li>
+          <li><a href="#project-settings-cancel-ongoing-build">Cancelling ongoing builds</a></li>
+          <li><a href="#project-settings-slack-notifications">Slack notifications</a></li>
+          <li><a href="#project-settings-env-vars">Environment variables</a></li>
+          <li><a href="#project-settings-ssh-keys">SSH keys</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title">
-          <a href="#config-file">Vexor config file</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#config-common-keys">Common keys</a></li>
-            <li>
-              <ul>
-                <li><a href="#config-language">language</a></li>
-                <li><a href="#config-env">env</a></li>
-                <li><a href="#config-before-install">before_install</a></li>
-                <li><a href="#config-install">install</a></li>
-                <li><a href="#config-database">database</a></li>
-                <li><a href="#config-before-script">before_script</a></li>
-                <li><a href="#config-services">services</a></li>
-                <li><a href="#config-script">script</a></li>
-                <li><a href="#config-chdir">chdir</a></li>
-                <li><a href="#config-timeout">timeout</a></li>
-                <li><a href="#config-read-timeout">read_timeout</a></li>
-                <li><a href="#config-cache">cache</a></li>
-              </ul>
-            </li>
-            <li><a href="#config-languages">Language versions</a></li>
-          </ul>
-        </li>
+      <li class="sidebar__nav__title">
+        <a href="#config-file">Vexor config file</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#config-common-keys">Common keys</a></li>
+          <li>
+            <ul>
+              <li><a href="#config-language">language</a></li>
+              <li><a href="#config-env">env</a></li>
+              <li><a href="#config-before-install">before_install</a></li>
+              <li><a href="#config-install">install</a></li>
+              <li><a href="#config-database">database</a></li>
+              <li><a href="#config-before-script">before_script</a></li>
+              <li><a href="#config-services">services</a></li>
+              <li><a href="#config-script">script</a></li>
+              <li><a href="#config-chdir">chdir</a></li>
+              <li><a href="#config-timeout">timeout</a></li>
+              <li><a href="#config-read-timeout">read_timeout</a></li>
+              <li><a href="#config-cache">cache</a></li>
+            </ul>
+          </li>
+          <li><a href="#config-languages">Language versions</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title">
-          <a href="#builds">Builds</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#builds-cancel">Cancel a build</a></li>
-            <li><a href="#builds-rebuild">Rebuild</a></li>
-          </ul>
-        </li>
+      <li class="sidebar__nav__title">
+        <a href="#builds">Builds</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#builds-cancel">Cancel a build</a></li>
+          <li><a href="#builds-rebuild">Rebuild</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title">
-          <a href="#parallelism">Parallelism</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#parallelism-versions">Different language versions</a></li>
-            <li><a href="#parallelism-env">Different scripts</a></li>
-            <li><a href="#parallelism-combined">Versions and scripts combined</a></li>
-            <li><a href="#parallelism-rspec">Parallel Rspec</a></li>
-          </ul>
-        </li>
+      <li class="sidebar__nav__title">
+        <a href="#parallelism">Parallelism</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#parallelism-versions">Different language versions</a></li>
+          <li><a href="#parallelism-env">Different scripts</a></li>
+          <li><a href="#parallelism-combined">Versions and scripts combined</a></li>
+          <li><a href="#parallelism-rspec">Parallel Rspec</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title untoggle">
-          <a href="#services">Preinstalled packages</a>
-        </li>
+      <li class="sidebar__nav__title untoggle">
+        <a href="#services">Preinstalled packages</a>
+      </li>
 
-        <li class="sidebar__nav__title">
-          <a href="#language-guides">Language guides</a>
-        </li>
-        <li class="sidebar__nav__links">
-          <ul>
-            <li><a href="#language-guides-ruby">Ruby</a></li>
-            <li><a href="#language-guides-clojure">Clojure</a></li>
-            <li><a href="#language-guides-scala">Scala</a></li>
-            <li><a href="#language-guides-python">Python</a></li>
-            <li><a href="#language-guides-nodejs">Node.js</a></li>
-            <li><a href="#language-guides-golang">Go</a></li>
-            <li><a href="#language-guides-rust">Rust</a></li>
-          </ul>
-        </li>
+      <li class="sidebar__nav__title">
+        <a href="#language-guides">Language guides</a>
+      </li>
+      <li class="sidebar__nav__links">
+        <ul>
+          <li><a href="#language-guides-ruby">Ruby</a></li>
+          <li><a href="#language-guides-clojure">Clojure</a></li>
+          <li><a href="#language-guides-scala">Scala</a></li>
+          <li><a href="#language-guides-python">Python</a></li>
+          <li><a href="#language-guides-nodejs">Node.js</a></li>
+          <li><a href="#language-guides-golang">Go</a></li>
+          <li><a href="#language-guides-rust">Rust</a></li>
+        </ul>
+      </li>
 
-        <li class="sidebar__nav__title untoggle">
-          <a href="#deploy">Deploying apps</a>
-        </li>
+      <li class="sidebar__nav__title untoggle">
+        <a href="#deploy">Deploying apps</a>
+      </li>
 
-        <li class="sidebar__nav__title untoggle">
-          <a href="#ssh">SSHing into builds</a>
-        </li>
+      <li class="sidebar__nav__title untoggle">
+        <a href="#ssh">SSHing into builds</a>
+      </li>
 
-        <li class="sidebar__nav__title untoggle">
-          <a href="#billing">Billing</a>
-        </li>
-      </ul>
-    </aside>
+      <li class="sidebar__nav__title untoggle">
+        <a href="#billing">Billing</a>
+      </li>
+    </ul>
+  </aside>
 
-    <div class="documentation__content">
-      {{ content }}
-    </div>
+  <div class="documentation__content styled-content">
+    {{ content }}
+  </div>
 
 </main>

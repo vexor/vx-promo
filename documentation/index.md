@@ -1,7 +1,8 @@
 ---
 layout: documentation
 title: Documentation
-description_key: help
+description_key: documentation
+js: landing
 sitemap:
   priority: 0.7
   changefreq: monthly

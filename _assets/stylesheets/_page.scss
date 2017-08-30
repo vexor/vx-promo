@@ -1,0 +1,107 @@
+.page {
+  position: relative;
+  top: 100px;
+
+  &__content {
+    padding-top: px_to_vh(80, $large-desktop-height);
+  }
+
+  &.inner-page {
+
+    .last-slide {
+      background-color: transparent;
+
+      figure.gif {
+        @extend .hidden;
+      }
+
+      h2 {
+        width: auto;
+        left: 0;
+        @include transform(translateY(-50%));
+        margin: 0 auto;
+        text-align: center;
+        color: black;
+
+        span { color: $ford-gunpowder-gray; }
+      }
+
+      &__sign-up {
+        bottom: 100px;
+
+        button {
+          background: transparent;
+          color: $blue-pigment;
+          border-color: $blue-pigment;
+
+          &:hover {
+            color: white;
+            background-color: $blue-pigment;
+            border-color: $blue-pigment;
+          }
+        }
+      }
+    }
+  }
+
+  &.documentation {
+    padding-top: px_to_vh(80, $large-desktop-height);
+    padding-bottom: calc(#{px_to_vh(120, $large-desktop-height)} + 100px);
+    @include scrollbars(5px, $blue-pigment, white);
+
+    .documentation__nav {
+      position: fixed;
+      top: 100px;
+      width: 20%;
+      height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-sm});
+      margin-top: px_to_vh(80, $large-desktop-height);
+      overflow-x: scroll;
+
+      @include tablet {
+        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
+      }
+
+      @include medium-width-media {
+        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-md});
+      }
+
+      @include large-desktops-media {
+        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-lg});
+      }
+    }
+
+    .documentation__content {
+      position: relative;
+      left: 28%;
+      width: 82%;
+      padding-right: 10%;
+
+      @include large-desktops-media {
+        left: 31%;
+        width: 72%;
+        padding-right: 3%;
+      }
+    }
+  }
+
+  &.blog {
+    padding-top: 0;
+    padding-bottom: px_to_vh(100, $large-desktop-height);
+
+    .blog__posts { }
+
+    .post {
+      margin-top: 30px;
+
+      h3 { margin-top: 0; }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    .comments {
+      margin-bottom: 80px;
+    }
+  }
+}

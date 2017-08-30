@@ -11,8 +11,12 @@ en:
     not_found: Page not found
 
   nav:
-    blog: Blog
-    documentation: Documentation
+    blog:
+      caption: Blog
+      link: /blog
+    documentation:
+      caption: Documentation
+      link: /documentation
     sign_up: Sign up
 
   get_started:
@@ -126,10 +130,18 @@ en:
 
   footer:
     copyright: © 2014–2017, VEXOR. All rights reserved.
-    powered_by: Powered by <a href="http://evrone.com" target="_blank" class="underlined white">Evrone</a>.
+    powered_by: Powered by <a href="http://evrone.com" target="_blank" class="underlined white">Evrone</a>
 
   second_nav:
-    terms: Terms
-    security: Security
-    privacy: Privacy
-    contacts: Contacts
+    terms:
+      caption: Terms
+      link: /terms
+    security:
+      caption: Security
+      link: /security
+    privacy:
+      caption: Privacy
+      link: /privacy
+    contacts:
+      caption: Contacts
+      link: mailto:support@vexor.io

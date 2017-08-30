@@ -1,5 +1,5 @@
 ---
-layout: promo_page
+layout: page
 title: Privacy
 description_key: privacy
 js: landing
@@ -13,7 +13,7 @@ sitemap:
 Privacy
 =======
 
-__General information__
+## General information
 
 We collect the e-mail addresses of those who communicate with us via e-mail,
 aggregate information on what pages consumers access or visit, and information
@@ -33,7 +33,7 @@ We transfer information about you if Vexor is acquired by or merged with
 another company. In this event, Vexor, llc. will notify you before information
 about you is transferred and becomes subject to a different privacy policy.
 
-__Information gathering and usage__
+## Information gathering and usage
 
 When you register for Vexor we ask for information such as your name, email
 address, billing address, credit card information. After binding a credit card,
@@ -43,7 +43,7 @@ Vexor uses collected information for the following general purposes: products
 and services provision, billing, identification and authentication, services
 improvement, contact, and research.
 
-__Cookies__
+## Cookies
 
 * A cookie is a small amount of data, which often includes an anonymous unique
 identifier, that is sent to your browser from a web site’s computers and stored
@@ -54,20 +54,20 @@ cookies. You are required to re-login to your Vexor account after a certain
 period of time has elapsed to protect you against others accidentally accessing
 your account contents.
 
-__Data storage__
+## Data storage
 
 Vexor uses third party vendors and hosting partners to provide the necessary
 hardware, software, networking, storage, and related technology required to run
 Vexor. Although Vexor, llc. owns the code, databases, and all rights to the
 Vexor application, you retain all rights to your data.
 
-__Disclosure__
+## Disclosure
 
 Vexor may disclose personally identifiable information under special
 circumstances, such as to comply with subpoenas or when your actions violate
 the Terms of Service.
 
-__Questions__
+## Questions
 
 Any questions about this Privacy Policy should be addressed to
 [support@vexor.io](mailto:support@vexor.io).

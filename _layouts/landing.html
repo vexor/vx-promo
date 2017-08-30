@@ -1,100 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{'' | current_language}}">
+
   <head>
     <title>Vexor: {{ page.title }} </title>
     {%if page.description_key %}{% assign page_description = 'description.pages.' | append: page.description_key%}{% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="google-site-verification" content="QN2ZV4jh2PVBk7XxTqTlc4OBVZgsB3VN4TDVLV2YysY" />
     <meta name="yandex-verification" content="c860b1651a6c8ff7" />
     <meta name="description" content="{{ page_description | t }}">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/feed.xml">
-
+    {% stylesheet landing %}
   </head>
-  <body>
-    <div class='landing'>
-      <nav class='navbar navbar-default'>
-        <div class='container-fluid'>
-          <div class='container'>
-            <div class='row'>
-              <div class='navbar-header header-logo'>
-                <a class='navbar-brand' href='/'><img alt="Logo" class="logo" src="/images/landing/logo.png" /></a>
-              </div>
 
-              <button class='navbar-toggle pull-right' data-target='#navbar-items' data-toggle='collapse' type='button'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar' ></span>
-                <span class='icon-bar' ></span>
-                <span class='icon-bar' ></span>
-              </button>
+  <body class="landing">
+    {% include header.html %}
 
-              <div class="clearfix"></div>
-              <div class='collapse navbar-collapse' id='navbar-items'>
-                <ul class='nav navbar-nav'>
-                    <!-- <li><a data-scroll="true" href="/#features"><span>{{ 'nav.features' | t }}</span></a></li> -->
-                  <li><a data-scroll="true" href="/#pricing"><span>{{ 'nav.pricing' | t }}</span></a></li>
-                  <li><a href="/documentation/"><span>{{ 'nav.help' | t }}</span></a></li>
-                  <!-- <li><a href="{{ 'nav.blog_link' | t }}"><span>{{ 'nav.blog' | t }}</span></a></li> -->
-                  <!-- <li><a href="https://medium.com/vexor-ci/hello-world-79c009f735f5#.j8vqagxz7" target="_blank"><span>{{ 'nav.about' | t }}</span></a></li> -->
-                </ul>
-                <!-- <ul class='nav navbar-nav navbar-right'>
-                     <li>
-                     <a class="landing-main-sign-in-button" onclick="yaCounter23972557.reachGoal('landing-main-sign-in-button'); return true;" data-signin=true href="https://ci.vexor.io/ui">
-                     {{ 'nav.signin' | t }}
-                     </a>
-                     </li>
-                     </ul> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="page">
-        {{ content }}
-      </div>
+    {{ content }}
 
+    {% include footer.html %}
 
-    </div>
+    {% javascript landing %}
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="screen" rel="stylesheet" />
-    <link href="/stylesheets/landing-header.css" media="all" rel="stylesheet" />
-    <link href="/stylesheets/webfonts.css" media="screen" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
-    <link href="/stylesheets/landing.css" media="all" rel="stylesheet" />
-    <link href="/stylesheets/content.css" media="all" rel="stylesheet" />
+    <!-- Adobe TypeKit -->
+    <script>!function(e){var t,a={kitId:"djq1soi",scriptTimeout:3e3,async:!0},c=e.documentElement,i=setTimeout(function(){c.className=c.className.replace(/\bwf-loading\b/g,"")+" wf-inactive"},a.scriptTimeout),n=e.createElement("script"),s=!1,o=e.getElementsByTagName("script")[0];c.className+=" wf-loading",n.src="https://use.typekit.net/"+a.kitId+".js",n.async=!0,n.onload=n.onreadystatechange=function(){if(!(t=this.readyState)||"complete"==t||"loaded"==t){s=!0,clearTimeout(i);try{Typekit.load(a)}catch(e){}}},o.parentNode.insertBefore(n,o)}(document);</script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/turbolinks/1.3.0/turbolinks.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23972557 = new Ya.Metrika({id:23972557, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23972557" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 
-    {% if page.js %}
-    <script src="/javascripts/{{ page.js }}.js"></script>
-    {% endif %}
-
-    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter23972557 = new Ya.Metrika({id:23972557, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/23972557" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
-
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-93363516-1', 'auto');
-    ga('send', 'pageview');
-        </script>
-
-    <script>
-    var ready = function() {
-        $(document).on("click", "a[data-signup]", function(){
-            ga('send', 'event', 'sign_up', 'click')
-        })
-        $(document).on("click", "a[data-signin]", function(){
-            ga('send', 'event', 'sign_in', 'click');
-        })
-    }
-    $(document).ready(ready)
-    $(document).on("page:load", ready)
-    </script>
+    <!-- Google Analytics -->
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-93363516-1', 'auto'); ga('send', 'pageview');</script>
   </body>
+
 </html>

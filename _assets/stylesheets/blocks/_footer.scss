@@ -22,7 +22,7 @@
 
   &__copyright, &__powered {
     color: rgba(255, 255, 255, 0.4);
-    font-size: px_to_em(16);
+    font-size: 14px;
     line-height: 1.43;
     letter-spacing: -0.4px;
   }
@@ -37,7 +37,7 @@
       line-height: 1.25;
 
       a {
-        font-size: px_to_em(16);
+        font-size: 16px;
         line-height: 1.25;
       }
 
@@ -58,7 +58,8 @@
     a {
       margin-left: 3px;
       text-transform: lowercase;
-      font-size: px_to_em(18);
+      font-size: 16px;
+      line-height: 1;
       @include opacity(100);
     }
   }
@@ -74,36 +75,30 @@
 
       img { display: block; }
 
+      &.x2 { display: none; }
+
       &.blue-logo { @extend .hidden; }
 
       &:first-of-type { margin-left: 0; }
     }
   }
 
-  &.blue-text {
+  &.inversed {
     border-top: 1px solid rgba($blue-pigment, 0.1);
 
     .footer__copyright, .footer__powered {
       color: rgba($blue-pigment, 0.6);
     }
 
-    .footer__powered {
-
-      a { @extend .blue; }
-    }
-
-    .footer__menu li a {
+    .footer__powered a, .footer__menu li a {
       @extend .blue;
     }
 
-    .footer__payment {
+    .footer__payment span {
 
-      span {
+      &.gray-logo { @extend .hidden; }
 
-        &.gray-logo { @extend .hidden; }
-
-        &.blue-logo { @extend .visible; }
-      }
+      &.blue-logo { @extend .visible; }
     }
   }
 
@@ -210,6 +205,11 @@
     &__menu { margin: 0 120px 0 65px; }
 
     &__powered { margin-left: 40px; }
+
+    &.inversed {
+
+      .footer__menu { margin: 0 114px 0 64px; }
+    }
   }
 
   @include large-desktops-media {
@@ -223,8 +223,30 @@
       vertical-align: middle;
     }
 
-    &__menu { margin: 0 390px 0 155px; }
+    &__copyright, &__powered {
+      font-size: 22px;
+    }
 
-    &__powered { margin-left: 40px; }
+    &__menu {
+      margin: 0 100px;
+
+      li a { font-size: 24px; }
+    }
+
+    &__powered {
+      margin-left: 60px;
+
+      a { font-size: 24px; }
+    }
+
+    &__payment {
+
+      span {
+
+        &.x1 { display: none; }
+
+        &.x2 { display: inherit; }
+      }
+    }
   }
 }

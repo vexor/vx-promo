@@ -4,7 +4,7 @@ function headerColor() {
         headerSel = 'header',
         headerHalfHeight = $(headerSel).outerHeight()/2;
 
-    if ($('#documentation').length > 0) {
+    if ($('.page').length > 0) {
         $(headerSel).addClass('white-bg');
         $(headerSel).find('svg#logo').addClass('smaller');
         $(headerSel).find('svg').removeClass('white');

@@ -187,6 +187,10 @@
       left: 390px;
     }
 
+    &__get-started, &__page-title, &__more {
+      font-size: px_to_em(26);
+    }
+
     &__get-started, &__more {
       bottom: 40px;
     }

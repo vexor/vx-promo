@@ -22,7 +22,7 @@ $(function() {
     }
 
     // index page's scripts
-    if ($('#documentation').length < 1) {
+    if ($('.page').length < 1) {
         initConfigurationsCalculator();
         initReviewsSlider();
 
@@ -38,10 +38,10 @@ $(function() {
             initSlidedMenu();
         }
     }
-    // documentation page's scripts
+    // other pages' scripts
     else {
-        $('body').addClass('doc');
-        $('footer').addClass('blue-text');
+        $('body').addClass('alternate');
+        $('footer').addClass('inversed');
         initDocumentationNav();
     }
 

@@ -29,8 +29,8 @@
       }
 
       &.smaller {
-        margin-left: -23px;
-        @include transform(scale(0.7));
+        margin-left: -16px;
+        @include transform(scale(0.8));
       }
 
       &#menu-close {
@@ -98,8 +98,13 @@
   }
 
   @include large-width-media {
-    nav a {
-      margin-left: 250px;
+    nav {
+      top: 0;
+
+      a {
+        margin-left: 250px;
+        font-size: 26px;
+      }
     }
   }
 }

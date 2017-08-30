@@ -2,29 +2,10 @@
 layout: landing
 ---
 
-<div class='block-header content-block-header'>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1>{{ page.title }}</h1>
-      </div>
-    </div>
-  </div>
-</div>
+<main id="blog" class="blog page base">
 
-<div class="content-block content-block-body">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="center-block post-content">
-          {{ content }}
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12" style="padding-top:2em">
-        <div id="disqus_thread"></div>
-      </div>
-    </div>
+  <div class="page__content">
+    {{ content }}
   </div>
-</div>
+
+</main>

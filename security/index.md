@@ -1,5 +1,5 @@
 ---
-layout: promo_page
+layout: page
 title: Security
 description_key: security
 js: landing
@@ -15,10 +15,12 @@ Security
 We know your code is extremely important to you and your business, and we're
 very protective of it.
 
+<br>
+
 Need to report a security vulnerability? Please inform us by sending email to
 [support@vexor.io](mailto:support@vexor.io)
 
-__Physical Security__
+## Physical Security
 
 * Data center access limited to data center technicians and approved Vexor staff
 * Biometric scanning for controlled data center access
@@ -28,34 +30,34 @@ __Physical Security__
 * Physical security audited by an independent firm
 * System Security
 
-__System installation using hardened, patched OS__
+## System installation using hardened, patched OS
 
 * Dedicated firewall and VPN services to help block unauthorized system access
 * Dedicated intrusion detection devices to provide an additional layer of protection against unauthorized system access
 * Distributed Denial of Service (DDoS) mitigation services powered by industry-leading solutions
 
 
-__Operational Security__
+## Operational Security
 
 * Systems access logged and tracked for auditing purposes
 * Secure document-destruction policies for all sensitive information
 * Fully documented change-management procedures
 
-__Software Security__
+## Software Security
 
 We employ a team of 24/7/365 server specialists at Vexor to keep our software
 and its dependencies up to date eliminating potential security vulnerabilities.
 We employ a wide range of monitoring solutions for preventing and eliminating
 attacks to the site.
 
-__Communications__
+## Communications
 
 All private data exchanged with Vexor is always transmitted over SSL (which is
 why your dashboard is served over HTTPS, for instance). All pushing and pulling
 of private data is done over SSH authenticated with keys, or over HTTPS using
 your Vexor username and password.
 
-__File system and backups__
+## File system and backups
 
 Every piece of hardware we use has an identical copy ready and waiting for an
 immediate hot-swap in case of hardware or software failure. Every line of code
@@ -72,7 +74,7 @@ would have access to the decryption routine, thus negating any security it
 provides. Therefore, we focus on making our machines and network as secure as
 possible.
 
-__Employee access__
+## Employee access
 
 No Vexor employees ever access private repositories unless required to for
 support reasons. Staff working directly in the file store access the compressed
@@ -86,13 +88,13 @@ issue we do our best to respect your privacy as much as possible, we only
 access the files and settings needed to resolve your issue. All cloned
 repositories are deleted as soon as the support issue has been resolved.
 
-__Maintaining security__
+## Maintaining security
 
 We protect your login from brute force attacks with rate limiting. All
 passwords are filtered from all our logs and are one-way encrypted in the
 database using bcrypt. Login information is always sent over SSL.
 
-__Credit card safety__
+## Credit card safety
 
 When you sign up for a paid account on Vexor, we do not store any of your card
 information on our servers. It's handed off to [http://cloudpayments.eu/](http://cloudpayments.eu/), a company dedicated to

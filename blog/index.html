@@ -2,18 +2,16 @@
 layout: blog
 title: Blog
 description_key: blog
-comments: false
 ---
 
-<div class="posts">
+<div class="blog__posts">
 
   {% for post in site.posts limit: 1 %}
-    <div class="post">
-      <p class="title">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <br/>
+    <div class="post styled-content">
+      <h3>
+        <a class="blue underlined" href="{{ post.url }}">{{ post.title }}</a>
         <small class="meta">{{ post.date | date_to_long_string }}</small>
-      </p>
+      </h3>
 
       {{ post.excerpt }}
     </div>
