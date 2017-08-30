@@ -47,4 +47,4 @@ $(function() {
 
 });
 
-// $(document).on('body:load', prepareAuth);
+$(document).on('ready, body:load', prepareAuth());

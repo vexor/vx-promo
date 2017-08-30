@@ -7,5 +7,3 @@ function prepareAuth() {
         ga('send', 'event', 'sign_in', 'click');
     });
 }
-
-$(document).on('ready, page:load', prepareAuth());
