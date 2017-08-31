@@ -15,26 +15,33 @@
       height: 30px;
       @include transition(all 0.3s ease);
 
-      path {
+      path, rect, polygon {
         fill: $blue-pigment;
         @include transition(fill 0.3s ease);
       }
 
       &.white {
-        path { fill: white; }
+        path, rect, polygon { fill: white; }
       }
 
       &.separate-white {
-        path { fill: white; }
+        path, rect, polygon { fill: white; }
       }
 
       &.smaller {
-        margin-left: -16px;
-        @include transform(scale(0.8));
+        //margin-left: -16px;
+        height: 40%;
       }
 
-      &#menu-close {
-        display: none;
+      &#menu-close { display: none; }
+
+      &#doc-nav-open {
+
+        &.active {
+          background-color: $blue-pigment;
+
+          rect, polygon { fill: white; }
+        }
       }
     }
 
@@ -55,7 +62,7 @@
   }
 
   &.white-bg {
-    background-color: rgba(white, 0.8);
+    background-color: rgba(white, 0.9);
   }
 
   &.without-bg {
@@ -63,7 +70,7 @@
   }
 
   @include mobile {
-    background-color: rgba($blue-pigment, 0.8);
+    background-color: rgba($blue-pigment, 0.9);
 
     &__inner {
       height: px_to_vh(60, $mobile-height);
@@ -72,7 +79,17 @@
       svg {
         height: px_to_vh(20, $mobile-height);
 
-        &.toggler { float: right; }
+        &.toggler {
+          float: right;
+          margin-left: px_to_vw(40, $mobile-width);
+        }
+
+        &#doc-nav-open {
+          position: relative;
+          top: px_to_vh(-5, $mobile-height);
+          height: px_to_vh(30, $mobile-height);
+          padding: px_to_vh(5, $mobile-height);
+        }
       }
     }
   }
@@ -97,13 +114,13 @@
     }
   }
 
-  @include large-width-media {
+  @include large-desktops-media {
     nav {
       top: 0;
 
       a {
         margin-left: 250px;
-        font-size: 26px;
+        font-size: 24px;
       }
     }
   }

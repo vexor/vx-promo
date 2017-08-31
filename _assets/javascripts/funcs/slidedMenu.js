@@ -3,35 +3,41 @@ function initSlidedMenu() {
     var bodySel = 'body',
         htmlSel = 'html',
         headerSel = 'header',
-        slidesSel = '#slides',
+        mainSel = 'main',
         menuSel = '#mobile-menu';
 
     $(bodySel).on('click', '#menu-open', function() {
         $(htmlSel).addClass('unscrollable');
+        $('#menu-open, #doc-nav-open').hide();
 
-        $(slidesSel).addClass('translated');
-        $(menuSel).addClass('translated');
+        setTimeout(function() {
+            $(mainSel).addClass('translated');
+            $(menuSel).addClass('translated');
+            $(headerSel).find('svg').addClass('separate-white');
+            $(headerSel).find('nav a').addClass('separate-white');
+            $(headerSel).addClass('without-bg');
+        }, 100);
 
-        $(headerSel).find('svg').addClass('separate-white');
-        $(headerSel).find('nav a').addClass('separate-white');
-        $(headerSel).addClass('without-bg');
-
-        $('#menu-open').hide();
-        $('#menu-close').show();
+        setTimeout(function() { $('#menu-close').show(); }, 200);
     });
 
     $(bodySel).on('click', '#menu-close', function() {
-        $(slidesSel).removeClass('translated');
-        $(menuSel).removeClass('translated');
-
-        $(headerSel).find('svg').removeClass('separate-white');
-        $(headerSel).find('nav a').removeClass('separate-white');
-        $(headerSel).removeClass('without-bg');
-
-        $(htmlSel).removeClass('unscrollable');
-
         $('#menu-close').hide();
-        $('#menu-open').show();
+
+        setTimeout(function() {
+            $(menuSel).removeClass('translated');
+            $(mainSel).removeClass('translated');
+        }, 100);
+
+        setTimeout(function() {
+            $(headerSel).removeClass('without-bg');
+            $(headerSel).find('svg').removeClass('separate-white');
+            $(headerSel).find('nav a').removeClass('separate-white');
+        }, 200);
+
+        setTimeout(function() { $('#menu-open, #doc-nav-open').show(); }, 300);
+
+        setTimeout(function() { $(htmlSel).removeClass('unscrollable'); }, 400);
     });
 
 }

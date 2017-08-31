@@ -9,6 +9,8 @@
   &.inner-page {
 
     .last-slide {
+      top: px_to_vh(-100);
+      height: auto;
       background-color: transparent;
 
       figure.gif {
@@ -43,6 +45,21 @@
           }
         }
       }
+
+      @include mobile {
+        padding: px_to_vh(130, $mobile-height) 0 px_to_vh(120, $mobile-height);
+
+        &__inner {
+
+          h2 {
+            @include transform(none);
+          }
+        }
+      }
+
+      @include tablet {
+        top: px_to_vh(-150, $tablet-height);
+      }
     }
   }
 
@@ -58,6 +75,20 @@
       height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-sm});
       margin-top: px_to_vh(80, $large-desktop-height);
       overflow-x: scroll;
+
+      @include mobile {
+        top: px_to_vh(58, $mobile-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - #{px_to_vh(58, $mobile-height)});
+        margin: 0;
+        padding: 1vh calc((100vw - #{px_to_vw($mobile-width-grid, $mobile-width)})/2);
+        z-index: 1;
+        background-color: rgba(white, 0.9);
+        @include transition(left 0.5s ease);
+
+        &.opened { left: 0; }
+      }
 
       @include tablet {
         height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
@@ -78,11 +109,22 @@
       width: 82%;
       padding-right: 10%;
 
+      @include mobile {
+        left: 0;
+        width: 100%;
+        padding-right: 0;
+      }
+
       @include large-desktops-media {
         left: 31%;
         width: 72%;
         padding-right: 3%;
       }
+    }
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: calc(#{px_to_vh(120, $large-desktop-height)} + #{px_to_vh($footer-height-mb, $mobile-height)});
     }
   }
 
@@ -97,13 +139,29 @@
 
       h3 { margin-top: 0; }
 
-      &:first-of-type {
-        margin-top: 0;
-      }
+      &:first-of-type { margin-top: 0; }
     }
 
     .comments {
       margin-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: px_to_vh(100, $mobile-height);
+
+      .comments { margin-bottom: 0; }
+    }
+
+    @include tablet {
+      min-height: calc(100vh - #{px_to_vh($footer-height-tb, $tablet-height)});
+    }
+  }
+
+  @include mobile {
+    top: px_to_vh(60, $mobile-height);
+
+    &__content {
+      padding-top: px_to_vh(40, $mobile-height);
     }
   }
 }

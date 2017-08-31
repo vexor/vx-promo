@@ -2,6 +2,7 @@
 layout: documentation
 title: Documentation
 description_key: documentation
+slug: documentation
 js: landing
 sitemap:
   priority: 0.7

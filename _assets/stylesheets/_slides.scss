@@ -1,11 +1,5 @@
 .slides {
   position: relative;
-  left: 0;
-  @include transition(left 0.5s ease);
-
-  &.translated {
-    left: -100%;
-  }
 }
 
 .slide {
@@ -17,6 +11,7 @@
 
   @include mobile {
     height: auto;
+    min-height: 100vh;
     padding-top: px_to_vh(60, $mobile-height);
   }
 }

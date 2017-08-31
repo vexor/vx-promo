@@ -41,9 +41,7 @@
         line-height: 1.25;
       }
 
-      &:last-of-type {
-        margin-right: 0;
-      }
+      &:last-of-type { margin-right: 0; }
     }
   }
 
@@ -98,14 +96,17 @@
 
       &.gray-logo { @extend .hidden; }
 
-      &.blue-logo { @extend .visible; }
+      &.blue-logo {
+        @extend .visible;
+        display: inline-block;
+      }
     }
   }
 
   @include mobile {
     position: absolute;
     bottom: 0;
-    height: px_to_vh(240, $mobile-height);
+    height: px_to_vh($footer-height-mb, $mobile-height);
     padding: px_to_vh(35, $mobile-height) 0;
 
     &__inner {
@@ -146,6 +147,13 @@
         &:first-of-type img { float: left; }
 
         &:last-of-type img { float: right; }
+      }
+    }
+
+    &.inversed {
+
+      .footer__payment span {
+        width: 16%;
       }
     }
   }

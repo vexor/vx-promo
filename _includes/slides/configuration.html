@@ -5,14 +5,18 @@
     <div class="configuration-slide__info">
       <strong>{{ 'sections.configuration.title' | t }}</strong>
       <p>{{ 'sections.configuration.caption' | t }}</p>
-      <button>{{ 'sections.configuration.btn-text' | t }}</button>
+      <button>
+        <a href="https://ci.vexor.io" class="blue abs-block">
+          {{ 'sections.configuration.btn-text' | t }}
+        </a>
+      </button>
     </div>
 
     <div class="configuration-slide__calculator">
       <div class="configuration-slide__calculator__commits">
         {{ 'sections.configuration.calculator.commits' | t }}
         <strong>
-          <span id="configuration-commits-count">200</span>
+          <span id="configuration-commits-count">10</span>
         </strong>
         <div id="configuration-commits"></div>
       </div>
@@ -20,7 +24,7 @@
       <div class="configuration-slide__calculator__build-duration">
         {{ 'sections.configuration.calculator.build_duration' | t }}
         <strong>
-          <span id="configuration-duration-value">15</span>
+          <span id="configuration-duration-value">10</span>
           {{ 'time.minutes' | t }}
         </strong>
         <div id="configuration-duration"></div>
@@ -33,7 +37,7 @@
       <div class="configuration-slide__calculator__total-cost">
         <strong>
           {{ 'currency.sign' | t }}
-          <span id="configuration-cost">30</span>
+          <span id="configuration-cost">1.00</span>
         </strong>
       </div>
     </div>

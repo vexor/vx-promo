@@ -2,6 +2,7 @@
 layout: page
 title: Terms and conditions
 description_key: terms
+slug: terms
 js: landing
 sitemap:
   priority: 0.7

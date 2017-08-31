@@ -95,8 +95,9 @@
     @include border-radius(5px);
     background-color: #3c3c5a;
     color: #6bdbbc;
-    font: normal normal normal px_to_rem(18) Consolas, SansSerif;
+    font: normal normal normal px_to_em(18) Consolas, SansSerif;
     line-height: 1.25;
+    white-space: pre-line;
   }
 
   .highlight {
@@ -106,6 +107,12 @@
     code {
       display: block;
       padding: 20px;
+    }
+  }
+
+  @include mobile {
+    img {
+      max-width: 100%;
     }
   }
 }

@@ -19,6 +19,7 @@ $(function() {
     // common mobile scripts
     if (isMobile.phone) {
         $('body').addClass('at-mobile');
+        initSlidedMenu();
     }
 
     // index page's scripts
@@ -32,17 +33,14 @@ $(function() {
             featuresSlideAnimations();
             lastSlideAnimations();
         }
-
-        // slided menu if mobile
-        if (isMobile.phone) {
-            initSlidedMenu();
-        }
     }
     // other pages' scripts
     else {
         $('body').addClass('alternate');
         $('footer').addClass('inversed');
-        initDocumentationNav();
+
+        if ($('#documentation').length > 0)
+            initDocumentationNav();
     }
 
 });

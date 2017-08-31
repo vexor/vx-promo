@@ -2,6 +2,7 @@
 layout: posts
 title: How To Deploy Rails Applications Using Ansible And Mina
 description_key: deploy_rails
+slug: blog_post
 ---
 
 

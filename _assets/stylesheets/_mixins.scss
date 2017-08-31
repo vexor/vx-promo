@@ -15,6 +15,10 @@
   filter: alpha(opacity=$opacity);
 }
 
+@mixin filter($function: none) {
+  @include prefixer(filter, $function, webkit spec);
+}
+
 @mixin clearTransform3d {
   @include transform(translate3d(0px, 0px, 0px));
   @include transform-style(flat);
@@ -25,6 +29,21 @@
   top: 50%;
   height: $height;
   margin-top: -#{$height/2};
+}
+
+@mixin absolute($top: false, $right: false, $bottom: false, $left: false) {
+  @if length($top) == 4 {
+    $left: nth($top, 4);
+    $bottom: nth($top, 3);
+    $right: nth($top, 2);
+    $top: nth($top, 1);
+  }
+
+  position: absolute;
+  @if is-set($top) { top: $top; }
+  @if is-set($right) { right: $right; }
+  @if is-set($bottom) { bottom: $bottom; }
+  @if is-set($left) { left: $left; }
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color) {

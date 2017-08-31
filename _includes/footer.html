@@ -8,19 +8,19 @@
 
     <ul class="footer__menu">
       <li>
-        <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white">
+        <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white {% if page.slug == 'terms' %}current{% endif %}">
           {{ 'second_nav.terms.caption' | t }}
         </a>
       </li>
 
       <li>
-        <a href="{{ 'second_nav.security.link' | t }}" class="underlined white">
+        <a href="{{ 'second_nav.security.link' | t }}" class="underlined white {% if page.slug == 'security' %}current{% endif %}">
           {{ 'second_nav.security.caption' | t }}
         </a>
       </li>
 
       <li>
-        <a href="{{ 'second_nav.privacy.link' | t }}" class="underlined white">
+        <a href="{{ 'second_nav.privacy.link' | t }}" class="underlined white {% if page.slug == 'privacy' %}current{% endif %}">
           {{ 'second_nav.privacy.caption' | t }}
         </a>
       </li>

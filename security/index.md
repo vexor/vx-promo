@@ -2,6 +2,7 @@
 layout: page
 title: Security
 description_key: security
+slug: security
 js: landing
 sitemap:
   priority: 0.7

@@ -1,6 +1,8 @@
 function initDocumentationNav() {
 
-    var navSel = '.documentation__nav',
+    var htmlSel = 'html',
+        headerSel = 'header',
+        navSel = '.documentation__nav',
         $commonMenu = $(navSel).children('.sidebar__nav'),
         menuTitleSel = '.sidebar__nav__title',
         menuListSel = '.sidebar__nav__links';
@@ -15,6 +17,18 @@ function initDocumentationNav() {
         // history.pushState(null, null, id);
 
         $('html, body').animate({ scrollTop: target }, duration);
+
+        if (isMobile.phone) {
+            setTimeout(function () {
+                $('#doc-nav-open').toggleClass('active');
+                $(navSel).toggleClass('opened');
+
+                if ($(navSel).hasClass('opened'))
+                    $(htmlSel).addClass('unscrollable');
+                else
+                    $(htmlSel).removeClass('unscrollable');
+            }, duration);
+        }
     });
 
     $(menuTitleSel+':not(.toggled)').on('click', 'a', function() {
@@ -28,5 +42,15 @@ function initDocumentationNav() {
     $(menuListSel).on('click', 'a:not(.active)', function() {
         $(menuListSel).find('a.active').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $(headerSel).on('click', '#doc-nav-open', function() {
+        $(this).toggleClass('active');
+        $(navSel).toggleClass('opened');
+
+        if ($(navSel).hasClass('opened'))
+            $(htmlSel).addClass('unscrollable');
+        else
+            $(htmlSel).removeClass('unscrollable');
     });
 }

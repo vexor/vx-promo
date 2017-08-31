@@ -2,6 +2,7 @@
 layout: page
 title: Privacy
 description_key: privacy
+slug: privacy
 js: landing
 sitemap:
   priority: 0.7
