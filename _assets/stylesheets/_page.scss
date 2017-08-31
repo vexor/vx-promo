@@ -13,9 +13,7 @@
       height: auto;
       background-color: transparent;
 
-      figure.gif {
-        @extend .hidden;
-      }
+      figure.gif { @extend .hidden; }
 
       h2 {
         width: auto;
@@ -47,7 +45,7 @@
       }
 
       @include mobile {
-        padding: px_to_vh(130, $mobile-height) 0 px_to_vh(120, $mobile-height);
+        padding: px_to_vh(130, $mobile-height) 0 0;
 
         &__inner {
 
@@ -124,11 +122,11 @@
 
     @include mobile {
       padding-top: 0;
-      padding-bottom: calc(#{px_to_vh(120, $large-desktop-height)} + #{px_to_vh($footer-height-mb, $mobile-height)});
     }
   }
 
   &.blog {
+    min-height: calc(100vh - #{px_to_vh($footer-height-sm)});
     padding-top: 0;
     padding-bottom: px_to_vh(100, $large-desktop-height);
 
@@ -149,11 +147,19 @@
     @include mobile {
       padding-bottom: px_to_vh(100, $mobile-height);
 
-      .comments { margin-bottom: 0; }
+      .comments { margin-bottom: 2px; }
     }
 
     @include tablet {
       min-height: calc(100vh - #{px_to_vh($footer-height-tb, $tablet-height)});
+    }
+
+    @include medium-width-media {
+      min-height: calc(100vh - #{px_to_vh($footer-height-md)});
+    }
+
+    @include large-desktops-media {
+      min-height: calc(100vh - #{px_to_vh($footer-height-lg, $large-desktop-height)});
     }
   }
 

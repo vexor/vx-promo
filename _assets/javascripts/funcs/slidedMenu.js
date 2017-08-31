@@ -30,12 +30,14 @@ function initSlidedMenu() {
         }, 100);
 
         setTimeout(function() {
-            $(headerSel).removeClass('without-bg');
             $(headerSel).find('svg').removeClass('separate-white');
             $(headerSel).find('nav a').removeClass('separate-white');
         }, 200);
 
-        setTimeout(function() { $('#menu-open, #doc-nav-open').show(); }, 300);
+        setTimeout(function() {
+            $(headerSel).removeClass('without-bg');
+            $('#menu-open, #doc-nav-open').show();
+        }, 300);
 
         setTimeout(function() { $(htmlSel).removeClass('unscrollable'); }, 400);
     });

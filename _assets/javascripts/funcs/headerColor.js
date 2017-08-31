@@ -26,8 +26,9 @@ function headerColor() {
                     $(headerSel).removeClass('white-bg');
                 }
 
-                $(headerSel).find('svg').addClass('white');
-                $(headerSel).find('nav a').addClass('white');
+                $(headerSel).find('svg, nav a')
+                    .removeClass('blue')
+                    .addClass('white');
             }
             else {
                 if ($(bodySel).hasClass('at-desktop')) {
@@ -38,8 +39,9 @@ function headerColor() {
                     $(headerSel).addClass('white-bg');
                 }
 
-                $(headerSel).find('svg').removeClass('white');
-                $(headerSel).find('nav a').removeClass('white');
+                $(headerSel).find('svg, nav a')
+                    .removeClass('white')
+                    .addClass('blue');
             }
         });
     }
