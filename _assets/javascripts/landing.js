@@ -33,6 +33,20 @@ $(function() {
             featuresSlideAnimations();
             lastSlideAnimations();
         }
+
+        $('.features-slide__screenshots__item').on('click', function() {
+            var videoParentEl = $(this),
+                video = document.getElementById('vexor-video');
+
+            if (video.paused) {
+                videoParentEl.addClass('playing');
+                video.play();
+            }
+            else {
+                video.pause();
+                videoParentEl.removeClass('playing');
+            }
+        });
     }
     // other pages' scripts
     else {

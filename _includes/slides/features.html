@@ -11,19 +11,25 @@
             {{ 'sections.features.fast_and_easy.btn-text' | t }}
           </a>
         </button>
-        <div class="screenshot desktop-down"></div>
+        <!--<div class="screenshot desktop-down"></div>-->
       </div>
 
       <div class="features-slide__info__item" data-item="asm_asn">
         <strong>{{ 'sections.features.asm_asn.title' | t }}</strong>
         <p>{{ 'sections.features.asm_asn.caption' | t }}</p>
-        <div class="screenshot desktop-down"></div>
+        <!--<div class="screenshot desktop-down"></div>-->
       </div>
     </div>
 
-    <div id="features-screenshots" class="features-slide__screenshots mobile-tablet-down">
-      <div class="features-slide__screenshots__item" data-item="fae"></div>
-      <div class="features-slide__screenshots__item" data-item="asm_asn"></div>
+    <div id="features-screenshots" class="features-slide__screenshots">
+      <div class="features-slide__screenshots__item">
+        <video id="vexor-video">
+          <source src="/vexor.mp4" type="video/mp4">
+          <source src="/vexor.ogv" type="video/ogg">
+        </video>
+      </div>
+      <!--<div class="features-slide__screenshots__item" data-item="fae"></div>-->
+      <!--<div class="features-slide__screenshots__item" data-item="asm_asn"></div>-->
     </div>
 
   </div>

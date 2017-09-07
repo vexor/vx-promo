@@ -11,13 +11,16 @@ function headerColor() {
         $(headerSel).find('nav a').removeClass('white');
     }
     else {
+
         var firstSlideSel = '#first-slide',
             lastSlideSel = '#last-slide',
             firstSlideHeight = $(firstSlideSel).outerHeight(),
             lastSlideOffset = $(lastSlideSel).offset().top;
 
         $(window).on('scroll', function() {
-            if ($(window).scrollTop() <= firstSlideHeight - headerHalfHeight || $(window).scrollTop() >= lastSlideOffset - headerHalfHeight) {
+
+            if (($(window).scrollTop() <= firstSlideHeight - headerHalfHeight) || ($(window).scrollTop() >= lastSlideOffset - headerHalfHeight)) {
+
                 if ($(bodySel).hasClass('at-desktop')) {
                     $(headerSel).find('svg#logo').removeClass('smaller');
                 }
@@ -29,8 +32,10 @@ function headerColor() {
                 $(headerSel).find('svg, nav a')
                     .removeClass('blue')
                     .addClass('white');
+
             }
             else {
+
                 if ($(bodySel).hasClass('at-desktop')) {
                     $(headerSel).find('svg#logo').addClass('smaller');
                 }
@@ -42,8 +47,11 @@ function headerColor() {
                 $(headerSel).find('svg, nav a')
                     .removeClass('white')
                     .addClass('blue');
+
             }
+
         });
+
     }
 
 }
