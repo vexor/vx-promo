@@ -28,28 +28,25 @@ en:
 
   sections:
     first:
-      title: <span class="row row-first">Un<b class="char-l">l</b>ımıted</span> <span class="row row-second">para<b class="char-l">l</b><b class="char-l">l</b>e<b class="char-l">l</b>ısm</span> <span class="row row-third">of <b class="char-b">b</b>uı<b class="char-l">l</b>ds.</span>
+#      title: <span class="row row-first">Un<b class="char-l">l</b>ımıted</span> <span class="row row-second">para<b class="char-l">l</b><b class="char-l">l</b>e<b class="char-l">l</b>ısm</span> <span class="row row-third">of <b class="char-b">b</b>uı<b class="char-l">l</b>ds.</span>
+      title: Unlimited parallelism of builds.
       subtitle: No pending. No queues.
-      more: More
+      more: Scroll
 
     features:
-      fast_and_easy:
-        title: Fast &<br>easy
+      es_es:
+        title: Easy start,<br>Easy setup
         caption: Integrate and setup your GitHub, BitBucket or Gitlab projects.
-        btn-text: Try it!
-
-      asm_asn:
-        title: As mutch<br>as needs
-        caption: Vexor can run unlimited number of parallel builds because it works in the cloud.
+        btn_text: Try it!
 
     configuration:
-      title: Pay only<br>for you<br>use
-      caption: Just $0.015 per minute.
-      btn-text: Get $5 to test Vexor
+      title: The most<br>Low cost
+      caption: Pay only for you use.<br>Just $0.015 per minute.
+      btn-text: Get $5 to test
       calculator:
+        cost: Cost
         commits: Commits
-        build_duration: Build duration
-        cost_per: Cost per <span class="cost-per active" data-period="day">Day</span> / <span class="cost-per" data-period="month">Month</span>
+        duration: Build duration
 
     customers:
       title: Join our customers

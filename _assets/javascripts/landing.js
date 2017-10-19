@@ -34,7 +34,7 @@ $(function() {
             lastSlideAnimations();
         }
 
-        $('.features-slide__screenshots__item').on('click', function() {
+        $('.features-slide__content__item').on('click', function() {
             var videoParentEl = $(this),
                 video = document.getElementById('vexor-video');
 

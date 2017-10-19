@@ -1,113 +1,82 @@
 .features-slide {
-  height: auto;
-  background-color: white;
+  @include linear-gradient($blue-pigment 0%, $blue-pigment 50%, white 50%, white 100%);
 
-  &__inner {
-    position: relative;
-  }
-
-  &__info, &__screenshots {
-    top: 0;
-    position: relative;
-    width: 50%;
+  &__info, &__content {
 
     &__item {
       width: 440px;
+      @include absolute(50%, auto, auto, auto);
+      @include transform(translateY(-50%));
     }
   }
 
   &__info {
-    float: left;
 
     &__item {
-      height: 100vh;
-      padding: 30vh 0 28vh;
+      left: 0;
 
       strong {
-        margin-top: 8px;
-        color: $blue-pigment;
+        @include vector-title;
+        padding-top: 40px;
         font-size: 80px;
         font-weight: 800;
         line-height: 0.75;
         letter-spacing: -1px;
+
+        svg {
+          @include absolute(35px, auto, auto, 2px);
+        }
       }
 
       p {
-        margin: 35px 0 40px;
-        font-size: 30px;
-        line-height: 1.33;
+        margin: 50px 0 30px;
+        font-size: 29px;
+        line-height: 1.38;
       }
 
       button { width: 160px; }
     }
   }
 
-  &__screenshots {
+  &__content {
     right: 0;
     float: right;
-    height: 100vh;
+    padding-left: 20px;
 
     &__item {
-      @include abs-vert-cent-block(330px);
-      left: 20px;
-      width: 440px;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      //@include box-shadow(0 40px 80px 10px rgba(51, 51, 153, 0.1));
+      right: 0;
+      height: 420px;
 
       video {
         display: block;
         width: 100%;
-        @include absolute(50%, 0, 0, 50%);
-        @include transform(translate(-50%, -50%));
+        height: 100%;
+        @include absolute(0, auto, auto, 0);
+        @include border-radius(7px);
         z-index: 1;
       }
 
       &:before {
         content: '';
         display: block;
-        @include absolute(-1px, -1px, -1px, -1px);
+        @include absolute(0, 0, 0, 0);
         z-index: 2;
-        background: rgba(white, 0.5) asset_url('interface/slides/features/play-button.svg') no-repeat center center;
+        background: asset_url('interface/slides/features/play-button.svg') no-repeat center center;
         background-size: px_to_vw(40) px_to_vw(40);
         @include opacity(100);
         transition: opacity 0.3s ease;
+        cursor: pointer;
       }
 
       &.playing {
 
-        &:before { @include opacity(0); }
+        video { z-index: 2; }
+
+        &:before {
+          z-index: 1;
+          @include opacity(0);
+        }
       }
-
-      &[data-item="fae"] {
-        background-image: asset_url('pictures/features/fast_and_easy.png');
-        z-index: 2;
-      }
-
-      &[data-item="asm_asn"] {
-        background-image: asset_url('pictures/features/asm_asn.png');
-        z-index: 1;
-      }
-    }
-
-    &.bottomed {
-      top: 100vh;
-      right: 0;
-
-      .features-slide__screenshots__item[data-item="fae"] { z-index: 1; }
-
-      .features-slide__screenshots__item[data-item="asm_asn"] { z-index: 2; }
-    }
-
-    &.fixed {
-      position: fixed;
-      top: 0;
-      right: 0;
-    }
-
-    &.blink {
-      @include animation(blink 0.9s ease); // Don't forget synchronize animations' duration in featuresSlideAnimations.js if had changed duration here
     }
   }
 
@@ -169,7 +138,7 @@
       }
     }
 
-    &__screenshots {
+    &__content {
       float: left;
       width: 100%;
       height: auto;
@@ -197,7 +166,7 @@
   @include tablet {
     padding: 115px 0;
 
-    &__info, &__screenshots {
+    &__info, &__content {
       position: static;
       width: 100%;
       height: auto;
@@ -257,7 +226,7 @@
       }
     }
 
-    &__screenshots {
+    &__content {
 
       &__item {
         position: relative;
@@ -279,23 +248,19 @@
   }
 
   @include medium-width-media {
-    &__info, &__screenshots {
+    &__info, &__content {
 
       &__item { width: 560px; }
     }
 
     &__info__item {
-      padding: 31.25vh 0 27.1vh;
-    }
 
-    &__screenshots__item {
-      height: 420px;
-      margin-top: -210px;
+      p { width: 450px; }
     }
   }
 
   @include large-desktops-media {
-    &__info, &__screenshots {
+    &__info, &__content {
 
       &__item {
         width: 740px;
@@ -318,7 +283,7 @@
       }
     }
 
-    &__screenshots__item {
+    &__content__item {
       height: 555px;
       margin-top: -277.5px;
 

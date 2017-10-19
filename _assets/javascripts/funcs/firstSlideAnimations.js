@@ -14,7 +14,7 @@ function firstSlideAnimations() {
 
     $(window).on('scroll', function() {
         if ($(window).scrollTop() <= $(firstSlideSel).outerHeight()) {
-            $(firstSlideSel).find(scrollableContentSel).css('top', 0 - $(window).scrollTop()/2);
+            // $(firstSlideSel).find(scrollableContentSel).css('top', 0 - $(window).scrollTop()/2);
             // $(firstSlideSel).find(scrollableContentSel).addClass('blur');
         }
     });

@@ -1,41 +1,43 @@
 function featuresSlideAnimations() {
 
-    var featuresSlideSel = '#features-slide',
+    var headerSel = 'header',
+        featuresSlideSel = '#features-slide',
         infoBlockSel = '#features-info',
-        screenshotsSel = '#features-screenshots',
+        contentSel = '#features-content',
         video = document.getElementById('vexor-video'),
-        featuresSlideOffset = $(featuresSlideSel).offset().top,
+        headerHeight = $(headerSel).outerHeight(),
+        featuresSlideOffset = $(featuresSlideSel).offset().top - 0.5*headerHeight,
         featuresSlideHeight = $(featuresSlideSel).outerHeight(),
-        nextSlideOffset = featuresSlideOffset + 0.5*featuresSlideHeight;
+        nextSlideOffset = featuresSlideOffset + headerHeight;
 
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() > featuresSlideOffset && $(window).scrollTop() < nextSlideOffset) {
+    // $(window).on('scroll', function() {
+    //     if ($(window).scrollTop() > featuresSlideOffset && $(window).scrollTop() < nextSlideOffset) {
+    //
+    //         $(featuresSlideSel).find(contentSel).children().addClass('playing');
+    //         video.play();
+    //
+    //         // if (window.scrollDirection > 0 && $(window).scrollTop() > nextSlideOffset - 0.4*$(contentSel).children().outerHeight()) {
+    //         //     animateContent(1, nextSlideOffset);
+    //         // }
+    //         //
+    //         // if (window.scrollDirection < 0 && $(window).scrollTop() < featuresSlideOffset + 0.4*$(contentSel).children().outerHeight()) {
+    //         //     animateContent(-1, featuresSlideOffset);
+    //         // }
+    //     }
+    //     else {
+    //         $(featuresSlideSel).find(contentSel).children().removeClass('playing');
+    //         video.pause();
+    //     }
+    //
+    //     // if ($(window).scrollTop() > nextSlideOffset) {
+    //     //     $(featuresSlideSel).find(contentSel).addClass('bottomed');
+    //     // }
+    //     // else {
+    //     //     $(featuresSlideSel).find(contentSel).removeClass('bottomed');
+    //     // }
+    // });
 
-            $(featuresSlideSel).find(screenshotsSel).addClass('fixed')
-                                                    .children().addClass('playing');
-            video.play();
 
-            // if (window.scrollDirection > 0 && $(window).scrollTop() > nextSlideOffset - 0.4*$(screenshotsSel).children().outerHeight()) {
-            //     animateContent(1, nextSlideOffset);
-            // }
-            //
-            // if (window.scrollDirection < 0 && $(window).scrollTop() < featuresSlideOffset + 0.4*$(screenshotsSel).children().outerHeight()) {
-            //     animateContent(-1, featuresSlideOffset);
-            // }
-        }
-        else {
-            $(featuresSlideSel).find(screenshotsSel).removeClass('fixed')
-                                                    .children().removeClass('playing');
-            video.pause();
-        }
-
-        if ($(window).scrollTop() > nextSlideOffset) {
-            $(featuresSlideSel).find(screenshotsSel).addClass('bottomed');
-        }
-        else {
-            $(featuresSlideSel).find(screenshotsSel).removeClass('bottomed');
-        }
-    });
 
     function animateContent(direction) {
         var directionClass, backDirectionClass,
@@ -60,14 +62,14 @@ function featuresSlideAnimations() {
             $html.addClass(directionClass);
 
             setTimeout(function () {
-                $(screenshotsSel).children('.features-slide__screenshots__item[data-item="fae"]').css('z-index', zIndex1);
-                $(screenshotsSel).children('.features-slide__screenshots__item[data-item="asm_asn"]').css('z-index', zIndex2);
+                $(contentSel).children('.features-slide__content__item[data-item="fae"]').css('z-index', zIndex1);
+                $(contentSel).children('.features-slide__content__item[data-item="asm_asn"]').css('z-index', zIndex2);
             }, 450);
 
-            $(screenshotsSel).addClass('blink');
+            $(contentSel).addClass('blink');
 
             setTimeout(function () {
-                $(screenshotsSel).removeClass('blink');
+                $(contentSel).removeClass('blink');
             }, 900);
         }
     }

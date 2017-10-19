@@ -46,6 +46,16 @@
   @if is-set($left) { left: $left; }
 }
 
+@mixin vector-title {
+  display: block;
+  position: relative;
+  color: transparent;
+
+  & > svg {
+    z-index: -1;
+  }
+}
+
 @mixin scrollbars($size, $foreground-color, $background-color) {
   // For Google Chrome
   ::-webkit-scrollbar {

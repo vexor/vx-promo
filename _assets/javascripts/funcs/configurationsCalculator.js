@@ -1,69 +1,117 @@
 function initConfigurationsCalculator() {
 
-    var commitsCountSel = '#configuration-commits-count',
+    var costValueSel = '#configuration-cost-value',
+        commitsCountSel = '#configuration-commits-count',
         durationValueSel = '#configuration-duration-value',
-        costSel = '#configuration-cost',
+        costSliderSel = '#configuration-cost',
         commitsSliderSel = '#configuration-commits',
         durationSliderSel = '#configuration-duration',
         period = 'day',
-        periodCoeff = calculatePeriodCoeff();
+        periodCoeff = getPeriodCoeff();
+
+
+    // Cost slider
+    $(costSliderSel).slider({
+        max: 4,
+        min: 0.1,
+        step: 0.1,
+        value: 1,
+        slide: function(event, ui) { $(costValueSel).val('$'+(ui.value*periodCoeff)); },
+        stop: function(event, ui) { updateSlidersValues(ui.value); }
+    }).draggable();
 
     // Commits slider
     $(commitsSliderSel).slider({
-        animate: 400,
         max: 20,
         min: 1,
         step: 1,
         value: 10,
-        slide: function(event, ui) { $(commitsCountSel).text(ui.value * periodCoeff); },
-        stop: function(event, ui) { calculateCost(); }
+        slide: function(event, ui) { $(commitsCountSel).val(ui.value*periodCoeff); },
+        stop: function(event, ui) { updateSlidersValues(false, ui.value); }
     }).draggable();
-
 
     // Duration slider
     $(durationSliderSel).slider({
-        animate: 400,
         max: 20,
         min: 1,
         step: 1,
         value: 10,
-        slide: function(event, ui) { $(durationValueSel).text(ui.value); },
-        stop: function(event, ui) { calculateCost(); }
+        slide: function(event, ui) { $(durationValueSel).val(ui.value); },
+        stop: function(event, ui) { updateSlidersValues(false, false, ui.value); }
     }).draggable();
 
 
-    // Toggle period of payment
-    $('.cost-per').on('click', function() {
-        var $el = $(this);
-
-        if (!$el.hasClass('active')) {
-            $el.siblings('.cost-per').removeClass('active');
-            $el.addClass('active');
-
-            period = $('.cost-per.active').data('period');
-            periodCoeff = calculatePeriodCoeff();
-
-            $(commitsCountSel).text($(commitsSliderSel).slider('value') * periodCoeff);
-
-            calculateCost();
-        }
-    });
-
-    function calculatePeriodCoeff() {
+    function getPeriodCoeff() {
         if (period == 'month')
             return 20;
         else if (period == 'day')
             return 1;
     }
 
-    // Calculate cost of configuration
-    function calculateCost() {
-        var cost,
-            commits = parseInt($(commitsCountSel).text()),
-            duration = parseInt($(durationValueSel).text());
+    function updateSlidersValues(cost, commits, duration) {
 
-        cost = (commits * 0.01*duration).toFixed(2);
-        $(costSel).text(cost);
+        if (cost) {
+            duration = parseInt($(durationValueSel).val());
+            commits = Math.floor(cost / duration * 100);
+
+            if (commits > 20*periodCoeff) {
+                commits = 20*periodCoeff;
+                duration = Math.floor(cost / commits * 100);
+            }
+            else if (commits < 1*periodCoeff) {
+                commits = 1*periodCoeff;
+                duration = 1;
+            }
+
+            $(commitsSliderSel).slider('value', commits);
+            $(durationSliderSel).slider('value', duration);
+            $(commitsCountSel).val(commits*periodCoeff);
+            $(durationValueSel).val(duration);
+
+            return [commits, duration];
+        }
+
+        if (commits) {
+            duration = parseInt($(durationValueSel).val());
+            cost = (commits * 0.01*duration).toFixed(2);
+            $(costSliderSel).slider('value', cost);
+            $(costValueSel).val('$'+cost*periodCoeff);
+
+            return cost;
+        }
+
+        if (duration) {
+            commits = parseInt($(commitsCountSel).val());
+            cost = (commits * 0.01*duration).toFixed(2);
+            $(costSliderSel).slider('value', cost);
+            $(costValueSel).val('$'+cost*periodCoeff);
+
+            return cost;
+        }
+
     }
+
+
+    // Toggle period of payment
+    $('.period').on('click', function() {
+        var $el = $(this),
+            prevPeriodCoeff = periodCoeff;
+
+        if (!$el.hasClass('active')) {
+            $el.siblings('.period').removeClass('active');
+            $el.addClass('active');
+
+            period = $('.period.active').data('period');
+            periodCoeff = getPeriodCoeff();
+
+            var commits = Math.floor($(commitsCountSel).val() / prevPeriodCoeff),
+                cost = $(costValueSel).val();
+
+            cost = (cost.substring(1, cost.length) / prevPeriodCoeff).toFixed(2);
+
+            $(commitsCountSel).val(commits*periodCoeff);
+            $(costValueSel).val('$' + cost*periodCoeff);
+        }
+    });
 
 }

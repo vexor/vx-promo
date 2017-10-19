@@ -1,4 +1,5 @@
 .customers-slide {
+  @include linear-gradient(white 0%, white 50%, $blue-pigment 50%, $blue-pigment 100%);
 
   &__inner {
     height: calc(100vh - #{$customers-height-sm-md});

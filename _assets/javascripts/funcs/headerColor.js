@@ -13,21 +13,29 @@ function headerColor() {
     else {
 
         var firstSlideSel = '#first-slide',
+            featuresSlideSel = '#features-slide',
             lastSlideSel = '#last-slide',
             firstSlideHeight = $(firstSlideSel).outerHeight(),
+            featuresSlideHeight = $(featuresSlideSel).outerHeight(),
+            featuresSlideOffset = $(featuresSlideSel).offset().top,
             lastSlideOffset = $(lastSlideSel).offset().top;
 
         $(window).on('scroll', function() {
 
-            if (($(window).scrollTop() <= firstSlideHeight - headerHalfHeight) || ($(window).scrollTop() >= lastSlideOffset - headerHalfHeight)) {
+            if ($(bodySel).hasClass('at-desktop')) {
 
-                if ($(bodySel).hasClass('at-desktop')) {
+                if ($(window).scrollTop() < 1)
                     $(headerSel).find('svg#logo').removeClass('smaller');
-                }
+                else
+                    $(headerSel).find('svg#logo').addClass('smaller');
 
-                if ($(bodySel).hasClass('at-mobile')) {
+            }
+
+
+            if (($(window).scrollTop() <= featuresSlideOffset + 0.5*featuresSlideHeight - headerHalfHeight) || ($(window).scrollTop() >= lastSlideOffset - headerHalfHeight)) {
+
+                if ($(bodySel).hasClass('at-mobile'))
                     $(headerSel).removeClass('white-bg');
-                }
 
                 $(headerSel).find('svg, nav a')
                     .removeClass('blue')
@@ -36,13 +44,8 @@ function headerColor() {
             }
             else {
 
-                if ($(bodySel).hasClass('at-desktop')) {
-                    $(headerSel).find('svg#logo').addClass('smaller');
-                }
-
-                if ($(bodySel).hasClass('at-mobile')) {
+                if ($(bodySel).hasClass('at-mobile'))
                     $(headerSel).addClass('white-bg');
-                }
 
                 $(headerSel).find('svg, nav a')
                     .removeClass('white')

@@ -97,12 +97,40 @@
 .ui-slider .ui-slider-handle {
 	position: absolute;
 	z-index: 2;
-	width: 20px;
-	height: 20px;
-	@include border-radius(10px);
 	cursor: default;
 	-ms-touch-action: none;
 	touch-action: none;
+	@include transition(all 0.2s ease);
+
+	&:before, &:after {
+		content: '';
+		display: block;
+	}
+
+	&:before {
+		@include absolute(50%, 20px, auto, -560px);
+		height: 2px;
+		background-color: $dark-blue-gray;
+		z-index: -1;
+		@include transform(translateY(-50%));
+	}
+
+	&:after {
+		@include absolute(0, auto, auto, 0);
+		width: 20px;
+		height: 20px;
+		z-index: 1;
+		@include border-radius(50%);
+		@include transform(translate(-100%, -50%));
+		@include transition(all 0.2s ease);
+	}
+
+	&:hover {
+
+		&:after {
+			@include transform(translate(-100%, -50%) scale(1.2));
+		}
+	}
 }
 .ui-slider .ui-slider-range {
 	position: absolute;
@@ -123,21 +151,7 @@
 	height: .8em;
 }
 .ui-slider-horizontal .ui-slider-handle {
-  @include transform(translate(-100%, -50%));
   cursor: pointer;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: -380px;
-    right: 21px;
-    height: 2px;
-    @include transform(translateY(-50%));
-    background-color: $dark-blue-gray;
-    z-index: -1;
-  }
 }
 .ui-slider-horizontal .ui-slider-range {
 	top: 0;
@@ -187,9 +201,9 @@
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
+	width: 535px;
 	height: 1px;
-	margin-left: 20px;
-	margin-right: 5px;
+	left: 21px;
 	background-color: $crayola-blue-bell;
   cursor: pointer;
 }
@@ -222,10 +236,9 @@
 works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-	//border: 1px solid #c5c5c5;
-	background: $aquamarine;
 	font-weight: normal;
-	//color: #454545;
+
+	&:after { background: $aquamarine; }
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -273,7 +286,10 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	background-color: $dark-blue-gray;
+	&:after {
+		background-color: $dark-blue-gray;
+		@include transform(translate(-100%, -50%) scale(1.2));
+	}
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {

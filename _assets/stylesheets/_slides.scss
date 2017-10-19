@@ -9,6 +9,27 @@
   height: 100vh;
   z-index: 1;
 
+  border: 1px solid black; // TODO: remove
+
+  &__inner {
+    position: relative;
+    @extend .base;
+
+    &__half {
+      width: 50%;
+      height: 100vh;
+      float: left;
+
+      &[data-position="left"] {
+        padding-right: 20px;
+      }
+
+      &[data-position="right"] {
+        padding-left: 20px;
+      }
+    }
+  }
+
   @include mobile {
     height: auto;
     min-height: 100vh;

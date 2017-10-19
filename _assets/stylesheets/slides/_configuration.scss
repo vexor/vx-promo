@@ -1,58 +1,60 @@
 .configuration-slide {
-  background-color: rgba(51, 51, 153, 0.05);
-
-  &__inner {
-    position: relative;
-    height: 100%;
-  }
+  background-color: white;
 
   &__calculator, &__info {
-    @include abs-vert-cent-block(420px);
+    @include abs-vert-cent-block(360px);
+    width: 440px;
   }
 
   &__calculator {
-    left: 80px;
-    width: 280px;
-    padding: 25px 20px;
-    background-color: white;
-    @include border-radius(5px);
-    @include box-shadow(0 20px 60px 0 rgba(51, 51, 153, 0.1), 0 30px 40px 0 rgba(51, 51, 153, 0.1));
+    right: 0;
     line-height: 1.5;
 
     strong {
+      position: relative;
       display: block;
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 0.83;
-      color: $blue-pigment;
+
+      label {
+        @include absolute(auto, auto, 0, 0);
+        display: block;
+        font-weight: normal;
+        color: $blue-pigment;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        font: 800 normal normal 36px Circe, Sans;
+        text-align: center;
+        color: $blue-pigment;
+        @include appearance(text);
+        border: 0;
+      }
     }
 
-    &__commits, &__build-duration {
+    &__slider {
       position: relative;
-      margin-bottom: 35px;
-      padding: 0 20px 11px 0;
+      margin-bottom: 5px;
+      padding-bottom: 11px;
       overflow: hidden;
 
-      strong {
-        margin: 15px 0 25px;
-      }
+      strong { margin: 15px 0 28px; }
 
       &:after {
         content: '∞';
         display: block;
-        position: absolute;
-        bottom: 0;
-        right: 0;
+        @include absolute(auto, 4px, 39px, auto);
         width: 15px;
         height: 20px;
         font-size: 20px;
-        line-height: 1.0;
-        color: $crayola-blue-bell;
+        line-height: 0.5;
+        color: rgba($blue-pigment, 0.2);
       }
     }
 
-    &__cost-per {
-      margin-bottom: 20px;
+    &__period {
+      margin-top: 30px;
 
       span {
         display: inline-block;
@@ -79,30 +81,30 @@
   }
 
   &__info {
-    right: 0;
-    width: 440px;
-    padding-top: 30px;
+    left: 0;
 
     & > * { display: block; }
 
     strong {
-      color: $blue-pigment;
+      @include vector-title;
       font-size: 80px;
       font-weight: 800;
       line-height: 0.75;
       letter-spacing: -1px;
+
+      svg {
+        @include absolute(0, 0, 0, 0);
+      }
     }
 
     p {
-      margin: 35px 0 40px;
-      font-size: 30px;
-      line-height: 1.33;
+      margin: 70px 0 30px;
+      font-size: 29px;
+      line-height: 1.38;
+      color: $blue-pigment;
     }
 
-    button {
-      width: 200px;
-      @include box-shadow(0 10px 30px 0 rgba(51, 51, 153, 0.15));
-    }
+    button { width: 200px; }
   }
 
   @include mobile {
@@ -170,20 +172,14 @@
 
   @include medium-width-media {
     &__calculator, &__info {
-      @include abs-vert-cent-block(460px);
+      width: 560px;
     }
 
-    &__calculator {
-      left: 100px;
-      width: 360px;
-      padding: 45px 40px 55px;
-    }
+    &__calculator { }
 
     &__info {
-      width: 560px;
-      padding-top: 50px;
 
-      button { width: 260px; }
+      button { width: 200px; }
     }
   }
 
