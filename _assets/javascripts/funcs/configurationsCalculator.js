@@ -52,20 +52,20 @@ function initConfigurationsCalculator() {
 
         if (cost) {
             duration = parseInt($(durationValueSel).val());
-            commits = Math.floor(cost / duration * 100);
+            commits = Math.floor(cost*periodCoeff / duration * 100);
 
             if (commits > 20*periodCoeff) {
                 commits = 20*periodCoeff;
-                duration = Math.floor(cost / commits * 100);
+                duration = Math.floor(cost*periodCoeff / commits * 100);
             }
             else if (commits < 1*periodCoeff) {
                 commits = 1*periodCoeff;
                 duration = 1;
             }
 
-            $(commitsSliderSel).slider('value', commits);
+            $(commitsSliderSel).slider('value', Math.floor(commits / periodCoeff));
             $(durationSliderSel).slider('value', duration);
-            $(commitsCountSel).val(commits*periodCoeff);
+            $(commitsCountSel).val(commits);
             $(durationValueSel).val(duration);
 
             return [commits, duration];
@@ -81,7 +81,7 @@ function initConfigurationsCalculator() {
         }
 
         if (duration) {
-            commits = parseInt($(commitsCountSel).val());
+            commits = Math.floor($(commitsCountSel).val() / periodCoeff);
             cost = (commits * 0.01*duration).toFixed(2);
             $(costSliderSel).slider('value', cost);
             $(costValueSel).val('$'+cost*periodCoeff);
@@ -110,7 +110,7 @@ function initConfigurationsCalculator() {
             cost = (cost.substring(1, cost.length) / prevPeriodCoeff).toFixed(2);
 
             $(commitsCountSel).val(commits*periodCoeff);
-            $(costValueSel).val('$' + cost*periodCoeff);
+            $(costValueSel).val('$'+cost*periodCoeff);
         }
     });
 
