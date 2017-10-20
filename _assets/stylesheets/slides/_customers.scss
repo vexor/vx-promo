@@ -92,38 +92,64 @@
     height: $customers-height-sm-md;
 
     &__item {
-      height: 23px;
+      height: 35px;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain;
+      background-size: auto;
       cursor: pointer;
+      @include opacity(80);
+      @include transition(all 0.2s linear);
 
-      &:hover {
-
+      &:hover, &.slick-current {
+        @include opacity(100);
       }
 
       &[data-image="bookmate"] {
-        background-image: asset_url('interface/slides/customers/logos/bookmate.png');
+        background-image: asset_url('interface/slides/customers/logos/bookmate--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/bookmate--active.png');
+        }
       }
 
       &[data-image="meduza"] {
-        background-image: asset_url('interface/slides/customers/logos/meduza.png');
+        background-image: asset_url('interface/slides/customers/logos/meduza--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/meduza--active.png');
+        }
       }
 
       &[data-image="insales"] {
-        background-image: asset_url('interface/slides/customers/logos/insales.png');
+        background-image: asset_url('interface/slides/customers/logos/insales--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/insales--active.png');
+        }
       }
 
       &[data-image="uptopromo"] {
-        background-image: asset_url('interface/slides/customers/logos/uptopromo.png');
+        background-image: asset_url('interface/slides/customers/logos/uptopromo--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/uptopromo--active.png');
+        }
       }
 
       &[data-image="brandymint"] {
-        background-image: asset_url('interface/slides/customers/logos/brandymint.png');
+        background-image: asset_url('interface/slides/customers/logos/brandymint--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/brandymint--active.png');
+        }
       }
 
       &[data-image="castle"] {
-        background-image: asset_url('interface/slides/customers/logos/castle.png');
+        background-image: asset_url('interface/slides/customers/logos/castle--new.png');
+
+        &.slick-current {
+          background-image: asset_url('interface/slides/customers/logos/castle--active.png');
+        }
       }
     }
 
