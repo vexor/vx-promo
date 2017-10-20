@@ -2,57 +2,46 @@
   color: white;
   background-color: $blue-pigment;
 
-  &__inner {
-    position: relative;
-    height: calc(100vh - #{$footer-height-sm});
-  }
+  figure.gif { left: 0; }
 
-  figure.gif {
-    left: 230px;
-    top: 0; // final position: -266px
-    background-size: contain;
-    @include transition(top 0.2s linear);
+  &__info {
+    @include absolute(50%, 0, auto, auto);
+    @include transform(translateY(-50%));
 
-    &--turned {
-      @include transform(rotate(90deg));
+    h2 {
+      @include vector-title;
+      width: 397px;
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 0.7;
+      letter-spacing: -0.9px;
+
+      svg {
+        @include absolute(0, auto, auto, 0);
+      }
+
+      span {
+        display: block;
+        margin: 25px 0 30px;
+        font-size: 29px;
+        font-weight: normal;
+        line-height: 1.38;
+        letter-spacing: -0.8px;
+        color: white;
+      }
     }
-  }
 
-  h2, &__sign-up {
-    position: absolute;
-    left: 240px;
-  }
+    &__sign-up {
+      @include clearfix;
 
-  h2 {
-    width: 397px;
-    top: 50%;
-    margin: -180px 0 0;
-    font-size: 80px;
-    font-weight: 800;
-    line-height: 0.75;
-    letter-spacing: -0.9px;
+      button {
+        float: left;
+        width: 120px;
+        margin-right: 40px;
+        font-size: 19px;
 
-    span {
-      display: block;
-      margin-top: 30px;
-      font-size: 30px;
-      font-weight: normal;
-      line-height: 1.33;
-      letter-spacing: -0.8px;
-    }
-  }
-
-  &__sign-up {
-    bottom: 90px;
-    @include clearfix;
-
-    button {
-      float: left;
-      width: 120px;
-      margin-right: 40px;
-      font-size: 19px;
-
-      &:last-of-type { margin-right: 0; }
+        &:last-of-type { margin-right: 0; }
+      }
     }
   }
 
@@ -125,30 +114,14 @@
   }
 
   @include medium-width-media {
-    &__inner {
-      height: calc(100vh - #{$footer-height-md});
-    }
-
-    figure.gif {
-      //top: -310px;
-      left: 280px;
-    }
-
-    h2, &__sign-up {
-      left: 300px;
-    }
-
-    h2 { margin-top: -155px; }
-
-    &__sign-up {
-      bottom: 80px;
+    &__info__sign-up {
 
       button { width: 160px; }
     }
   }
 
   @include large-desktops-media {
-    &__inner {
+    &__content {
       height: calc(100vh - #{$footer-height-lg});
     }
 

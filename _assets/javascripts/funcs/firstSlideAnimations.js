@@ -1,6 +1,7 @@
 function firstSlideAnimations() {
 
     var firstSlideSel = '#first-slide',
+        featuresSlideSel = '#features-slide',
         scrollableContentSel = '.first-slide__scrollable';
 
     $.fn.scrollStopped = function(callback) {
@@ -22,5 +23,14 @@ function firstSlideAnimations() {
     // $(window).scrollStopped(function() {
     //     $(firstSlideSel).find(scrollableContentSel).removeClass('blur');
     // });
+
+    $('#scroll-down').on('click', function() {
+        var target = $(featuresSlideSel).offset().top,
+            duration = getScrollDuration(target);
+
+        $('html, body').animate({
+            scrollTop: target
+        }, duration);
+    });
 
 }

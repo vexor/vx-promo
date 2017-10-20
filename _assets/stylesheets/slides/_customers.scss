@@ -1,123 +1,108 @@
 .customers-slide {
   @include linear-gradient(white 0%, white 50%, $blue-pigment 50%, $blue-pigment 100%);
 
-  &__inner {
-    height: calc(100vh - #{$customers-height-sm-md});
-    padding-top: 120px;
+  &__title {
+    float: left;
+    width: 50%;
+    @include vector-title;
+    top: calc(50% - 35px);
+    @include transform(translateY(-100%));
 
-    &-wrap {
-      position: relative;
-      top: 50%;
-      @include transform(translateY(-50%));
-
-      & > strong {
-        display: block;
-        font-size: 30px;
-        line-height: 1.33;
-        text-align: center;
-        font-weight: normal;
-      }
+    svg {
+      @include absolute(0, auto, auto, 0);
     }
   }
 
   &__reviews {
+    float: right;
+    width: 50%;
+    height: 428px;
+    top: 50%;
+    @include transform(translateY(-50%));
+
+    &:before {
+      content: '';
+      display: block;
+      width: 34px;
+      height: 13px;
+      @include absolute(50%, auto, auto, -17px);
+      @include transform(translateY(-50%));
+      background: asset_url('interface/slides/customers/corner.svg') no-repeat center center;
+      background-size: cover;
+    }
 
     &__item {
-      width: 920px;
-      height: 440px;
-      padding-top: 70px;
+      width: 440px;
+      height: 308px;
 
-      &__inner {
-        position: relative;
-        @include size(600px 300px);
-        margin: 0 auto;
-        padding: 60px 40px 40px;
-        background-color: white;
-        @include border-radius(5px);
-        box-shadow: 0 40px 60px 0 rgba(51, 51, 153, 0.1), 0 30px 40px 0 rgba(51, 51, 153, 0.1);
-        text-align: center;
+      & > p, & > div {
+        height: 50%;
+      }
 
-        &:before {
-          content: '';
+      & > p {
+        padding-bottom: 55px;
+        color: $blue-pigment;
+        font-size: 24px;
+        line-height: 1.67;
+      }
+
+      & > div {
+        padding-top: 55px;
+        color: white;
+        font-size: 19px;
+        line-height: 1.05;
+
+        span {
           display: block;
-          position: absolute;
-          @include size(80px);
-          top: -40px;
-          left: 50%;
-          margin-left: -40px;
-          @include border-radius(50%);
-          background-repeat: no-repeat;
-          background-position: left top;
-          background-size: cover;
-        }
-
-        & > div {
-          color: $blue-pigment;
-          font-size: 16px;
-          line-height: 1.25;
-
-          span {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 1.0;
-          }
-        }
-
-        p {
-          margin-top: 20px;
-          line-height: 1.5;
+          margin-bottom: 15px;
+          font-size: 30px;
+          font-weight: bold;
+          line-height: 1.0;
         }
       }
+    }
 
-      &[data-review="bookmate"] {
-        .customers-slide__reviews__item__inner:before {
-          background-image: asset_url('pictures/reviews/bm_avatar.jpg');
-        }
+    .slick-list {
+      padding: 60px 0;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 40px;
+        z-index: 1;
       }
 
-      &[data-review="uptopromo"] {
-        .customers-slide__reviews__item__inner:before {
-          background-image: asset_url('pictures/reviews/up_avatar.jpg');
-        }
+      &:before {
+        top: 0;
+        background-color: rgba(white, 0.5);
       }
 
-      &[data-review="scalex"] {
-        .customers-slide__reviews__item__inner:before {
-          background-image: asset_url('pictures/reviews/sx_avatar.jpg');
-        }
-      }
-
-      &[data-review="railsmob"] {
-        .customers-slide__reviews__item__inner:before {
-          background-image: asset_url('pictures/reviews/rb_avatar.jpg');
-        }
+      &:after {
+        bottom: 0;
+        background-color: rgba($blue-pigment, 0.5);
       }
     }
   }
 
   &__logos {
+    @include absolute(auto, 0, 50px, 0);
     height: $customers-height-sm-md;
-    padding: 43.5px 0;
-    background-color: rgba(51, 51, 153, 0.05);
 
-    a {
-      float: left;
-      @include size(120px 23px);
-      margin-left: 40px;
+    &__item {
+      height: 23px;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
-      @include opacity(50);
-      @include transition(all 0.3s ease);
+      cursor: pointer;
 
       &:hover {
-        @include opacity(100);
+
       }
 
       &[data-image="bookmate"] {
-        margin-left: 0;
         background-image: asset_url('interface/slides/customers/logos/bookmate.png');
       }
 
@@ -139,6 +124,30 @@
 
       &[data-image="castle"] {
         background-image: asset_url('interface/slides/customers/logos/castle.png');
+      }
+    }
+
+    .slick-list {
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        height: 100%;
+        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
+        z-index: 1;
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+        @include transform(rotate(180deg));
       }
     }
   }
@@ -236,15 +245,7 @@
 
   @include medium-width-media {
     &__reviews__item {
-      width: 1160px;
-    }
-
-    &__logos {
-      padding: 40px 0;
-
-      a {
-        @include size(160px 30px);
-      }
+      width: 560px;
     }
   }
 

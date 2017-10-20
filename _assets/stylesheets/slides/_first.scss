@@ -3,6 +3,8 @@
   background-color: $blue-pigment;
   z-index: 2;
 
+  figure.gif { right: 90px; }
+
   &__scrollable {
     position: relative;
     top: 0;
@@ -10,8 +12,6 @@
     height: 100vh;
     @include transition(top 0.2s linear);
   }
-
-  figure.gif { background-size: cover; }
 
   h1, &__get-started, &__more, &__page-title {
     position: absolute;
@@ -23,22 +23,22 @@
   }
 
   &__get-started, &__more {
-    bottom: 50px;
+    bottom: 58px;
   }
 
   h1 {
+    @include vector-title(absolute);
     width: 535px;
     top: 50%;
-    margin: -143px 0 0;
+    @include transform(translateY(-50%));
+    margin: 0;
     font-size: 114px;
     font-weight: 800;
     line-height: 0.7;
     letter-spacing: -1px;
-    color: transparent;
 
     svg {
       @include absolute(0, none, none, 0);
-      z-index: -1;
     }
 
     .subtitle {
@@ -96,13 +96,35 @@
 
   &__page-title {
     width: 100px;
-    top: 40px;
+    top: 50px;
   }
 
   &__more {
     right: 0;
 
-    span { color: white; }
+    span {
+      color: white;
+      cursor: pointer;
+
+      &:after {
+        content: '↓';
+        position: relative;
+        display: inline-block;
+        top: -10px;
+        left: 5px;
+        font: normal 29px Circe;
+        @include opacity(0);
+        @include transition(all 0.2s linear);
+      }
+
+      &:hover {
+
+        &:after {
+          @include opacity(100);
+          top: 0;
+        }
+      }
+    }
   }
 
   @include mobile {
@@ -182,12 +204,6 @@
   }
 
   @include medium-width-media {
-    figure.gif {
-      top: 50%;
-      right: 100px;
-      @include transform(translateY(-50%));
-    }
-
     h1, &__get-started, &__page-title {
       left: 300px;
     }

@@ -13,11 +13,12 @@
 
   &__inner {
     position: relative;
+    height: 100vh;
     @extend .base;
 
     &__half {
       width: 50%;
-      height: 100vh;
+      height: 100%;
       float: left;
 
       &[data-position="left"] {
@@ -28,6 +29,19 @@
         padding-left: 20px;
       }
     }
+  }
+
+  &__title {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 0.75;
+    letter-spacing: -1px;
+  }
+
+  &__caption {
+    font-size: 29px;
+    line-height: 1.38;
+    color: $blue-pigment;
   }
 
   @include mobile {

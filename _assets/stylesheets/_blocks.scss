@@ -67,24 +67,35 @@
 figure.gif {
   display: block;
   position: absolute;
-  top: 140px;
+  top: 50%;
   right: 0;
-  width: 440px;
-  height: 528px;
+  width: 365px;
+  height: 380px;
   margin: 0;
   z-index: -1;
-  background-image: asset_url('interface/slides/3-d.gif');
+  @include transform(translateY(-50%));
+  background-image: asset_url('interface/slides/first/figure.gif');
   background-repeat: no-repeat;
   background-position: left top;
+  background-size: auto 100%;
 
   @include medium-width-media {
-    width: 380px;
-    height: 460px;
+    width: 405px;
+    height: 420px;
   }
 
   @include large-desktops-media {
     width: 740px;
     height: 888px;
+  }
+
+  &.mazed {
+    background-image: asset_url('interface/slides/last/figure.gif');
+
+    @include medium-width-media {
+      width: 460px;
+      height: 460px;
+    }
   }
 }
 

@@ -12,11 +12,12 @@ function headerColor() {
     }
     else {
 
-        var firstSlideSel = '#first-slide',
-            featuresSlideSel = '#features-slide',
+        var featuresSlideSel = '#features-slide',
+            customersSlideSel = '#customers-slide',
             lastSlideSel = '#last-slide',
-            firstSlideHeight = $(firstSlideSel).outerHeight(),
             featuresSlideHeight = $(featuresSlideSel).outerHeight(),
+            customersSlideHeight = $(customersSlideSel).outerHeight(),
+            lastSlideHeight = $(lastSlideSel).outerHeight(),
             featuresSlideOffset = $(featuresSlideSel).offset().top,
             lastSlideOffset = $(lastSlideSel).offset().top;
 
@@ -24,7 +25,7 @@ function headerColor() {
 
             if ($(bodySel).hasClass('at-desktop')) {
 
-                if ($(window).scrollTop() < 1)
+                if ($(window).scrollTop() < 1 || $(window).scrollTop() == $('#slides').outerHeight() - lastSlideHeight)
                     $(headerSel).find('svg#logo').removeClass('smaller');
                 else
                     $(headerSel).find('svg#logo').addClass('smaller');
@@ -32,7 +33,7 @@ function headerColor() {
             }
 
 
-            if (($(window).scrollTop() <= featuresSlideOffset + 0.5*featuresSlideHeight - headerHalfHeight) || ($(window).scrollTop() >= lastSlideOffset - headerHalfHeight)) {
+            if (($(window).scrollTop() <= featuresSlideOffset + 0.5*featuresSlideHeight - headerHalfHeight) || ($(window).scrollTop() >= lastSlideOffset - 0.5*customersSlideHeight - headerHalfHeight)) {
 
                 if ($(bodySel).hasClass('at-mobile'))
                     $(headerSel).removeClass('white-bg');

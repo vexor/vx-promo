@@ -2,12 +2,12 @@
   background-color: white;
 
   &__calculator, &__info {
-    @include abs-vert-cent-block(360px);
     width: 440px;
+    @include transform(translateY(-50%));
   }
 
   &__calculator {
-    right: 0;
+    @include absolute(50%, 0, auto, auto);
     line-height: 1.5;
 
     strong {
@@ -35,7 +35,7 @@
 
     &__slider {
       position: relative;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       padding-bottom: 11px;
       overflow: hidden;
 
@@ -51,10 +51,15 @@
         line-height: 0.5;
         color: rgba($blue-pigment, 0.2);
       }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     &__period {
-      margin-top: 30px;
+      margin-bottom: 10px;
+      text-align: center;
 
       span {
         display: inline-block;
@@ -81,28 +86,19 @@
   }
 
   &__info {
-    left: 0;
+    @include absolute(50%, auto, auto, 0);
 
     & > * { display: block; }
 
     strong {
       @include vector-title;
-      font-size: 80px;
-      font-weight: 800;
-      line-height: 0.75;
-      letter-spacing: -1px;
 
       svg {
         @include absolute(0, 0, 0, 0);
       }
     }
 
-    p {
-      margin: 70px 0 30px;
-      font-size: 29px;
-      line-height: 1.38;
-      color: $blue-pigment;
-    }
+    p { margin: 70px 0 30px; }
 
     button { width: 200px; }
   }

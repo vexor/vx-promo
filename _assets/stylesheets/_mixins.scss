@@ -46,10 +46,12 @@
   @if is-set($left) { left: $left; }
 }
 
-@mixin vector-title {
+@mixin vector-title($position: relative) {
   display: block;
-  position: relative;
   color: transparent;
+
+  @if is-set($position) { position: $position; }
+  @else { position: relative; }
 
   & > svg {
     z-index: -1;

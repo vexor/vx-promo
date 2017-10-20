@@ -29,7 +29,7 @@ en:
   sections:
     first:
 #      title: <span class="row row-first">Un<b class="char-l">l</b>ımıted</span> <span class="row row-second">para<b class="char-l">l</b><b class="char-l">l</b>e<b class="char-l">l</b>ısm</span> <span class="row row-third">of <b class="char-b">b</b>uı<b class="char-l">l</b>ds.</span>
-      title: Unlimited parallelism of builds.
+      title: Unlimited<br>parallelism<br>of builds.
       subtitle: No pending. No queues.
       more: Scroll
 
@@ -49,34 +49,34 @@ en:
         duration: Build duration
 
     customers:
-      title: Join our customers
+      title: Enjoyable<br>Usage
       reviews:
         bookmate:
           text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
 
-#        klops:
-#          text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
-#          person: Voldemar Duletskiy, CTO<br />Klops.ru
+        castle:
+          text: “Review will be soon”
+          person: <span>Somebody</span>Post/duty, Cloud Castle
 
         uptopromo:
           text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
-        railsmob:
-          text: “We are a small team of developers chose Vexor for optimal pricing – pay only for the processing time, the speed test is very good for us”
-          person: <span>Ivan Zotov</span>CEO, Railsmob
+        brandymint:
+          text: “Review will be soon”
+          person: <span>Somebody</span>Post/duty, Brandymint
 
-    #    starttrack:
-    #      text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
-    #      person: Alexander Baryshnikov, CTO<br />Starttrack.ru
+        meduza:
+          text: “Review will be soon”
+          person: <span>Somebody</span>Post/duty, Meduza
 
-        scalex:
-          text: “We have 6400 tests. And even when there are dozens of pull requests, by some miracle, Vexor does everything within 10 minutes and nothing breaks.“
-          person: <span>Alexey Blinov</span>CTO, Scalex
+        insales:
+          text: “Review will be soon”
+          person: <span>Somebody</span>Post/duty, InSales.ru
 
     last:
-      title: Set up the&nbsp;rıght contınıous ıntegratıon!
+      title: Set up<br>the right<br>continious<br>integration!
       subtitle: "Sign up for VEXOR today:"
 
   description:

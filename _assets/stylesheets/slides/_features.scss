@@ -18,21 +18,13 @@
       strong {
         @include vector-title;
         padding-top: 40px;
-        font-size: 80px;
-        font-weight: 800;
-        line-height: 0.75;
-        letter-spacing: -1px;
 
         svg {
           @include absolute(35px, auto, auto, 2px);
         }
       }
 
-      p {
-        margin: 50px 0 30px;
-        font-size: 29px;
-        line-height: 1.38;
-      }
+      p { margin: 50px 0 30px; }
 
       button { width: 160px; }
     }

@@ -6,6 +6,19 @@
       {{ 'footer.copyright' | t }}
     </div>
 
+    <div class="footer__payment">
+      <span class="gray-logo">{% image 'interface/footer/visa.png' %}</span>
+      <span class="gray-logo">{% image 'interface/footer/verifiedby_visa.png' %}</span>
+      <span class="gray-logo">{% image 'interface/footer/mastercard.png' %}</span>
+      <span class="gray-logo">{% image 'interface/footer/mastercard_secure.png' %}</span>
+      <span class="gray-logo">{% image 'interface/footer/cloud_payments.png' %}</span>
+      <span class="blue-logo">{% image 'interface/footer/visa_blue.png' %}</span>
+      <span class="blue-logo">{% image 'interface/footer/verifiedby_visa_blue.png' %}</span>
+      <span class="blue-logo">{% image 'interface/footer/mastercard_blue.png' %}</span>
+      <span class="blue-logo">{% image 'interface/footer/mastercard_secure_blue.png' %}</span>
+      <span class="blue-logo">{% image 'interface/footer/cloud_payments_blue.png' %}</span>
+    </div>
+
     <ul class="footer__menu">
       <li>
         <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white {% if page.slug == 'terms' %}current{% endif %}">
@@ -31,19 +44,6 @@
         </a>
       </li>
     </ul>
-
-    <div class="footer__payment">
-      <span class="gray-logo">{% image 'interface/footer/visa.png' %}</span>
-      <span class="gray-logo">{% image 'interface/footer/verifiedby_visa.png' %}</span>
-      <span class="gray-logo">{% image 'interface/footer/mastercard.png' %}</span>
-      <span class="gray-logo">{% image 'interface/footer/mastercard_secure.png' %}</span>
-      <span class="gray-logo">{% image 'interface/footer/cloud_payments.png' %}</span>
-      <span class="blue-logo">{% image 'interface/footer/visa_blue.png' %}</span>
-      <span class="blue-logo">{% image 'interface/footer/verifiedby_visa_blue.png' %}</span>
-      <span class="blue-logo">{% image 'interface/footer/mastercard_blue.png' %}</span>
-      <span class="blue-logo">{% image 'interface/footer/mastercard_secure_blue.png' %}</span>
-      <span class="blue-logo">{% image 'interface/footer/cloud_payments_blue.png' %}</span>
-    </div>
 
     <div class="footer__powered">
       {{ 'footer.powered_by' | t }}

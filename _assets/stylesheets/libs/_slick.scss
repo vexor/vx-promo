@@ -19,6 +19,7 @@
     display: block;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 
     &:focus {
         outline: none;
@@ -87,69 +88,64 @@
 
     .slick-vertical & {
         display: block;
-        height: auto;
-        border: 1px solid transparent;
+        float: none;
     }
 }
 .slick-arrow {
     display: block;
+    width: 22px;
+    height: 22px;
     position: absolute;
-    top: 50%;
-    height: 36px;
-    width: 36px;
+    left: 0;
     z-index: 1;
     color: transparent;
     background-color: transparent;
     @include box-shadow(none);
-    @include transform(translateY(-100%));
     font-size: 0;
     overflow: hidden;
     cursor: default;
 
     &:before {
-        position: absolute;
-        top: -27px;
-        color: $aquamarine;
-        line-height: 0.33;
+        @include absolute(-16px, auto, auto, -1px);
+        line-height: 0.56;
         text-align: center;
-        font: normal 60px Circe;
+        font: normal 36px Circe;
         cursor: pointer;
         @include transition(color 0.3s ease);
     }
 
     &.slick-prev {
-        left: 0;
+        top: 0;
 
         &:before {
-            content: "←";
-            left: -1px;
+            content: "↑";
+            color: $blue-pigment;
         }
     }
 
     &.slick-next {
-        right: 0;
+        bottom: 0;
 
         &:before {
-            content: "→";
-            right: -1px;
+            content: "↓";
+            color: white;
         }
     }
 
     &:hover {
         background-color: transparent;
 
-        &:before { color: $blue-pigment; }
+        &:before { color: $aquamarine; }
     }
 }
 .slick-arrow.slick-hidden {
     display: none;
 }
 .slick-dots {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    @include transform(translate(-50%, -25px));
+    display: block;
     @include clearfix;
+
+    background-color: white;
 
     li {
         float: left;
@@ -164,7 +160,7 @@
             color: transparent;
 
             &:hover {
-                background-color: aquamarine;
+                //background-color: aquamarine;
                 @include transform(scale(2));
             }
         }
