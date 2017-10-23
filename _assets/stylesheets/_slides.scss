@@ -15,6 +15,7 @@
     @extend .base;
 
     &__half {
+      position: relative;
       width: 50%;
       height: 100%;
       float: left;

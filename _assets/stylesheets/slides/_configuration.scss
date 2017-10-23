@@ -7,7 +7,7 @@
   }
 
   &__calculator {
-    @include absolute(50%, 0, auto, auto);
+    @include absolute(50%, auto, auto, 20px);
     line-height: 1.5;
 
     strong {
@@ -31,6 +31,12 @@
         @include appearance(text);
         border: 0;
       }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
     }
 
     &__slider {
@@ -44,7 +50,7 @@
       &:after {
         content: '∞';
         display: block;
-        @include absolute(auto, 4px, 39px, auto);
+        @include absolute(auto, 0, 39px, auto);
         width: 15px;
         height: 20px;
         font-size: 20px;
@@ -98,7 +104,7 @@
       }
     }
 
-    p { margin: 70px 0 30px; }
+    p { margin: 70px 0 30px -1px; }
 
     button { width: 200px; }
   }

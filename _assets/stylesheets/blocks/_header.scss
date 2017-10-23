@@ -9,38 +9,42 @@
     height: 110px;
     padding-top: 50px;
 
-    svg {
+    .link-with-logo {
       float: left;
-      width: auto;
-      height: 30px;
-      @include transition(all 0.3s ease);
 
-      path, rect, polygon {
-        fill: $blue-pigment;
-        @include transition(fill 0.3s ease);
-      }
 
-      &.white {
-        path, rect, polygon { fill: white; }
-      }
+      svg {
+        position: relative;
+        @include size(155px 30px);
+        @include transition(all 0.3s ease);
 
-      &.separate-white {
-        path, rect, polygon { fill: white; }
-      }
+        path, rect, polygon {
+          fill: $blue-pigment;
+          @include transition(fill 0.3s ease);
+        }
 
-      &.smaller {
-        //margin-left: -16px;
-        height: 40%;
-      }
+        &.smaller {
+          top: 4px;
+          @include size(103px 20px);
+        }
 
-      &#menu-close { display: none; }
+        &.white {
+          path, rect, polygon { fill: white; }
+        }
 
-      &#doc-nav-open {
+        &.separate-white {
+          path, rect, polygon { fill: white; }
+        }
 
-        &.active {
-          background-color: $blue-pigment;
+        &#menu-close { display: none; }
 
-          rect, polygon { fill: white; }
+        &#doc-nav-open {
+
+          &.active {
+            background-color: $blue-pigment;
+
+            rect, polygon { fill: white; }
+          }
         }
       }
     }

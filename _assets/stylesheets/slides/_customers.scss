@@ -14,8 +14,6 @@
   }
 
   &__reviews {
-    float: right;
-    width: 50%;
     height: 428px;
     top: 50%;
     @include transform(translateY(-50%));
@@ -23,12 +21,12 @@
     &:before {
       content: '';
       display: block;
-      width: 34px;
-      height: 13px;
+      width: 40px;
+      height: 30px;
       @include absolute(50%, auto, auto, -17px);
       @include transform(translateY(-50%));
       background: asset_url('interface/slides/customers/corner.svg') no-repeat center center;
-      background-size: cover;
+      background-size: contain;
     }
 
     &__item {
@@ -90,6 +88,7 @@
   &__logos {
     @include absolute(auto, 0, 50px, 0);
     height: $customers-height-sm-md;
+    z-index: 1;
 
     &__item {
       height: 35px;
@@ -97,7 +96,7 @@
       background-position: center center;
       background-size: auto;
       cursor: pointer;
-      @include opacity(80);
+      @include opacity(50);
       @include transition(all 0.2s linear);
 
       &:hover, &.slick-current {
@@ -163,17 +162,17 @@
         bottom: 0;
         width: 50px;
         height: 100%;
-        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
         z-index: 1;
       }
 
       &:before {
         left: 0;
+        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
       }
 
       &:after {
         right: 0;
-        @include transform(rotate(180deg));
+        @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
       }
     }
   }

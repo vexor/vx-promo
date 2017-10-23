@@ -109,7 +109,7 @@
 
 	&:before {
 		@include absolute(50%, 20px, auto, -560px);
-		height: 2px;
+		height: 3px;
 		background-color: $dark-blue-gray;
 		z-index: -1;
 		@include transform(translateY(-50%));
@@ -201,7 +201,7 @@
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
-	width: 535px;
+	width: 538px;
 	height: 1px;
 	left: 21px;
 	background-color: $crayola-blue-bell;
