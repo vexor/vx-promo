@@ -9,54 +9,78 @@
   &.inner-page {
 
     .last-slide {
-      top: px_to_vh(-100);
+      position: static;
       height: auto;
+      padding: 50px 0 calc(50px + #{$footer-height-sm});
       background-color: transparent;
 
       figure.gif { @extend .hidden; }
 
-      h2 {
-        width: auto;
-        left: 0;
-        @include transform(translateY(-50%));
-        margin: 0 auto;
-        text-align: center;
-        color: black;
+      &__inner { height: auto; }
 
-        span { color: $ford-gunpowder-gray; }
-      }
+      &__info {
+        position: static;
+        @include transform(none);
 
-      &__sign-up {
-        bottom: 100px;
+        h2 {
+          position: relative;
+          margin: 0 auto;
 
-        button {
-          background: transparent;
-          color: $blue-pigment;
-          border-color: $blue-pigment;
+          svg {
 
-          &:hover {
-            color: white;
-            background-color: $blue-pigment;
+            path, rect, polygon {
+              fill: black;
+            }
+          }
+
+          span { color: $ford-gunpowder-gray; }
+        }
+
+        &__sign-up {
+          display: table;
+          margin: 0 auto;
+          text-align: center;
+
+          button {
+            background: transparent;
+            color: $blue-pigment;
             border-color: $blue-pigment;
 
-            a { color: white; }
+            &:hover {
+              color: white;
+              background-color: $blue-pigment;
+              border-color: $blue-pigment;
+
+              a { color: white; }
+            }
           }
         }
       }
 
       @include mobile {
-        padding: px_to_vh(130, $mobile-height) 0 0;
+        padding: px_to_vh(110, $mobile-height) 0 0;
+        overflow: visible;
 
-        &__inner {
+        &__info {
 
           h2 {
-            @include transform(none);
+
+            svg {}
+          }
+
+          &__sign-up {
+            display: block;
+            margin: px_to_vh(20, $mobile-height) 0 0;
           }
         }
       }
 
       @include tablet {
         top: px_to_vh(-150, $tablet-height);
+      }
+
+      @include medium-width-media {
+        padding-bottom: calc(50px + #{$footer-height-md});
       }
     }
   }

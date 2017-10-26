@@ -49,8 +49,6 @@ body {
   &.at-desktop {
     min-height: 768px;
     min-width: 900px;
-
-    //@import 'ui/continious-titles';
   }
 
   &.at-mobile {}
@@ -135,15 +133,15 @@ button {
 
   a { line-height: 50px; }
 
+  &.bordered {
+    border: 2px solid $aquamarine;
+  }
+
   &:hover {
     background: $blue-pigment;
     color: $aquamarine;
 
     a { color: $aquamarine; }
-  }
-
-  &.bordered {
-    border: 2px solid $aquamarine;
   }
 }
 

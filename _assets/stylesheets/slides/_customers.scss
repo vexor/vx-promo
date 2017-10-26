@@ -166,12 +166,12 @@
       }
 
       &:before {
-        left: 0;
+        left: -10px;
         @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
 
       &:after {
-        right: 0;
+        right: -10px;
         @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
     }
