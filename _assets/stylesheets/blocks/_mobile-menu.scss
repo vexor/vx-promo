@@ -11,10 +11,10 @@
 
   figure.gif {
     width: px_to_vw(630, $mobile-width);
-    height: px_to_vh(500, $mobile-height);
-    top: px_to_vh(25, $mobile-height);
-    left: px_to_vw(-315, $mobile-width);
-    background-size: cover;
+    height: px_to_vh(480, $mobile-height);
+    top: px_to_vh(90, $mobile-height);
+    left: px_to_vw(-318, $mobile-width);
+    @include transform(none);
   }
 
   ul, button {
@@ -22,7 +22,7 @@
   }
 
   ul {
-    top: px_to_vh(100, $mobile-height);
+    top: px_to_vh(80, $mobile-height);
     right: px_to_vw(30, $mobile-width);
 
     li {
@@ -42,7 +42,5 @@
     width: px_to_vw(420, $mobile-width);
   }
 
-  &.translated {
-    left: 0;
-  }
+  &.translated { left: 0; }
 }

@@ -80,9 +80,9 @@
         width: 100%;
         height: calc(100vh - #{px_to_vh(58, $mobile-height)});
         margin: 0;
-        padding: 1vh calc((100vw - #{px_to_vw($mobile-width-grid, $mobile-width)})/2);
+        padding: px_to_vh(25, $mobile-height) calc((100vw - #{px_to_vw($mobile-width-grid, $mobile-width)})/2);
         z-index: 1;
-        background-color: rgba(white, 0.9);
+        background-color: rgba(white, 0.95);
         @include transition(left 0.5s ease);
 
         &.opened { left: 0; }
@@ -164,7 +164,7 @@
   }
 
   @include mobile {
-    top: px_to_vh(60, $mobile-height);
+    top: px_to_vh(80, $mobile-height);
 
     &__content {
       padding-top: px_to_vh(40, $mobile-height);

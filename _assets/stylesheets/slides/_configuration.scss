@@ -110,39 +110,54 @@
   }
 
   @include mobile {
-    padding: px_to_vh(80, $mobile-height) 0;
+    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(30, $mobile-height);
+
+    &__info, &__calculator {
+      position: static;
+      width: 100%;
+      @include transform(none);
+    }
 
     &__info {
-      position: static;
-      height: auto;
-      margin: 0;
-      padding: 0;
 
       strong {
-        margin-bottom: px_to_vh(20, $mobile-height);
         font-size: 50px;
         letter-spacing: -1px;
       }
 
       p {
-        margin: 0;
+        margin: px_to_vh(450, $mobile-height) 0 px_to_vh(50, $mobile-height);
         font-size: 20px;
         line-height: 1.5;
       }
 
-      button {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-      }
+      button { width: 100%; }
+    }
+
+    &__calculator-wrap {
+      position: absolute;
+      top: px_to_vh(120, $mobile-height);
+      left: 0;
+      width: 100%;
     }
 
     &__calculator {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      margin: px_to_vh(40, $mobile-height) 0 px_to_vh(110, $mobile-height);
+
+      &__period { margin-bottom: 0; }
+
+      &__slider {
+
+        strong {
+          margin: px_to_vh(15, $mobile-height) 0 px_to_vh(25, $mobile-height);
+
+          input {
+            text-align: right;
+            font-size: 24px;
+          }
+        }
+
+        &:after { display: none; }
+      }
     }
   }
 

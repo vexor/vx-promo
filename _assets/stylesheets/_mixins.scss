@@ -53,9 +53,7 @@
   @if is-set($position) { position: $position; }
   @else { position: relative; }
 
-  & > svg {
-    z-index: -1;
-  }
+  & > svg { z-index: -1; }
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color) {

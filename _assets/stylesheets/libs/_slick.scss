@@ -175,15 +175,15 @@
 }
 
 @include mobile {
-    .slick-list {
-        padding-left: px_to_vw(20, 320);
-    }
-
-    .slick-dots {
-        @include transform(translate(-50%, -40px));
-
-        li { margin-left: 40px; }
-    }
+    //.slick-list {
+    //    padding-left: px_to_vw(20, 320);
+    //}
+    //
+    //.slick-dots {
+    //    @include transform(translate(-50%, -40px));
+    //
+    //    li { margin-left: 40px; }
+    //}
 }
 
 @include large-desktops-media {

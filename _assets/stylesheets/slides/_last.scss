@@ -46,43 +46,44 @@
   }
 
   @include mobile {
-    padding: px_to_vh(130, $mobile-height) 0 px_to_vh(240, $mobile-height);
+    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(240, $mobile-height);
 
     &__inner {
       position: static;
       height: auto;
     }
 
-    figure.gif {
-      width: px_to_vh(300, $mobile-height);
-      height: px_to_vw(525, $mobile-width);
-      top: px_to_vh(-160, $mobile-height);
-      left: px_to_vw(15, $mobile-width);
-    }
+    figure.gif { display: none; }
 
-    h2, &__sign-up {
+    &__info {
       position: static;
-    }
+      @include transform(none);
 
-    h2 {
-      width: 100%;
-      margin: 0;
-      font-size: 50px;
-      line-height: 0.8;
-      letter-spacing: -1px;
-
-      span {
-        font-size: 20px;
-        line-height: 1.5;
+      h2, &__sign-up {
+        position: relative;
       }
-    }
 
-    &__sign-up {
-      margin-bottom: px_to_vh(60, $mobile-height);
-
-      button {
+      h2 {
         width: 100%;
+        margin: 0;
+        font-size: 50px;
+        line-height: 0.8;
+        letter-spacing: -1px;
+
+        span {
+          margin: px_to_vh(15, $mobile-height) 0 0;
+          font-size: 24px;
+          line-height: 1.5;
+        }
+      }
+
+      &__sign-up {
         margin-top: px_to_vh(20, $mobile-height);
+
+        button {
+          width: 100%;
+          margin: 0 0 px_to_vh(20, $mobile-height);
+        }
       }
     }
   }

@@ -5,9 +5,8 @@ function initReviewsSlider() {
         slidesToScroll: 1,
         vertical: true,
         verticalSwiping: true,
-        speed: 700
-        // speed: 600, // BUG: this value is setted for 1600
-        // responsive: [
+        speed: 700,
+        responsive: [
         //     {
         //         breakpoint: 1600,
         //         settings: {
@@ -21,15 +20,14 @@ function initReviewsSlider() {
         //             speed: 700 // BUG: this value is setted as default
         //         }
         //     },
-        //     {
-        //         breakpoint: 1023,
-        //         settings: {
-        //             mobileFirst: true,
-        //             arrows: false,
-        //             speed: 500
-        //         }
-        //     }
-        // ]
+            {
+                breakpoint: 480,
+                settings: {
+                    mobileFirst: true,
+                    arrows: false
+                }
+            }
+        ]
     });
 
     $('#reviewers').slick({
@@ -39,6 +37,16 @@ function initReviewsSlider() {
         arrows: false,
         centerMode: true,
         focusOnSelect: true,
-        speed: 500
+        speed: 500,
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    mobileFirst: true,
+                    centerMode: false,
+                    slidesToShow: 2
+                }
+            }
+        ]
     });
 }

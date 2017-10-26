@@ -47,6 +47,20 @@
     height: auto;
     min-height: 100vh;
     padding-top: px_to_vh(60, $mobile-height);
+
+    &__inner {
+      height: auto;
+
+      &__half {
+        float: none;
+        width: auto;
+        height: auto;
+
+        &[data-position="left"], &[data-position="right"] {
+          padding: 0;
+        }
+      }
+    }
   }
 }
 

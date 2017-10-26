@@ -128,35 +128,41 @@
   }
 
   @include mobile {
-    padding-bottom: px_to_vh(20, $mobile-height);
+    padding: px_to_vh(80, $mobile-height) 0 px_to_vh(30, $mobile-height);
 
     figure.gif {
       width: px_to_vw(630, $mobile-width);
-      height: px_to_vh(500, $mobile-height);
-      top: px_to_vh(-15, $mobile-height);
-      right: px_to_vw(-335, $mobile-width);
+      height: px_to_vh(480, $mobile-height);
+      top: px_to_vh(10, $mobile-height);
+      right: px_to_vw(-340, $mobile-width);
+      @include transform(none);
     }
+
+    &__scrollable { height: auto; }
 
     h1, &__get-started, &__page-title {
       position: static;
     }
 
     h1 {
+      position: relative;
+      top: 0;
+      left: 0;
       width: 100%;
-      margin-top: px_to_vh(60, $mobile-height);
+      margin-top: px_to_vh(80, $mobile-height);
       font-size: 56px;
       letter-spacing: -1px;
+      @include transform(none);
 
       .subtitle {
-        margin-top: px_to_vh(20, $mobile-height);
+        margin-top: px_to_vh(25, $mobile-height);
         font-size: 24px;
         line-height: 1.67;
-        letter-spacing: -0.7px;
       }
     }
 
     &__get-started {
-      margin: px_to_vh(20, $mobile-height) 0 px_to_vh(140, $mobile-height);
+      margin: px_to_vh(120, $mobile-height) 0 0;
       font-size: 0;
       color: transparent;
 
@@ -166,16 +172,12 @@
     }
 
     &__page-title {
-      width: px_to_vw(225, $mobile-width);
+      width: 100px;
       font-size: 16px;
       line-height: 1.25;
     }
 
-    &__more {
-      bottom: 0;
-      font-size: 16px;
-      line-height: 1.25;
-    }
+    &__more { display: none; }
   }
 
   @include tablet {

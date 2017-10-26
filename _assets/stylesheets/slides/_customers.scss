@@ -38,7 +38,6 @@
       }
 
       & > p {
-        padding-bottom: 55px;
         color: $blue-pigment;
         font-size: 24px;
         line-height: 1.67;
@@ -75,12 +74,13 @@
 
       &:before {
         top: 0;
-        background-color: rgba(white, 0.5);
+        @include linear-gradient(to bottom, white 0%, rgba(white, 0.8) 50%, rgba(white, 0.6) 100%);
       }
 
       &:after {
         bottom: 0;
-        background-color: rgba($blue-pigment, 0.5);
+        background-color: rgba($blue-pigment, 0.7);
+        @include linear-gradient(to top, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
     }
   }
@@ -99,7 +99,7 @@
       @include opacity(50);
       @include transition(all 0.2s linear);
 
-      &:hover, &.slick-current {
+      &:hover, &:active, &.slick-current {
         @include opacity(100);
       }
 
@@ -167,17 +167,19 @@
 
       &:before {
         left: 0;
-        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
+        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
 
       &:after {
         right: 0;
-        @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.75) 50%, rgba($blue-pigment, 0.5) 100%);
+        @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
     }
   }
 
   @include mobile {
+    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(30, $mobile-height);
+    @include linear-gradient(white 0%, white 66%, $blue-pigment 66%, $blue-pigment 100%);
 
     &__inner {
       position: relative;
@@ -196,31 +198,84 @@
       }
     }
 
+    &__title {
+      float: none;
+      width: 100%;
+      top: 0;
+      @include transform(none);
+      font-size: 54px;
+    }
+
     &__reviews {
+      height: auto;
+      @include transform(none);
+
+      &:before { top: 62%; }
+
+      .slick-list {
+        padding: px_to_vh(40, $mobile-height) 0;
+      }
 
       &__item {
-        width: px_to_vw(420, $mobile-width);
-        height: auto;
-        margin: 0 px_to_vw(30, $mobile-width);
-        padding-bottom: px_to_vh(50, $mobile-height);
+        height: px_to_vh(308, $mobile-height);
 
-        &__inner {
-          @include size(100% auto);
-          padding: px_to_vh(60, $mobile-height) px_to_vw(30, $mobile-width) px_to_vh(40, $mobile-height);
+        & > p {
+          height: px_to_vh(200, $mobile-height);
+          padding: 0;
+          font-size: 20px;
+          line-height: 1.5;
+        }
+
+        & > div {
+          height: px_to_vh(103, $mobile-height);
+          padding-top: px_to_vh(40, $mobile-height);
+
+          span {
+            margin-bottom: px_to_vh(10, $mobile-height);
+            font-size: 28px;
+          }
         }
       }
     }
 
     &__logos {
-      height: px_to_vh(190, $mobile-height);
-      padding: px_to_vh(45, $mobile-height) 0;
+      position: static;
 
-      a {
-        width: px_to_vw(180, $mobile-width);
-        height: px_to_vw(35, $mobile-width);
-        margin: 0 0 px_to_vh(18, $mobile-height);
+      &__item {
+        background-position: left center;
+        background-size: 80% auto;
+        @include transition(all 0.2s linear, background-position 0.1s linear);
 
-        &:nth-child(even) { float: right; }
+        &.slick-current + .slick-active {
+          background-position: right center;
+        }
+
+        &[data-image="brandymint"] {
+          background-size: 72% auto;
+        }
+
+        &[data-image="meduza"] {
+          background-size: 66% auto;
+        }
+
+        &[data-image="insales"] {
+          background-size: 55% auto;
+        }
+      }
+
+      .slick-list {
+
+        &:before, &:after {
+          width: px_to_vw(40, $mobile-width);
+        }
+
+        &:before {
+          left: px_to_vw(-40, $mobile-width);
+        }
+
+        &:after {
+          right: px_to_vw(-40, $mobile-width);
+        }
       }
     }
   }
@@ -269,9 +324,11 @@
   }
 
   @include medium-width-media {
+
     &__reviews__item {
       width: 560px;
     }
+
   }
 
   @include large-desktops-media {

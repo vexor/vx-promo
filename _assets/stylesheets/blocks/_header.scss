@@ -9,42 +9,47 @@
     height: 110px;
     padding-top: 50px;
 
+    svg {
+
+      path, rect, polygon {
+        fill: $blue-pigment;
+        @include transition(fill 0.3s ease);
+      }
+
+      &.white {
+        path, rect, polygon { fill: white; }
+      }
+
+      &.separate-white {
+        path, rect, polygon { fill: white; }
+      }
+
+      &#menu-close { display: none; }
+
+      &#doc-nav-open {
+
+        &.active {
+
+          path, rect, polygon { fill: $aquamarine; }
+        }
+      }
+    }
+
     .link-with-logo {
       float: left;
-
 
       svg {
         position: relative;
         @include size(155px 30px);
         @include transition(all 0.3s ease);
 
-        path, rect, polygon {
-          fill: $blue-pigment;
-          @include transition(fill 0.3s ease);
-        }
-
         &.smaller {
-          top: 4px;
           @include size(103px 20px);
         }
 
-        &.white {
-          path, rect, polygon { fill: white; }
-        }
-
-        &.separate-white {
-          path, rect, polygon { fill: white; }
-        }
-
-        &#menu-close { display: none; }
-
-        &#doc-nav-open {
-
-          &.active {
-            background-color: $blue-pigment;
-
-            rect, polygon { fill: white; }
-          }
+        &.top-translated {
+          top: 4px;
+          @extend .smaller;
         }
       }
     }
@@ -80,20 +85,25 @@
       height: px_to_vh(60, $mobile-height);
       padding-top: px_to_vh(20, $mobile-height);
 
+      .link-with-logo {
+
+        svg {
+          width: px_to_vw(155, $mobile-width);
+          height: px_to_vh(23, $mobile-height);
+        }
+      }
+
       svg {
-        height: px_to_vh(20, $mobile-height);
+        height: px_to_vh(23, $mobile-height);
 
         &.toggler {
           float: right;
           margin-left: px_to_vw(40, $mobile-width);
         }
 
-        &#doc-nav-open {
-          position: relative;
-          top: px_to_vh(-5, $mobile-height);
-          height: px_to_vh(30, $mobile-height);
-          padding: px_to_vh(5, $mobile-height);
-        }
+        &#doc-nav-open { position: relative; }
+
+        &#menu-close { display: none; }
       }
     }
   }
