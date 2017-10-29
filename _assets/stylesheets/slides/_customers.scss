@@ -39,8 +39,8 @@
 
       & > p {
         color: $blue-pigment;
-        font-size: 24px;
-        line-height: 1.67;
+        font-size: 22px;
+        line-height: 1.5;
       }
 
       & > div {
@@ -52,7 +52,7 @@
         span {
           display: block;
           margin-bottom: 15px;
-          font-size: 30px;
+          font-size: 26px;
           font-weight: bold;
           line-height: 1.0;
         }
@@ -327,6 +327,26 @@
 
     &__reviews__item {
       width: 560px;
+
+      & > p {
+        font-size: 24px;
+        line-height: 1.67;
+      }
+
+      & > div {
+
+        span { font-size: 30px; }
+      }
+    }
+
+  }
+
+  @include large-width-media {
+
+    &__reviews__item {
+      width: 740px;
+
+      & > p { width: 600px; }
     }
 
   }

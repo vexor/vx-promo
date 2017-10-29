@@ -68,8 +68,7 @@ figure.gif {
   display: block;
   position: absolute;
   top: 50%;
-  right: 0;
-  width: 365px;
+  width: 380px;
   height: 380px;
   margin: 0;
   z-index: -1;
@@ -84,7 +83,12 @@ figure.gif {
     height: 420px;
   }
 
-  @include large-desktops-media {
+  @include large-width-media {
+    width: 520px;
+    height: 525px;
+  }
+
+  @include large-height-media {
     width: 740px;
     height: 888px;
   }

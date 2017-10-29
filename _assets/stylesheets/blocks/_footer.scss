@@ -3,17 +3,19 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: $footer-height-sm;
+  height: $footer-height-md;
   z-index: 2;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
   &__inner {
     position: relative;
     height: 100%;
+    padding-top: 43px;
   }
 
   &__copyright, &__powered, &__menu, &__payment {
-    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   &__copyright, &__powered, &__menu {
@@ -28,12 +30,12 @@
   }
 
   &__menu {
-    top: 27px;
+    margin-left: 42px;
     @include clearfix;
 
     li {
       float: left;
-      margin-right: 21px;
+      margin-right: 24px;
       line-height: 1.25;
 
       a {
@@ -45,12 +47,10 @@
     }
   }
 
-  &__copyright {
-    bottom: 49px;
-  }
+  &__copyright {}
 
   &__powered {
-    bottom: 27px;
+    margin-left: 40px;
     line-height: 1.25;
 
     a {
@@ -63,8 +63,7 @@
   }
 
   &__payment {
-    bottom: 35px;
-    right: 0;
+    margin-left: 35px;
 
     span {
       display: inline-block;
@@ -215,21 +214,15 @@
   }
 
   @include medium-width-media {
-    height: $footer-height-md;
+    &__payment { margin-left: 75px; }
 
-    &__inner { padding-top: 43px; }
+    &__menu {
+      margin-left: 120px;
 
-    &__copyright, &__powered, &__menu, &__payment {
-      position: static;
-      display: inline-block;
-      vertical-align: middle;
+      li { margin-right: 50px; }
     }
 
-    &__payment { margin-left: 56px; }
-
-    &__menu { margin-left: 140px; }
-
-    &__powered { margin-left: 169px; }
+    &__powered { margin-left: 84px; }
 
     &.inversed {
 
@@ -239,6 +232,20 @@
 
       .footer__powered { margin-left: 182px; }
     }
+  }
+
+  @include large-width-media {
+
+    &__payment { margin-left: 185px; }
+
+    &__menu {
+      margin-left: 190px;
+
+      li { margin-right: 50px; }
+    }
+
+    &__powered { margin-left: 263px; }
+
   }
 
   @include large-desktops-media {

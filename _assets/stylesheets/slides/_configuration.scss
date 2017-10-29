@@ -192,11 +192,18 @@
       width: 560px;
     }
 
-    &__calculator { }
+    &__info button {
+      width: 200px;
+    }
+  }
 
-    &__info {
+  @include large-width-media {
+    &__calculator, &__info {
+      width: 740px;
+    }
 
-      button { width: 200px; }
+    &__info button {
+      width: 220px;
     }
   }
 

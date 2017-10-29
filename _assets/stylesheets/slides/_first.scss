@@ -3,7 +3,7 @@
   background-color: $blue-pigment;
   z-index: 2;
 
-  figure.gif { right: 90px; }
+  figure.gif { right: -25px; }
 
   &__scrollable {
     position: relative;
@@ -100,18 +100,18 @@
   }
 
   &__more {
-    right: -18px;
+    right: 0;
 
     span {
+      display: block;
+      position: relative;
       color: white;
       cursor: pointer;
 
       &:after {
         content: '↓';
-        position: relative;
-        display: inline-block;
-        top: -10px;
-        left: 5px;
+        display: block;
+        @include absolute(-25px, -25px, auto, auto);
         font: normal 29px Circe;
         @include opacity(0);
         @include transition(all 0.2s linear);
@@ -121,7 +121,7 @@
 
         &:after {
           @include opacity(100);
-          top: 0;
+          top: -15px;
         }
       }
     }
@@ -206,6 +206,8 @@
   }
 
   @include medium-width-media {
+    figure.gif { right: 90px; }
+
     h1, &__get-started, &__page-title {
       left: 300px;
     }
@@ -215,11 +217,19 @@
     }
   }
 
-  @include large-desktops-media {
+  @include large-width-media {
+    figure.gif { right: 110px; }
+
     h1, &__get-started, &__page-title {
       left: 390px;
     }
 
+    &__get-started::before {
+      left: -390px;
+    }
+  }
+
+  @include large-height-media {
     &__get-started, &__page-title, &__more {
       font-size: px_to_em(26);
     }
@@ -228,15 +238,9 @@
       bottom: 40px;
     }
 
-    figure.gif {
-      top: 100px;
-      right: -5px;
-    }
-
     h1 {
       width: 740px;
       font-size: 144px;
-      margin-top: -200px;
 
       .subtitle {
         margin-top: 80px;

@@ -219,6 +219,18 @@
     }
   }
 
+  @include large-width-media {
+    &__info, &__content {
+
+      &__item { width: 740px; }
+    }
+
+    &__info__item {
+
+      p { width: 630px; }
+    }
+  }
+
   @include large-desktops-media {
     &__info, &__content {
 

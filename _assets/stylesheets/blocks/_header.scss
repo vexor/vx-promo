@@ -61,7 +61,7 @@
         display: inline-block;
         font-size: px_to_em(20);
         line-height: 1.0;
-        margin-left: 100px;
+        margin-left: 142px;
 
         &:first-of-type { margin-left: 0; }
       }
@@ -126,14 +126,17 @@
     }
   }
 
+  @include large-width-media {
+    nav a {
+      margin-left: 291px;
+    }
+  }
+
   @include large-desktops-media {
-    //nav {
-    //  top: 0;
-    //
-    //  a {
-    //    margin-left: 250px;
-    //    font-size: 24px;
-    //  }
-    //}
+    nav {
+      top: 0;
+
+      a { font-size: 24px; }
+    }
   }
 }

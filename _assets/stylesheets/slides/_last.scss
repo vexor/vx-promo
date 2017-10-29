@@ -121,6 +121,19 @@
     }
   }
 
+  @include large-width-media {
+
+    &__info {
+      right: 180px;
+
+      &__sign-up {
+
+        button { width: 160px; }
+      }
+    }
+
+  }
+
   @include large-desktops-media {
     &__content {
       height: calc(100vh - #{$footer-height-lg});

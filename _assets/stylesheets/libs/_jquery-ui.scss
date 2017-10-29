@@ -108,7 +108,7 @@
 	}
 
 	&:before {
-		@include absolute(50%, 20px, auto, -560px);
+		@include absolute(50%, 20px, auto, -440px);
 		height: 3px;
 		background-color: $dark-blue-gray;
 		z-index: -1;
@@ -201,7 +201,7 @@
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
-	width: 538px;
+	width: 418px;
 	height: 1px;
 	left: 21px;
 	background-color: $crayola-blue-bell;
@@ -405,5 +405,29 @@ a.ui-button:active,
 @include mobile {
 	.ui-widget.ui-widget-content {
 		width: px_to_vw($mobile-width-grid - 35, $mobile-width);
+	}
+
+	.ui-slider .ui-slider-handle::before {
+		left: -$mobile-width;
+	}
+}
+
+@include medium-width-media {
+	.ui-widget.ui-widget-content {
+		width: 538px;
+	}
+
+	.ui-slider .ui-slider-handle::before {
+		left: -560px;
+	}
+}
+
+@include large-width-media {
+	.ui-widget.ui-widget-content {
+		width: 718px;
+	}
+
+	.ui-slider .ui-slider-handle::before {
+		left: -740px;
 	}
 }

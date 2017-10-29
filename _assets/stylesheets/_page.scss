@@ -11,7 +11,7 @@
     .last-slide {
       position: static;
       height: auto;
-      padding: 50px 0 calc(50px + #{$footer-height-sm});
+      padding: 80px 0 calc(50px + #{$footer-height-sm});
       background-color: transparent;
 
       figure.gif { @extend .hidden; }

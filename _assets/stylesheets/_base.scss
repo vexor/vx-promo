@@ -157,6 +157,10 @@ ul {
   }
 }
 
+@include large-width-media {
+  button { width: 200px; }
+}
+
 @include large-desktops-media {
   button a { line-height: 60px; }
 }
