@@ -1,8 +1,8 @@
-<section id="configuration-slide" class="slide configuration-slide">
+<section id="configuration-slide" class="slide short configuration-slide">
 
   <div class="slide__inner">
 
-    <div class="slide__inner__half" data-position="left">
+    <div class="slide__inner__half configuration-slide__info-wrap" data-position="left">
 
       <div class="configuration-slide__info">
         <strong class="slide__title">
@@ -38,13 +38,10 @@
 
       <div class="configuration-slide__calculator">
 
-        <div class="configuration-slide__calculator__period">
-          <span class="period active" data-period="day">Daily</span> / <span class="period" data-period="month">Monthly</span>
-        </div>
-
         <div class="configuration-slide__calculator__slider">
-          <strong>
+          <strong class="configuration-slide__calculator__period">
             <label for="configuration-cost-value">
+              <span class="period active" data-period="day">Daily</span> / <span class="period" data-period="month">Monthly</span>
               {{ 'sections.configuration.calculator.cost' | t }}
             </label>
 

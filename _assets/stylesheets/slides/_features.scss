@@ -17,14 +17,12 @@
 
       strong {
         @include vector-title;
-        padding-top: 40px;
+        top: 27px;
 
-        svg {
-          @include absolute(35px, auto, auto, 2px);
-        }
+        svg { @include absolute(0, auto, auto, 2px); }
       }
 
-      p { margin: 50px 0 30px; }
+      p { margin: 100px 0 30px; }
 
       button { width: 160px; }
     }
@@ -35,12 +33,13 @@
     &__item {
       right: 0;
       height: 420px;
+      @include border-radius(7px);
 
       video {
         display: block;
         width: 100%;
-        height: 100%;
-        @include absolute(0, auto, auto, 0);
+        @include absolute(50%, auto, auto, 0);
+        @include transform(translateY(-50%));
         @include border-radius(7px);
         z-index: 1;
       }
@@ -96,7 +95,7 @@
         }
 
         p {
-          margin: px_to_vh(240, $mobile-height) 0 px_to_vh(100, $mobile-height);
+          margin: px_to_vh(280, $mobile-height) 0 px_to_vh(100, $mobile-height);
           font-size: 20px;
           line-height: 1.5;
         }
@@ -111,93 +110,62 @@
 
     &__content {
       position: absolute;
-      top: px_to_vh(130, $mobile-height);
+      top: px_to_vh(150, $mobile-height);
 
       &__item {
         position: relative;
+        background-color: #dcdef4;
 
-        &:before { background-size: px_to_vw(100px) px_to_vw(100px); }
+        &:before { background-size: 13%; }
 
-        video { position: static; }
+        video {
+          position: static;
+          @include transform(none);
+        }
       }
     }
   }
 
   @include tablet {
-    padding: 115px 0;
+
+    & > div { padding-bottom: 95px; }
 
     &__info, &__content {
-      position: static;
       width: 100%;
-      height: auto;
+      padding: 0 !important;
     }
 
     &__info {
+      height: auto;
 
       &__item {
-        position: relative;
-        float: left;
-        width: 50%;
-        height: 430px;
-        padding: 45px 0;
-        @include clearfix;
+        position: static;
+        width: 100%;
+        @include transform(none);
 
-        strong, p {
-          max-width: 80%;
+        strong {
+          top: 1px;
+
+          svg { @include size(320px 112px); }
         }
 
         p {
-          font-size: 20px;
-          line-height: 1.5;
+          width: 560px;
+          margin: 480px 0 50px;
         }
 
-        button {
-          float: right;
-          width: 220px;
-          @include transform(translateX(50%));
-        }
-
-        .screenshot {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 320px;
-          height: 420px;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: cover;
-          @include box-shadow(0 40px 80px 15px rgba(51, 51, 153, 0.1));
-        }
-
-        &[data-item="fae"] {
-          //margin-bottom: 120px;
-
-          .screenshot {
-            background-image: asset_url('pictures/features/fast_and_easy_mobile.png');
-          }
-        }
-
-        &[data-item="asm_asn"] {
-
-          .screenshot {
-            background-image: asset_url('pictures/features/asm_asn_mobile.png');
-          }
-        }
+        button { width: 200px; }
       }
     }
 
     &__content {
+      @include absolute(309px, auto, auto, 0);
+      height: 400px;
 
       &__item {
-        position: relative;
-        width: 100%;
-        height: auto;
-        left: 0;
-        margin-top: 0;
+        @include size(auto);
 
-        &:before {
-          background-size: px_to_vw(80px) px_to_vw(80px);
-        }
+        &:before { background-size: 10%; }
 
         video {
           position: static;
@@ -208,6 +176,7 @@
   }
 
   @include medium-width-media {
+
     &__info, &__content {
 
       &__item { width: 560px; }
@@ -217,9 +186,11 @@
 
       p { width: 450px; }
     }
+
   }
 
   @include large-width-media {
+
     &__info, &__content {
 
       &__item { width: 740px; }
@@ -229,45 +200,26 @@
 
       p { width: 630px; }
     }
+
   }
 
   @include large-desktops-media {
-    &__info, &__content {
-
-      &__item {
-        width: 740px;
-      }
-    }
 
     &__info__item {
-      padding: 33.33vh 0 29.63vh;
 
       strong {
-        font-size: 100px;
-        line-height: 0.8;
+        top: 20px;
+
+        svg { @include size(510px 179px); }
       }
 
-      p { margin: 40px 0 60px; }
-
-      button {
-        width: 220px;
-        height: 60px;
+      p {
+        margin: 120px 0 40px;
+        font-size: 33px;
       }
+
+      button { @include size(220px 60px); }
     }
 
-    &__content__item {
-      height: 555px;
-      margin-top: -277.5px;
-
-      &[data-item="fae"] {
-        background: asset_url('pictures/features/fast_and_easy@2x.png') no-repeat right top;
-        background-size: cover;
-      }
-
-      &[data-item="asm_asn"] {
-        background: asset_url('pictures/features/asm_asn@2x.png') no-repeat right top;
-        background-size: cover;
-      }
-    }
   }
 }

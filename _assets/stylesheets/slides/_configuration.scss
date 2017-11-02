@@ -26,7 +26,7 @@
         width: 100%;
         height: 40px;
         font: 800 normal normal 36px Circe, Sans;
-        text-align: center;
+        text-align: right;
         color: $blue-pigment;
         @include appearance(text);
         border: 0;
@@ -49,8 +49,8 @@
 
       &:after {
         content: '∞';
-        display: block;
-        @include absolute(auto, 0, 39px, auto);
+        display: none;
+        @include absolute(auto, -1px, 39px, auto);
         width: 15px;
         height: 20px;
         font-size: 20px;
@@ -64,14 +64,16 @@
     }
 
     &__period {
-      margin-bottom: 10px;
-      text-align: center;
+      //margin-bottom: 10px;
+      //text-align: center;
+      text-transform: lowercase;
 
       span {
         display: inline-block;
         vertical-align: baseline;
         color: $blue-pigment;
         border-bottom: dashed 1px $blue-pigment;
+        text-transform: none;
         line-height: 1.0;
         font-weight: 800;
         cursor: pointer;
@@ -99,14 +101,15 @@
     strong {
       @include vector-title;
 
-      svg {
-        @include absolute(0, 0, 0, 0);
-      }
+      svg { @include absolute(0, auto, auto, 0); }
     }
 
-    p { margin: 70px 0 30px -1px; }
+    p { margin: 70px 0 30px 10px; }
 
-    button { width: 200px; }
+    button {
+      width: 200px;
+      margin-left: 10px;
+    }
   }
 
   @include mobile {
@@ -126,7 +129,7 @@
       }
 
       p {
-        margin: px_to_vh(450, $mobile-height) 0 px_to_vh(50, $mobile-height);
+        margin: px_to_vh(420, $mobile-height) 0 px_to_vh(50, $mobile-height);
         font-size: 20px;
         line-height: 1.5;
       }
@@ -162,78 +165,118 @@
   }
 
   @include tablet {
-    height: auto;
-    padding: 120px 0;
+
+    & > div { padding: 140px 0 40px; }
+
+    &__info-wrap, &__calculator-wrap {
+      float: none;
+      width: 100%;
+      padding: 0 !important;
+    }
+
+    &__calculator-wrap {
+      @include absolute(330px, auto, auto, 0);
+    }
 
     &__info, &__calculator {
       position: static;
       width: 320px;
       margin: 0;
+      @include transform(none);
     }
 
     &__info {
-      float: right;
 
       p {
-        font-size: 20px;
-        line-height: 1.5;
+        margin-top: 440px;
+        margin-bottom: 50px;
       }
 
       button { width: 230px; }
     }
 
     &__calculator {
-      float: left;
+      width: 100%;
+
+      &__slider {
+        margin-bottom: 10px;
+      }
     }
   }
 
   @include medium-width-media {
+
     &__calculator, &__info {
       width: 560px;
     }
 
-    &__info button {
-      width: 200px;
+    &__info button { width: 200px; }
+
+    &__calculator {
+
+      strong input { text-align: center; }
+
+      &__slider::after { display: block; }
     }
+
   }
 
   @include large-width-media {
+
     &__calculator, &__info {
       width: 740px;
     }
 
-    &__info button {
-      width: 220px;
-    }
-  }
+    &__info {
 
-  @include large-desktops-media {
-    &__calculator, &__info {
-      @include abs-vert-cent-block(520px);
+      p { width: 630px; }
+
+      button { width: 280px; }
     }
 
     &__calculator {
-      left: 150px;
-      width: 480px;
-      padding: 60px 40px;
 
-      &__commits, &__build-duration, &__cost-per {
-        font-size: 24px;
+      strong input { text-align: center; }
+
+      &__slider::after { display: block; }
+    }
+
+  }
+
+  @include large-desktops-media {
+
+    &__calculator {
+
+      strong {
+
+        label { font-size: 24px; }
+
+        input { font-size: 40px; }
+      }
+
+      &__slider { margin-bottom: 30px; }
+
+      &__period {
+        margin-bottom: 30px;
+
+        span { font-size: 24px; }
       }
     }
 
     &__info {
-      width: 740px;
-      padding-top: 50px;
 
-      strong {
-        font-size: 100px;
-        line-height: 0.8;
+      strong svg { @include size(421px 156px); }
+
+      p {
+        margin-left: 12px;
+        font-size: 33px;
       }
 
-      p { margin-bottom: 60px; }
-
-      button { @include size(350px 60px); }
+      button {
+        @include size(350px 60px);
+        margin-left: 12px;
+      }
     }
+
   }
 }

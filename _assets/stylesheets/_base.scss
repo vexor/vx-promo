@@ -25,8 +25,7 @@ body {
   letter-spacing: normal;
 
   &.alternate {
-    padding-bottom: $footer-height-sm;
-    font-size: 16px;
+    padding-bottom: $footer-height-md;
 
     @include mobile {
       padding-bottom: $footer-height-mb;
@@ -37,12 +36,12 @@ body {
     }
 
     @include medium-width-media {
-      padding-bottom: $footer-height-md;
+      //padding-bottom: $footer-height-md;
     }
 
     @include large-desktops-media {
-      padding-bottom: $footer-height-lg;
-      font-size: 20px;
+      //padding-bottom: $footer-height-lg;
+      //font-size: 20px;
     }
   }
 
@@ -150,17 +149,27 @@ ul {
 }
 
 @include mobile {
-  button {
-    height: px_to_vh(50, $mobile-height);
 
-    a { line-height: px_to_vh(52, $mobile-height); }
+  button {
+    height: px_to_vh(55, $mobile-height);
+
+    a { line-height: px_to_vh(57, $mobile-height); }
   }
+
 }
 
 @include large-width-media {
+
   button { width: 200px; }
+
 }
 
 @include large-desktops-media {
-  button a { line-height: 60px; }
+
+  button {
+    font-size: 24px;
+
+    a { line-height: 60px; }
+  }
+
 }

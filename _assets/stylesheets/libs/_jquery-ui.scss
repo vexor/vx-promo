@@ -96,6 +96,7 @@
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
+	width: 20px;
 	z-index: 2;
 	cursor: default;
 	-ms-touch-action: none;
@@ -108,9 +109,9 @@
 	}
 
 	&:before {
-		@include absolute(50%, 20px, auto, -440px);
+		@include absolute(50%, 30px, auto, -440px);
 		height: 3px;
-		background-color: $dark-blue-gray;
+		background-color: $blue-pigment;
 		z-index: -1;
 		@include transform(translateY(-1.5px));
 	}
@@ -204,7 +205,7 @@
 	width: 418px;
 	height: 1px;
 	left: 21px;
-	background-color: $crayola-blue-bell;
+	background-color: rgba($blue-pigment, 0.2);
   cursor: pointer;
 }
 .ui-widget-content {
@@ -365,30 +366,30 @@ a.ui-button:active,
 ----------------------------------*/
 
 /* Corner radius */
-.ui-corner-all,
-.ui-corner-top,
-.ui-corner-left,
-.ui-corner-tl {
-	border-top-left-radius: 3px;
-}
-.ui-corner-all,
-.ui-corner-top,
-.ui-corner-right,
-.ui-corner-tr {
-	border-top-right-radius: 3px;
-}
-.ui-corner-all,
-.ui-corner-bottom,
-.ui-corner-left,
-.ui-corner-bl {
-	border-bottom-left-radius: 3px;
-}
-.ui-corner-all,
-.ui-corner-bottom,
-.ui-corner-right,
-.ui-corner-br {
-	border-bottom-right-radius: 3px;
-}
+//.ui-corner-all,
+//.ui-corner-top,
+//.ui-corner-left,
+//.ui-corner-tl {
+//	border-top-left-radius: 3px;
+//}
+//.ui-corner-all,
+//.ui-corner-top,
+//.ui-corner-right,
+//.ui-corner-tr {
+//	border-top-right-radius: 3px;
+//}
+//.ui-corner-all,
+//.ui-corner-bottom,
+//.ui-corner-left,
+//.ui-corner-bl {
+//	border-bottom-left-radius: 3px;
+//}
+//.ui-corner-all,
+//.ui-corner-bottom,
+//.ui-corner-right,
+//.ui-corner-br {
+//	border-bottom-right-radius: 3px;
+//}
 
 /* Overlays */
 .ui-widget-overlay {
@@ -403,6 +404,7 @@ a.ui-button:active,
 
 
 @include mobile {
+
 	.ui-widget.ui-widget-content {
 		width: px_to_vw($mobile-width-grid - 35, $mobile-width);
 	}
@@ -410,9 +412,23 @@ a.ui-button:active,
 	.ui-slider .ui-slider-handle::before {
 		left: -$mobile-width;
 	}
+
+}
+
+@include tablet {
+
+	.ui-widget.ui-widget-content {
+		width: 658px;
+	}
+
+	.ui-slider .ui-slider-handle::before {
+		left: -680px;
+	}
+
 }
 
 @include medium-width-media {
+
 	.ui-widget.ui-widget-content {
 		width: 538px;
 	}
@@ -420,9 +436,11 @@ a.ui-button:active,
 	.ui-slider .ui-slider-handle::before {
 		left: -560px;
 	}
+
 }
 
 @include large-width-media {
+
 	.ui-widget.ui-widget-content {
 		width: 718px;
 	}
@@ -430,4 +448,5 @@ a.ui-button:active,
 	.ui-slider .ui-slider-handle::before {
 		left: -740px;
 	}
+
 }

@@ -10,7 +10,6 @@
 
     h2 {
       @include vector-title;
-      width: 397px;
       font-size: 80px;
       font-weight: 800;
       line-height: 0.7;
@@ -46,7 +45,7 @@
   }
 
   @include mobile {
-    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(240, $mobile-height);
+    padding: px_to_vh(110, $mobile-height) 0 240px;
 
     &__inner {
       position: static;
@@ -90,26 +89,22 @@
 
   @include tablet {
 
-    &__inner {
-      height: calc(100vh - #{$footer-height-tb});
-    }
+    &__inner { padding: 340px 0 315px; }
 
     figure.gif {
-      width: 530px;
-      height: 660px;
-      top: -330px;
-      left: 50px;
+      top: 210px;
+      left: auto;
+      right: 0;
+      @include transform(none);
     }
 
-    h2, &__sign-up {
-      left: 0;
-    }
+    &__info {
+      position: static;
+      @include transform(none);
 
-    &__sign-up {
-      bottom: 150px;
+      &__sign-up {
 
-      button {
-        width: 200px;
+        button { width: 200px; }
       }
     }
   }
@@ -135,42 +130,33 @@
   }
 
   @include large-desktops-media {
-    &__content {
-      height: calc(100vh - #{$footer-height-lg});
-    }
 
-    figure.gif {
-      //top: -415px;
-      left: 360px;
-    }
+    &__info {
+      right: 0;
 
-    h2, &__sign-up {
-      left: 390px;
-    }
+      h2 {
+        font-size: 100px;
+        line-height: 0.8;
+        letter-spacing: -1.2px;
 
-    h2 {
-      width: 640px;
-      margin-top: -185px;
-      font-size: 100px;
-      line-height: 0.8;
-      letter-spacing: -1.2px;
+        svg { @include size(580px 320px); }
 
-      span {
-        margin-top: 40px;
-        font-size: 48px;
-        line-height: 0.83;
-        letter-spacing: -1.3px;
+        span {
+          margin: 40px 0 45px;
+          font-size: 33px;
+          line-height: 0.83;
+          letter-spacing: -1.3px;
+        }
+      }
+
+      &__sign-up {
+
+        button {
+          @include size(220px 60px);
+          font-size: 23px;
+        }
       }
     }
 
-    &__sign-up {
-      bottom: 130px;
-
-      button {
-        width: 220px;
-        height: 60px;
-        font-size: 24px;
-      }
-    }
   }
 }

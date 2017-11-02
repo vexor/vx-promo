@@ -140,7 +140,7 @@
 
     &__scrollable { height: auto; }
 
-    h1, &__get-started, &__page-title {
+    &__get-started, &__page-title {
       position: static;
     }
 
@@ -181,32 +181,48 @@
   }
 
   @include tablet {
-    padding-top: 140px;
 
-    figure.gif {
-      width: 560px;
-      height: 670px;
-      top: 40px;
-      right: -240px;
+    &__scrollable {
+      height: auto;
+      padding-bottom: 46px;
     }
 
-    h1, &__get-started, &__page-title {
+    figure.gif {
+      width: 640px;
+      height: 650px;
+      top: 190px;
+      right: -280px;
+      @include transform(none);
+    }
+
+    &__get-started, &__page-title {
       position: static;
     }
 
     h1 {
+      position: relative;
+      top: 0;
+      left: 0;
+      @include transform(none);
       margin: 140px 0 220px;
     }
 
-    &__page-title {
-      width: 105px;
+    &__get-started {
+
+      &:before {
+        position: static;
+        margin-bottom: 20px;
+      }
     }
+
+    &__page-title { width: 105px; }
 
     &__more { display: none; }
   }
 
   @include medium-width-media {
-    figure.gif { right: 90px; }
+
+    figure.gif { right: 95px; }
 
     h1, &__get-started, &__page-title {
       left: 300px;
@@ -215,10 +231,12 @@
     &__get-started::before {
       left: -300px;
     }
+
   }
 
   @include large-width-media {
-    figure.gif { right: 110px; }
+
+    figure.gif { right: 120px; }
 
     h1, &__get-started, &__page-title {
       left: 390px;
@@ -227,20 +245,27 @@
     &__get-started::before {
       left: -390px;
     }
+
   }
 
-  @include large-height-media {
+  @include large-desktops-media {
+
+    figure.gif { right: 90px; }
+
     &__get-started, &__page-title, &__more {
-      font-size: px_to_em(26);
+      font-size: 26px;
     }
 
-    &__get-started, &__more {
-      bottom: 40px;
+    &__more span::after {
+      right: -30px;
+      font-size: 35px;
     }
 
     h1 {
       width: 740px;
-      font-size: 144px;
+      font-size: 155px;
+
+      svg { @include size(740px 326px); }
 
       .subtitle {
         margin-top: 80px;
@@ -249,5 +274,6 @@
         letter-spacing: -1.3px;
       }
     }
+
   }
 }

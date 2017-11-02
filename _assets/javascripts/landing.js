@@ -22,6 +22,10 @@ $(function() {
         initSlidedMenu();
     }
 
+    if (isMobile.tablet) {
+        $('body').addClass('at-tablet');
+    }
+
     // index page's scripts
     if ($('.page').length < 1) {
         initConfigurationsCalculator();
@@ -34,6 +38,7 @@ $(function() {
             lastSlideAnimations();
         }
 
+        // play/pause video
         $('.features-slide__content__item').on('click', function() {
             var videoParentEl = $(this),
                 video = document.getElementById('vexor-video');
@@ -48,7 +53,7 @@ $(function() {
             }
         });
     }
-    // other pages' scripts
+    // scripts for other pages
     else {
         $('body').addClass('alternate');
         $('footer').addClass('inversed');

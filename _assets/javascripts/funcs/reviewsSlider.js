@@ -1,4 +1,5 @@
 function initReviewsSlider() {
+
     $('#reviews').slick({
         asNavFor: '#reviewers',
         slidesToShow: 1,
@@ -7,19 +8,6 @@ function initReviewsSlider() {
         verticalSwiping: true,
         speed: 700,
         responsive: [
-        //     {
-        //         breakpoint: 1600,
-        //         settings: {
-        //             slidesToShow: 2,
-        //             speed: 800 // BUG: this value is setted for 1366
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 1366,
-        //         settings: {
-        //             speed: 700 // BUG: this value is setted as default
-        //         }
-        //     },
             {
                 breakpoint: 480,
                 settings: {
@@ -30,12 +18,15 @@ function initReviewsSlider() {
         ]
     });
 
+    var reviewersSlidesCnt = $('body').hasClass('at-tablet') ? 3 : 5;
+
     $('#reviewers').slick({
         asNavFor: '#reviews',
-        slidesToShow: 5,
+        slidesToShow: reviewersSlidesCnt,
         slidesToScroll: 1,
         arrows: false,
         centerMode: true,
+        centerPadding: '0',
         focusOnSelect: true,
         speed: 500,
         responsive: [

@@ -119,20 +119,18 @@
   @include mobile {
     position: absolute;
     bottom: 0;
-    height: px_to_vh($footer-height-mb, $mobile-height);
-    padding: px_to_vh(35, $mobile-height) 0;
+    height: $footer-height-mb;
+    padding: 35px 0;
 
-    &__inner {
-      padding-top: px_to_vh(60, $mobile-height);
-    }
+    &__inner { padding-top: 55px; }
 
     &__copyright, &__powered {
       position: static;
     }
 
     &__menu, &__payment {
-      left: 0;
-      right: 0;
+      @include absolute(auto, 0, auto, 0);
+      margin: 0;
     }
 
     &__menu {
@@ -164,6 +162,8 @@
       }
     }
 
+    &__powered { margin: 0; }
+
     &.inversed {
 
       .footer__payment span {
@@ -175,21 +175,23 @@
   @include tablet {
     height: $footer-height-tb;
 
-    &__copyright, &__powered, &__menu {
-      left: 0;
+    &__inner { padding-top: 0; }
+
+    &__copyright, &__powered, &__menu, &__payment {
+      position: absolute;
+      margin-left: 0;
     }
 
     &__menu {
-      top: 35px;
+      top: 36px;
+      left: 0;
       width: 100%;
 
       li {
         width: 25%;
         margin-right: 0;
 
-        &:first-of-type {
-          padding-right: 40px;
-        }
+        &:first-of-type { padding-right: 40px; }
 
         &:nth-of-type(2), &:nth-of-type(3) {
           padding: 0 20px;
@@ -206,14 +208,24 @@
       }
     }
 
-    &__copyright { bottom: 45px; }
+    &__copyright {
+      bottom: 45px;
+      left: 0;
+    }
 
-    &__powered { bottom: 25px; }
+    &__powered {
+      left: 0;
+      bottom: 25px;
+    }
 
-    &__payment { bottom: 30px; }
+    &__payment {
+      right: 0;
+      bottom: 30px;
+    }
   }
 
   @include medium-width-media {
+
     &__payment { margin-left: 75px; }
 
     &__menu {
@@ -224,14 +236,6 @@
 
     &__powered { margin-left: 84px; }
 
-    &.inversed {
-
-      .footer__payment { margin-left: 64px; }
-
-      .footer__menu { margin-left: 122px; }
-
-      .footer__powered { margin-left: 182px; }
-    }
   }
 
   @include large-width-media {
@@ -249,40 +253,34 @@
   }
 
   @include large-desktops-media {
-    height: $footer-height-lg;
-
-    &__inner { padding-top: 62px; }
-
-    &__copyright, &__powered, &__menu, &__payment {
-      position: static;
-      display: inline-block;
-      vertical-align: middle;
-    }
 
     &__copyright, &__powered {
       font-size: 22px;
     }
 
-    &__menu {
-      margin: 0 100px;
+    &__payment {
+      margin-left: 85px;
 
-      li a { font-size: 24px; }
+      span {
+        @include transform(scale(1.5));
+        margin-left: 50px;
+      }
+    }
+
+    &__menu {
+      margin-left: 85px;
+
+      li {
+        margin-right: 55px;
+
+        a { font-size: 24px; }
+      }
     }
 
     &__powered {
-      margin-left: 60px;
+      margin-left: 79px;
 
       a { font-size: 24px; }
-    }
-
-    &__payment {
-
-      span {
-
-        &.x1 { display: none; }
-
-        &.x2 { display: inherit; }
-      }
     }
   }
 }

@@ -43,9 +43,7 @@
         @include size(155px 30px);
         @include transition(all 0.3s ease);
 
-        &.smaller {
-          @include size(103px 20px);
-        }
+        &.smaller { @include size(103px 20px); }
 
         &.top-translated {
           top: 4px;
@@ -68,13 +66,9 @@
     }
   }
 
-  &.white-bg {
-    background-color: rgba(white, 0.9);
-  }
+  &.white-bg { background-color: rgba(white, 0.9); }
 
-  &.without-bg {
-    background-color: transparent;
-  }
+  &.without-bg { background-color: transparent; }
 
   @include mobile {
     background-color: rgba($blue-pigment, 0.9);
@@ -92,7 +86,7 @@
       }
 
       svg {
-        height: px_to_vh(23, $mobile-height);
+        //height: px_to_vh(23, $mobile-height);
 
         &.toggler {
           float: right;
@@ -100,13 +94,12 @@
         }
 
         &#doc-nav-open { position: relative; }
-
-        &#menu-close { display: none; }
       }
     }
   }
 
   @include tablet {
+
     &__inner {
 
       svg { height: 20px; }
@@ -115,9 +108,10 @@
         position: relative;
         top: -5px;
 
-        a { margin-left: 40px; }
+        a { margin-left: 80px; }
       }
     }
+
   }
 
   @include medium-width-media {
@@ -127,16 +121,23 @@
   }
 
   @include large-width-media {
-    nav a {
-      margin-left: 291px;
-    }
+
+    nav a { margin-left: 291px; }
+
   }
 
   @include large-desktops-media {
-    nav {
-      top: 0;
 
-      a { font-size: 24px; }
+    .link-with-logo svg {
+      @include size(207px 40px);
+
+      &.smaller { @include size(155px 30px); }
     }
+
+    nav a {
+      margin-left: 277px;
+      font-size:  24px;
+    }
+
   }
 }

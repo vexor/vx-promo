@@ -43,13 +43,18 @@
     color: $blue-pigment;
   }
 
+  &.short {
+    height: 70vh;
+
+    .slide__inner { height: 70vh; }
+  }
+
   @include mobile {
-    height: auto;
-    min-height: 100vh;
+    height: auto !important;
     padding-top: px_to_vh(60, $mobile-height);
 
     &__inner {
-      height: auto;
+      height: auto !important;
 
       &__half {
         float: none;
@@ -57,10 +62,41 @@
         height: auto;
 
         &[data-position="left"], &[data-position="right"] {
-          padding: 0;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     }
+  }
+
+  @include tablet {
+    height: auto !important;
+
+
+    &__inner {
+      height: auto !important;
+      padding-top: 140px;
+
+      &__half {
+        //float: none;
+        //width: auto;
+        height: auto;
+
+        &[data-position="left"], &[data-position="right"] {
+          //padding-left: 0;
+          //padding-right: 0;
+        }
+      }
+    }
+  }
+
+  @include large-desktops-media {
+
+    &__title {
+      font-size: 100px;
+      line-height: 0.8;
+    }
+
   }
 }
 

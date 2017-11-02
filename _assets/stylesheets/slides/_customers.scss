@@ -5,12 +5,10 @@
     float: left;
     width: 50%;
     @include vector-title;
-    top: calc(50% - 35px);
+    top: calc(50% - 46px);
     @include transform(translateY(-100%));
 
-    svg {
-      @include absolute(0, auto, auto, 0);
-    }
+    svg { @include absolute(0, auto, auto, 0); }
   }
 
   &__reviews {
@@ -73,12 +71,12 @@
       }
 
       &:before {
-        top: 0;
+        top: -1px;
         @include linear-gradient(to bottom, white 0%, rgba(white, 0.8) 50%, rgba(white, 0.6) 100%);
       }
 
       &:after {
-        bottom: 0;
+        bottom: -1px;
         background-color: rgba($blue-pigment, 0.7);
         @include linear-gradient(to top, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
@@ -160,18 +158,18 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 50px;
+        width: 40px;
         height: 100%;
         z-index: 1;
       }
 
       &:before {
-        left: -10px;
+        left: -20px;
         @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
 
       &:after {
-        right: -10px;
+        right: -20px;
         @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
     }
@@ -281,46 +279,29 @@
   }
 
   @include tablet {
-    height: auto;
 
-    &__inner {
-      height: auto;
-      padding-bottom: 10px;
+    & > div { padding: 263px 0; }
 
-      &-wrap {
-        position: static;
-        width: 100%;
-        @include transform(none);
-      }
+    &__title {
+      width: auto;
+      @include transform(none);
+
+      svg { @include size(320px 127px); }
     }
 
     &__reviews {
+      height: 498px;
+      @include transform(none);
 
       &__item {
-        width: 100vw;
-        height: 430px;
-
-        &__inner {
-          width: $tablet-width-grid;
-        }
+        height: 378px;
       }
     }
 
     &__logos {
-      height: $customers-height-tb-lg;
-
-      a {
-        @include size(140px 26px);
-
-        &[data-image="brandymint"], &[data-image="castle"] {
-          margin-top: 20px;
-        }
-
-        &[data-image="brandymint"] {
-          margin-left: 180px;
-        }
-      }
+      //bottom: 100px;
     }
+
   }
 
   @include medium-width-media {
@@ -352,32 +333,69 @@
   }
 
   @include large-desktops-media {
-    &__inner {
-      height: calc(100vh - #{$customers-height-tb-lg});
-      padding-top: 200px;
+
+    &__title {
+      top: calc(50% - 51px);
+
+      svg {
+        @include size(450px 179px);
+      }
     }
 
     &__reviews {
+      height: 468px;
+
+      .slick-list {
+        padding: 80px 0;
+
+        &:before, &:after {
+          height: 60px;
+        }
+      }
 
       &__item {
-        width: 670px;
-        height: 500px;
-        padding-top: 130px;
 
-        &__inner {
+        & > p { font-size: 26px; }
 
-          & > div { font-size: 20px; }
+        & > div {
+          font-size: 23px;
 
-          p { font-size: 22px; }
+          span { font-size: 30px; }
         }
       }
     }
 
     &__logos {
-      height: $customers-height-tb-lg;
-      padding: 58px 0;
+      height: 50px;
 
-      a { @include size(220px 44px); }
+      &__item {
+        height: 50px;
+
+        &[data-image="bookmate"] {
+          background-size: auto 80%;
+        }
+
+        &[data-image="castle"] {
+          background-size: auto 35%;
+        }
+
+        &[data-image="uptopromo"] {
+          background-size: auto 55%;
+        }
+
+        &[data-image="brandymint"] {
+          background-size: auto 60%;
+        }
+
+        &[data-image="meduza"] {
+          background-size: auto 58%;
+        }
+
+        &[data-image="insales"] {
+          background-size: auto 66%;
+        }
+      }
     }
+
   }
 }

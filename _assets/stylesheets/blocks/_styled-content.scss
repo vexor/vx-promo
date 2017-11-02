@@ -109,8 +109,15 @@
   }
 
   @include mobile {
-    img {
-      max-width: 100%;
-    }
+    font-size: 18px;
+
+    h1 { font-size: px_to_em(42);  }
+
+    h2 { font-size: px_to_em(34);  }
+
+    h3 { font-size: px_to_em(22);  }
+
+    img { max-width: 100%; }
+
   }
 }

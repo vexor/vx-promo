@@ -103,7 +103,7 @@
     @include box-shadow(none);
     font-size: 0;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
 
     &:before {
         @include absolute(-16px, auto, auto, -1px);
@@ -171,25 +171,5 @@
             background-color: $blue-pigment;
             @include transform(scale(2));
         }
-    }
-}
-
-@include mobile {
-    //.slick-list {
-    //    padding-left: px_to_vw(20, 320);
-    //}
-    //
-    //.slick-dots {
-    //    @include transform(translate(-50%, -40px));
-    //
-    //    li { margin-left: 40px; }
-    //}
-}
-
-@include large-desktops-media {
-    .slick-list {
-        width: 1340px;
-        margin: 0 auto;
-        overflow: hidden;
     }
 }

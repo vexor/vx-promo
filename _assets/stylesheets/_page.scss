@@ -11,7 +11,7 @@
     .last-slide {
       position: static;
       height: auto;
-      padding: 80px 0 calc(50px + #{$footer-height-sm});
+      padding: 85px 0 calc(77px + #{$footer-height-md});
       background-color: transparent;
 
       figure.gif { @extend .hidden; }
@@ -24,6 +24,7 @@
 
         h2 {
           position: relative;
+          width: 410px;
           margin: 0 auto;
 
           svg {
@@ -78,10 +79,6 @@
       @include tablet {
         top: px_to_vh(-150, $tablet-height);
       }
-
-      @include medium-width-media {
-        padding-bottom: calc(50px + #{$footer-height-md});
-      }
     }
   }
 
@@ -105,7 +102,7 @@
         height: calc(100vh - #{px_to_vh(58, $mobile-height)});
         margin: 0;
         padding: px_to_vh(25, $mobile-height) calc((100vw - #{px_to_vw($mobile-width-grid, $mobile-width)})/2);
-        z-index: 1;
+        z-index: 3;
         background-color: rgba(white, 0.95);
         @include transition(left 0.5s ease);
 
@@ -121,7 +118,7 @@
       }
 
       @include large-desktops-media {
-        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-lg});
+        //height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-lg});
       }
     }
 
@@ -138,9 +135,9 @@
       }
 
       @include large-desktops-media {
-        left: 31%;
-        width: 72%;
-        padding-right: 3%;
+        //left: 31%;
+        //width: 72%;
+        //padding-right: 3%;
       }
     }
 
@@ -183,7 +180,7 @@
     }
 
     @include large-desktops-media {
-      min-height: calc(100vh - #{px_to_vh($footer-height-lg, $large-desktop-height)});
+      //min-height: calc(100vh - #{px_to_vh($footer-height-lg, $large-desktop-height)});
     }
   }
 
