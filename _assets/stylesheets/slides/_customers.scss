@@ -248,6 +248,10 @@
           background-position: right center;
         }
 
+        &:active {
+          background-position: center center;
+        }
+
         &[data-image="brandymint"] {
           background-size: 72% auto;
         }
@@ -296,10 +300,6 @@
       &__item {
         height: 378px;
       }
-    }
-
-    &__logos {
-      //bottom: 100px;
     }
 
   }

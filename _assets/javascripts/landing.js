@@ -8,6 +8,7 @@
 $(function() {
 
     headerColor();
+    initSlidedMenu();
 
     // common desktop scripts
     if (!isMobile.any) {
@@ -19,7 +20,6 @@ $(function() {
     // common mobile scripts
     if (isMobile.phone) {
         $('body').addClass('at-mobile');
-        initSlidedMenu();
     }
 
     if (isMobile.tablet) {

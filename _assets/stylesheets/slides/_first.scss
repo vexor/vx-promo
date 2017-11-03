@@ -128,7 +128,7 @@
   }
 
   @include mobile {
-    padding: px_to_vh(80, $mobile-height) 0 px_to_vh(30, $mobile-height);
+    padding: px_to_vh(80, $mobile-height) 0 px_to_vh(20, $mobile-height);
 
     figure.gif {
       width: px_to_vw(630, $mobile-width);
@@ -162,7 +162,7 @@
     }
 
     &__get-started {
-      margin: px_to_vh(120, $mobile-height) 0 0;
+      margin: px_to_vh(113, $mobile-height) 0 0;
       font-size: 0;
       color: transparent;
 

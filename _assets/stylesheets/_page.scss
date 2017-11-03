@@ -1,17 +1,19 @@
 .page {
   position: relative;
-  top: 100px;
+  min-height: calc(100vh - #{$footer-height-md});
+  padding-top: $header-height;
 
   &__content {
     padding-top: px_to_vh(80, $large-desktop-height);
   }
 
   &.inner-page {
+    padding-bottom: px_to_vh(80, $large-desktop-height);
 
     .last-slide {
       position: static;
       height: auto;
-      padding: 85px 0 calc(77px + #{$footer-height-md});
+      padding: 120px 0 30px;
       background-color: transparent;
 
       figure.gif { @extend .hidden; }
@@ -77,67 +79,78 @@
       }
 
       @include tablet {
-        top: px_to_vh(-150, $tablet-height);
+        padding-top: 180px;
+
+        &__inner { padding: 0; }
+      }
+
+      @include large-desktops-media {
+        padding-top: 160px;
+
+        &__info {
+
+          h2 { width: 580px; }
+        }
       }
     }
   }
 
   &.documentation {
-    padding-top: px_to_vh(80, $large-desktop-height);
-    padding-bottom: calc(#{px_to_vh(120, $large-desktop-height)} + 100px);
+    padding-bottom: calc(#{px_to_vh(50, $large-desktop-height)} + #{$footer-height-md});
     @include scrollbars(5px, $blue-pigment, white);
 
     .documentation__nav {
       position: fixed;
-      top: 100px;
+      top: calc(#{px_to_vh(80, $large-desktop-height)} + #{$header-height});
       width: 20%;
-      height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-sm});
-      margin-top: px_to_vh(80, $large-desktop-height);
-      overflow-x: scroll;
+      height: calc(100vh - #{$header-height}  - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-md});
+      z-index: 3;
+      overflow-x: auto;
 
       @include mobile {
         top: px_to_vh(58, $mobile-height);
-        left: -100%;
-        width: 100%;
+        width: $mobile-width-grid;
         height: calc(100vh - #{px_to_vh(58, $mobile-height)});
-        margin: 0;
-        padding: px_to_vh(25, $mobile-height) calc((100vw - #{px_to_vw($mobile-width-grid, $mobile-width)})/2);
+        margin: 0 auto;
+        padding: px_to_vh(25, $mobile-height) 0;
         z-index: 3;
         background-color: rgba(white, 0.95);
-        @include transition(left 0.5s ease);
+        @include transform(translateX(-$mobile-width-grid));
+        @include transition(transform 0.4s ease);
 
-        &.opened { left: 0; }
+        &.opened { @include transform(translateX(0)); }
       }
 
       @include tablet {
-        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
-      }
-
-      @include medium-width-media {
-        height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-md});
-      }
-
-      @include large-desktops-media {
-        //height: calc(100vh - 100px - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-lg});
+        width: 25%;
+        height: calc(100vh - #{$header-height} - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
       }
     }
 
     .documentation__content {
       position: relative;
+      top: px_to_vh(80, $large-desktop-height);
       left: 28%;
       width: 82%;
+      padding-top: 0;
       padding-right: 10%;
 
       @include mobile {
+        top: px_to_vh(120, $mobile-height);
         left: 0;
         width: 100%;
         padding-right: 0;
       }
 
+      @include tablet {
+        left: 33%;
+        width: 77%;
+      }
+
       @include large-desktops-media {
-        //left: 31%;
-        //width: 72%;
-        //padding-right: 3%;
+        left: 30%;
+        width: 70%;
+        padding-right: 0;
       }
     }
 
@@ -147,11 +160,9 @@
   }
 
   &.blog {
-    min-height: calc(100vh - #{px_to_vh($footer-height-sm)});
-    padding-top: 0;
-    padding-bottom: px_to_vh(100, $large-desktop-height);
+    padding-bottom: px_to_vh(80, $large-desktop-height);
 
-    .blog__posts { }
+    .blog__posts {}
 
     .post {
       margin-top: 30px;
@@ -161,34 +172,39 @@
       &:first-of-type { margin-top: 0; }
     }
 
-    .comments {
-      margin-bottom: 80px;
-    }
+    .comments { margin-bottom: 80px; }
 
     @include mobile {
-      padding-bottom: px_to_vh(100, $mobile-height);
 
       .comments { margin-bottom: 2px; }
-    }
 
-    @include tablet {
-      min-height: calc(100vh - #{px_to_vh($footer-height-tb, $tablet-height)});
-    }
-
-    @include medium-width-media {
-      min-height: calc(100vh - #{px_to_vh($footer-height-md)});
-    }
-
-    @include large-desktops-media {
-      //min-height: calc(100vh - #{px_to_vh($footer-height-lg, $large-desktop-height)});
     }
   }
 
   @include mobile {
-    top: px_to_vh(80, $mobile-height);
+    min-height: calc(100vh - #{$footer-height-mb});
+    padding-top: px_to_vh(60, $mobile-height);
+    padding-bottom: px_to_vh(60, $mobile-height);
 
     &__content {
-      padding-top: px_to_vh(40, $mobile-height);
+      padding-top: px_to_vh(60, $mobile-height);
     }
+  }
+
+  @include tablet {
+    min-height: calc(100vh - #{$footer-height-tb});
+    padding-bottom: calc(#{px_to_vh(50, $tablet-height)} + #{$footer-height-tb});
+
+    &__content {
+      padding-top: px_to_vh(30, $tablet-height);
+    }
+  }
+
+  @include medium-width-media {
+
+  }
+
+  @include large-desktops-media {
+
   }
 }

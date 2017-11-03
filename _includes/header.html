@@ -20,22 +20,28 @@
       </a>
     </nav>
 
-    <svg id="menu-open" class="toggler white tablet-down desktop-down" title="Open menu" xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
-      <path fill="#FFF" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1zm0 9a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1zm0 9a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1z"/>
-    </svg>
+    <span id="menu-open" class="toggler tablet-down desktop-down">
+      <svg class="white" xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
+        <path fill="#FFF" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1zm0 9a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1zm0 9a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H1c-.552 0-1-.444-1-1z"/>
+      </svg>
+    </span>
 
-    <svg id="menu-close" class="toggler white tablet-down desktop-down" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-      <path fill="#FFF" fill-rule="evenodd" d="M7.586 9l-7.07 7.07a1 1 0 1 0 1.413 1.415L9 10.415l7.07 7.07a1 1 0 1 0 1.415-1.414L10.415 9l7.07-7.07A1 1 0 1 0 16.07.514L9 7.585 1.93.516A1 1 0 1 0 .514 1.93L7.585 9z"/>
-    </svg>
+    <span id="menu-close" class="toggler tablet-down desktop-down">
+      <svg class="white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <path fill="#FFF" fill-rule="evenodd" d="M7.586 9l-7.07 7.07a1 1 0 1 0 1.413 1.415L9 10.415l7.07 7.07a1 1 0 1 0 1.415-1.414L10.415 9l7.07-7.07A1 1 0 1 0 16.07.514L9 7.585 1.93.516A1 1 0 1 0 .514 1.93L7.585 9z"/>
+      </svg>
+    </span>
 
     {% if page.slug == 'documentation' %}
-      <svg id="doc-nav-open" class="toggler white tablet-down desktop-down" xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
-        <path d="M0.7,4.6h15.7c0.4,0,0.8,0.4,0.8,0.9v0c0,0.5-0.3,0.9-0.8,0.9H0.7C0.3,6.4,0,6,0,5.5v0C0,5,0.3,4.6,0.7,4.6z"/>
-        <path d="M0.7,13.6h15.7c0.4,0,0.8,0.4,0.8,0.9v0c0,0.5-0.3,0.9-0.8,0.9H0.7C0.3,15.4,0,15,0,14.5v0C0,14,0.3,13.6,0.7,13.6z"/>
-        <path d="M0,1c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,2,0,1.6,0,1z"/>
-        <path d="M0,10c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,11,0,10.6,0,10z"/>
-        <path d="M0,19c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,20,0,19.6,0,19z"/>
-      </svg>
+      <span id="doc-nav-open" class="toggler tablet-down desktop-down">
+        <svg class="white" xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20">
+          <path d="M0.7,4.6h15.7c0.4,0,0.8,0.4,0.8,0.9v0c0,0.5-0.3,0.9-0.8,0.9H0.7C0.3,6.4,0,6,0,5.5v0C0,5,0.3,4.6,0.7,4.6z"/>
+          <path d="M0.7,13.6h15.7c0.4,0,0.8,0.4,0.8,0.9v0c0,0.5-0.3,0.9-0.8,0.9H0.7C0.3,15.4,0,15,0,14.5v0C0,14,0.3,13.6,0.7,13.6z"/>
+          <path d="M0,1c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,2,0,1.6,0,1z"/>
+          <path d="M0,10c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,11,0,10.6,0,10z"/>
+          <path d="M0,19c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1s-0.4,1-1,1H1C0.4,20,0,19.6,0,19z"/>
+        </svg>
+      </span>
     {% endif %}
 
   </div>

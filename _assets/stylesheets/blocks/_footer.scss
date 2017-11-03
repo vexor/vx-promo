@@ -121,6 +121,8 @@
     bottom: 0;
     height: $footer-height-mb;
     padding: 35px 0;
+    @include transform(translateX(0));
+    @include transition(transform 0.5s ease);
 
     &__inner { padding-top: 55px; }
 
@@ -169,6 +171,10 @@
       .footer__payment span {
         width: 16%;
       }
+    }
+
+    &.translated {
+      @include transform(translateX(-100%));
     }
   }
 

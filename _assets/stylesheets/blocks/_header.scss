@@ -10,6 +10,7 @@
     padding-top: 50px;
 
     svg {
+      cursor: pointer;
 
       path, rect, polygon {
         fill: $blue-pigment;
@@ -22,16 +23,6 @@
 
       &.separate-white {
         path, rect, polygon { fill: white; }
-      }
-
-      &#menu-close { display: none; }
-
-      &#doc-nav-open {
-
-        &.active {
-
-          path, rect, polygon { fill: $aquamarine; }
-        }
       }
     }
 
@@ -49,6 +40,15 @@
           top: 4px;
           @extend .smaller;
         }
+      }
+    }
+
+    #menu-close { display: none; }
+
+    #doc-nav-open {
+
+      &.active {
+        path, rect, polygon { fill: $aquamarine; }
       }
     }
 
@@ -75,26 +75,39 @@
 
     &__inner {
       height: px_to_vh(60, $mobile-height);
-      padding-top: px_to_vh(20, $mobile-height);
+      padding-top: 0;
 
       .link-with-logo {
+        position: relative;
+        width: px_to_vw(160, $mobile-width);
+        height: px_to_vh(30, $mobile-height);;
+        top: px_to_vh(15, $mobile-height);
 
         svg {
+          @include absolute(50%, auto, auto, 0);
           width: px_to_vw(155, $mobile-width);
           height: px_to_vh(23, $mobile-height);
+          @include transform(translateY(-50%));
         }
       }
 
-      svg {
-        //height: px_to_vh(23, $mobile-height);
+      .toggler {
+        position: relative;
+        float: right;
+        top: px_to_vh(10, $mobile-height);
+        height: px_to_vh(40, $mobile-height);
+        width: px_to_vh(40, $mobile-height);
+        margin-left: px_to_vw(20, $mobile-width);
 
-        &.toggler {
-          float: right;
-          margin-left: px_to_vw(40, $mobile-width);
+        svg {
+          @include absolute(50%, auto, auto, 50%);
+          @include transform(translate(-50%, -50%));
+          width: auto;
+          height: px_to_vh(20, $mobile-height);
         }
-
-        &#doc-nav-open { position: relative; }
       }
+
+      #doc-nav-open { position: relative; }
     }
   }
 

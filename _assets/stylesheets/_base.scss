@@ -11,9 +11,7 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
 
-  &.unscrollable {
-    overflow-y: hidden;
-  }
+  &.unscrollable { overflow: hidden; }
 }
 
 body {
@@ -34,34 +32,10 @@ body {
     @include tablet {
       padding-bottom: $footer-height-tb;
     }
-
-    @include medium-width-media {
-      //padding-bottom: $footer-height-md;
-    }
-
-    @include large-desktops-media {
-      //padding-bottom: $footer-height-lg;
-      //font-size: 20px;
-    }
-  }
-
-  &.at-desktop {
-    min-height: 768px;
-    min-width: 900px;
-  }
-
-  &.at-mobile {}
-}
-
-main {
-  position: relative;
-  left: 0;
-  @include transition(left 0.5s ease);
-
-  &.translated {
-    left: -100%;
   }
 }
+
+main {}
 
 a {
   text-decoration: none;
@@ -144,11 +118,19 @@ button {
   }
 }
 
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
+
 
 @include mobile {
+
+  main {
+    @include transform(translateX(0));
+    @include transition(transform 0.5s ease);
+
+    &.translated {
+      @include transform(translateX(-100%));
+    }
+  }
 
   button {
     height: px_to_vh(55, $mobile-height);

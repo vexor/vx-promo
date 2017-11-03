@@ -5,7 +5,6 @@ function initReviewsSlider() {
         slidesToShow: 1,
         slidesToScroll: 1,
         vertical: true,
-        verticalSwiping: true,
         speed: 700,
         responsive: [
             {
@@ -35,6 +34,7 @@ function initReviewsSlider() {
                 settings: {
                     mobileFirst: true,
                     centerMode: false,
+                    swipe: false,
                     slidesToShow: 2
                 }
             }

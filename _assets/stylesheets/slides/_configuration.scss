@@ -42,7 +42,7 @@
     &__slider {
       position: relative;
       margin-bottom: 10px;
-      padding-bottom: 11px;
+      padding-bottom: 12px;
       overflow: hidden;
 
       strong { margin: 15px 0 28px; }
@@ -64,8 +64,6 @@
     }
 
     &__period {
-      //margin-bottom: 10px;
-      //text-align: center;
       text-transform: lowercase;
 
       span {
@@ -134,7 +132,10 @@
         line-height: 1.5;
       }
 
-      button { width: 100%; }
+      button {
+        width: 100%;
+        margin-left: 0;
+      }
     }
 
     &__calculator-wrap {

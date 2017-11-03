@@ -1,18 +1,21 @@
 function initSlidedMenu() {
 
-    var bodySel = 'body',
-        htmlSel = 'html',
+    var htmlSel = 'html',
+        bodySel = 'body',
         headerSel = 'header',
+        footerSel = 'footer',
         mainSel = 'main',
         menuSel = '#mobile-menu';
+
 
     $(bodySel).on('click', '#menu-open', function() {
         $(htmlSel).addClass('unscrollable');
         $('#menu-open, #doc-nav-open').hide();
 
         setTimeout(function() {
-            $(mainSel).addClass('translated');
             $(menuSel).addClass('translated');
+            $(footerSel).addClass('translated');
+            $(mainSel).addClass('translated');
             $(headerSel).find('svg').addClass('separate-white');
             $(headerSel).find('nav a').addClass('separate-white');
             $(headerSel).addClass('without-bg');
@@ -21,12 +24,14 @@ function initSlidedMenu() {
         setTimeout(function() { $('#menu-close').show(); }, 200);
     });
 
+
     $(bodySel).on('click', '#menu-close', function() {
         $('#menu-close').hide();
 
         setTimeout(function() {
-            $(menuSel).removeClass('translated');
             $(mainSel).removeClass('translated');
+            $(footerSel).removeClass('translated');
+            $(menuSel).removeClass('translated');
         }, 100);
 
         setTimeout(function() {

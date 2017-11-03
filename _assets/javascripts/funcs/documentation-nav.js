@@ -7,6 +7,7 @@ function initDocumentationNav() {
         menuTitleSel = '.sidebar__nav__title',
         menuListSel = '.sidebar__nav__links';
 
+
     $commonMenu.on('click', 'a', function(ev) {
         ev.preventDefault();
 
@@ -31,6 +32,7 @@ function initDocumentationNav() {
         }
     });
 
+
     $(menuTitleSel+':not(.toggled)').on('click', 'a', function() {
         $(menuTitleSel+'.toggled').removeClass('toggled')
                                   .next(menuListSel).slideUp(400);
@@ -39,10 +41,12 @@ function initDocumentationNav() {
                                                       .next(menuListSel).slideDown(400);
     });
 
+
     $(menuListSel).on('click', 'a:not(.active)', function() {
         $(menuListSel).find('a.active').removeClass('active');
         $(this).addClass('active');
     });
+
 
     $(headerSel).on('click', '#doc-nav-open', function() {
         $(this).toggleClass('active');
