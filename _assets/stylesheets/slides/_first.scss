@@ -149,7 +149,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      margin-top: px_to_vh(80, $mobile-height);
+      margin-top: px_to_vh(90, $mobile-height);
       font-size: 56px;
       letter-spacing: -1px;
       @include transform(none);
@@ -162,7 +162,7 @@
     }
 
     &__get-started {
-      margin: px_to_vh(113, $mobile-height) 0 0;
+      margin: px_to_vh(145, $mobile-height) 0 0;
       font-size: 0;
       color: transparent;
 

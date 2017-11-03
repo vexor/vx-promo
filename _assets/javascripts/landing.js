@@ -26,6 +26,10 @@ $(function() {
         $('body').addClass('at-tablet');
     }
 
+    if (isMobile.apple.device) {
+        $('#features-slide .features-slide__content__item').addClass('without-play-icon');
+    }
+
     // index page's scripts
     if ($('.page').length < 1) {
         initConfigurationsCalculator();

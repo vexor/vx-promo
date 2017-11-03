@@ -65,6 +65,11 @@
           @include opacity(0);
         }
       }
+
+      &.without-play-icon {
+
+        &:before { @extend .hidden; }
+      }
     }
   }
 

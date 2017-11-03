@@ -242,7 +242,7 @@
       &__item {
         background-position: left center;
         background-size: 80% auto;
-        @include transition(all 0.2s linear, background-position 0.1s linear);
+        @include transition(background-image 0.2s linear);
 
         &.slick-current + .slick-active {
           background-position: right center;
