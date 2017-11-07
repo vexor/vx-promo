@@ -7,10 +7,13 @@ en:
     minutes: min
 
   header:
-    base_url: https://vexor.io
+    base_url: https://vexor.io/
     not_found: Page not found
 
   nav:
+    blog:
+      caption: Blog
+      link: /blog/
     promo:
       caption: Promo
       link:
@@ -22,7 +25,7 @@ en:
       link:
     documentation:
       caption: Docs
-      link: /documentation
+      link: /documentation/
     sign_up:
       caption: Sign up
       link: http://ci.vexor.io/users/companies/new
@@ -140,13 +143,13 @@ en:
   second_nav:
     terms:
       caption: Terms
-      link: /terms
+      link: /terms/
     security:
       caption: Security
-      link: /security
+      link: /security/
     privacy:
       caption: Privacy
-      link: /privacy
+      link: /privacy/
     contacts:
       caption: Contacts
       link: mailto:support@vexor.io
