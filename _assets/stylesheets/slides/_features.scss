@@ -37,7 +37,7 @@
 
       video {
         display: block;
-        width: 100%;
+        width: 99.9%;
         @include absolute(50%, auto, auto, 0);
         @include transform(translateY(-50%));
         @include border-radius(7px);
@@ -133,7 +133,7 @@
 
   @include tablet {
 
-    & > div { padding-bottom: 95px; }
+    & > div { padding-bottom: 104px; }
 
     &__info, &__content {
       width: 100%;
@@ -165,10 +165,11 @@
 
     &__content {
       @include absolute(309px, auto, auto, 0);
-      height: 400px;
+      height: 380px;
 
       &__item {
         @include size(auto);
+        background-color: #dcdef4;
 
         &:before { background-size: 10%; }
 

@@ -9,6 +9,7 @@
 
   &.inner-page {
     padding-bottom: px_to_vh(80, $large-desktop-height);
+    overflow-x: hidden;
 
     .last-slide {
       position: static;
@@ -74,6 +75,8 @@
           &__sign-up {
             display: block;
             margin: px_to_vh(20, $mobile-height) 0 0;
+
+            button { @include box-shadow(none); }
           }
         }
       }
@@ -96,7 +99,7 @@
   }
 
   &.documentation {
-    padding-bottom: calc(#{px_to_vh(50, $large-desktop-height)} + #{$footer-height-md});
+    //padding-bottom: calc(#{px_to_vh(50, $large-desktop-height)} + #{$footer-height-md});
     @include scrollbars(5px, $blue-pigment, white);
 
     .documentation__nav {
@@ -109,13 +112,14 @@
 
       @include mobile {
         top: px_to_vh(58, $mobile-height);
-        width: $mobile-width-grid;
+        left: 0;
+        width: px_to_vw($mobile-width-grid, $mobile-width);
         height: calc(100vh - #{px_to_vh(58, $mobile-height)});
         margin: 0 auto;
         padding: px_to_vh(25, $mobile-height) 0;
         z-index: 3;
         background-color: rgba(white, 0.95);
-        @include transform(translateX(-$mobile-width-grid));
+        @include transform(translateX(-100vw));
         @include transition(transform 0.4s ease);
 
         &.opened { @include transform(translateX(0)); }
@@ -130,8 +134,8 @@
     .documentation__content {
       position: relative;
       top: px_to_vh(80, $large-desktop-height);
-      left: 28%;
-      width: 82%;
+      left: 33%;
+      width: 77%;
       padding-top: 0;
       padding-right: 10%;
 
@@ -140,11 +144,6 @@
         left: 0;
         width: 100%;
         padding-right: 0;
-      }
-
-      @include tablet {
-        left: 33%;
-        width: 77%;
       }
 
       @include large-desktops-media {
@@ -192,7 +191,7 @@
   }
 
   @include tablet {
-    min-height: calc(100vh - #{$footer-height-tb});
+    min-height: calc(100vh - #{$footer-height-tb} - 57px);
     padding-bottom: calc(#{px_to_vh(50, $tablet-height)} + #{$footer-height-tb});
 
     &__content {
@@ -200,11 +199,7 @@
     }
   }
 
-  @include medium-width-media {
+  @include medium-width-media {}
 
-  }
-
-  @include large-desktops-media {
-
-  }
+  @include large-desktops-media {}
 }

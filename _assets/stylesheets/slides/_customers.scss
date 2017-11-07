@@ -89,63 +89,56 @@
     z-index: 1;
 
     &__item {
-      height: 35px;
+      position: relative;
+      height: $customers-height-sm-md;
       background-repeat: no-repeat;
-      background-position: center center;
-      background-size: auto;
       cursor: pointer;
-      @include opacity(50);
       @include transition(all 0.2s linear);
 
-      &:hover, &:active, &.slick-current {
-        @include opacity(100);
-      }
+      svg {
+        max-height: 100%;
+        max-width: 80%;
+        @include absolute(50%, auto, auto, 50%);
+        @include transform(translate(-50%, -50%));
 
-      &[data-image="bookmate"] {
-        background-image: asset_url('interface/slides/customers/logos/bookmate--new.png');
-
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/bookmate--active.png');
+        path, rect, polygon {
+          fill: rgba($dark-blue-gray, 0.5);
+          @include transition(fill 0.3s ease);
         }
       }
 
-      &[data-image="meduza"] {
-        background-image: asset_url('interface/slides/customers/logos/meduza--new.png');
-
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/meduza--active.png');
-        }
-      }
-
-      &[data-image="insales"] {
-        background-image: asset_url('interface/slides/customers/logos/insales--new.png');
-
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/insales--active.png');
-        }
+      &[data-image="cloudcastle"] {
+        svg { max-height: 40%; }
       }
 
       &[data-image="uptopromo"] {
-        background-image: asset_url('interface/slides/customers/logos/uptopromo--new.png');
-
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/uptopromo--active.png');
-        }
+        svg { max-height: 70%; }
       }
 
       &[data-image="brandymint"] {
-        background-image: asset_url('interface/slides/customers/logos/brandymint--new.png');
+        svg { max-height: 85%; }
+      }
 
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/brandymint--active.png');
+      &[data-image="meduza"] {
+        svg { max-height: 76%; }
+      }
+
+      &[data-image="insales"] {
+        svg { max-height: 88%; }
+      }
+
+      &:hover, &:active {
+
+        svg {
+          path, rect, polygon { fill: $dark-blue-gray; }
         }
       }
 
-      &[data-image="castle"] {
-        background-image: asset_url('interface/slides/customers/logos/castle--new.png');
+      &.slick-current {
+        cursor: default;
 
-        &.slick-current {
-          background-image: asset_url('interface/slides/customers/logos/castle--active.png');
+        svg {
+          path, rect, polygon { fill: $aquamarine; }
         }
       }
     }
@@ -164,12 +157,12 @@
       }
 
       &:before {
-        left: -20px;
+        left: -40px;
         @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
 
       &:after {
-        right: -20px;
+        right: -40px;
         @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
       }
     }
@@ -208,7 +201,7 @@
       height: auto;
       @include transform(none);
 
-      &:before { top: 62%; }
+      &:before { top: 61%; }
 
       .slick-list {
         padding: px_to_vh(40, $mobile-height) 0;
@@ -240,28 +233,22 @@
       position: static;
 
       &__item {
-        background-position: left center;
-        background-size: 80% auto;
-        @include transition(background-image 0.2s linear);
 
-        &.slick-current + .slick-active {
-          background-position: right center;
-        }
+        &.slick-current {
 
-        &:active {
-          background-position: center center;
-        }
+          svg {
+            left: 0;
+            @include transform(translateY(-50%));
+          }
 
-        &[data-image="brandymint"] {
-          background-size: 72% auto;
-        }
+          & + .slick-active {
 
-        &[data-image="meduza"] {
-          background-size: 66% auto;
-        }
-
-        &[data-image="insales"] {
-          background-size: 55% auto;
+            svg {
+              left: auto;
+              right: 0;
+              @include transform(translateY(-50%));
+            }
+          }
         }
       }
 
@@ -302,6 +289,11 @@
       }
     }
 
+    &__logos {
+      height: $customers-height-tb-lg;
+
+      &__item { height: $customers-height-tb-lg; }
+    }
   }
 
   @include medium-width-media {
@@ -319,7 +311,6 @@
         span { font-size: 30px; }
       }
     }
-
   }
 
   @include large-width-media {
@@ -329,7 +320,6 @@
 
       & > p { width: 600px; }
     }
-
   }
 
   @include large-desktops-media {
@@ -366,36 +356,9 @@
     }
 
     &__logos {
-      height: 50px;
+      height: $customers-height-tb-lg;
 
-      &__item {
-        height: 50px;
-
-        &[data-image="bookmate"] {
-          background-size: auto 80%;
-        }
-
-        &[data-image="castle"] {
-          background-size: auto 35%;
-        }
-
-        &[data-image="uptopromo"] {
-          background-size: auto 55%;
-        }
-
-        &[data-image="brandymint"] {
-          background-size: auto 60%;
-        }
-
-        &[data-image="meduza"] {
-          background-size: auto 58%;
-        }
-
-        &[data-image="insales"] {
-          background-size: auto 66%;
-        }
-      }
+      &__item { height: $customers-height-tb-lg; }
     }
-
   }
 }

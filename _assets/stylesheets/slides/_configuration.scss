@@ -255,7 +255,10 @@
         input { font-size: 40px; }
       }
 
-      &__slider { margin-bottom: 30px; }
+      &__slider {
+        padding-bottom: 18px;
+        margin-bottom: 30px;
+      }
 
       &__period {
         margin-bottom: 30px;

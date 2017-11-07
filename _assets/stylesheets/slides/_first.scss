@@ -133,7 +133,7 @@
     figure.gif {
       width: px_to_vw(630, $mobile-width);
       height: px_to_vh(480, $mobile-height);
-      top: px_to_vh(10, $mobile-height);
+      top: px_to_vh(8, $mobile-height);
       right: px_to_vw(-340, $mobile-width);
       @include transform(none);
     }
@@ -149,7 +149,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      margin-top: px_to_vh(90, $mobile-height);
+      margin-top: px_to_vh(88, $mobile-height);
       font-size: 56px;
       letter-spacing: -1px;
       @include transform(none);
@@ -162,7 +162,7 @@
     }
 
     &__get-started {
-      margin: px_to_vh(145, $mobile-height) 0 0;
+      margin: px_to_vh(135, $mobile-height) 0 0;
       font-size: 0;
       color: transparent;
 
@@ -184,7 +184,7 @@
 
     &__scrollable {
       height: auto;
-      padding-bottom: 46px;
+      padding-bottom: 57px;
     }
 
     figure.gif {
@@ -204,7 +204,7 @@
       top: 0;
       left: 0;
       @include transform(none);
-      margin: 140px 0 220px;
+      margin: 140px 0 210px;
     }
 
     &__get-started {

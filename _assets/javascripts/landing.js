@@ -7,17 +7,24 @@
 
 $(function() {
 
+    window.breakpoints = {
+        mobileWidth: 480,
+        tabletWidth: 768,
+        smallDesktopWidth: 1024,
+        mediumDesktopWidth: 1366,
+        largeDesktopWidth: 1600
+    };
+
+    scrollParams();
+    scrollbarWidth();
+
     headerColor();
     initSlidedMenu();
 
-    // common desktop scripts
     if (!isMobile.any) {
         $('body').addClass('at-desktop');
-        scrollParams();
-        scrollbarWidth();
     }
 
-    // common mobile scripts
     if (isMobile.phone) {
         $('body').addClass('at-mobile');
     }
@@ -26,8 +33,8 @@ $(function() {
         $('body').addClass('at-tablet');
     }
 
-    if (isMobile.apple.device) {
-        $('#features-slide .features-slide__content__item').addClass('without-play-icon');
+    if (isMobile.apple.iphone) {
+        $('#features-slide').find('.features-slide__content__item').addClass('without-play-icon');
     }
 
     // index page's scripts
@@ -65,6 +72,10 @@ $(function() {
         if ($('#documentation').length > 0)
             initDocumentationNav();
     }
+
+    $('input[readonly="readonly"]').on('click mousedown', function (ev) {
+        ev.preventDefault();
+    });
 
 });
 

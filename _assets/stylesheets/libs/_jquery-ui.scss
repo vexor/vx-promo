@@ -96,14 +96,13 @@
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
-	top: -10px;
-	width: 20px;
-	height: 20px;
+	top: 0;
+	@include size(20px);
 	z-index: 2;
 	cursor: default;
 	-ms-touch-action: none;
 	touch-action: none;
-	@include transform(translateX(-96%));
+	@include transform(translate(-100%, -50%));
 	@include transition(all 0.2s ease);
 
 	&:before, &:after {
@@ -113,7 +112,7 @@
 	}
 
 	&:before {
-		@include absolute(50%, 18px, auto, -440px);
+		@include absolute(50%, 18px, auto, -50vw);
 		height: 3px;
 		background-color: $blue-pigment;
 		z-index: -1;
@@ -122,8 +121,7 @@
 
 	&:after {
 		@include absolute(0, auto, auto, 0);
-		width: 20px;
-		height: 20px;
+		@include size(100%);
 		z-index: 1;
 		@include border-radius(50%);
 		@include transition(all 0.2s ease);
@@ -205,9 +203,9 @@
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
-	width: 418px;
+	width: calc(100% - 22px);
 	height: 1px;
-	left: 20px;
+	left: 21px;
 	background-color: rgba($blue-pigment, 0.2);
   cursor: pointer;
 }
@@ -408,48 +406,35 @@ a.ui-button:active,
 
 @include mobile {
 
-	.ui-widget.ui-widget-content {
-		width: px_to_vw($mobile-width-grid - 27px, $mobile-width);
-	}
-
 	.ui-slider .ui-slider-handle::before {
-		left: -$mobile-width;
+		left: -100vw;
 	}
 
 }
 
 @include tablet {
 
-	.ui-widget.ui-widget-content {
-		width: 660px;
-	}
-
-	.ui-slider .ui-slider-handle::before {
-		left: -680px;
-	}
+  .ui-slider .ui-slider-handle::before {
+    left: -100vw;
+  }
 
 }
 
-@include medium-width-media {
+@include medium-width-media {}
 
-	.ui-widget.ui-widget-content {
-		width: 538px;
-	}
+@include large-width-media {}
 
-	.ui-slider .ui-slider-handle::before {
-		left: -560px;
-	}
+@include large-desktops-media {
 
-}
+  .ui-widget.ui-widget-content {
+    left: 32px;
+    width: calc(100% - 34px);
+  }
 
-@include large-width-media {
+	.ui-slider .ui-slider-handle {
+		@include size(30px);
 
-	.ui-widget.ui-widget-content {
-		width: 718px;
-	}
-
-	.ui-slider .ui-slider-handle::before {
-		left: -740px;
+    &:before { right: 27px; }
 	}
 
 }

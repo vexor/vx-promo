@@ -17,19 +17,17 @@ function initDocumentationNav() {
 
         // history.pushState(null, null, id);
 
-        $('html, body').animate({ scrollTop: target }, duration);
+        if ($(window).width() + window.scrollbarWidth < breakpoints.tabletWidth) {
+            $('#doc-nav-open').removeClass('active');
+            $(navSel).removeClass('opened');
+            $(htmlSel).removeClass('unscrollable');
 
-        if (isMobile.phone) {
             setTimeout(function () {
-                $('#doc-nav-open').toggleClass('active');
-                $(navSel).toggleClass('opened');
-
-                if ($(navSel).hasClass('opened'))
-                    $(htmlSel).addClass('unscrollable');
-                else
-                    $(htmlSel).removeClass('unscrollable');
-            }, duration);
+                $('html, body').animate({ scrollTop: target }, duration);
+            }, 400);
         }
+        else
+            $('html, body').animate({ scrollTop: target }, duration);
     });
 
 
@@ -49,8 +47,10 @@ function initDocumentationNav() {
 
 
     $(headerSel).on('click', '#doc-nav-open', function() {
+        var navTopPos = $(window).scrollTop() + $(headerSel).outerHeight();
+
         $(this).toggleClass('active');
-        $(navSel).toggleClass('opened');
+        $(navSel).css('top', navTopPos).toggleClass('opened');
 
         if ($(navSel).hasClass('opened'))
             $(htmlSel).addClass('unscrollable');
