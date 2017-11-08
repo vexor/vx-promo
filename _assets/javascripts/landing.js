@@ -33,7 +33,7 @@ $(function() {
         $('body').addClass('at-tablet');
     }
 
-    if (isMobile.apple.iphone) {
+    if (isMobile.apple.device) {
         $('#features-slide').find('.features-slide__content__item').addClass('without-play-icon');
     }
 
@@ -73,7 +73,7 @@ $(function() {
             initDocumentationNav();
     }
 
-    $('input[readonly="readonly"]').on('click mousedown', function (ev) {
+    $('input[readonly]').on('click focus touchmove', function (ev) {
         ev.preventDefault();
     });
 

@@ -24,11 +24,10 @@
       &__info {
         position: static;
         @include transform(none);
+        width: 100%;
 
         h2 {
-          position: relative;
-          width: 410px;
-          margin: 0 auto;
+          width: 100%;
 
           svg {
 
@@ -41,9 +40,7 @@
         }
 
         &__sign-up {
-          display: table;
-          margin: 0 auto;
-          text-align: center;
+          width: 100%;
 
           button {
             background: transparent;
@@ -99,7 +96,7 @@
   }
 
   &.documentation {
-    //padding-bottom: calc(#{px_to_vh(50, $large-desktop-height)} + #{$footer-height-md});
+    padding-bottom: calc(#{px_to_vh(20, $large-desktop-height)} + #{$footer-height-md});
     @include scrollbars(5px, $blue-pigment, white);
 
     .documentation__nav {
@@ -155,6 +152,7 @@
 
     @include mobile {
       padding-top: 0;
+      padding-bottom: calc(#{px_to_vh(60, $mobile-height)} + #{0.5*$footer-height-mb});
     }
   }
 

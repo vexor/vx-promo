@@ -104,13 +104,13 @@ function initConfigurationsCalculator() {
             period = $('.period.active').data('period');
             periodCoeff = getPeriodCoeff();
 
-            var commits = Math.floor($(commitsCountSel).val() / prevPeriodCoeff),
+            var commits = Math.floor($(commitsCountSel).val() / prevPeriodCoeff) * periodCoeff,
                 cost = $(costValueSel).val();
 
-            cost = (cost.substring(1, cost.length) / prevPeriodCoeff).toFixed(2);
+            cost = (cost.substring(1, cost.length) / prevPeriodCoeff * periodCoeff).toFixed(2);
 
-            $(commitsCountSel).val(commits*periodCoeff);
-            $(costValueSel).val('$'+cost*periodCoeff);
+            $(commitsCountSel).val(commits);
+            $(costValueSel).val('$'+cost);
         }
     });
 

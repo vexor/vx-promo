@@ -133,36 +133,35 @@
     figure.gif {
       width: px_to_vw(630, $mobile-width);
       height: px_to_vh(480, $mobile-height);
-      top: px_to_vh(8, $mobile-height);
-      right: px_to_vw(-340, $mobile-width);
+      top: px_to_vh(10, $mobile-height);
+      right: px_to_vw(-342, $mobile-width);
       @include transform(none);
     }
 
-    &__scrollable { height: auto; }
-
-    &__get-started, &__page-title {
-      position: static;
-    }
+    &__scrollable {
+      height: calc(100vh - #{px_to_vh(100, $mobile-height)}); }
 
     h1 {
       position: relative;
       top: 0;
       left: 0;
       width: 100%;
-      margin-top: px_to_vh(88, $mobile-height);
+      margin-top: px_to_vh(80, $mobile-height);
       font-size: 56px;
       letter-spacing: -1px;
       @include transform(none);
 
       .subtitle {
-        margin-top: px_to_vh(25, $mobile-height);
+        margin-top: px_to_vh(20, $mobile-height);
         font-size: 24px;
         line-height: 1.67;
       }
     }
 
     &__get-started {
-      margin: px_to_vh(135, $mobile-height) 0 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       font-size: 0;
       color: transparent;
 
@@ -172,6 +171,7 @@
     }
 
     &__page-title {
+      position: static;
       width: 100px;
       font-size: 16px;
       line-height: 1.25;

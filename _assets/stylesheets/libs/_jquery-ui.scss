@@ -414,10 +414,19 @@ a.ui-button:active,
 
 @include tablet {
 
-  .ui-slider .ui-slider-handle::before {
-    left: -100vw;
-  }
+	.ui-widget.ui-widget-content {
+		left: 32px;
+		width: calc(100% - 34px);
+	}
 
+	.ui-slider .ui-slider-handle {
+		@include size(30px);
+
+		&:before {
+			left: -100vw;
+			right: 27px;
+		}
+	}
 }
 
 @include medium-width-media {}

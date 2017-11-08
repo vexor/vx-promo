@@ -50,11 +50,11 @@
   }
 
   @include mobile {
-    height: auto !important;
+    height: auto;
     padding-top: px_to_vh(60, $mobile-height);
 
     &__inner {
-      height: auto !important;
+      height: auto;
 
       &__half {
         float: none;
@@ -67,26 +67,22 @@
         }
       }
     }
+
+    &.short {
+      height: auto;
+
+      .slide__inner { height: auto; }
+    }
   }
 
   @include tablet {
     height: auto !important;
 
-
     &__inner {
       height: auto !important;
       padding-top: 140px;
 
-      &__half {
-        //float: none;
-        //width: auto;
-        height: auto;
-
-        &[data-position="left"], &[data-position="right"] {
-          //padding-left: 0;
-          //padding-right: 0;
-        }
-      }
+      &__half { height: auto; }
     }
   }
 
