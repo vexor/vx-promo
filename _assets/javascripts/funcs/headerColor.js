@@ -2,7 +2,7 @@ function headerColor() {
 
     var bodySel = 'body',
         headerSel = 'header',
-        headerHalfHeight = 0.5 * $(headerSel).outerHeight();
+        headerHalfHeight = 0.6 * $(headerSel).outerHeight();
 
 
     function setHeaderColor() {
@@ -18,22 +18,31 @@ function headerColor() {
             changeCondition1 = featuresSlideOffset + 0.5*featuresSlideHeight - headerHalfHeight,
             changeCondition2 = customersSlideOffset + 0.5*customersSlideHeight - headerHalfHeight;
 
-        if ($(bodySel).hasClass('at-desktop')) {
 
-            if ($(window).scrollTop() < 1 || $(window).scrollTop() >= $('#slides').outerHeight() - lastSlideHeight)
+        if ($(window).width() < breakpoints.tabletWidth)
+            changeCondition2 = customersSlideOffset + 0.66*customersSlideHeight - headerHalfHeight;
+
+
+        if ($(window).width() >= breakpoints.tabletWidth) {
+
+            if ($(window).scrollTop() < 1 || $(window).scrollTop() >= $('#slides').outerHeight() - lastSlideHeight) {
                 $(headerSel).find('svg#logo').removeClass('top-translated');
-            else
+                $(headerSel).removeClass('blue-blur');
+            }
+            else {
                 $(headerSel).find('svg#logo').addClass('top-translated');
+                $(headerSel).addClass('blue-blur');
+            }
 
         }
-
-        if ($(bodySel).hasClass('at-mobile'))
-            changeCondition2 = customersSlideOffset + 0.66*customersSlideHeight - headerHalfHeight;
 
 
         if (($(window).scrollTop() <= changeCondition1) || ($(window).scrollTop() >= changeCondition2)) {
 
-            if ($(bodySel).hasClass('at-mobile'))
+            if ($(window).width() >= breakpoints.tabletWidth)
+                $(headerSel).removeClass('white-blur');
+
+            if ($(window).width() < breakpoints.tabletWidth)
                 $(headerSel).removeClass('white-bg');
 
             $(headerSel).find('svg, nav a')
@@ -43,7 +52,10 @@ function headerColor() {
         }
         else {
 
-            if ($(bodySel).hasClass('at-mobile'))
+            if ($(window).width() >= breakpoints.tabletWidth)
+                $(headerSel).addClass('white-blur');
+
+            if ($(window).width() < breakpoints.tabletWidth)
                 $(headerSel).addClass('white-bg');
 
             $(headerSel).find('svg, nav a')

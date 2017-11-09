@@ -9,14 +9,26 @@
     </a>
 
     <nav class="mobile-down">
+      {% if page.url == '/index.html' %}
+        <a href="#features-slide" class="underlined blue white tablet-down" data-action="scroll">
+          {{ 'nav.promo.caption' | t }}
+        </a>
+
+        <a href="#configuration-slide" class="underlined blue white tablet-down" data-action="scroll">
+          {{ 'nav.pricing.caption' | t }}
+        </a>
+
+        <a href="#customers-slide" class="underlined blue white tablet-down" data-action="scroll">
+          {{ 'nav.reviews.caption' | t }}
+        </a>
+      {% endif %}
+
       <a href="{{ 'nav.documentation.link' | t }}" class="underlined blue white {% if page.slug == 'documentation' %}current{% endif %}">
         {{ 'nav.documentation.caption' | t }}
       </a>
-      <a href="{{ 'nav.blog.link' | t }}" class="underlined blue white {% if page.slug == 'blog' or page.slug == 'blog_post' %}current{% endif %}">
-        {{ 'nav.blog.caption' | t }}
-      </a>
-      <a href="https://ci.vexor.io/users/companies/new" class="underlined blue white" data-action="sign-up">
-        {{ 'nav.sign_up' | t }}
+
+      <a href="{{ 'nav.sign_up.link' | t }}" class="underlined blue white" data-action="sign-up">
+        {{ 'nav.sign_up.caption' | t }}
       </a>
     </nav>
 

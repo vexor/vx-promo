@@ -9,12 +9,6 @@
     </li>
 
     <li>
-      <a href="{{ 'nav.blog.link' | t }}" class="underlined white {% if page.slug == 'blog' or page.slug == 'blog_post' %}current{% endif %}">
-        {{ 'nav.blog.caption' | t }}
-      </a>
-    </li>
-
-    <li>
       <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white smaller {% if page.slug == 'terms' %}current{% endif %}">
         {{ 'second_nav.terms.caption' | t }}
       </a>
@@ -40,8 +34,8 @@
   </ul>
 
   <button class="mobile-menu__sign-up bordered">
-    <a href="https://ci.vexor.io/users/gitlab?do=sign_up" class="blue abs-block" data-action="sign-up">
-      {{ 'nav.sign_up' | t }}
+    <a href="{{ 'nav.sign_up.link' | t }}" class="blue abs-block" data-action="sign-up">
+      {{ 'nav.sign_up.caption' | t }}
     </a>
   </button>
 </div>

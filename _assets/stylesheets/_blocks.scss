@@ -23,10 +23,10 @@
 .desktop {
 
   @include desktop {
-    display: block;
+    display: block !important;;
 
     &-down {
-      display: none;
+      display: none !important;;
     }
   }
 }
@@ -34,10 +34,10 @@
 .mobile-tablet {
 
   @include mobile_tablet {
-    display: block;
+    display: block !important;;
 
     &-down {
-      display: none;
+      display: none !important;;
     }
   }
 }
@@ -45,10 +45,10 @@
 .tablet {
 
   @include tablet {
-    display: block;
+    display: block !important;;
 
     &-down {
-      display: none;
+      display: none !important;
     }
   }
 }
@@ -56,10 +56,10 @@
 .mobile {
 
   @include mobile {
-    display: block;
+    display: block !important;;
 
     &-down {
-      display: none;
+      display: none !important;;
     }
   }
 }

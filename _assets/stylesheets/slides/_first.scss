@@ -23,7 +23,7 @@
   }
 
   &__get-started, &__more {
-    bottom: 58px;
+    bottom: 50px;
   }
 
   h1 {
@@ -102,7 +102,7 @@
   &__more {
     right: 0;
 
-    span {
+    a {
       display: block;
       position: relative;
       color: white;
@@ -114,7 +114,7 @@
         @include absolute(-25px, -25px, auto, auto);
         font: normal 29px Circe;
         @include opacity(0);
-        @include transition(all 0.2s linear);
+        @include transition(top 0.2s linear, opacity 0.2s linear);
       }
 
       &:hover {
@@ -256,7 +256,7 @@
       font-size: 26px;
     }
 
-    &__more span::after {
+    &__more a::after {
       right: -30px;
       font-size: 35px;
     }

@@ -11,13 +11,21 @@ en:
     not_found: Page not found
 
   nav:
-    blog:
-      caption: Blog
-      link: /blog
+    promo:
+      caption: Promo
+      link:
+    pricing:
+      caption: Pricing
+      link:
+    reviews:
+      caption: Reviews
+      link:
     documentation:
       caption: Docs
       link: /documentation
-    sign_up: Sign up
+    sign_up:
+      caption: Sign up
+      link: http://ci.vexor.io/users/companies/new
 
   get_started:
     caption: "Get started with:"

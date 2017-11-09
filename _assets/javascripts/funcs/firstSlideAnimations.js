@@ -24,13 +24,4 @@ function firstSlideAnimations() {
     //     $(firstSlideSel).find(scrollableContentSel).removeClass('blur');
     // });
 
-    $('#scroll-down').on('click', function() {
-        var target = $(featuresSlideSel).offset().top,
-            duration = getScrollDuration(target);
-
-        $('html, body').animate({
-            scrollTop: target
-        }, duration);
-    });
-
 }

@@ -42,6 +42,7 @@
         @include transform(translateY(-50%));
         @include border-radius(7px);
         z-index: 1;
+        background-color: #dadcf6;
       }
 
       &:before {

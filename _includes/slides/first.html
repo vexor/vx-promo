@@ -51,14 +51,16 @@
         </ul>
 
         <button class="bordered tablet-down desktop-down">
-          <a href="https://ci.vexor.io/users/companies/new" class="blue abs-block" data-action="sign-up">
+          <a href="{{ 'nav.sign_up.link' | t }}" class="blue abs-block" data-action="sign-up">
             {{ 'get_started.mobile' | t }}
           </a>
         </button>
       </div>
 
-      <div class="first-slide__more" id="scroll-down">
-        <span>{{ 'sections.first.more' | t }}</span>
+      <div class="first-slide__more">
+        <a href="#features-slide" data-action="scroll" class="white">
+          {{ 'sections.first.more' | t }}
+        </a>
       </div>
     </div>
 
