@@ -67,24 +67,24 @@ en:
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
 
         castle:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Cloud Castle
+          text: " "
+          person: " "
 
         uptopromo:
           text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
         brandymint:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Brandymint
+          text: " "
+          person: " "
 
         meduza:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Meduza
+          text: " "
+          person: " "
 
         insales:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, InSales.ru
+          text: " "
+          person: " "
 
     last:
       title: Set up<br>the right<br>continious<br>integration!
