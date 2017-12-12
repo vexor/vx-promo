@@ -13,7 +13,7 @@ en:
   nav:
     blog:
       caption: Blog
-      link: /blog/
+      link: https://hype.codes/vexor
     promo:
       caption: Promo
       link:
@@ -62,29 +62,29 @@ en:
     customers:
       title: Enjoyable<br>Usage
       reviews:
+        evrone:
+          text: “Thanks to the Vexor, our company can afford to run thousands of tests per day, without worrying about the waiting time or queues. All tests run instantly and without any limits! We are very glad to work with Vexor and recommend it as the main CI/CD service.”
+          person: <span>Alexander Kirillov</span>CTO, Evrone.ru
+
         bookmate:
           text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
-
-        castle:
-          text: " "
-          person: " "
 
         uptopromo:
           text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
-        brandymint:
-          text: " "
-          person: " "
+        humaniq:
+          text: “We love Vexor at Humaniq and use it for of our open source projects on GitHub. Vexor is simple to use, we love their platform to build tooling and very happy with the new container infrastructure for speedier builds.”
+          person: <span>Anton Mozgovoy</span> Humaniq
 
-        meduza:
-          text: " "
-          person: " "
+        starttrack:
+          text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
+          person: <span>Alexander Baryshnikov</span> CTO, Starttrack.ru
 
-        insales:
-          text: " "
-          person: " "
+        klops:
+          text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
+          person: <span>Voldemar Duletskiy</span> CTO, Klops.ru
 
     last:
       title: Set up<br>the right<br>continious<br>integration!

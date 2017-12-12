@@ -127,6 +127,22 @@
         svg { max-height: 88%; }
       }
 
+      &[data-image="evrone"] {
+          svg { max-height: 100%; }
+      }
+
+      &[data-image="humaniq"] {
+          svg { max-height: 100%; }
+      }
+
+      &[data-image="starttrack"] {
+          svg { max-height: 100%; }
+      }
+
+      &[data-image="klops"] {
+          svg { max-height: 100%; }
+      }
+
       &:hover, &:active {
 
         svg {
