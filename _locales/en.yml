@@ -63,7 +63,7 @@ en:
       title: Enjoyable<br>Usage
       reviews:
         evrone:
-          text: “Thanks to the Vexor, our company can afford to run thousands of tests per day, without worrying about the waiting time or queues. All tests run instantly and without any limits! We are very glad to work with Vexor and recommend it as the main CI/CD service.”
+          text: “Thanks to Vexor we are now able to run thousands of tests a day at Evrone. All tests start instantly no matter how many must be run. That is awesome. We are happy to recommend Vexor as a primary CI/CD service.”
           person: <span>Alexander Kirillov</span>CTO, Evrone.ru
 
         bookmate:
@@ -71,7 +71,7 @@ en:
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
 
         uptopromo:
-          text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
+          text: “Vexor helps us to test all our branches simultaneously. And we’re running more than 3000 tests in 8 minutes!”
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
         humaniq:
