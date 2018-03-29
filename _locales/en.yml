@@ -7,10 +7,13 @@ en:
     minutes: min
 
   header:
-    base_url: https://vexor.io
+    base_url: https://vexor.io/
     not_found: Page not found
 
   nav:
+    blog:
+      caption: Blog
+      link: https://hype.codes/vexor
     promo:
       caption: Promo
       link:
@@ -22,7 +25,7 @@ en:
       link:
     documentation:
       caption: Docs
-      link: /documentation
+      link: /documentation/
     sign_up:
       caption: Sign up
       link: http://ci.vexor.io/users/companies/new
@@ -59,29 +62,29 @@ en:
     customers:
       title: Enjoyable<br>Usage
       reviews:
+        evrone:
+          text: “Thanks to Vexor we are now able to run thousands of tests a day at Evrone. All tests start instantly no matter how many must be run. That is awesome. We are happy to recommend Vexor as a primary CI/CD service.”
+          person: <span>Alexander Kirillov</span>CTO, Evrone.ru
+
         bookmate:
           text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
 
-        castle:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Cloud Castle
-
         uptopromo:
-          text: “Vexor helps to test all our branches in parallel. And we're doing in 8 minutes with more than 3000 tests!”
+          text: “Vexor helps us to test all our branches simultaneously. And we’re running more than 3000 tests in 8 minutes!”
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
-        brandymint:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Brandymint
+        humaniq:
+          text: “We love Vexor at Humaniq and use it for of our open source projects on GitHub. Vexor is simple to use, we love their platform to build tooling and very happy with the new container infrastructure for speedier builds.”
+          person: <span>Anton Mozgovoy</span> Humaniq
 
-        meduza:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, Meduza
+        starttrack:
+          text: “Starttrack is a really test-heavy project, so we are extremely pleased with Vexor testing performance for such a reasonable price”
+          person: <span>Alexander Baryshnikov</span> CTO, Starttrack.ru
 
-        insales:
-          text: “Review will be soon”
-          person: <span>Somebody</span>Post/duty, InSales.ru
+        klops:
+          text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
+          person: <span>Voldemar Duletskiy</span> CTO, Klops.ru
 
     last:
       title: Set up<br>the right<br>continious<br>integration!
@@ -140,13 +143,13 @@ en:
   second_nav:
     terms:
       caption: Terms
-      link: /terms
+      link: /terms/
     security:
       caption: Security
-      link: /security
+      link: /security/
     privacy:
       caption: Privacy
-      link: /privacy
+      link: /privacy/
     contacts:
       caption: Contacts
       link: mailto:support@vexor.io
