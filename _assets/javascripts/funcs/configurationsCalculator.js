@@ -1,96 +1,101 @@
+//= require libs/jquery-ui.min.js
+//= require libs/jquery-ui-touch-punch.min.js
+
 function initConfigurationsCalculator() {
 
-    var costValueSel = '#configuration-cost-value',
-        commitsCountSel = '#configuration-commits-count',
-        durationValueSel = '#configuration-duration-value',
-        costSliderSel = '#configuration-cost',
-        commitsSliderSel = '#configuration-commits',
-        durationSliderSel = '#configuration-duration',
-        period = 'day',
-        periodCoeff = getPeriodCoeff();
+    var $cost = $('#configuration-cost-value');
+    var $commits = $('#configuration-commits-count');
+    var $duration = $('#configuration-duration-value');
+    var $costSlider = $('#configuration-cost');
+    var $commitsSlider = $('#configuration-commits');
+    var $durationSlider = $('#configuration-duration');
+    var period = 'day';
+    var periodCoeff = getPeriodCoeff();
+    var price = 0.015;
 
+    function calcCost(commits, duration) { return (commits * price * duration); }
+    function getCost(pc) { return parseFloat($cost.val().substring(1)) / pc; }
+    function showCost(cost) {
+        var formatted = (cost * periodCoeff).toFixed(2).split('.');
+        $cost.val('$' + formatted[0] + (formatted[1] !== '00' ? '.' + formatted[1] : ''));
+    }
+
+    function getCommits(pc) { return Math.round(parseInt($commits.val()) / pc); }
+    function showCommits(commits) { $commits.val(commits * periodCoeff); }
+
+    function getDuration() { return parseInt($duration.val()); }
+    function showDuration(duration) { $duration.val(duration + ' min'); }
 
     // Cost slider
-    $(costSliderSel).slider({
+    $costSlider.slider({
         max: 4,
         min: 0.1,
         step: 0.1,
         value: 1,
-        slide: function(event, ui) { $(costValueSel).val('$'+(ui.value*periodCoeff)); },
+        slide: function(event, ui) { showCost(ui.value); },
         stop: function(event, ui) { updateSlidersValues(ui.value); }
     }).draggable();
 
     // Commits slider
-    $(commitsSliderSel).slider({
+    $commitsSlider.slider({
         max: 20,
         min: 1,
         step: 1,
-        value: 10,
-        slide: function(event, ui) { $(commitsCountSel).val(ui.value*periodCoeff); },
+        value: getCommits(periodCoeff),
+        slide: function(event, ui) { showCommits(ui.value); },
         stop: function(event, ui) { updateSlidersValues(false, ui.value); }
     }).draggable();
 
     // Duration slider
-    $(durationSliderSel).slider({
+    $durationSlider.slider({
         max: 20,
         min: 1,
         step: 1,
-        value: 10,
-        slide: function(event, ui) { $(durationValueSel).val(ui.value); },
+        value: getDuration(),
+        slide: function(event, ui) { showDuration(ui.value); },
         stop: function(event, ui) { updateSlidersValues(false, false, ui.value); }
     }).draggable();
 
+    updateSlidersValues();
 
     function getPeriodCoeff() {
-        if (period == 'month')
+        if (period === 'month')
             return 20;
-        else if (period == 'day')
+        else if (period === 'day')
             return 1;
     }
 
     function updateSlidersValues(cost, commits, duration) {
 
         if (cost) {
-            duration = parseInt($(durationValueSel).val());
-            commits = Math.floor(cost*periodCoeff / duration * 100);
+            duration = getDuration();
+            commits = Math.round(cost / price / duration);
 
-            if (commits > 20*periodCoeff) {
-                commits = 20*periodCoeff;
-                duration = Math.floor(cost*periodCoeff / commits * 100);
+            if (commits > 20) {
+                commits = 20;
+                duration = Math.round(cost / price / commits);
             }
-            else if (commits < 1*periodCoeff) {
-                commits = 1*periodCoeff;
+            else if (commits < 1) {
+                commits = 1;
                 duration = 1;
             }
 
-            $(commitsSliderSel).slider('value', Math.floor(commits / periodCoeff));
-            $(durationSliderSel).slider('value', duration);
-            $(commitsCountSel).val(commits);
-            $(durationValueSel).val(duration);
-
-            return [commits, duration];
+            $commitsSlider.slider('value', commits);
+            $durationSlider.slider('value', duration);
+            showCommits(commits);
+            showDuration(duration);
+        } else {
+            if (!commits) {
+                commits = getCommits(periodCoeff);
+            }
+            if (!duration) {
+                duration = getDuration();
+            }
+            cost = calcCost(commits, duration);
+            $costSlider.slider('value', cost);
+            showCost(cost);
         }
-
-        if (commits) {
-            duration = parseInt($(durationValueSel).val());
-            cost = (commits * 0.01*duration).toFixed(2);
-            $(costSliderSel).slider('value', cost);
-            $(costValueSel).val('$'+cost*periodCoeff);
-
-            return cost;
-        }
-
-        if (duration) {
-            commits = Math.floor($(commitsCountSel).val() / periodCoeff);
-            cost = (commits * 0.01*duration).toFixed(2);
-            $(costSliderSel).slider('value', cost);
-            $(costValueSel).val('$'+cost*periodCoeff);
-
-            return cost;
-        }
-
     }
-
 
     // Toggle period of payment
     $('.period').on('click', function() {
@@ -104,14 +109,15 @@ function initConfigurationsCalculator() {
             period = $('.period.active').data('period');
             periodCoeff = getPeriodCoeff();
 
-            var commits = Math.floor($(commitsCountSel).val() / prevPeriodCoeff) * periodCoeff,
-                cost = $(costValueSel).val();
+            var commits = getCommits(prevPeriodCoeff);
+            var cost = getCost(prevPeriodCoeff);
 
-            cost = (cost.substring(1, cost.length) / prevPeriodCoeff * periodCoeff).toFixed(2);
-
-            $(commitsCountSel).val(commits);
-            $(costValueSel).val('$'+cost);
+            showCommits(commits);
+            showCost(cost);
         }
     });
 
+  $('input[readonly]').on('click focus touchmove', function (ev) {
+    ev.preventDefault();
+  });
 }

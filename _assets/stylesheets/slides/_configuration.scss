@@ -1,288 +1,69 @@
+@import 'configuration/calculator';
+
 .configuration-slide {
   background-color: white;
 
-  &__calculator, &__info {
-    width: 440px;
-    @include transform(translateY(-50%));
-  }
-
-  &__calculator {
-    @include absolute(50%, auto, auto, 20px);
-    line-height: 1.5;
-
-    strong {
-      position: relative;
-      display: block;
-
-      label {
-        @include absolute(auto, auto, 0, 0);
-        display: block;
-        font-weight: normal;
-        color: $blue-pigment;
-      }
-
-      input {
-        display: block;
-        width: 100%;
-        height: 50px;
-        font: 800 normal normal 36px Circe, Sans;
-        text-align: right;
-        color: $blue-pigment;
-        @include appearance(text);
-        border: 0;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-      }
-    }
-
-    &__slider {
-      position: relative;
-      margin-bottom: 10px;
-      padding-bottom: 12px;
-      overflow: hidden;
-
-      strong { margin: 15px 0 28px; }
-
-      &:after {
-        content: '∞';
-        display: none;
-        @include absolute(auto, -1px, 39px, auto);
-        width: 15px;
-        height: 20px;
-        font-size: 20px;
-        line-height: 0.5;
-        color: rgba($blue-pigment, 0.2);
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-
-    &__period {
-      text-transform: lowercase;
-
-      span {
-        display: inline-block;
-        vertical-align: baseline;
-        color: $blue-pigment;
-        border-bottom: dashed 1px $blue-pigment;
-        text-transform: none;
-        line-height: 1.0;
-        font-weight: 800;
-        cursor: pointer;
-        @include transition(all 0.3s ease);
-
-        &:hover {
-          color: $aquamarine;
-          border-bottom-color: rgba(107, 219, 188, 0.4);
-        }
-
-        &.active {
-          color: $aquamarine;
-          border-bottom-color: transparent;
-          cursor: default;
-        }
-      }
-    }
-  }
-
   &__info {
-    @include absolute(50%, auto, auto, 0);
-
-    & > * { display: block; }
-
-    strong {
-      @include vector-title;
-
-      svg { @include absolute(0, auto, auto, 0); }
-    }
-
-    p { margin: 70px 0 30px 10px; }
-
-    button {
-      width: 200px;
-      margin-left: 10px;
-    }
-  }
-
-  @include mobile {
-    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(30, $mobile-height);
-
-    &__info, &__calculator {
+    @include mobile {
       position: static;
-      width: 100%;
-      @include transform(none);
+      height: 100%;
     }
 
-    &__info {
+    > strong {
+      top: 40px;
 
-      strong {
-        font-size: 50px;
-        letter-spacing: -1px;
+      @include mobile {
+        top: calc(30vh - 40vw);
       }
 
-      p {
-        margin: px_to_vh(420, $mobile-height) 0 px_to_vh(50, $mobile-height);
+      @include large-desktops-media {
+        top: 20px;
+      }
+    }
+
+    > p {
+      margin: 70px 0 30px 10px;
+
+      @include mobile {
+        @include absolute(calc(30vh - 40vw + 100px));
         font-size: 20px;
         line-height: 1.5;
+        margin: 0;
       }
 
-      button {
-        width: 100%;
-        margin-left: 0;
-      }
-    }
-
-    &__calculator-wrap {
-      position: absolute;
-      top: px_to_vh(120, $mobile-height);
-      left: 0;
-      width: 100%;
-    }
-
-    &__calculator {
-
-      &__period { margin-bottom: 0; }
-
-      &__slider {
-
-        strong {
-          margin: px_to_vh(15, $mobile-height) 0 px_to_vh(25, $mobile-height);
-
-          input {
-            text-align: right;
-            font-size: 24px;
-            z-index: -1;
-          }
-        }
-
-        &:after { display: none; }
-      }
-    }
-  }
-
-  @include tablet {
-
-    & > div { padding: 140px 0 40px; }
-
-    &__info-wrap, &__calculator-wrap {
-      float: none;
-      width: 100%;
-      padding: 0 !important;
-    }
-
-    &__calculator-wrap {
-      @include absolute(350px, auto, auto, 0);
-    }
-
-    &__info, &__calculator {
-      position: static;
-      width: 320px;
-      margin: 0;
-      @include transform(none);
-    }
-
-    &__info {
-
-      p {
-        margin-top: 500px;
-        margin-bottom: 50px;
-      }
-
-      button { width: 230px; }
-    }
-
-    &__calculator {
-      width: 100%;
-
-      &__slider {
-        padding-bottom: 18px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-
-  @include medium-width-media {
-
-    &__calculator, &__info {
-      width: 560px;
-    }
-
-    &__info button { width: 200px; }
-
-    &__calculator {
-
-      strong input { text-align: center; }
-
-      &__slider::after { display: block; }
-    }
-
-  }
-
-  @include large-width-media {
-
-    &__calculator, &__info {
-      width: 740px;
-    }
-
-    &__info {
-
-      p { width: 630px; }
-
-      button { width: 280px; }
-    }
-
-    &__calculator {
-
-      strong input { text-align: center; }
-
-      &__slider::after { display: block; }
-    }
-
-  }
-
-  @include large-desktops-media {
-
-    &__calculator {
-
-      strong {
-
-        label { font-size: 24px; }
-
-        input { font-size: 40px; }
-      }
-
-      &__slider {
-        padding-bottom: 18px;
-        margin-bottom: 30px;
-      }
-
-      &__period {
-        margin-bottom: 30px;
-
-        span { font-size: 24px; }
-      }
-    }
-
-    &__info {
-
-      strong svg { @include size(421px 156px); }
-
-      p {
+      @include large-desktops-media {
         margin-left: 12px;
         font-size: 33px;
       }
 
-      button {
+      @include large-width-media {
+        width: 630px;
+      }
+    }
+
+    > button {
+      display: block;
+      width: 200px;
+      margin-left: 10px;
+
+      @include mobile {
+        @include absolute(false, 0, 0, 0);
+        width: 100%;
+        margin-left: 0;
+      }
+      @include tablet {
+        width: 230px;
+      }
+      @include medium-width-media {
+        width: 200px;
+      }
+      @include large-width-media {
+        width: 280px;
+      }
+      @include large-desktops-media {
         @include size(350px 60px);
         margin-left: 12px;
       }
     }
-
   }
 }

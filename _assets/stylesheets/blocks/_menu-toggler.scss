@@ -1,0 +1,79 @@
+$bar-length: 24px;
+$bar-width: 2px;
+$bar-space: 7px;
+
+$menu-padding-h: 20px;
+$menu-padding-v: 15px;
+
+$menu-top-duration: 200ms;
+$menu-transform-duration: $menu-top-duration * 1.1;
+
+
+.menu-toggler {
+  cursor: pointer;
+  position: relative;
+  float: right;
+  top: 5px;
+  width: $bar-length + $menu-padding-h * 2;
+  height: $bar-width * 3 + $bar-space * 2 + $menu-padding-v * 2;
+  margin: -$menu-padding-v (-$menu-padding-h) 0 px_to_vw(20, $mobile-width);
+
+  &__bar {
+    &::before,
+    &::after {
+      content: '';
+      left: 0;
+    }
+
+    &,
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      @include size($bar-length 0);
+      border: 0 solid $blue-pigment;
+      border-bottom-width: $bar-width;
+
+      .header.white & {
+        border-color: #fff;
+      }
+    }
+
+    top: $menu-padding-v;
+    left: $menu-padding-h;
+    transition: border-color 0ms linear $menu-transform-duration * 1.1;
+
+    &::before {
+      top: $bar-width + $bar-space;
+      transition:
+        transform $menu-transform-duration cubic-bezier(0.55, 0.055, 0.675, 0.19),
+        top $menu-top-duration cubic-bezier(0.33333, 0.66667, 0.66667, 1) $menu-transform-duration * 1.2;
+    }
+    &::after {
+      top: ($bar-width + $bar-space) * 2;
+      transition:
+        transform $menu-transform-duration cubic-bezier(0.55, 0.055, 0.675, 0.19),
+        top $menu-top-duration cubic-bezier(0.33333, 0.66667, 0.66667, 1) $menu-transform-duration * 1.2;
+    }
+  }
+
+  &.close-icon > &__bar {
+    transition-delay: $menu-top-duration * 1.1;
+    border-color: transparent;
+
+    &::before {
+      top: 0;
+      @include transform(translate3d(0, $bar-width + $bar-space, 0) rotate(45deg));
+      transition:
+        top $menu-top-duration cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform $menu-transform-duration cubic-bezier(0.215, 0.61, 0.355, 1) $menu-top-duration * 1.2;
+    }
+    &::after {
+      top: 0;
+      @include transform(translate3d(0, $bar-width + $bar-space, 0) rotate(-45deg));
+      transition:
+        top $menu-top-duration cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+        transform $menu-transform-duration cubic-bezier(0.215, 0.61, 0.355, 1) $menu-top-duration * 1.2;
+    }
+  }
+}

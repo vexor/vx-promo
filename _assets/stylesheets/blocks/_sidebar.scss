@@ -3,34 +3,45 @@
   &__nav {
 
     li {
-      margin-bottom: 20px;
-      font: bold normal normal px_to_em(20) Circe, SansSerif;
+      padding-bottom: 20px;
+      font: bold normal normal px_to_em(20) $font-family-vexor;
       line-height: 1.25;
       letter-spacing: 0.5px;
 
       & > a {
         color: $blue-pigment;
+        margin-right: 5px;
 
-        &.active { color: $aquamarine; }
+        .mobile-menu & {
+          color: #fff;
+        }
+
+        &.active {
+          color: $aquamarine;
+        }
       }
     }
 
     &__title {
-
-      &:after {
+      &::after {
+        display: inline-block;
         content: '↓';
         color: $crayola-blue-bell;
-        padding-left: 3px;
+        @include transition(transform 200ms ease);
       }
 
       &.toggled {
 
-        &:after { content: '↑'; }
+        &::after {
+          @include transform(rotate(-180deg));
+        }
       }
 
       &.untoggle {
 
-        &:after { content: ''; }
+        &::after {
+          content: '';
+        }
       }
     }
 

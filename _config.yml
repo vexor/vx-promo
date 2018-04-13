@@ -4,7 +4,7 @@ markdown: redcarpet
 highlighter: true
 host: 0.0.0.0
 
-exclude: [translate/, Rakefile, Gemfile, Gemfile.lock, vexor.yml, docker-compose.yml]
+exclude: [translate/, Rakefile, Gemfile, Gemfile.lock, vexor.yml, docker-compose.yml, _site/, .sass-cache/, .idea/]
 
 help:
   - title: Configuration
@@ -37,9 +37,6 @@ defaults:
 
 jekyll-press:
   exclude: 'sitemap.xml'
-
-gems:
-  - jekyll-bootstrap-sass
 
 assets:
   autowrite: true

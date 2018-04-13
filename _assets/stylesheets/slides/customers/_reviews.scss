@@ -1,0 +1,118 @@
+$review-font-size: 22px;
+
+@mixin review-size($review-font-size, $review-lines: 6) {
+  $review-height: $review-font-size * 1.5 * $review-lines;
+  height: $review-height * 2;
+
+  > p {
+    font-size: $review-font-size;
+    height: $review-height;
+  }
+
+  > div {
+    padding-top: $review-height / 2 - $review-font-size * 1.5;
+    font-size: $review-font-size - 3px;
+
+    > span {
+      margin-bottom: round($review-font-size * 2 / 3);
+      font-size: $review-font-size + 4px;
+    }
+  }
+}
+
+.customers-slide__reviews {
+  // decorative corner
+  @include before {
+    @include size(40px 30px);
+    @include absolute(0, false, 0, -13px);
+    margin: auto 0;
+    background: asset-data-uri('interface/slides/customers/corner.svg') no-repeat center center / contain;
+  }
+
+  &__item {
+
+    & > p, & > div {
+      height: 50%;
+    }
+
+    & > p {
+      display: table-cell;
+      vertical-align: middle;
+      color: $blue-pigment;
+      line-height: 1.5;
+    }
+
+    & > div {
+      color: white;
+      line-height: 1.05;
+
+      > span {
+        display: block;
+        font-weight: bold;
+        line-height: 1.0;
+      }
+    }
+
+    @include review-size(20px, 6);
+
+    @media (max-width: #{$mobile-width - 1}) {
+      @include review-size(16px, 6);
+    }
+    @include small-width-media {
+      @include review-size(21px, 6);
+    }
+    @include medium-width-media {
+      @include review-size(24px, 6);
+    }
+    @include large-width-media {
+      @include review-size(26px, 5);
+    }
+  }
+
+  .slick-list {
+    padding: $review-fade-height - 10px 0;
+
+    @include both {
+      @include absolute(false, 0, false, 0);
+      height: $review-fade-height;
+      z-index: 1;
+    }
+
+    &::before {
+      top: 0;
+      @include linear-gradient(
+          to bottom,
+          white 0%,
+          rgba(white, 0.8) 33%,
+          rgba(white, 0.6) 67%,
+          rgba(white, 0.0) 100%,
+        $fallback: transparent
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      @include linear-gradient(
+          to top,
+          $blue-pigment 0%,
+          rgba($blue-pigment, 0.8) 33%,
+          rgba($blue-pigment, 0.6) 67%,
+          rgba($blue-pigment, 0.0) 100%,
+        $fallback: transparent
+      );
+    }
+  }
+
+  @include mobile {
+  }
+
+  @include tablet {
+  }
+
+
+  @include large-width-media {
+  }
+
+  @include large-desktops-media {
+  }
+}

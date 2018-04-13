@@ -2,23 +2,39 @@
   position: relative;
 }
 
+@include mobile {
+  body.menu-show {
+    .slide {
+      @include transform(translateX(-100% + $menu-show-shift));
+    }
+    .page {
+      @include transform(translateX(-50% + $menu-show-shift));
+    }
+  }
+}
+
 .slide {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 100vh;
   z-index: 1;
-  
+  @include transform(translateX(0));
+  @include transition(transform $menu-show-duration ease);
+
+
   &__inner {
     position: relative;
-    height: 100vh;
+    height: 100%;
     @extend .base;
 
+    display: table;
+
     &__half {
+      display: table-cell;
+      vertical-align: middle;
+
       position: relative;
       width: 50%;
-      height: 100%;
-      float: left;
 
       &[data-position="left"] {
         padding-right: 20px;
@@ -28,13 +44,55 @@
         padding-left: 20px;
       }
     }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      display: block;
+      height: 90%;
+
+      &__half {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        &[data-position="left"], &[data-position="right"] {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
   }
 
   &__title {
-    font-size: 80px;
-    font-weight: 800;
-    line-height: 0.75;
+    line-height: 0.7;
     letter-spacing: -1px;
+
+    @include vector-title;
+    white-space: nowrap;
+
+    > svg {
+      @include absolute(-4%, auto, auto, 2%);
+      width: 97%;
+    }
+
+    @include large-desktops-media {
+      font-size: 100px;
+      margin-left: (100px * $shift-k);
+    }
+
+    @include mobile {
+      @include absolute(0, false, false, 0);
+      font-size: 60px;
+      margin-left: (60px * $shift-k);
+    }
+
+    @include tablet {
+      font-size: px_to_vw(80px, $small-desktop-width);
+      margin-left: px_to_vw(80px * $shift-k, $small-desktop-width);
+    }
   }
 
   &__caption {
@@ -45,54 +103,6 @@
 
   &.short {
     height: 70vh;
-
-    .slide__inner { height: 70vh; }
-  }
-
-  @include mobile {
-    height: auto;
-    padding-top: px_to_vh(60, $mobile-height);
-
-    &__inner {
-      height: auto;
-
-      &__half {
-        float: none;
-        width: auto;
-        height: auto;
-
-        &[data-position="left"], &[data-position="right"] {
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-    }
-
-    &.short {
-      height: auto;
-
-      .slide__inner { height: auto; }
-    }
-  }
-
-  @include tablet {
-    height: auto !important;
-
-    &__inner {
-      height: auto !important;
-      padding-top: 140px;
-
-      &__half { height: auto; }
-    }
-  }
-
-  @include large-desktops-media {
-
-    &__title {
-      font-size: 100px;
-      line-height: 0.8;
-    }
-
   }
 }
 
@@ -101,4 +111,3 @@
 @import "slides/configuration";
 @import "slides/customers";
 @import "slides/last";
-

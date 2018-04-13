@@ -47,13 +47,9 @@
   top: 0;
   display: block;
 
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
+  @include both(table);
 
-  &:after {
+  &::after {
     clear: both;
   }
 
@@ -98,10 +94,10 @@
 
 .slick-arrow {
   display: block;
-  @include size(22px);
-  position: absolute;
-  left: 0;
+  @include size($review-fade-height);
+  @include absolute(false, false, false, -($review-fade-height / 3));
   z-index: 1;
+  @include transform(translateZ(0));
   color: transparent;
   background-color: transparent;
   @include box-shadow(none);
@@ -109,28 +105,27 @@
   overflow: hidden;
   cursor: pointer;
 
-  &:before {
-    @include absolute(-16px, auto, auto, -1px);
+  &::before {
     line-height: 0.56;
     text-align: center;
-    font: normal 36px Circe;
+    font: normal 36px $font-family-vexor;
     cursor: pointer;
     @include transition(color 0.3s ease);
   }
 
   &.slick-prev {
-    top: 0;
+    top: -7px;
 
-    &:before {
+    &::before {
       content: "↑";
       color: $blue-pigment;
     }
   }
 
   &.slick-next {
-    bottom: 0;
+    bottom: 22px;
 
-    &:before {
+    &::before {
       content: "↓";
       color: white;
     }
@@ -139,61 +134,12 @@
   &:hover {
     background-color: transparent;
 
-    &:before {
+    &::before {
       color: $aquamarine;
     }
-  }
-
-  @include tablet {
-    @include size(54px);
-    left: -16px;
-
-    &:before {
-      top: 0;
-      left: 15px;
-    }
-
-    &.slick-prev { top: -16px; }
-
-    &.slick-next { bottom: -16px; }
   }
 }
 
 .slick-arrow.slick-hidden {
   display: none;
-}
-
-.slick-dots {
-  display: block;
-  @include clearfix;
-
-  background-color: white;
-
-  li {
-    float: left;
-    margin-left: 20px;
-    background: transparent;
-
-    button {
-      display: block;
-      @include size(5px);
-      @include border-radius(50%);
-      font-size: 0;
-      color: transparent;
-
-      &:hover {
-        //background-color: aquamarine;
-        @include transform(scale(2));
-      }
-    }
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-
-    &.slick-active button {
-      background-color: $blue-pigment;
-      @include transform(scale(2));
-    }
-  }
 }

@@ -23,10 +23,10 @@
 .desktop {
 
   @include desktop {
-    display: block !important;;
+    display: block !important;
 
     &-down {
-      display: none !important;;
+      display: none !important;
     }
   }
 }
@@ -34,10 +34,10 @@
 .mobile-tablet {
 
   @include mobile_tablet {
-    display: block !important;;
+    display: block !important;
 
     &-down {
-      display: none !important;;
+      display: none !important;
     }
   }
 }
@@ -45,7 +45,7 @@
 .tablet {
 
   @include tablet {
-    display: block !important;;
+    display: block !important;
 
     &-down {
       display: none !important;
@@ -56,61 +56,31 @@
 .mobile {
 
   @include mobile {
-    display: block !important;;
+    display: block !important;
 
     &-down {
-      display: none !important;;
+      display: none !important;
     }
   }
 }
 
-figure.gif {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 380px;
-  height: 380px;
-  margin: 0;
-  z-index: -1;
-  @include transform(translateY(-50%));
-  background-image: asset_url('interface/slides/first/figure.gif');
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: auto 100%;
-
-  @include medium-width-media {
-    width: 405px;
-    height: 420px;
-  }
-
-  @include large-width-media {
-    width: 520px;
-    height: 525px;
-  }
-
-  @include large-desktops-media {
-    width: 598px;
-    height: 620px;
-  }
+.figure-wrapper {
+  @include absolute(0, 0, 0);
 
   &.mazed {
-    background-image: asset_url('interface/slides/last/figure.gif');
-
-    @include tablet {
-      width: 420px;
-      height: 420px;
-    }
-
-    @include medium-width-media {
-      width: 460px;
-      height: 460px;
-    }
-
-    @include large-desktops-media {
-      width: 640px;
-      height: 640px;
-    }
+    right: auto;
+    left: 0;
   }
+}
+
+figure.gif {
+  @include absolute(0, 0, 0);
+  display: block;
+  @include size(100% 0);
+  padding-bottom: (525px / 520px) * 100%;
+  margin: auto;
+
+  background: no-repeat asset_url('interface/slides/first/figure-holder.png') center center / cover;
 }
 
 @import "blocks/header";

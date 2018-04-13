@@ -1,153 +1,142 @@
+@import 'menu-toggler';
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 4;
+  @include transform(translateZ(0));
 
-  &:before {
-    content: '';
-    display: block;
+  @include both {
     @include absolute(0, auto, auto, 0);
-    @include size(100% 110px);
+    @include size(100%);
     z-index: -1;
+    @include transition(opacity 200ms linear 100ms);
+    opacity: 0;
+  }
+
+  &::before {
+    @include linear-gradient(
+        to bottom,
+        $blue-pigment 0%,
+        $blue-pigment 25%,
+        rgba($blue-pigment, 0.6) 67%,
+        rgba($blue-pigment, 0.0) 100%,
+      $fallback: transparent
+    );
+  }
+
+  &::after {
+    @include linear-gradient(
+        to bottom,
+        #fff 0%,
+        #fff 25%,
+        rgba(#fff, 0.6) 67%,
+        rgba(#fff, 0.0) 100%,
+      $fallback: transparent
+    );
   }
 
   &__inner {
-    height: 110px;
-    padding-top: 50px;
+    padding: 50px 0 20px;
 
     svg {
       cursor: pointer;
 
-      path, rect, polygon {
+      > path, > g {
         fill: $blue-pigment;
         @include transition(fill 0.3s ease);
-      }
-
-      &.white {
-        path, rect, polygon { fill: white; }
-      }
-
-      &.separate-white {
-        path, rect, polygon { fill: white; }
       }
     }
 
     .link-with-logo {
       float: left;
 
-      svg {
+      > svg {
         position: relative;
-        @include size(155px 30px);
-        @include transition(all 0.3s ease);
+        width: 155px;
+        @include transition(all 400ms ease);
 
-        &.smaller { @include size(103px 20px); }
-
-        &.top-translated {
-          top: 4px;
-          @extend .smaller;
+        &.smaller {
+          width: 103px;
         }
       }
-    }
 
-    .toggler { cursor: pointer; }
-
-    #menu-close { display: none; }
-
-    #doc-nav-open {
-
-      &.active {
-        path, rect, polygon { fill: $aquamarine; }
+      &:hover > svg > path {
+        fill: $aquamarine;
       }
     }
 
     nav {
       float: right;
 
-      a {
+      > a {
         display: inline-block;
         font-size: px_to_em(20);
         line-height: 1.0;
         margin-left: 36px;
+        color: $blue-pigment;
 
         &:first-of-type { margin-left: 0; }
       }
     }
-  }
 
-  &.blue-blur {
-
-    &:before { background-image: linear-gradient(to bottom, $blue-pigment, $blue-pigment 40%, rgba($blue-pigment, 0.95) 50%, rgba($blue-pigment, 0.93) 60%, rgba($blue-pigment, 0.7) 70%, rgba($blue-pigment, 0.0)); }
-  }
-
-  &.white-blur {
-
-    &:before { background-image: linear-gradient(to bottom, white, white 40%, rgba(white, 0.95) 50%, rgba(white, 0.93) 60%, rgba(white, 0.7) 70%, rgba(white, 0.0)); }
-  }
-
-  &.white-bg { background-color: rgba(white, 0.9); }
-
-  &.without-bg { background-color: transparent; }
-
-  @include mobile {
-    background-color: rgba($blue-pigment, 0.9);
-
-    &:before { display: none; }
-
-    &__inner {
-      height: px_to_vh(60, $mobile-height);
-      padding-top: 0;
+    @include mobile {
+      padding: px_to_vh(15, $mobile-height) 0 px_to_vh(5, $mobile-height);
 
       .link-with-logo {
         position: relative;
-        width: px_to_vw(160, $mobile-width);
-        height: px_to_vh(30, $mobile-height);;
-        top: px_to_vh(15, $mobile-height);
-
-        svg {
-          @include absolute(50%, auto, auto, 0);
-          width: px_to_vw(155, $mobile-width);
-          height: px_to_vh(23, $mobile-height);
-          @include transform(translateY(-50%));
-        }
       }
-
-      .toggler {
-        position: relative;
-        float: right;
-        top: px_to_vh(10, $mobile-height);
-        height: px_to_vh(40, $mobile-height);
-        width: px_to_vh(40, $mobile-height);
-        margin-left: px_to_vw(20, $mobile-width);
-
-        svg {
-          @include absolute(50%, auto, auto, 50%);
-          @include transform(translate(-50%, -50%));
-          width: auto;
-          height: px_to_vh(20, $mobile-height);
-        }
-      }
-
-      #doc-nav-open { position: relative; }
     }
-  }
 
-  @include tablet {
-
-    &__inner {
-
-      svg { height: 20px; }
+    @include tablet {
+      padding: 35px 0 15px;
 
       nav {
-        position: relative;
-        top: -5px;
-
         a { margin-left: 100px; }
       }
     }
-
   }
+
+
+  &.blue-blur {
+    &::before {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &.white-blur {
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  background-color: rgba(white, 0.0);
+  @include transition(background-color $menu-show-duration ease);
+
+  &.white {
+    a {
+      color: #fff;
+
+      &:hover {
+        color: $aquamarine;
+      }
+    }
+    svg {
+      > path, > g {
+        fill: #fff;
+      }
+    }
+  }
+
+  &.without-bg { background-color: transparent; }
 
   @include medium-width-media {
     nav a {
@@ -156,23 +145,25 @@
   }
 
   @include large-width-media {
-
-    nav a { margin-left: 111px; }
-
+    nav a {
+      margin-left: 111px;
+    }
   }
 
   @include large-desktops-media {
 
     .link-with-logo svg {
-      @include size(207px 40px);
+      width: 207px;
 
-      &.smaller { @include size(155px 30px); }
+      &.smaller {
+        width: 155px;
+      }
     }
 
     nav a {
       margin-left: 97px;
-      font-size:  24px;
+      font-size: 24px;
     }
-
   }
 }
+

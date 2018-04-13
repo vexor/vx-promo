@@ -2,35 +2,114 @@
   color: white;
   background-color: $blue-pigment;
 
-  figure.gif { left: 0; }
+  .figure-wrapper {
+    width: 50%;
+    bottom: 5vh;
+    @include transition(all 200ms ease);
+
+    @include mobile_tablet {
+      display: none;
+    }
+
+    @include medium-width-media {
+    }
+
+    @include large-width-media {
+      width: 40%;
+      left: 5%;
+    }
+  }
+
+  @include mobile_tablet {
+    .active.fp-completely + &,
+    .active + &.fp-completely,
+    &.active {
+      .figure-wrapper {
+        top: 0;
+      }
+    }
+  }
 
   &__info {
-    @include absolute(50%, 0, auto, auto);
-    @include transform(translateY(-50%));
-    width: 440px;
+    width: 50%;
+    @include absolute(0, 0, 3vh);
+    margin: auto 0;
+    display: table;
+    padding-left: 20px;
 
-    h2 {
+    @include mobile_tablet {
+      width: 100%;
+      bottom: 100px;
+      padding-left: 0;
+      z-index: 1;
+    }
+
+    @include mobile {
+      // position: relative;
+      bottom: 80px;
+    }
+
+    > h2 {
       @include vector-title;
-      font-size: 80px;
-      font-weight: 800;
-      line-height: 0.7;
+      line-height: 0.64;
       letter-spacing: -0.9px;
 
-      svg { @include absolute(0, auto, auto, 0); }
+      > svg {
+        @include absolute(-3%, auto, auto, 2%);
+        width: 97%;
+      }
 
-      span {
+      > span {
         display: block;
-        margin: 25px 0 30px;
+        margin-top: 25px;
+        margin-bottom: 30px;
         font-size: 29px;
         font-weight: normal;
         line-height: 1.38;
         letter-spacing: -0.8px;
         color: white;
       }
+
+      @include mobile {
+        //width: 100%;
+        font-size: 55px;
+        margin: 0 0 0 (55px * $shift-k);
+
+        > span {
+          margin: px_to_vh(25, $mobile-height) 0 0 (55px * -$shift-k);
+          font-size: 24px;
+          line-height: 1.5;
+        }
+      }
+
+      @media (max-width: #{$mobile-width - 1}) {
+        //font-size: 45px;
+
+        > span {
+          font-size: 20px;
+        }
+      }
+
+      @include large-width-media {
+        font-size: 100px;
+        margin-left: (100px * $shift-k);
+
+        > span {
+          margin: 40px 0 45px (100px * -$shift-k);
+          font-size: 33px;
+          line-height: 0.83;
+          letter-spacing: -1.3px;
+        }
+      }
     }
 
     &__sign-up {
       @include clearfix;
+
+      @include mobile {
+        position: relative;
+        margin-top: px_to_vh(20, $mobile-height);
+      }
 
       button {
         float: left;
@@ -39,133 +118,25 @@
         font-size: 19px;
 
         &:last-of-type { margin-right: 0; }
-      }
-    }
-  }
 
-  @include mobile {
-    padding: px_to_vh(110, $mobile-height) 0 240px;
-
-    &__inner {
-      position: static;
-      height: auto;
-    }
-
-    figure.gif { display: none; }
-
-    &__info {
-      position: static;
-      width: 100%;
-      @include transform(none);
-
-      h2, &__sign-up {
-        position: relative;
-      }
-
-      h2 {
-        width: 100%;
-        margin: 0;
-        font-size: 50px;
-        line-height: 0.8;
-        letter-spacing: -1px;
-
-        span {
-          margin: px_to_vh(15, $mobile-height) 0 0;
-          font-size: 24px;
-          line-height: 1.5;
+        @include mobile {
+          width: 40%;
         }
-      }
 
-      &__sign-up {
-        margin-top: px_to_vh(20, $mobile-height);
-
-        button {
-          width: 100%;
-          margin: 0 0 px_to_vh(20, $mobile-height);
+        @include tablet {
+          width: 200px;
         }
-      }
-    }
-  }
 
-  @include tablet {
-
-    &__inner { padding: 340px 0 315px; }
-
-    figure.gif {
-      top: 220px;
-      left: auto;
-      right: -40px;
-      @include transform(none);
-    }
-
-    &__info {
-      position: static;
-      width: 100%;
-      @include transform(none);
-
-      &__sign-up {
-
-        button { width: 200px; }
-      }
-    }
-  }
-
-  @include medium-width-media {
-
-    &__info {
-      width: 560px;
-
-      &__sign-up {
-
-        button {
+        @include medium-width-media {
           width: 160px;
           margin-right: 40px;
         }
-      }
-    }
-  }
 
-  @include large-width-media {
-
-    &__info {
-      width: 740px;
-
-      &__sign-up {
-
-        button { width: 160px; }
-      }
-    }
-
-  }
-
-  @include large-desktops-media {
-
-    &__info {
-      right: 0;
-
-      h2 {
-        font-size: 100px;
-        line-height: 0.8;
-        letter-spacing: -1.2px;
-
-        svg { @include size(580px 320px); }
-
-        span {
-          margin: 40px 0 45px;
-          font-size: 33px;
-          line-height: 0.83;
-          letter-spacing: -1.3px;
-        }
-      }
-
-      &__sign-up {
-
-        button {
-          @include size(220px 60px);
+        @include large-width-media {
+          width: 220px;
           font-size: 23px;
         }
       }
     }
-
   }
 }

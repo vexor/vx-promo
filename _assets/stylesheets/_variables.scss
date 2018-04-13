@@ -18,14 +18,14 @@ $large-desktop-width: 1600px;
 $mobile-height: 640px;
 $tablet-height: 1024px;
 $small-desktop-height: 768px;
-$large-desktop-height: 1080px;
+$large-desktop-height: 800px;
 
 $mobile-width-grid: 420px;
 $tablet-width-grid: 680px;
 
 
 // customers
-$customers-height-sm-md: 30px;
+$customers-height-sm-md: 35px;
 $customers-height-tb-lg: 45px;
 
 $header-height: 110px;
@@ -36,3 +36,13 @@ $footer-height-tb: 163px;
 $footer-height-sm: 147px;
 $footer-height-md: 116px;
 $footer-height-lg: 138px;
+
+$caption-font-size-mb: 18vw;
+$text-shape-factor-mobile: 110px;
+$font-family-vexor: Circe, Arial, Helvetica, sans-serif;
+
+$review-fade-height: 60px;
+$menu-show-duration: 400ms;
+$full-page-slide-duration: 700ms;
+$menu-show-shift: 0; // 20%;
+$shift-k: -0.1;

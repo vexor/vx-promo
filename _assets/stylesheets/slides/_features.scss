@@ -1,232 +1,133 @@
 .features-slide {
-  @include linear-gradient($blue-pigment 0%, $blue-pigment 50%, white 50%, white 100%);
+  //z-index: 1;
 
-  &__info, &__content {
+  @include both {
+    content: '';
+    display: block;
+    @include absolute(false, 0, false, 0);
+    height: 50%;
+    z-index: -1;
+  }
 
-    &__item {
-      width: 440px;
-      @include absolute(50%, auto, auto, auto);
-      @include transform(translateY(-50%));
-    }
+  &::before {
+    background: $blue-pigment;
+    top: 1px;
+  }
+
+  &::after {
+    background: #fff;
+    bottom: -1px;
   }
 
   &__info {
 
-    &__item {
-      left: -2px;
+    @include mobile {
+      position: static;
+    }
 
-      strong {
-        @include vector-title;
-        top: 27px;
+    > strong {
+      letter-spacing: 0;
+      top: 40px;
 
-        svg { @include absolute(0, auto, auto, 2px); }
+      @include mobile {
+        top: calc(30vh - 40vw); // calc(37vh - 50vw);
+      }
+    }
+
+    > p {
+      max-width: 450px;
+      margin: 100px 0 30px;
+
+      @include mobile_tablet {
+        font-size: 20px;
       }
 
-      p { margin: 100px 0 30px; }
+      @include mobile {
+        @include absolute(false, false, calc(45vh - 35vw - 60px)); // calc(43vh - 40vw));
+        margin: 0;
+        line-height: 1.5;
+      }
 
-      button { width: 160px; }
+      @include large-desktops-media {
+        margin: 120px 0 40px;
+        font-size: 33px;
+        max-width: 450px;
+      }
+    }
+
+    > button {
+      width: 160px;
+
+      @include mobile {
+        width: 100%;
+        @include absolute(false, 0, 0, 0);
+      }
+
+      @include tablet {
+        width: 200px;
+      }
+
+      @include large-desktops-media {
+        width: 220px;
+      }
     }
   }
 
   &__content {
 
-    &__item {
-      right: 0;
-      height: 420px;
-      @include border-radius(7px);
+    @include mobile {
+      @include absolute(0, false, 0);
+      display: table;
+      margin: auto 0;
+    }
 
-      video {
+    &__item {
+      padding-bottom: 9 / 16 * 100%;
+      @include border-radius(7px);
+      background-color: #dadcf6;
+      @include box-shadow(0 40px 120px rgba(0, 0, 102, 0.1));
+      position: relative;
+
+      > video {
         display: block;
-        width: 99.9%;
-        @include absolute(50%, auto, auto, 0);
-        @include transform(translateY(-50%));
-        @include border-radius(7px);
-        z-index: 1;
+        @include absolute(0, 0, 0, 0);
+        @include size(100%);
         background-color: #dadcf6;
+        @include border-radius(7px);
       }
 
-      &:before {
+      &::after {
         content: '';
         display: block;
         @include absolute(0, 0, 0, 0);
-        z-index: 2;
-        background: asset_url('interface/slides/features/play-button.svg') no-repeat center center;
+        background: asset_data_uri('interface/slides/features/play-button.svg') no-repeat center center;
         background-size: px_to_vw(40) px_to_vw(40);
         @include opacity(100);
         transition: opacity 0.3s ease;
         cursor: pointer;
+        z-index: 1;
+        @include transform(translateZ(0));
+
+        @include mobile {
+          background-size: 13%;
+        }
+
+        @include tablet {
+          background-size: 10%;
+        }
       }
 
       &.playing {
-
-        video { z-index: 2; }
-
-        &:before {
-          z-index: 1;
+        &::after {
           @include opacity(0);
         }
       }
 
       &.without-play-icon {
-
-        &:before { @extend .hidden; }
-      }
-    }
-  }
-
-  @include mobile {
-    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(30, $mobile-height);
-
-    &__info__item, &__content__item {
-      width: 100%;
-      height: auto;
-      @include transform(none);
-    }
-
-    &__info {
-      position: static;
-
-      &__item {
-        position: static;
-
-        strong {
-          font-size: 50px;
-          line-height: 0.8;
-          padding-top: 0;
-
-          svg {
-            top: 0;
-            left: 0;
-          }
-        }
-
-        p {
-          margin: px_to_vh(280, $mobile-height) 0 px_to_vh(100, $mobile-height);
-          font-size: 20px;
-          line-height: 1.5;
-        }
-
-        button {
-          position: absolute;
-          width: 100%;
-          bottom: 0;
+        &::after {
+          @extend .hidden;
         }
       }
     }
-
-    &__content {
-      position: absolute;
-      top: px_to_vh(150, $mobile-height);
-
-      &__item {
-        position: relative;
-        background-color: #dcdef4;
-
-        &:before { background-size: 13%; }
-
-        video {
-          position: static;
-          @include transform(none);
-        }
-      }
-    }
-  }
-
-  @include tablet {
-
-    & > div { padding-bottom: 104px; }
-
-    &__info, &__content {
-      width: 100%;
-      padding: 0 !important;
-    }
-
-    &__info {
-      height: auto;
-
-      &__item {
-        position: static;
-        width: 100%;
-        @include transform(none);
-
-        strong {
-          top: 1px;
-
-          svg { @include size(320px 112px); }
-        }
-
-        p {
-          width: 560px;
-          margin: 480px 0 50px;
-        }
-
-        button { width: 200px; }
-      }
-    }
-
-    &__content {
-      @include absolute(309px, auto, auto, 0);
-      height: 380px;
-
-      &__item {
-        @include size(auto);
-        background-color: #dcdef4;
-
-        &:before { background-size: 10%; }
-
-        video {
-          position: static;
-          @include transform(none);
-        }
-      }
-    }
-  }
-
-  @include medium-width-media {
-
-    &__info, &__content {
-
-      &__item { width: 560px; }
-    }
-
-    &__info__item {
-
-      p { width: 450px; }
-    }
-
-  }
-
-  @include large-width-media {
-
-    &__info, &__content {
-
-      &__item { width: 740px; }
-    }
-
-    &__info__item {
-
-      p { width: 630px; }
-    }
-
-  }
-
-  @include large-desktops-media {
-
-    &__info__item {
-
-      strong {
-        top: 20px;
-
-        svg { @include size(510px 179px); }
-      }
-
-      p {
-        margin: 120px 0 40px;
-        font-size: 33px;
-      }
-
-      button { @include size(220px 60px); }
-    }
-
   }
 }

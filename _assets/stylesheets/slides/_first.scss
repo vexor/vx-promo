@@ -1,44 +1,92 @@
+body{
+  .fp-viewing-features.animation-down,
+  .fp-viewing-unlimited.animation-up {
+
+  }
+}
+
 .first-slide {
   color: white;
-  background-color: $blue-pigment;
-  z-index: 2;
 
-  figure.gif { right: -25px; }
-
-  &__scrollable {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    @include transition(top 0.2s linear);
+  &-figure {
+    z-index: -1;
+    @include absolute(0, 0, 0, 0);
   }
 
-  h1, &__get-started, &__more, &__page-title {
+  figure.gif {
+  }
+
+  .figure-wrapper {
+    width: 50%;
+
+    &.with-transition {
+      @include transition(transform $full-page-slide-duration ease);
+
+      &-top {
+        @include transform(translate(0, -90vh));
+      }
+    }
+
+    @include mobile {
+      width: px_to_vw(630, $mobile-width);
+      right: px_to_vw(-342, $mobile-width);
+      bottom: 8vh;
+    }
+    @include tablet {
+      width: 55%;
+      right: -40px;
+    }
+    @include small-width-media {
+      width: 55%;
+      right: -40px;
+    }
+    @include medium-width-media {
+      width: 55%;
+      right: -40px;
+    }
+    @include large-width-media {
+      //width: 598px;
+      //right: 90px;
+    }
+  }
+
+  &__get-started,
+  &__more,
+  &__page-title {
     position: absolute;
     line-height: 1.0;
   }
 
-  h1, &__get-started, &__page-title {
+  &__get-started,
+  &__page-title {
     left: 240px;
   }
 
-  &__get-started, &__more {
+  &__get-started,
+  &__more {
     bottom: 50px;
   }
 
-  h1 {
-    @include vector-title(absolute);
-    width: 535px;
-    top: 50%;
-    @include transform(translateY(-50%));
-    margin: 0;
-    font-size: 114px;
-    font-weight: 800;
-    line-height: 0.7;
-    letter-spacing: -1px;
+  &__title {
+    width: 555px;
+    display: table;
+    @include absolute(5vh, false, 0, 0);
+    margin: auto 0;
 
-    svg {
-      @include absolute(0, none, none, 0);
+    > h1 {
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      font-size: 117px;
+      font-weight: 800;
+      line-height: 0.7;
+      letter-spacing: -2px;
+      color: transparent;
+    }
+
+    &-shape {
+      @include absolute(-9px, none, none, 2px);
+      width: 100%;
     }
 
     .subtitle {
@@ -49,11 +97,56 @@
       line-height: 1.11;
       color: white;
     }
+
+    @include mobile {
+      top: 5vh;
+      width: px_to_vw(555px * 1.2, $tablet-width);
+
+      > h1 {
+        font-size: px_to_vw(117px * 1.2, $tablet-width);
+      }
+
+      &-shape {
+        top: px_to_vw(-9px * 1.2, $tablet-width);
+        left: px_to_vw(-2px * 1.2, $tablet-width);
+      }
+
+      .subtitle {
+        margin-top: px_to_vh(20px, $mobile-height);
+        font-size: 24px;
+        line-height: 1.67;
+      }
+    }
+
+    @include tablet {
+      &-shape {
+        left: 1px;
+      }
+    }
+
+    @include large-desktops-media {
+      width: 740px;
+
+      > h1 {
+        font-size: 155px;
+      }
+
+      &-shape {
+        top: -10px;
+      }
+
+      .subtitle {
+        margin-top: 80px;
+        font-size: 48px;
+        line-height: 0.83;
+        letter-spacing: -1.3px;
+      }
+    }
   }
 
   &__get-started {
 
-    &:before {
+    &::before {
       content: 'Get started with:';
       display: block;
       position: absolute;
@@ -68,7 +161,7 @@
         float: left;
         padding: 0 20px;
 
-        &:after {
+        &::after {
           content: "/";
           display: block;
           position: absolute;
@@ -96,7 +189,11 @@
 
   &__page-title {
     width: 100px;
-    top: 50px;
+    top: 55px;
+
+    @include tablet {
+      top: 40px;
+    }
   }
 
   &__more {
@@ -108,11 +205,11 @@
       color: white;
       cursor: pointer;
 
-      &:after {
+      &::after {
         content: '↓';
         display: block;
         @include absolute(-25px, -25px, auto, auto);
-        font: normal 29px Circe;
+        font: normal 29px $font-family-vexor;
         @include opacity(0);
         @include transition(top 0.2s linear, opacity 0.2s linear);
       }
@@ -128,38 +225,19 @@
   }
 
   @include mobile {
-    padding: px_to_vh(80, $mobile-height) 0 px_to_vh(20, $mobile-height);
-
-    figure.gif {
-      width: px_to_vw(630, $mobile-width);
-      height: px_to_vh(480, $mobile-height);
-      top: px_to_vh(10, $mobile-height);
-      right: px_to_vw(-342, $mobile-width);
-      @include transform(none);
+    &__get-started,
+    &__page-title {
+      left: 0;
     }
 
-    &__scrollable {
-      height: calc(100vh - #{px_to_vh(100, $mobile-height)}); }
-
-    h1 {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      margin-top: px_to_vh(80, $mobile-height);
-      font-size: 56px;
-      letter-spacing: -1px;
-      @include transform(none);
-
-      .subtitle {
-        margin-top: px_to_vh(20, $mobile-height);
-        font-size: 24px;
-        line-height: 1.67;
-      }
+    &__page-title {
+      top: 6vh;
+      width: 100px;
+      font-size: 16px;
+      line-height: 1.25;
     }
 
     &__get-started {
-      left: 0;
       right: 0;
       bottom: 0;
       font-size: 0;
@@ -170,61 +248,38 @@
       button { width: 100%; }
     }
 
-    &__page-title {
-      position: static;
-      width: 100px;
-      font-size: 16px;
-      line-height: 1.25;
-    }
 
-    &__more { display: none; }
+    &__more {
+      display: none;
+    }
   }
 
   @include tablet {
-
-    &__scrollable {
-      height: auto;
-      padding-bottom: 57px;
-    }
-
-    figure.gif {
-      width: 640px;
-      height: 650px;
-      top: 190px;
-      right: -280px;
-      @include transform(none);
-    }
-
-    &__get-started, &__page-title {
-      position: static;
-    }
-
-    h1 {
-      position: relative;
-      top: 0;
-      left: 0;
-      @include transform(none);
-      margin: 140px 0 210px;
-    }
-
     &__get-started {
-
-      &:before {
-        position: static;
-        margin-bottom: 20px;
-      }
+    //&__page-title {
+      //position: static;
+      left: 0;
     }
 
-    &__page-title { width: 105px; }
+    &__get-started::before {
+      position: static;
+      margin-bottom: 20px;
+    }
 
-    &__more { display: none; }
+    //&__page-title {
+    //  width: 105px;
+    //}
+
+    &__more {
+      display: none;
+    }
   }
 
   @include medium-width-media {
 
-    figure.gif { right: 95px; }
-
-    h1, &__get-started, &__page-title {
+    &__title,
+    &__get-started,
+    &__page-title {
       left: 300px;
     }
 
@@ -236,9 +291,9 @@
 
   @include large-width-media {
 
-    figure.gif { right: 120px; }
-
-    h1, &__get-started, &__page-title {
+    &__title,
+    &__get-started,
+    &__page-title {
       left: 390px;
     }
 
@@ -250,30 +305,19 @@
 
   @include large-desktops-media {
 
-    figure.gif { right: 90px; }
-
-    &__get-started, &__page-title, &__more {
+    &__get-started,
+    &__page-title,
+    &__more {
       font-size: 26px;
+    }
+
+    &__page-title {
+      top: 50px;
     }
 
     &__more a::after {
       right: -30px;
       font-size: 35px;
     }
-
-    h1 {
-      width: 740px;
-      font-size: 155px;
-
-      svg { @include size(740px 326px); }
-
-      .subtitle {
-        margin-top: 80px;
-        font-size: 48px;
-        line-height: 0.83;
-        letter-spacing: -1.3px;
-      }
-    }
-
   }
 }

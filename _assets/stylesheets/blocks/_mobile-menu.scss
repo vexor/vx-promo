@@ -1,49 +1,111 @@
 .mobile-menu {
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: $blue-pigment;
+  z-index: 1;
   @include transform(translateX(100%));
-  @include transition(transform 0.5s ease);
+  @include transition(transform $menu-show-duration ease, visibility $menu-show-duration step-end);
+  display: none;
 
-  figure.gif {
-    width: px_to_vw(630, $mobile-width);
-    height: px_to_vh(480, $mobile-height);
-    top: px_to_vh(90, $mobile-height);
-    left: px_to_vw(-318, $mobile-width);
-    @include transform(none);
+  @include mobile {
+    display: block;
   }
 
-  ul, button {
-    position: absolute;
-  }
+  $shades-height: 12.5vh;
 
-  ul {
-    top: px_to_vh(80, $mobile-height);
-    right: px_to_vw(30, $mobile-width);
+  &__inner {
+    position: relative;
+    top: 5%;
+    height: 90%;
 
-    li {
-      margin-bottom: px_to_vh(30, $mobile-height);
-      text-align: right;
+    > ul {
+      position: absolute;
+      top: px_to_vh(80, $mobile-height);
+      right: 0;
 
-      a.smaller {
-        font-size: 16px;
-        line-height: 1.25;
+      > li {
+        margin-bottom: px_to_vh(30, $mobile-height);
+        text-align: right;
+
+        > a {
+          font-size: 25px;
+        }
+      }
+    }
+
+    > button {
+      @include absolute(false, 0, 0, 0);
+      width: 100%;
+    }
+
+    &.scrollable {
+      top: 0;
+      height: 100%;
+      width: 100%;
+      padding: $shades-height (100vw - 87.5vw) / 2;
+      @include scrollable();
+      > ul {
+        position: static;
+
+        > li {
+          text-align: left;
+
+          > a {
+            font-size: 30px;
+          }
+        }
+      }
+
+      > button {
+        margin-top: 45px;
+        position: relative;
       }
     }
   }
 
-  button {
-    bottom: px_to_vh(20, $mobile-height);
-    right: px_to_vw(30, $mobile-width);
-    width: px_to_vw(420, $mobile-width);
+  &.with-shades {
+    @include both {
+      z-index: 1;
+      @include absolute(false, 0, false, 0);
+      height: $shades-height;
+    }
+
+    &::before {
+      top: 0;
+      @include linear-gradient(
+          to bottom,
+          $blue-pigment 0%,
+          $blue-pigment 33%,
+          rgba($blue-pigment, 0.7) 67%,
+          rgba($blue-pigment, 0.0) 100%,
+        $fallback: transparent
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      @include linear-gradient(
+          to top,
+          $blue-pigment 0%,
+          $blue-pigment 33%,
+          rgba($blue-pigment, 0.7) 67%,
+          rgba($blue-pigment, 0.0) 100%,
+        $fallback: transparent
+      );
+    }
   }
 
-  &.translated {
-    @include transform(translateX(0));
-    z-index: 3;
+  body.alternate & {
+    background: $blue-pigment;
+  }
+
+  body.menu-show & {
+    visibility: visible;
+    @include transform(translateX($menu-show-shift));
+    @include transition(transform $menu-show-duration ease, visibility $menu-show-duration step-start);
   }
 }

@@ -1,380 +1,62 @@
+@import 'customers/reviews';
+@import 'customers/logos';
+
 .customers-slide {
-  @include linear-gradient(white 0%, white 50%, $blue-pigment 50%, $blue-pigment 100%);
+  z-index: 2;
+  background: $blue-pigment;
+
+  &::before {
+    content: '';
+    display: block;
+    @include absolute(-1px, 0, false, 0);
+    height: 50%;
+    z-index: -1;
+    background: #fff;
+  }
+
+  $customers-mobile-shift: 5vh;
 
   &__title {
-    float: left;
-    width: 50%;
-    @include vector-title;
-    top: calc(50% - 46px);
-    @include transform(translateY(-100%));
+    top: -92px;
+    @include transform(translateZ(0));
 
-    svg { @include absolute(0, auto, auto, 0); }
-  }
-
-  &__reviews {
-    height: 428px;
-    top: 50%;
-    @include transform(translateY(-50%));
-
-    &:before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 30px;
-      @include absolute(50%, auto, auto, -17px);
-      @include transform(translateY(-50%));
-      background: asset_url('interface/slides/customers/corner.svg') no-repeat center center;
-      background-size: contain;
+    @include mobile {
+      top: calc(50% - 200px - #{$customers-mobile-shift / 2});
+      z-index: 1;
     }
 
-    &__item {
-      width: 440px;
-      height: 308px;
-
-      & > p, & > div {
-        height: 50%;
-      }
-
-      & > p {
-        color: $blue-pigment;
-        font-size: 22px;
-        line-height: 1.5;
-      }
-
-      & > div {
-        padding-top: 55px;
-        color: white;
-        font-size: 19px;
-        line-height: 1.05;
-
-        span {
-          display: block;
-          margin-bottom: 15px;
-          font-size: 26px;
-          font-weight: bold;
-          line-height: 1.0;
-        }
-      }
+    @include tablet {
     }
 
-    .slick-list {
-      padding: 60px 0;
-
-      &:before, &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 40px;
-        z-index: 1;
-      }
-
-      &:before {
-        top: -1px;
-        @include linear-gradient(to bottom, white 0%, rgba(white, 0.8) 50%, rgba(white, 0.6) 100%);
-      }
-
-      &:after {
-        bottom: -1px;
-        background-color: rgba($blue-pigment, 0.7);
-        @include linear-gradient(to top, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
-      }
-    }
-  }
-
-  &__logos {
-    @include absolute(auto, 0, 50px, 0);
-    height: $customers-height-sm-md;
-    z-index: 1;
-
-    &__item {
-      position: relative;
-      height: $customers-height-sm-md;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      @include transition(all 0.2s linear);
-
-      svg {
-        max-height: 100%;
-        max-width: 80%;
-        @include absolute(50%, auto, auto, 50%);
-        @include transform(translate(-50%, -50%));
-
-        path, rect, polygon {
-          fill: rgba($dark-blue-gray, 0.5);
-          @include transition(fill 0.3s ease);
-        }
-      }
-
-      &[data-image="cloudcastle"] {
-        svg { max-height: 40%; }
-      }
-
-      &[data-image="uptopromo"] {
-        svg { max-height: 70%; }
-      }
-
-      &[data-image="brandymint"] {
-        svg { max-height: 85%; }
-      }
-
-      &[data-image="meduza"] {
-        svg { max-height: 76%; }
-      }
-
-      &[data-image="insales"] {
-        svg { max-height: 88%; }
-      }
-
-      &[data-image="evrone"] {
-          svg { max-height: 100%; }
-      }
-
-      &[data-image="humaniq"] {
-          svg { max-height: 100%; }
-      }
-
-      &[data-image="starttrack"] {
-          svg { max-height: 100%; }
-      }
-
-      &[data-image="klops"] {
-          svg { max-height: 100%; }
-      }
-
-      &:hover, &:active {
-
-        svg {
-          path, rect, polygon { fill: $dark-blue-gray; }
-        }
-      }
-
-      &.slick-current {
-        cursor: default;
-
-        svg {
-          path, rect, polygon { fill: $aquamarine; }
-        }
-      }
-    }
-
-    .slick-list {
-
-      &:before, &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 40px;
-        height: 100%;
-        z-index: 1;
-      }
-
-      &:before {
-        left: -40px;
-        @include linear-gradient(to right, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
-      }
-
-      &:after {
-        right: -40px;
-        @include linear-gradient(to left, $blue-pigment 0%, rgba($blue-pigment, 0.8) 50%, rgba($blue-pigment, 0.6) 100%);
-      }
+    @include large-desktops-media {
     }
   }
 
   @include mobile {
-    padding: px_to_vh(110, $mobile-height) 0 px_to_vh(30, $mobile-height);
-    @include linear-gradient(white 0%, white 66%, $blue-pigment 66%, $blue-pigment 100%);
-
-    &__inner {
-      position: relative;
-      height: auto;
-      padding-top: 0;
-
-      &-wrap {
+    &::before {
+      height: calc(50% + #{$customers-mobile-shift});
+    }
+    &::after {
+      height: calc(50% - #{$customers-mobile-shift});
+    }
+    .slide__inner__half {
+      &[data-position="left"] {
         position: static;
-        width: 100%;
-        @include transform(none);
-
-        & > strong {
-          font-size: 20px;
-          line-height: 2.0;
-        }
       }
-    }
-
-    &__title {
-      float: none;
-      width: 100%;
-      top: 0;
-      @include transform(none);
-      font-size: 54px;
-    }
-
-    &__reviews {
-      height: auto;
-      @include transform(none);
-
-      &:before { top: 61%; }
-
-      .slick-list {
-        padding: px_to_vh(40, $mobile-height) 0;
-      }
-
-      &__item {
-        height: px_to_vh(308, $mobile-height);
-
-        & > p {
-          height: px_to_vh(200, $mobile-height);
-          padding: 0;
-          font-size: 20px;
-          line-height: 1.5;
-        }
-
-        & > div {
-          height: px_to_vh(103, $mobile-height);
-          padding-top: px_to_vh(40, $mobile-height);
-
-          span {
-            margin-bottom: px_to_vh(10, $mobile-height);
-            font-size: 28px;
-          }
-        }
-      }
-    }
-
-    &__logos {
-      position: static;
-
-      &__item {
-
-        &.slick-current {
-
-          svg {
-            left: 0;
-            @include transform(translateY(-50%));
-          }
-
-          & + .slick-active {
-
-            svg {
-              left: auto;
-              right: 0;
-              @include transform(translateY(-50%));
-            }
-          }
-        }
-      }
-
-      .slick-list {
-
-        &:before, &:after {
-          width: px_to_vw(40, $mobile-width);
-        }
-
-        &:before {
-          left: px_to_vw(-40, $mobile-width);
-        }
-
-        &:after {
-          right: px_to_vw(-40, $mobile-width);
-        }
+      &[data-position="right"] {
+        @include absolute($customers-mobile-shift * 2, 0, 0, 0);
+        margin: auto 0;
+        display: table;
       }
     }
   }
 
   @include tablet {
-
-    & > div { padding: 263px 0; }
-
-    &__title {
-      width: auto;
-      @include transform(none);
-
-      svg { @include size(320px 127px); }
-    }
-
-    &__reviews {
-      height: 498px;
-      @include transform(none);
-
-      &__item {
-        height: 378px;
-      }
-    }
-
-    &__logos {
-      height: $customers-height-tb-lg;
-
-      &__item { height: $customers-height-tb-lg; }
-    }
   }
 
   @include medium-width-media {
-
-    &__reviews__item {
-      width: 560px;
-
-      & > p {
-        font-size: 24px;
-        line-height: 1.67;
-      }
-
-      & > div {
-
-        span { font-size: 30px; }
-      }
-    }
   }
 
   @include large-width-media {
-
-    &__reviews__item {
-      width: 740px;
-
-      & > p { width: 600px; }
-    }
-  }
-
-  @include large-desktops-media {
-
-    &__title {
-      top: calc(50% - 51px);
-
-      svg {
-        @include size(450px 179px);
-      }
-    }
-
-    &__reviews {
-      height: 468px;
-
-      .slick-list {
-        padding: 80px 0;
-
-        &:before, &:after {
-          height: 60px;
-        }
-      }
-
-      &__item {
-
-        & > p { font-size: 26px; }
-
-        & > div {
-          font-size: 23px;
-
-          span { font-size: 30px; }
-        }
-      }
-    }
-
-    &__logos {
-      height: $customers-height-tb-lg;
-
-      &__item { height: $customers-height-tb-lg; }
-    }
   }
 }

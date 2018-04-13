@@ -46,14 +46,44 @@
   @if is-set($left) { left: $left; }
 }
 
-@mixin vector-title($position: relative) {
-  display: block;
-  color: transparent;
+@mixin before($display: block, $content: '') {
+  &::before {
+    display: $display;
+    content: $content;
+    @content;
+  }
+}
 
-  @if is-set($position) { position: $position; }
-  @else { position: relative; }
+@mixin after($display: block, $content: '') {
+  &::after {
+    display: $display;
+    content: $content;
+    @content;
+  }
+}
+
+@mixin both($display: block, $content: '') {
+  &::before,
+  &::after {
+    display: $display;
+    content: $content;
+    @content;
+  }
+}
+
+@mixin vector-title {
+  display: table;
+  font-weight: 800;
+  font-size: 80px;
+  margin-left: (80px * $shift-k);
+  color: transparent;
+  position: relative;
 
   & > svg { z-index: -1; }
+
+  > span {
+    margin-left: (80px * -$shift-k);
+  }
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color) {
@@ -89,6 +119,17 @@
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
   }
+}
+
+@mixin scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // Edge-tech property for smooth scrolling on touch devices
+  // scss-lint:disable PropertySpelling
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  // scss-lint:enable PropertySpelling
 }
 
 @mixin mobile {
