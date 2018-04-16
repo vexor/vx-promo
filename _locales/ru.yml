@@ -1,3 +1,4 @@
+# Currently ru-locale is NOT SUPPORTED!
 ru:
   currency:
     name: Рубль
@@ -6,27 +7,33 @@ ru:
   time:
     minutes: мин.
 
-  nav:
-    url: https://vexor.ru
-    about: О нас
-    features: Особенности
-    pricing: Стоимость
-    help: Документация
-    blog: Блог
-    blog_link: https://medium.com/vexor-ci-russian
-    signin: Войти
+  header:
+    base_url: https://vexor.io/
     not_found: Страница не найдена
 
-  header:
-    title: Cloud Continuous Integration service.
-    slogan: Continuous Integration без очередей.<br />С поминутной оплатой.
+  nav:
+    blog:
+      caption: Блог
+      link: https://hype.codes/vexor
+    promo:
+      caption: Возможности
+      link: '#features'
+    pricing:
+      caption: Стоимость
+      link: '#configuration'
+    reviews:
+      caption: Reviews
+      link: '#customers'
+    documentation:
+      caption: Документация
+      link: /documentation/
     sign_up:
-      github: GitHub
-      bitbucket: BitBucket
+      caption: Войти
+      link: https://ci.vexor.io/users/companies/new
 
   description:
     pages:
-      promo: Неограниченный параллелизм. Нет задержек и очередей в ожидании билда. Поминутная оплата. Плати как сможешь.
+      index: Неограниченный параллелизм. Нет задержек и очередей в ожидании билда. Поминутная оплата. Плати как сможешь.
       privacy: Конфиденциальность. Общая информация. Сбор информации и использование. Раскрытие информации. Вопросы.
       security: "Мы знаем, что ваш код является чрезвычайно важным для вас и вашего бизнеса"
       terms: Общие и специальные меры, положения, требования, правила, технические условия, стандарты и основные части договора или контракта. 
@@ -96,11 +103,19 @@ ru:
       person: Алексей Блинов, CTO<br/> Scalex
 
   footer:
-    setup: Настройте continuous integration.
-    signup: Зарегистрируйтесь на Vexor сегодня.
-    try: Попробовать сейчас!
-    copyright: © 2014–2017, VEXOR. Все права защищены. Проект <a href='http://evrone.ru/'>Evrone</a>.
-    terms: Соглашение
-    security: Безопасность
-    privacy: Конфиденциальность
-    contacts: Контакты
+    copyright: VEXOR. Все права защищены.
+    powered_by: Проект <a href="https://evrone.ru/" target="_blank" class="underlined white">Evrone</a>
+
+  second_nav:
+    terms:
+      caption: Соглашение
+      link: /terms/
+    security:
+      caption: Безопасность
+      link: /security/
+    privacy:
+      caption: Конфиденциальность
+      link: /privacy/
+    contacts:
+      caption: Контакты
+      link: mailto:support@vexor.io

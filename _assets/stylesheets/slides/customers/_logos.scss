@@ -1,0 +1,133 @@
+.customers-slide__logos {
+  @include absolute(auto, 0, 8vh, -40px);
+  height: $customers-height-sm-md;
+  z-index: 1;
+
+  @include mobile {
+    left: -5vw;
+  }
+
+  &__item {
+    position: relative;
+    height: $customers-height-sm-md;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    @include transition(all 0.2s linear);
+
+    > svg {
+      max-height: 100%;
+      max-width: 80%;
+      @include absolute(0, false, 0, 40px);
+      margin: auto;
+
+      @include mobile {
+        left: 5vw;
+      }
+
+      path, rect, polygon {
+        fill: rgba(#fff, 0.25);
+        @include transition(fill 0.3s ease);
+      }
+    }
+
+    &[data-image="cloudcastle"] {
+      svg { max-height: 40%; }
+    }
+
+    &[data-image="uptopromo"] {
+      svg { max-height: 70%; }
+    }
+
+    &[data-image="brandymint"] {
+      svg { max-height: 85%; }
+    }
+
+    &[data-image="meduza"] {
+      svg { max-height: 76%; }
+    }
+
+    &[data-image="insales"] {
+      svg { max-height: 88%; }
+    }
+
+    &[data-image="evrone"] {
+      svg { max-height: 100%; }
+    }
+
+    &[data-image="humaniq"] {
+      svg { max-height: 100%; }
+    }
+
+    &[data-image="starttrack"] {
+      svg { max-height: 100%; }
+    }
+
+    &[data-image="klops"] {
+      svg { max-height: 100%; }
+    }
+
+    &:hover, &:active {
+
+      svg {
+        path, rect, polygon { fill: rgba(#fff, 0.75); }
+      }
+    }
+
+    &.slick-current {
+      cursor: default;
+
+      svg {
+        path, rect, polygon { fill: $aquamarine; }
+      }
+    }
+  }
+
+  .slick-list {
+    @include both {
+      @include absolute(0, false, 0);
+      z-index: 1;
+      @include transform(translateZ(0));
+      width: 40px;
+
+      @include mobile {
+        width: 5vw;
+      }
+    }
+
+    &::before {
+      left: -1px;
+      @include linear-gradient(
+          to right,
+          $blue-pigment 0%,
+          rgba($blue-pigment, 0.7) 50%,
+          rgba($blue-pigment, 0.0) 100%,
+        $fallback: transparent
+      );
+    }
+
+    &::after {
+      right: -1px;
+      @include linear-gradient(
+          to left,
+          $blue-pigment 0%,
+          rgba($blue-pigment, 0.7) 50%,
+          rgba($blue-pigment, 0.0) 100%,
+        $fallback: transparent);
+    }
+  }
+
+  @include tablet {
+    height: $customers-height-tb-lg;
+
+    &__item { height: $customers-height-tb-lg; }
+  }
+
+  @include medium-width-media {
+  }
+
+  @include large-width-media {
+    height: $customers-height-tb-lg;
+
+    &__item { height: $customers-height-tb-lg; }
+  }
+}

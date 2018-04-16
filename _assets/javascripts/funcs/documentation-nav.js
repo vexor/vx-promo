@@ -1,60 +1,202 @@
+//= require ./subscribeAnimationFrame
+
 function initDocumentationNav() {
+  var $nav = $('.documentation__nav');
+  if ($nav.length === 0) {
+    return;
+  }
+  var $mobileDocsItem = $('.mobile-menu li:first');
+  var $page = $('main.page');
+  if (!window.$body) {
+    window.$body = $('body');
+  }
+  if (!window.$footer) {
+    window.$footer = $('.footer');
+  }
+  var isMobilePoint = false;
 
-    var htmlSel = 'html',
-        headerSel = 'header',
-        navSel = '.documentation__nav',
-        $commonMenu = $(navSel).children('.sidebar__nav'),
-        menuTitleSel = '.sidebar__nav__title',
-        menuListSel = '.sidebar__nav__links';
+  $nav.on('click', 'a', function(ev) {
+    ev.preventDefault();
+    var $link = $(this);
+    if (isMobilePoint) {
+      if ($link.parent().hasClass('sidebar__nav__title') && !$link.parent().hasClass('untoggle')) {
+        return;
+      }
+      menuClose(function () {
+        scrollByLink($link);
+      });
+      return;
+    }
+    scrollByLink($link);
+  });
 
+  function scrollByLink($link) {
+    var id = $link.attr('href');
+    var target = $(id).offset().top - $('.documentation__content').offset().top;
+    var duration = getScrollDuration(target);
 
-    $commonMenu.on('click', 'a', function(ev) {
-        ev.preventDefault();
+    window.docScrolling = true;
+    $('html, body').stop(true).animate({ scrollTop: target }, duration, function () {
+      // window.location.href = id;
+      window.docScrolling = false;
+      scrollToShowActiveItems();
+      if (window.history && history.replaceState) {
+        history.replaceState({}, '', id);
+      }
+    });
+  }
 
-        var id = $(this).attr('href'),
-            target = $(id).offset().top - $('.documentation__content').offset().top,
-            duration = getScrollDuration(target);
+  var menuTitleSel = '.sidebar__nav__title';
+  var menuListSel = '.sidebar__nav__links';
 
-        // history.pushState(null, null, id);
+  function toggleLink($link, callback) {
+    $nav.stop(true);
+    $link
+      .toggleClass('toggled')
+      .next(menuListSel).stop(true).slideToggle(400, callback);
+  }
 
-        if ($(window).width() + window.scrollbarWidth < breakpoints.tabletWidth) {
-            $('#doc-nav-open').removeClass('active');
-            $(navSel).removeClass('opened');
-            $(htmlSel).removeClass('unscrollable');
+  $nav.on('click', menuTitleSel + ':not(.untoggle)', function(ev) {
+    toggleLink($(ev.currentTarget));
+  });
 
-            setTimeout(function () {
-                $('html, body').animate({ scrollTop: target }, duration);
-            }, 400);
-        }
-        else
-            $('html, body').animate({ scrollTop: target }, duration);
+  var $contentAnchors = $('a.anchor[id]');
+
+  $contentAnchors.each(function (index, element) {
+    var $anchor = $(element);
+    var $anchorLinks = $nav.find('a[href="#' + $anchor.attr('id') + '"]');
+    $anchor.data('$anchorLinks', $anchorLinks);
+  });
+
+  var tops = new Array($contentAnchors.length);
+
+  function recalcTops() {
+    $contentAnchors.each(function (index, element) {
+      var $anchor = $(element);
+      tops[index] = $anchor.offset().top;
+    });
+  }
+
+  var $togglableLists = $nav.find(menuListSel);
+  var $allAnchorLinks = $nav.find('a[href^="#"]');
+
+  subscribeAnimationFrame(null, function(props, prevProps, changed) {
+    if (changed.width || changed.height) {
+      recalcTops();
+    }
+
+    var topPadding = 0.1 * props.height + 100;
+    var topDetection = props.scrollTop + topPadding;
+    var bottomDetection = props.scrollBottom - topPadding / 2;
+
+    $contentAnchors.each(function (index, element) {
+      var $anchor = $(element);
+      var anchorLine = tops[index];
+      var nextAnchorLine = index === (tops.length - 1) ? anchorLine : tops[index + 1];
+      var visible = topDetection < nextAnchorLine && anchorLine < bottomDetection;
+      $anchor.data('$anchorLinks').toggleClass('active', visible);
     });
 
+    if (changed.navBottom) {
+      $nav.css('bottom', props.navBottom);
+    }
 
-    $(menuTitleSel+':not(.toggled)').on('click', 'a', function() {
-        $(menuTitleSel+'.toggled').removeClass('toggled')
-                                  .next(menuListSel).slideUp(400);
+    if (changed.width) {
+      switch (matchBreakpoint(props, prevProps, 'tablet')) {
+        case -1:
+          isMobilePoint = true;
+          moveNavToSide();
+          break;
+        case 1:
+          isMobilePoint = false;
+          returnNav();
+          break;
+      }
+    }
 
-        $(this).parent(menuTitleSel+':not(.untoggle)').addClass('toggled')
-                                                      .next(menuListSel).slideDown(400);
+    if (window.docScrolling) {
+      return;
+    }
+
+    $togglableLists.each(function (index, element) {
+      var $list = $(element);
+      var $link = $list.prev(menuTitleSel);
+      var toggled = $link.hasClass('toggled');
+      var hasActive = $list.find('a.active').length > 0;
+      if (toggled && !hasActive || !toggled && hasActive) {
+        toggleLink($link, scrollToShowActiveItems);
+      }
     });
 
+    scrollToShowActiveItems();
+  },
+  true,
+  function (props) {
+    var scrollBottom = props.scrollTop + props.height;
+    var distanceToBottom = $body.height() - (props.scrollTop + props.height);
+    return {
+      scrollBottom: scrollBottom,
+      // distanceToBottom: distanceToBottom,
+      navBottom: Math.max(0, $footer.height() - distanceToBottom)
+    };
+  });
 
-    $(menuListSel).on('click', 'a:not(.active)', function() {
-        $(menuListSel).find('a.active').removeClass('active');
-        $(this).addClass('active');
+  function matchBreakpoint(props, prevProps, point) {
+    var pointWidth = breakpoints[point + 'Width'];
+    if ((!prevProps.width || prevProps.width >= pointWidth) && props.width < pointWidth) {
+      return -1;
+    } else if ((!prevProps.width || prevProps.width < pointWidth) && props.width >= pointWidth) {
+      return 1;
+    }
+    return 0;
+  }
+
+  var scrollingItems = false;
+
+  function scrollToShowActiveItems() {
+    if (scrollingItems) {
+      return;
+    }
+    scrollingItems = true;
+    var minTop = Infinity;
+    var maxTop = 0;
+    $allAnchorLinks.filter('.active:visible').each(function (index, element) {
+      var top = $(element).position().top;
+      if (top < minTop) { minTop = top; }
+      if (top > maxTop) { maxTop = top; }
     });
+    var navTop = $nav.scrollTop();
+    var newTop = null;
+    if (0 > minTop) {
+      newTop = minTop
+    } else if (0 < (maxTop += 45 - $nav.height())) {
+      newTop = maxTop;
+    }
+    if (newTop !== null) {
+      var duration = Math.sqrt(Math.abs(newTop - navTop)) * 50;
+      $nav.stop(true).animate({ scrollTop: navTop + newTop }, duration, function () {
+        scrollingItems = false;
+      });
+      return;
+    }
+    scrollingItems = false;
+  }
 
+  var $wrapperItem = $('<li></li>');
+  $wrapperItem.hide().insertAfter($mobileDocsItem);
 
-    $(headerSel).on('click', '#doc-nav-open', function() {
-        var navTopPos = $(window).scrollTop() + $(headerSel).outerHeight();
+  function moveNavToSide() {
+    $wrapperItem.show().append($nav);
+  }
 
-        $(this).toggleClass('active');
-        $(navSel).css('top', navTopPos).toggleClass('opened');
+  function returnNav() {
+    $page.prepend($nav);
+    $wrapperItem.show();
+  }
+}
 
-        if ($(navSel).hasClass('opened'))
-            $(htmlSel).addClass('unscrollable');
-        else
-            $(htmlSel).removeClass('unscrollable');
-    });
+function getScrollDuration(target) {
+  var currentTop = $(window).scrollTop();
+  var distance = Math.abs(currentTop - target);
+  return Math.round(Math.sqrt(distance) * 15);
 }

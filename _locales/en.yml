@@ -16,19 +16,16 @@ en:
       link: https://hype.codes/vexor
     promo:
       caption: Promo
-      link:
     pricing:
       caption: Pricing
-      link:
     reviews:
       caption: Reviews
-      link:
     documentation:
       caption: Docs
       link: /documentation/
     sign_up:
       caption: Sign up
-      link: http://ci.vexor.io/users/companies/new
+      link: https://ci.vexor.io/users/companies/new
 
   get_started:
     caption: "Get started with:"
@@ -39,15 +36,14 @@ en:
 
   sections:
     first:
-#      title: <span class="row row-first">Un<b class="char-l">l</b>ımıted</span> <span class="row row-second">para<b class="char-l">l</b><b class="char-l">l</b>e<b class="char-l">l</b>ısm</span> <span class="row row-third">of <b class="char-b">b</b>uı<b class="char-l">l</b>ds.</span>
-      title: Unlimited<br>parallelism<br>of builds.
+      title: Unlimited parallelism of builds.
       subtitle: No pending. No queues.
       more: Scroll
 
     features:
       es_es:
-        title: Easy start,<br>Easy setup
-        caption: Integrate and setup your GitHub, BitBucket or Gitlab projects.
+        title: Fast start,<br>Easy setup
+        caption: Integrate and setup your GitHub, BitBucket or&nbsp;Gitlab projects.
         btn_text: Try it!
 
     configuration:
@@ -87,13 +83,13 @@ en:
           person: <span>Voldemar Duletskiy</span> CTO, Klops.ru
 
     last:
-      title: Set up<br>the right<br>continious<br>integration!
+      title: Set up <br>the right <br>continuous <br>integration!
       subtitle: "Sign up for VEXOR today:"
 
   description:
     slogan: Fast, Cheap and Easy – you can easily have all three
     pages:
-      promo: Unlimited parallelism. No more pending and queues of builds. Per minutes payment. Pay as you go.
+      index: Unlimited parallelism. No more pending and queues of builds. Per minutes payment. Pay as you go.
       privacy: Privacy. General information. Information gathering and usage. Disclosure. Questions.
       security: "We know your code is extremely important to you and your business, and we're very protective of it."
       terms: General and special arrangements, provisions, requirements, rules, specifications, and standards that form an integral part of an agreement or contract.
@@ -138,7 +134,7 @@ en:
 
   footer:
     copyright: VEXOR. All rights reserved.
-    powered_by: Powered by <a href="http://evrone.com" target="_blank" class="underlined white">Evrone</a>
+    powered_by: Powered by <a href="https://evrone.com" target="_blank" class="underlined white">Evrone</a>
 
   second_nav:
     terms:

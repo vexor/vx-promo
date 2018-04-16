@@ -57,6 +57,7 @@
   p {
     color: $ford-gunpowder-gray;
     line-height: 1.5;
+    margin-top: 20px;
   }
 
   ul {
@@ -123,8 +124,11 @@
   }
 
   @include large-desktops-media {
+    font-size: px_to_em(22);
 
-    p { font-size: px_to_em(22); }
+    p {
+      margin-top: 30px;
+    }
 
     img { margin: 50px auto; }
   }

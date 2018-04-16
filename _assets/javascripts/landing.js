@@ -1,88 +1,51 @@
 //= require libs/jquery.min.js
-//= require libs/jquery-ui.min.js
-//= require libs/jquery-ui-touch-punch.min.js
-//= require libs/slick.min.js
 //= require libs/is-mobile.min.js
-//= require_directory ./funcs
 
-$(function() {
+//= require funcs/animateFigures.js
+//= require funcs/buttons.js
+//= require funcs/configurationsCalculator.js
+//= require funcs/documentation-nav.js
+//= require funcs/featuresSlideAnimations.js
+//= require funcs/fullpage.js
+//= require funcs/reviewsSlider.js
+//= require funcs/slidedMenu.js
 
-    window.breakpoints = {
-        mobileWidth: 480,
-        tabletWidth: 768,
-        smallDesktopWidth: 1024,
-        mediumDesktopWidth: 1366,
-        largeDesktopWidth: 1600
-    };
+window.breakpoints = {
+  mobileWidth: 480,
+  tabletWidth: 768,
+  smallDesktopWidth: 1024,
+  mediumDesktopWidth: 1366,
+  largeDesktopWidth: 1600
+};
 
+$(initPage);
 
-    scrollParams();
-    scrollbarWidth();
+function initPage() {
+  window.pageKey = $('[data-page-key]').data('pageKey');
 
-    headerColor();
-    initSlidedMenu();
+  //console.log('Init!', pageKey);
+  if (pageKey === 'index') {
+    initIndex();
+  } else if (pageKey === 'documentation') {
+    initDocumentation();
+  }
+  buttonsEffect();
+  initSlidedMenu();
+}
 
+function initIndex() {
+  fullpageInit();
+  animateFigures();
 
-    if (!isMobile.any)
-        $('body').addClass('at-desktop');
+  featuresSlideAnimations();
+  initConfigurationsCalculator();
+  initReviewsSlider();
 
-    if (isMobile.phone)
-        $('body').addClass('at-mobile');
+  if (isMobile.apple.device) {
+    $('#features').find('.features-slide__content__item').addClass('without-play-icon');
+  }
+}
 
-    if (isMobile.tablet)
-        $('body').addClass('at-tablet');
-
-    if (isMobile.apple.device)
-        $('#features-slide').find('.features-slide__content__item').addClass('without-play-icon');
-
-
-    // index page's scripts
-    if ($('.page').length < 1) {
-        initConfigurationsCalculator();
-        initReviewsSlider();
-
-        // play/pause video
-        $('.features-slide__content__item').on('click', function() {
-            var videoParentEl = $(this),
-                video = document.getElementById('vexor-video');
-
-            if (video.paused) {
-                videoParentEl.addClass('playing');
-                video.play();
-            }
-            else {
-                video.pause();
-                videoParentEl.removeClass('playing');
-            }
-        });
-    }
-    // scripts for other pages
-    else {
-        $('body').addClass('alternate');
-        $('footer').addClass('inversed');
-
-        if ($('#documentation').length > 0)
-            initDocumentationNav();
-    }
-
-
-    $('a[data-action="scroll"]').on('click', function(ev) {
-        ev.preventDefault();
-
-        var sel = $(this).attr('href'),
-            target = (sel == '#configuration-slide') ? $(sel).offset().top - 0.15*$(window).height() : $(sel).offset().top,
-            duration = getScrollDuration(target);
-
-        $('html, body').animate({
-            scrollTop: target
-        }, duration);
-    });
-
-
-    $('input[readonly]').on('click focus touchmove', function (ev) {
-        ev.preventDefault();
-    });
-
-});
-
-$(document).on('ready, body:load', prepareAuth());
+function initDocumentation() {
+  initDocumentationNav();
+}

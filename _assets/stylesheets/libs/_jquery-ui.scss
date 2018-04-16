@@ -96,32 +96,27 @@
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
-	top: 0;
-	@include size(20px);
+	top: 12px;
+	@include size(30px);
 	z-index: 2;
 	cursor: default;
 	-ms-touch-action: none;
 	touch-action: none;
-	@include transform(translate(-100%, -50%));
+	@include transform(translate(-26px, -50%));
 	@include transition(all 0.2s ease);
 
-	&:before, &:after {
-		content: '';
-		display: block;
+	@include both {
 		cursor: pointer;
 	}
 
-	&:before {
-		@include absolute(50%, 18px, auto, -50vw);
+	&::before {
+		@include absolute(14px, 18px, auto, -50vw);
 		height: 3px;
 		background-color: $blue-pigment;
-		z-index: -1;
-		@include transform(translateY(-50%));
 	}
 
-	&:after {
-		@include absolute(0, auto, auto, 0);
-		@include size(100%);
+	&::after {
+		@include absolute(5px, 5px, 5px, 5px);
 		z-index: 1;
 		@include border-radius(50%);
 		@include transition(all 0.2s ease);
@@ -129,7 +124,7 @@
 
 	&:hover {
 
-		&:after {
+		&::after {
 			@include transform(scale(1.2));
 		}
 	}
@@ -204,15 +199,20 @@
 }
 .ui-widget.ui-widget-content {
 	width: calc(100% - 22px);
-	height: 1px;
+	height: 23px;
 	left: 21px;
-	background-color: rgba($blue-pigment, 0.2);
   cursor: pointer;
 }
 .ui-widget-content {
-	border: 1px solid #dddddd;
 	background: #ffffff;
 	color: #333333;
+	&::before {
+      content: '';
+      display: block;
+      position: relative;
+      top: 11px;
+      border-top: 2px dotted #D6D6EB;
+	}
 }
 .ui-widget-content a {
 	color: #333333;
@@ -440,10 +440,14 @@ a.ui-button:active,
     width: calc(100% - 34px);
   }
 
-	.ui-slider .ui-slider-handle {
-		@include size(30px);
+  .ui-slider .ui-slider-handle {
+    @include size(40px);
 
-    &:before { right: 27px; }
-	}
+    @include transform(translate(-36px, -50%));
 
+    &::before {
+      top: 19px;
+      right: 27px;
+    }
+  }
 }

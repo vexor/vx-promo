@@ -1,6 +1,5 @@
 .page {
   position: relative;
-  min-height: calc(100vh - #{$footer-height-md});
   padding-top: $header-height;
 
   &__content {
@@ -16,8 +15,6 @@
       height: auto;
       padding: 120px 0 30px;
       background-color: transparent;
-
-      figure.gif { @extend .hidden; }
 
       &__inner { height: auto; }
 
@@ -96,48 +93,29 @@
   }
 
   &.documentation {
-    padding-bottom: calc(#{px_to_vh(20, $large-desktop-height)} + #{$footer-height-md});
     @include scrollbars(5px, $blue-pigment, white);
 
     .documentation__nav {
+      @include scrollable();
+      @include transform(translateZ(0));
       position: fixed;
       top: calc(#{px_to_vh(80, $large-desktop-height)} + #{$header-height});
-      width: 20%;
-      height: calc(100vh - #{$header-height}  - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-md});
+      bottom: 0;
       z-index: 3;
-      overflow-x: auto;
-
-      @include mobile {
-        top: px_to_vh(58, $mobile-height);
-        left: 0;
-        width: px_to_vw($mobile-width-grid, $mobile-width);
-        height: calc(100vh - #{px_to_vh(58, $mobile-height)});
-        margin: 0 auto;
-        padding: px_to_vh(25, $mobile-height) 0;
-        z-index: 3;
-        background-color: rgba(white, 0.95);
-        @include transform(translateX(-100vw));
-        @include transition(transform 0.4s ease);
-
-        &.opened { @include transform(translateX(0)); }
-      }
 
       @include tablet {
         width: 25%;
-        height: calc(100vh - #{$header-height} - #{px_to_vh(80, $large-desktop-height)} - #{$footer-height-tb});
+        top: calc(#{px_to_vh(30, $tablet-height)} + #{$header-height});
       }
     }
 
     .documentation__content {
       position: relative;
-      top: px_to_vh(80, $large-desktop-height);
       left: 33%;
       width: 77%;
-      padding-top: 0;
       padding-right: 10%;
 
       @include mobile {
-        top: px_to_vh(120, $mobile-height);
         left: 0;
         width: 100%;
         padding-right: 0;
@@ -148,11 +126,6 @@
         width: 70%;
         padding-right: 0;
       }
-    }
-
-    @include mobile {
-      padding-top: 0;
-      padding-bottom: calc(#{px_to_vh(60, $mobile-height)} + #{0.5*$footer-height-mb});
     }
   }
 
@@ -179,18 +152,15 @@
   }
 
   @include mobile {
-    min-height: calc(100vh - #{$footer-height-mb});
-    padding-top: px_to_vh(60, $mobile-height);
     padding-bottom: px_to_vh(60, $mobile-height);
 
     &__content {
-      padding-top: px_to_vh(60, $mobile-height);
+      padding-top: 0;
     }
   }
 
   @include tablet {
-    min-height: calc(100vh - #{$footer-height-tb} - 57px);
-    padding-bottom: calc(#{px_to_vh(50, $tablet-height)} + #{$footer-height-tb});
+    padding-bottom: px_to_vh(50, $tablet-height);
 
     &__content {
       padding-top: px_to_vh(30, $tablet-height);

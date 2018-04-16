@@ -1,16 +1,14 @@
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
   outline: none;
+  box-sizing: border-box;
 }
 
 html {
-  height: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
-
   &.unscrollable { overflow: hidden; }
 }
 
@@ -18,24 +16,15 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   color: $dark-blue-gray;
-  font: normal normal normal 20px Circe, Arial, Helvetica;
+  font: normal normal normal 20px $font-family-vexor;
   font-stretch: normal;
   letter-spacing: normal;
+  background: $blue-pigment;
 
   &.alternate {
-    padding-bottom: $footer-height-md;
-
-    @include mobile {
-      padding-bottom: $footer-height-mb;
-    }
-
-    @include tablet {
-      padding-bottom: $footer-height-tb;
-    }
+    background: #fff;
   }
 }
-
-main {}
 
 a {
   text-decoration: none;
@@ -67,7 +56,7 @@ a {
   &.blue, &.white, &.underlined {
 
     &:hover {
-      color: aquamarine;
+      color: $aquamarine;
       border-bottom-color: rgba(107, 219, 188, 0.4);
     }
 
@@ -76,6 +65,7 @@ a {
     }
   }
 
+  &.active,
   &.current {
     color: $aquamarine !important;
     border-bottom-color: transparent !important;
@@ -99,7 +89,7 @@ button {
   @include box-shadow(0 10px 30px 0 rgba(51, 51, 153, 0.15));
   @include appearance(none);
   line-height: 1.0;
-  font: 800 20px Circe, SansSerif;
+  font: 800 20px $font-family-vexor;
   cursor: pointer;
   @include appearance(none);
   @include transition(color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease);
@@ -116,6 +106,35 @@ button {
 
     a { color: $aquamarine; }
   }
+
+  &.fx {
+    overflow: hidden;
+    z-index: 1;
+
+    > .ripple {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      background: $blue-pigment;
+      z-index: -1;
+      @include transition(
+          top 200ms ease-in-out,
+          left 200ms ease-in-out,
+          width 400ms ease-in-out,
+          padding 400ms ease-in-out);
+      @include size(0);
+      @include transform(translate(-50%, -50%));
+    }
+
+    &:hover {
+      background: $aquamarine;
+
+      > .ripple {
+        width: (100% * 2.25);
+        padding-bottom: (100% * 2.25);
+      }
+    }
+  }
 }
 
 ul { list-style: none; }
@@ -126,16 +145,12 @@ ul { list-style: none; }
   main {
     @include transform(translateX(0));
     @include transition(transform 0.5s ease);
-
-    &.translated {
-      @include transform(translateX(-100%));
-    }
   }
 
   button {
     height: px_to_vh(55, $mobile-height);
 
-    a { line-height: px_to_vh(57, $mobile-height); }
+    a { line-height: px_to_vh(55, $mobile-height); }
   }
 
 }
@@ -149,6 +164,7 @@ ul { list-style: none; }
 @include large-desktops-media {
 
   button {
+    height: 60px;
     font-size: 24px;
 
     a { line-height: 60px; }

@@ -33,3 +33,7 @@ $height-default: $small-desktop-height;
 @function px_to_vh($pixels, $context: $height-default) {
   @return #{strip-unit($pixels)/strip-unit($context)*100}vh;
 }
+
+@function mobile-text-shape-width($desktop-width) {
+  @return (strip-unit($desktop-width) / strip-unit($text-shape-factor-mobile) * $caption-font-size-mb);
+}

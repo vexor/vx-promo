@@ -1,41 +1,41 @@
-<div id="mobile-menu" class="mobile-menu tablet-down desktop-down">
-  <figure class="gif"></figure>
+<div id="mobile-menu" class="mobile-menu{% if page.description_key == 'documentation' %} with-shades{% endif %}">
+  <div class="mobile-menu__inner base{% if page.description_key == 'documentation' %} scrollable{% endif %}">
+    <ul>
+      <li>
+        <a href="{{ 'nav.documentation.link' | t }}" class="underlined white {% if page.slug == 'documentation' %} current{% endif %}">
+          {{ 'nav.documentation.caption' | t }}
+        </a>
+      </li>
 
-  <ul>
-    <li>
-      <a href="{{ 'nav.documentation.link' | t }}" class="underlined white {% if page.slug == 'documentation' %}current{% endif %}">
-        {{ 'nav.documentation.caption' | t }}
+      <li>
+        <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white{% if page.slug == 'terms' %} current{% endif %}">
+          {{ 'second_nav.terms.caption' | t }}
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ 'second_nav.security.link' | t }}" class="underlined white{% if page.slug == 'security' %} current{% endif %}">
+          {{ 'second_nav.security.caption' | t }}
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ 'second_nav.privacy.link' | t }}" class="underlined white{% if page.slug == 'privacy' %} current{% endif %}">
+          {{ 'second_nav.privacy.caption' | t }}
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ 'second_nav.contacts.link' | t }}" class="underlined white">
+          {{ 'second_nav.contacts.caption' | t }}
+        </a>
+      </li>
+    </ul>
+
+    <button class="mobile-menu__sign-up bordered fx">
+      <a href="{{ 'nav.sign_up.link' | t }}" class="blue abs-block" target="_blank">
+        {{ 'nav.sign_up.caption' | t }}
       </a>
-    </li>
-
-    <li>
-      <a href="{{ 'second_nav.terms.link' | t }}" class="underlined white smaller {% if page.slug == 'terms' %}current{% endif %}">
-        {{ 'second_nav.terms.caption' | t }}
-      </a>
-    </li>
-
-    <li>
-      <a href="{{ 'second_nav.security.link' | t }}" class="underlined white smaller {% if page.slug == 'security' %}current{% endif %}">
-        {{ 'second_nav.security.caption' | t }}
-      </a>
-    </li>
-
-    <li>
-      <a href="{{ 'second_nav.privacy.link' | t }}" class="underlined white smaller {% if page.slug == 'privacy' %}current{% endif %}">
-        {{ 'second_nav.privacy.caption' | t }}
-      </a>
-    </li>
-
-    <li>
-      <a href="{{ 'second_nav.contacts.link' | t }}" class="underlined white smaller">
-        {{ 'second_nav.contacts.caption' | t }}
-      </a>
-    </li>
-  </ul>
-
-  <button class="mobile-menu__sign-up bordered">
-    <a href="{{ 'nav.sign_up.link' | t }}" class="blue abs-block" data-action="sign-up">
-      {{ 'nav.sign_up.caption' | t }}
-    </a>
-  </button>
+    </button>
+  </div>
 </div>
