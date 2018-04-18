@@ -37,6 +37,7 @@ function fullpageInit() {
         visibleSections[window.fromIndex] = false;
         afterFigure();
         afterHeader();
+        afterPlayer();
         $('head > meta[name="theme-color"]').attr('content', isWhiteSection(index) ? '#FFFFFF' : '#333399');
         // $('body').removeClass('animation-' + window.animationDirection);
         window.animationDirection = false;
@@ -53,6 +54,7 @@ function fullpageInit() {
         visibleSections[nextIndex] = true;
         beforeFigure();
         beforeHeader();
+        beforePlayer();
 
         if (window.animationTimestamp) {
           window.leaveTimestamp = window.animationTimestamp;
@@ -113,6 +115,46 @@ function afterHeader() {
   // }
 }
 
+// Player
+
+var autopaused = false;
+
+function beforePlayer() {
+  playerFlow(fromIndex, function (player) {
+    player.getPaused().then(function(paused) {
+      if (!paused) {
+        autopaused = true;
+        player.pause();
+      }
+    });
+  });
+}
+
+function afterPlayer() {
+  playerFlow(toIndex, function (player) {
+    if (autopaused) {
+      autopaused = false;
+      player.play();
+    }
+  });
+}
+
+function playerFlow(slideIndex, callback) {
+  if (slideIndex === 2) {
+    var player = getVexorPromoPlayer();
+    if (player) {
+      callback(player);
+    }
+  }
+}
+
+var vexorPromoPlayer;
+
+function getVexorPromoPlayer() {
+  return vexorPromoPlayer || (vexorPromoPlayer = Vimeo && new Vimeo.Player(document.getElementById('vexor-video')));
+}
+
+// ---
 
 function isWhiteSection(sectionIndex) {
   return whiteSections.indexOf(sectionIndex) !== -1;

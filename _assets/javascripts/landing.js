@@ -5,7 +5,6 @@
 //= require funcs/buttons.js
 //= require funcs/configurationsCalculator.js
 //= require funcs/documentation-nav.js
-//= require funcs/featuresSlideAnimations.js
 //= require funcs/fullpage.js
 //= require funcs/reviewsSlider.js
 //= require funcs/slidedMenu.js
@@ -37,13 +36,12 @@ function initIndex() {
   fullpageInit();
   animateFigures();
 
-  featuresSlideAnimations();
   initConfigurationsCalculator();
   initReviewsSlider();
 
-  if (isMobile.apple.device) {
-    $('#features').find('.features-slide__content__item').addClass('without-play-icon');
-  }
+  // if (isMobile.apple.device) {
+  //   $('#features').find('.features-slide__content__item').addClass('without-play-icon');
+  // }
 }
 
 function initDocumentation() {
