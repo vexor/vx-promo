@@ -131,6 +131,10 @@ function updateTexture(forPipe1, forPipe2) {
 function renderPipe(pipe) {
   pipe.camera.lookAt(pipe.scene.position);
   pipe.renderer.render(pipe.scene, pipe.camera);
+  if (!pipe.renderReady) {
+    pipe.renderReady = true;
+    pipe.$container.addClass('gl-render');
+  }
 }
 
 function createPipe($container, sceneResult, frustumSize) {

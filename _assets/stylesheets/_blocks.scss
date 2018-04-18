@@ -81,6 +81,10 @@ figure.gif {
   margin: auto;
 
   background: no-repeat asset_url('interface/slides/first/figure-holder.png') center center / cover;
+
+  &.gl-render {
+    background-image: none;
+  }
 }
 
 @import "blocks/header";

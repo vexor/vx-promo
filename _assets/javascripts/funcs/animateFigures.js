@@ -1,4 +1,5 @@
 function animateFigures(callback) {
+  var $withFallbacks = $('.gif[data-fallback]');
   if (glEnabled()) {
     var glAsset = $('[data-gl-assets]').data('glAssets');
     if (glAsset) {
@@ -9,7 +10,7 @@ function animateFigures(callback) {
       });
     }
   } else {
-    $('.gif[data-fallback]').each(function () {
+    $withFallbacks.each(function () {
       var $gif = $(this);
       $gif.css({
         backgroundImage: 'url("' + $gif.data('fallback') + '")'
@@ -19,6 +20,7 @@ function animateFigures(callback) {
       setTimeout(callback, 100);
     }
   }
+  $withFallbacks.removeAttr('data-fallback');
 }
 
 function glEnabled() {
