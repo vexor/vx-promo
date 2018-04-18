@@ -26,9 +26,12 @@ function initConfigurationsCalculator() {
     function getDuration() { return parseInt($duration.val()); }
     function showDuration(duration) { $duration.val(duration + ' min'); }
 
+    var maxCommits = 20;
+    var maxMinutes = 20;
+
     // Cost slider
     $costSlider.slider({
-        max: 4,
+        max: calcCost(maxCommits, maxMinutes),
         min: 0.1,
         step: 0.1,
         value: 1,
@@ -38,7 +41,7 @@ function initConfigurationsCalculator() {
 
     // Commits slider
     $commitsSlider.slider({
-        max: 20,
+        max: maxCommits,
         min: 1,
         step: 1,
         value: getCommits(periodCoeff),
@@ -48,7 +51,7 @@ function initConfigurationsCalculator() {
 
     // Duration slider
     $durationSlider.slider({
-        max: 20,
+        max: maxMinutes,
         min: 1,
         step: 1,
         value: getDuration(),

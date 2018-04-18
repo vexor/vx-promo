@@ -1,10 +1,13 @@
 function animateFigures(callback) {
   if (glEnabled()) {
-    $.getScript($('[data-gl-assets]').data('glAssets'), function () {
-      if (callback) {
-        setTimeout(callback, 100);
-      }
-    });
+    var glAsset = $('[data-gl-assets]').data('glAssets');
+    if (glAsset) {
+      $.getScript(glAsset, function () {
+        if (callback) {
+          setTimeout(callback, 100);
+        }
+      });
+    }
   } else {
     $('.gif[data-fallback]').each(function () {
       var $gif = $(this);

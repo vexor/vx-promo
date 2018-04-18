@@ -102,6 +102,7 @@
       top: calc(#{px_to_vh(80, $large-desktop-height)} + #{$header-height});
       bottom: 0;
       z-index: 3;
+      min-width: 18%;
 
       @include tablet {
         width: 25%;

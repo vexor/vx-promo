@@ -37,7 +37,7 @@ function fullpageInit() {
         visibleSections[window.fromIndex] = false;
         afterFigure();
         afterHeader();
-
+        $('head > meta[name="theme-color"]').attr('content', isWhiteSection(index) ? '#FFFFFF' : '#333399');
         // $('body').removeClass('animation-' + window.animationDirection);
         window.animationDirection = false;
         if (window.runAfterSlideCallback) {
@@ -99,11 +99,11 @@ function afterFigure() {
 // Header
 
 function beforeHeader() {
-  var isWhiteSection = whiteSections.indexOf(window.toIndex) !== -1;
+  var isWhite = isWhiteSection(window.toIndex);
   var edgeSection = window.toIndex === 1 || window.toIndex === lastSection;
   $header
-    .toggleClass('white-blur', isWhiteSection)
-    .toggleClass('blue-blur white', !isWhiteSection)
+    .toggleClass('white-blur', isWhite)
+    .toggleClass('blue-blur white', !isWhite)
     .find('svg#logo').toggleClass('smaller', !edgeSection);
 }
 
@@ -113,6 +113,10 @@ function afterHeader() {
   // }
 }
 
+
+function isWhiteSection(sectionIndex) {
+  return whiteSections.indexOf(sectionIndex) !== -1;
+}
 
 window.runAfterSlide = function (callback) {
   if (window.animationDirection) {
