@@ -81,7 +81,7 @@ function initDocumentationNav() {
   var $allAnchorLinks = $nav.find('a[href^="#"]');
 
   subscribeAnimationFrame(null, function(props, prevProps, changed) {
-    if (changed.width || changed.height) {
+    if (changed.width || changed.height || changed.bodyHeight) {
       recalcTops();
     }
 
@@ -133,9 +133,11 @@ function initDocumentationNav() {
   true,
   function (props) {
     var scrollBottom = props.scrollTop + props.height;
-    var distanceToBottom = $body.height() - (props.scrollTop + props.height);
+    var bodyHeight = $body.height();
+    var distanceToBottom = bodyHeight - (props.scrollTop + props.height);
     return {
       scrollBottom: scrollBottom,
+      bodyHeight: bodyHeight,
       // distanceToBottom: distanceToBottom,
       navBottom: Math.max(0, $footer.height() - distanceToBottom)
     };
