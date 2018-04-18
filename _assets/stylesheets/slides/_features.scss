@@ -84,49 +84,19 @@
     &__item {
       padding-bottom: 9 / 16 * 100%;
       @include border-radius(7px);
-      background-color: #dadcf6;
+      overflow: hidden;
+      //background-color: #dadcf6;
       @include box-shadow(0 40px 120px rgba(0, 0, 102, 0.1));
       position: relative;
+      @include transform(translateZ(0));
 
-      > video {
+      > .vexor-video {
         display: block;
         @include absolute(0, 0, 0, 0);
         @include size(100%);
-        background-color: #dadcf6;
+        //background-color: #dadcf6;
         @include border-radius(7px);
-      }
-
-      &::after {
-        content: '';
-        display: block;
-        @include absolute(0, 0, 0, 0);
-        background: asset_data_uri('interface/slides/features/play-button.svg') no-repeat center center;
-        background-size: px_to_vw(40) px_to_vw(40);
-        @include opacity(100);
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-        z-index: 1;
-        @include transform(translateZ(0));
-
-        @include mobile {
-          background-size: 13%;
-        }
-
-        @include tablet {
-          background-size: 10%;
-        }
-      }
-
-      &.playing {
-        &::after {
-          @include opacity(0);
-        }
-      }
-
-      &.without-play-icon {
-        &::after {
-          @extend .hidden;
-        }
+        overflow: hidden;
       }
     }
   }
