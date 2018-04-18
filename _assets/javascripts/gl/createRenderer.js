@@ -1,5 +1,5 @@
 window.createRenderer = function (containerSize, pixelRatio) {
-  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
   updateRenderer(renderer, containerSize, pixelRatio);
   renderer.shadowMap.enabled = false;
