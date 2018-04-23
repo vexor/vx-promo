@@ -69,7 +69,7 @@ body{
 
   &__title {
     width: 555px;
-    display: table;
+    height: 350px;
     @include absolute(5vh, false, 0, 0);
     margin: auto 0;
 
@@ -101,6 +101,7 @@ body{
     @include mobile {
       top: 5vh;
       width: px_to_vw(555px * 1.2, $tablet-width);
+      height: px_to_vw(350px * 1.2, $tablet-width);
 
       > h1 {
         font-size: px_to_vw(117px * 1.2, $tablet-width);
@@ -126,6 +127,7 @@ body{
 
     @include large-desktops-media {
       width: 740px;
+      height: 450px;
 
       > h1 {
         font-size: 155px;
