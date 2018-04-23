@@ -32,9 +32,10 @@
 
   &__info {
     width: 50%;
+    height: 350px;
     @include absolute(0, 0, 3vh);
     margin: auto 0;
-    display: table;
+    //display: table;
     padding-left: 20px;
 
     @include mobile_tablet {
@@ -47,6 +48,10 @@
     @include mobile {
       // position: relative;
       bottom: 80px;
+    }
+
+    @include large-width-media {
+      height: 420px;
     }
 
     > h2 {

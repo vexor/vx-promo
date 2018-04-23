@@ -73,12 +73,18 @@
     }
   }
 
+  .slide__inner {
+    @include mobile {
+      display: table;
+    }
+  }
+
   &__content {
 
     @include mobile {
-      @include absolute(0, false, 0);
-      display: table;
-      margin: auto 0;
+      //@include absolute(0, false, 0);
+      display: table-cell;
+      //margin: auto 0;
     }
 
     &__item {

@@ -1,8 +1,13 @@
 $review-font-size: 22px;
+$reviews-list-padding: $review-fade-height - 10px;
 
 @mixin review-size($review-font-size, $review-lines: 6) {
   $review-height: $review-font-size * 1.5 * $review-lines;
   height: $review-height * 2;
+
+  @at-root .customers-slide .slide__inner__half[data-position="right"] {
+    height: $review-height * 2 + $reviews-list-padding * 2;
+  }
 
   > p {
     font-size: $review-font-size;
@@ -70,7 +75,7 @@ $review-font-size: 22px;
   }
 
   .slick-list {
-    padding: $review-fade-height - 10px 0;
+    padding: $reviews-list-padding 0;
 
     @include both {
       @include absolute(false, 0, false, 0);
@@ -101,18 +106,5 @@ $review-font-size: 22px;
         $fallback: transparent
       );
     }
-  }
-
-  @include mobile {
-  }
-
-  @include tablet {
-  }
-
-
-  @include large-width-media {
-  }
-
-  @include large-desktops-media {
   }
 }
