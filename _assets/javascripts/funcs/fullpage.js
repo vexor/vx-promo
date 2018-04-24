@@ -85,7 +85,7 @@ function beforeFigure() {
       getFigureElement()
         .addClass('with-transition')
         .removeClass('with-transition-top');
-    }, 1);
+    }, 20);
   }
 }
 

@@ -39,7 +39,7 @@
         &__sign-up {
           width: 100%;
 
-          button {
+          .button {
             background: transparent;
             color: $blue-pigment;
             border-color: $blue-pigment;
@@ -70,7 +70,7 @@
             display: block;
             margin: px_to_vh(20, $mobile-height) 0 0;
 
-            button { @include box-shadow(none); }
+            .button { @include box-shadow(none); }
           }
         }
       }
