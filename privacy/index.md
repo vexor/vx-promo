@@ -43,10 +43,11 @@ When you register for Vexor we ask for information such as your name, email
 address, billing address, credit card information. 
 
 #### Payment information
-When you add your financial account information to your Account, that information is directed to our third-party payment processor. We do not store your financial account information on our systems; however, we have access to, and may retain, subscriber information through our third-party payment processor.
 
-<!-- After binding a credit card, the amount of 1$ is holded to check the creditworthiness of the card.  -->
-<!-- Member receives 5$ as a bonus after binding the first credit card. -->
+After binding a credit card, the amount of 1$ is holded to check the creditworthiness of the card.
+Member receives 5$ as a bonus after binding the first credit card.
+
+When you add your financial account information to your Account, that information is directed to our third-party payment processor. We do not store your financial account information on our systems; however, we have access to, and may retain, subscriber information through our third-party payment processor.
 
 Vexor uses collected information for the following general purposes: products
 and services provision, billing, identification and authentication, services
