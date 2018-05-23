@@ -102,7 +102,7 @@ We use analytics providers such as Yandex.Metrica. Yandex.Metrica uses cookies t
 ## Third-party services
 You may access other third-party services through the Vexor, for example by clicking on links to those third-party services from within the Vexor. We are not responsible for the privacy policies and/or practices of these third-party services, and we encourage you to carefully review their privacy policies.
 
-## Your data protection rights under the General Data Protection Regulation (GDRP)
+## Your data protection rights under the General Data Protection Regulation (GDPR)
 
 If you are a resident of the EEA, you have the following data protection rights:
 
