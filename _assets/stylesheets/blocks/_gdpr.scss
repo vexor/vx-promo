@@ -1,0 +1,37 @@
+.gdpr-cookies {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 5;
+    background-color: #222;
+
+    &__inner {
+        width: 100%;
+        padding: 15px;
+        color: #fff;
+        display: inline-flex;
+        vertical-align: middle;
+        position: relative;
+
+        .policy-text {
+            padding-left: 15px;
+            float: left;
+
+            a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+
+        .close {
+            float: right;
+            margin-left: 15px;
+
+            span {
+                padding: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
