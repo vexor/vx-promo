@@ -63,7 +63,7 @@ en:
           person: <span>Alexander Kirillov</span>CTO, Evrone.ru
 
         bookmate:
-          text: “We have >2500 tests and it takes only 9 minutes to pass. Thanks Vexor's support team for help with config and much cheaper price than analogues!”
+          text: “We have more than 2500 tests and thanks to Vexor they take just 9 minutes. I’d like to thank the support team of Vexor for helping with config and providing much cheaper prices than its analogs have.”
           person: <span>Vlad Syabruk</span>Lead developer, Bookmate.com
 
         uptopromo:
@@ -71,7 +71,7 @@ en:
           person: <span>Alexander Balashov</span>CTO, Uptopromo.com
 
         humaniq:
-          text: “We love Vexor at Humaniq and use it for of our open source projects on GitHub. Vexor is simple to use, we love their platform to build tooling and very happy with the new container infrastructure for speedier builds.”
+          text: “We love Vexor and use it for our open source projects on GitHub. We appreciate the platform as it is simple to use and allows us to build tools. We also enjoy the new container infrastructure for speedier builds.”
           person: <span>Anton Mozgovoy</span> Humaniq
 
         starttrack:
@@ -79,7 +79,7 @@ en:
           person: <span>Alexander Baryshnikov</span> CTO, Starttrack.ru
 
         klops:
-          text: “Hello, we have city media portal klops.ru. We have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is 10$”
+          text: “At our media portal klops.ru we have around 300 tests with runtime between 3 and 5 minutes. Average monthly payment is $10.”
           person: <span>Voldemar Duletskiy</span> CTO, Klops.ru
 
     last:
