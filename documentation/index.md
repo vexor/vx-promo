@@ -832,11 +832,12 @@ deploy:
 
 During the ``deploy`` phase in the new container the optional stages of installation and preparation of the database will be skipped, which can significantly speed up the deploy time.
 
-
-# <a class="anchor" id="ssh">SSHing into a build</a>
-
-Soon.
-
 # <a class="anchor" id="billing">Billing</a>
 
-Soon.
+Vexor has the postpaid billing system. The price is calculated from the total time spent for running tests. Any time you can check how much time your tasks took during the current month. You can also view Vexor usage details during any month in the past.
+
+![Balance page](/images/docs/billing-1.png)
+
+Moreover, in your personal account you can view your current balance and discount info. You can change the payment details, and view the information about your past payments. Different types of reports are available - from daily to monthly ones. It is also possible to set up automatic payments and fill in your company contact information.
+
+![Invoice details](/images/docs/billing-2.png)
