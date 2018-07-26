@@ -794,10 +794,44 @@ To select the specific version for testing, a configuration key ``rust`` is used
 
 # <a class="anchor" id="deploy">Deploiyng your application</a>
 
-Soon.
+To deploy your application, you can use the standard tools of language or environment. For instance, [Capistrano](https://capistranorb.com/) or [Mina](http://nadarei.co/mina/) are usually used to deliver Rails applications.
 
-+ Capistrano examples
-+ Ansible examples
+The new version of the application is normally delivered to the server only if all the tests pass successfully.
+There is a special ``deploy`` phase in the configuration file of Vexor. Using it you can call user commands after successfully passing the tests. This phase is started by a separate task, and all artefacts that could occur during the tests are ignored.
+
+```yaml
+# vexor.yml:
+deploy:
+  - branch: master
+    shell:
+      - bundle exec cap production deploy
+```
+
+This example shows the easiest way to deliver Rails applications.
+
+The ``deploy`` section of the configuration file can contain the unlimited number of branches for the deploy. It is also possible to skip some steps from the main thread of execution, for example:
+
+```yaml
+# vexor.yml
+language: ruby
+rvm: 2.5
+
+install: bundle install
+database: bundle exec rake db:setup
+script: bundle exec rspec
+
+deploy:
+  - branch: master
+    skip:
+      - install
+      - database
+    shell:
+    - bundle exec cap production deploy
+    - echo "Done"
+```
+
+During the ``deploy`` phase in the new container the optional stages of installation and preparation of the database will be skipped, which can significantly speed up the deploy time.
+
 
 # <a class="anchor" id="ssh">SSHing into a build</a>
 
