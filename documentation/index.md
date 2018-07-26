@@ -836,8 +836,8 @@ During the ``deploy`` phase in the new container the optional stages of installa
 
 Vexor has the postpaid billing system. The price is calculated from the total time spent for running tests. Any time you can check how much time your tasks took during the current month. You can also view Vexor usage details during any month in the past.
 
-![Balance page](/images/docs/billing-1.png)
+![Balance page](/images/docs/Vexor-billing-1.png)
 
 Moreover, in your personal account you can view your current balance and discount info. You can change the payment details, and view the information about your past payments. Different types of reports are available - from daily to monthly ones. It is also possible to set up automatic payments and fill in your company contact information.
 
-![Invoice details](/images/docs/billing-2.png)
+![Invoice details](/images/docs/Vexor-billing-2.png)
