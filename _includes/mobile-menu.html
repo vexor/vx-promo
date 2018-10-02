@@ -1,6 +1,13 @@
 <div id="mobile-menu" class="mobile-menu{% if page.description_key == 'documentation' %} with-shades{% endif %}">
   <div class="mobile-menu__inner base{% if page.description_key == 'documentation' %} scrollable{% endif %}">
     <ul>
+
+      <li>
+        <a href="{{ 'nav.sign_in.link' | t }}" class="underlined white >
+          {{ 'nav.sign_in.caption' | t }}
+        </a>
+      </li>
+
       <li>
         <a href="{{ 'nav.documentation.link' | t }}" class="underlined white {% if page.slug == 'documentation' %} current{% endif %}">
           {{ 'nav.documentation.caption' | t }}

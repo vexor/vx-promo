@@ -26,6 +26,9 @@ en:
     sign_up:
       caption: Sign up
       link: https://ci.vexor.io/users/companies/new
+    sign_in:
+      caption: Sign in
+      link: https://ci.vexor.io
 
   get_started:
     caption: "Get started with:"
