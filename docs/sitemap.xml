@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>translation missing: en.nav.url/blog/2014/02/19/deploy-rails-applications-using-ansible-and-mina.html</loc>
+  <lastmod>2014-02-19T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+
+
+
+<url>
+  <loc>translation missing: en.nav.url/documentation/index.html</loc>
+  <lastmod>2016-11-14T10:45:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>translation missing: en.nav.url/privacy/index.html</loc>
+  <lastmod>2014-11-14T10:45:20+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>translation missing: en.nav.url/terms/index.html</loc>
+  <lastmod>2014-11-14T10:45:20+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>translation missing: en.nav.url/security/index.html</loc>
+  <lastmod>2014-11-14T10:45:20+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.7</priority>
+</url>
+
+</urlset>

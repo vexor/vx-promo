@@ -1,0 +1,129 @@
+@import "../_assets/stylesheets/mixins";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #666666;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  .logo {
+    height: 1em;
+  }
+  .navbar-nav {
+    >li {
+      >a {
+        text-transform: uppercase;
+        color: #9cf5fb;
+
+        &:hover {
+          background-color: #666666;
+          color: white;
+          text-decoration: none;
+        }
+
+        font-size: 1.3em;
+        line-height: 1.2;
+        font-weight: normal;
+        letter-spacing: 1px;
+      }
+      &.active {
+        > a, > a:hover {
+          background-color: #666666;
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .navbar-collapse {
+    position: relative;
+    text-align: center;
+    .navbar-nav {
+      float: none;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    ul li {
+      padding-top: 3px;
+      a {
+        &:hover span {
+          display: inline-block;
+          border-bottom: 2px solid white;
+          padding-bottom: 4px;
+          margin-bottom: -6px;
+        }
+        &:active, &:focus {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .landing nav.navbar .navbar-nav {
+    font-size: 0.8em;
+
+    li {
+      padding-top: 5px;
+    }
+  }
+}
+
+@media (min-width: 0) {
+  .landing .navbar li.separator {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .landing .navbar li.separator {
+    display: inline;
+    margin-top: 14px;
+    color: #9cf5fb;
+  }
+}
+
+
+@media (min-width: 0) {
+  .landing .landing-block-header {
+    padding-bottom: 20px;
+  }
+}
+
+.landing .landing-block-header {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  background-color: #10a3e7;
+  padding-top: 48.0px;
+  .title{
+    margin-top: 20px;
+    font-size: 3.5em;
+    line-height: 110%;
+  }
+  .description {
+    margin-top: 20px;
+    font-size: 1.7em;
+    line-height: 120%;
+  }
+  .main-image {
+    height: 235px;
+
+    img { width: 570px; }
+
+    @include mobile_tablet {
+      height: auto;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
