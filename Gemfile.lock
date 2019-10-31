@@ -73,7 +73,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
-    mini_magick (4.7.0)
+    mini_magick (4.9.5)
     multi_css (0.1.0)
       css_press
     multi_js (0.1.0)
